@@ -1,0 +1,1455 @@
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"Servo_Driver.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.set_position,"ax",%progbits
+  19              		.align	2
+  20              		.global	set_position
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	set_position, %function
+  24              	set_position:
+  25              	.LFB63:
+  26              		.file 1 ".\\Servo_Driver.c"
+   1:.\Servo_Driver.c **** /* ========================================
+   2:.\Servo_Driver.c ****  *
+   3:.\Servo_Driver.c ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\Servo_Driver.c ****  * All Rights Reserved
+   5:.\Servo_Driver.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\Servo_Driver.c ****  *
+   7:.\Servo_Driver.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\Servo_Driver.c ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\Servo_Driver.c ****  *
+  10:.\Servo_Driver.c ****  * ========================================
+  11:.\Servo_Driver.c **** */
+  12:.\Servo_Driver.c **** #include "Servo_Driver.h"
+  13:.\Servo_Driver.c **** #include"project.h"
+  14:.\Servo_Driver.c **** 
+  15:.\Servo_Driver.c **** void set_position(uint16 position, struct Servo *s)
+  16:.\Servo_Driver.c **** {
+  27              		.loc 1 16 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              	.LVL0:
+  32 0000 08B5     		push	{r3, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 3, -8
+  35              		.cfi_offset 14, -4
+  17:.\Servo_Driver.c ****     uint16 temp;
+  18:.\Servo_Driver.c ****     if(s->max_rotational_degree <= position)
+  36              		.loc 1 18 0
+  37 0002 0B88     		ldrh	r3, [r1]
+  38 0004 8342     		cmp	r3, r0
+  39 0006 01D8     		bhi	.L2
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 2
+
+
+  19:.\Servo_Driver.c ****     {
+  20:.\Servo_Driver.c ****         s->position = position;
+  40              		.loc 1 20 0
+  41 0008 4880     		strh	r0, [r1, #2]	@ movhi
+  42 000a 00E0     		b	.L3
+  43              	.L2:
+  21:.\Servo_Driver.c ****     }
+  22:.\Servo_Driver.c ****     else
+  23:.\Servo_Driver.c ****     {
+  24:.\Servo_Driver.c ****         s->position = s->max_rotational_degree;
+  44              		.loc 1 24 0
+  45 000c 4B80     		strh	r3, [r1, #2]	@ movhi
+  46              	.L3:
+  25:.\Servo_Driver.c ****     }
+  26:.\Servo_Driver.c ****     switch(s->servo)
+  47              		.loc 1 26 0
+  48 000e 0B79     		ldrb	r3, [r1, #4]	@ zero_extendqisi2
+  49 0010 032B     		cmp	r3, #3
+  50 0012 38D8     		bhi	.L1
+  51 0014 DFE803F0 		tbb	[pc, r3]
+  52              	.L6:
+  53 0018 02       		.byte	(.L5-.L6)/2
+  54 0019 11       		.byte	(.L7-.L6)/2
+  55 001a 1E       		.byte	(.L8-.L6)/2
+  56 001b 2B       		.byte	(.L9-.L6)/2
+  57              		.p2align 1
+  58              	.L5:
+  27:.\Servo_Driver.c ****     {
+  28:.\Servo_Driver.c ****         case SERVO_1A:
+  29:.\Servo_Driver.c ****             temp = ((265*s->position)/9)+1800;
+  59              		.loc 1 29 0
+  60 001c 4B88     		ldrh	r3, [r1, #2]
+  61 001e 03EB4310 		add	r0, r3, r3, lsl #5
+  62              	.LVL1:
+  63 0022 03EBC000 		add	r0, r3, r0, lsl #3
+  64 0026 184A     		ldr	r2, .L10
+  65 0028 82FB0030 		smull	r3, r0, r2, r0
+  66 002c 4010     		asrs	r0, r0, #1
+  67 002e 00F5E160 		add	r0, r0, #1800
+  68              	.LVL2:
+  30:.\Servo_Driver.c ****             Servo_A_WriteCompare1((uint16) temp);
+  69              		.loc 1 30 0
+  70 0032 80B2     		uxth	r0, r0
+  71              	.LVL3:
+  72 0034 FFF7FEFF 		bl	Servo_A_WriteCompare1
+  73              	.LVL4:
+  31:.\Servo_Driver.c ****             break;
+  74              		.loc 1 31 0
+  75 0038 08BD     		pop	{r3, pc}
+  76              	.LVL5:
+  77              	.L7:
+  32:.\Servo_Driver.c ****         case SERVO_1B:
+  33:.\Servo_Driver.c ****             temp = ((50*s->position)/3+3000);
+  78              		.loc 1 33 0
+  79 003a 4B88     		ldrh	r3, [r1, #2]
+  80 003c 3220     		movs	r0, #50
+  81              	.LVL6:
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 3
+
+
+  82 003e 00FB03F0 		mul	r0, r0, r3
+  83 0042 124B     		ldr	r3, .L10+4
+  84 0044 83FB0020 		smull	r2, r0, r3, r0
+  85 0048 00F6B830 		addw	r0, r0, #3000
+  86              	.LVL7:
+  34:.\Servo_Driver.c ****             Servo_A_WriteCompare2((uint16) temp);
+  87              		.loc 1 34 0
+  88 004c 80B2     		uxth	r0, r0
+  89              	.LVL8:
+  90 004e FFF7FEFF 		bl	Servo_A_WriteCompare2
+  91              	.LVL9:
+  35:.\Servo_Driver.c ****             break;
+  92              		.loc 1 35 0
+  93 0052 08BD     		pop	{r3, pc}
+  94              	.LVL10:
+  95              	.L8:
+  36:.\Servo_Driver.c ****         case SERVO_2A:
+  37:.\Servo_Driver.c ****             temp =((50*s->position)/3+3000);
+  96              		.loc 1 37 0
+  97 0054 4B88     		ldrh	r3, [r1, #2]
+  98 0056 3220     		movs	r0, #50
+  99              	.LVL11:
+ 100 0058 00FB03F0 		mul	r0, r0, r3
+ 101 005c 0B4B     		ldr	r3, .L10+4
+ 102 005e 83FB0020 		smull	r2, r0, r3, r0
+ 103 0062 00F6B830 		addw	r0, r0, #3000
+ 104              	.LVL12:
+  38:.\Servo_Driver.c ****             Servo_B_WriteCompare1((uint16) temp);
+ 105              		.loc 1 38 0
+ 106 0066 80B2     		uxth	r0, r0
+ 107              	.LVL13:
+ 108 0068 FFF7FEFF 		bl	Servo_B_WriteCompare1
+ 109              	.LVL14:
+  39:.\Servo_Driver.c ****             break;
+ 110              		.loc 1 39 0
+ 111 006c 08BD     		pop	{r3, pc}
+ 112              	.LVL15:
+ 113              	.L9:
+  40:.\Servo_Driver.c ****         case SERVO_2B:
+  41:.\Servo_Driver.c ****             temp = ((50*s->position)/3+3000);
+ 114              		.loc 1 41 0
+ 115 006e 4B88     		ldrh	r3, [r1, #2]
+ 116 0070 3220     		movs	r0, #50
+ 117              	.LVL16:
+ 118 0072 00FB03F0 		mul	r0, r0, r3
+ 119 0076 054B     		ldr	r3, .L10+4
+ 120 0078 83FB0020 		smull	r2, r0, r3, r0
+ 121 007c 00F6B830 		addw	r0, r0, #3000
+ 122              	.LVL17:
+  42:.\Servo_Driver.c ****             Servo_B_WriteCompare2((uint16) temp);
+ 123              		.loc 1 42 0
+ 124 0080 80B2     		uxth	r0, r0
+ 125              	.LVL18:
+ 126 0082 FFF7FEFF 		bl	Servo_B_WriteCompare2
+ 127              	.LVL19:
+ 128              	.L1:
+ 129 0086 08BD     		pop	{r3, pc}
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 4
+
+
+ 130              	.L11:
+ 131              		.align	2
+ 132              	.L10:
+ 133 0088 398EE338 		.word	954437177
+ 134 008c 56555555 		.word	1431655766
+ 135              		.cfi_endproc
+ 136              	.LFE63:
+ 137              		.size	set_position, .-set_position
+ 138              		.section	.text.get_position,"ax",%progbits
+ 139              		.align	2
+ 140              		.global	get_position
+ 141              		.thumb
+ 142              		.thumb_func
+ 143              		.type	get_position, %function
+ 144              	get_position:
+ 145              	.LFB64:
+  43:.\Servo_Driver.c ****             break;    
+  44:.\Servo_Driver.c ****     }
+  45:.\Servo_Driver.c **** }
+  46:.\Servo_Driver.c **** uint16 get_position(struct Servo *s)
+  47:.\Servo_Driver.c **** {
+ 146              		.loc 1 47 0
+ 147              		.cfi_startproc
+ 148              		@ args = 0, pretend = 0, frame = 0
+ 149              		@ frame_needed = 0, uses_anonymous_args = 0
+ 150              		@ link register save eliminated.
+ 151              	.LVL20:
+  48:.\Servo_Driver.c ****     
+  49:.\Servo_Driver.c ****     return s->position;   
+  50:.\Servo_Driver.c **** }
+ 152              		.loc 1 50 0
+ 153 0000 4088     		ldrh	r0, [r0, #2]
+ 154              	.LVL21:
+ 155 0002 7047     		bx	lr
+ 156              		.cfi_endproc
+ 157              	.LFE64:
+ 158              		.size	get_position, .-get_position
+ 159              		.section	.text.set_max_rotational_degree,"ax",%progbits
+ 160              		.align	2
+ 161              		.global	set_max_rotational_degree
+ 162              		.thumb
+ 163              		.thumb_func
+ 164              		.type	set_max_rotational_degree, %function
+ 165              	set_max_rotational_degree:
+ 166              	.LFB65:
+  51:.\Servo_Driver.c **** void set_max_rotational_degree(uint16 value, struct Servo *s)
+  52:.\Servo_Driver.c **** {
+ 167              		.loc 1 52 0
+ 168              		.cfi_startproc
+ 169              		@ args = 0, pretend = 0, frame = 0
+ 170              		@ frame_needed = 0, uses_anonymous_args = 0
+ 171              		@ link register save eliminated.
+ 172              	.LVL22:
+  53:.\Servo_Driver.c ****     s->max_rotational_degree = value;
+ 173              		.loc 1 53 0
+ 174 0000 0880     		strh	r0, [r1]	@ movhi
+ 175 0002 7047     		bx	lr
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 5
+
+
+ 176              		.cfi_endproc
+ 177              	.LFE65:
+ 178              		.size	set_max_rotational_degree, .-set_max_rotational_degree
+ 179              		.section	.text.get_max_rotational_degree,"ax",%progbits
+ 180              		.align	2
+ 181              		.global	get_max_rotational_degree
+ 182              		.thumb
+ 183              		.thumb_func
+ 184              		.type	get_max_rotational_degree, %function
+ 185              	get_max_rotational_degree:
+ 186              	.LFB66:
+  54:.\Servo_Driver.c **** }
+  55:.\Servo_Driver.c **** uint16 get_max_rotational_degree(struct Servo *s)
+  56:.\Servo_Driver.c **** {
+ 187              		.loc 1 56 0
+ 188              		.cfi_startproc
+ 189              		@ args = 0, pretend = 0, frame = 0
+ 190              		@ frame_needed = 0, uses_anonymous_args = 0
+ 191              		@ link register save eliminated.
+ 192              	.LVL23:
+  57:.\Servo_Driver.c ****     return s->max_rotational_degree;   
+  58:.\Servo_Driver.c **** }
+ 193              		.loc 1 58 0
+ 194 0000 0088     		ldrh	r0, [r0]
+ 195              	.LVL24:
+ 196 0002 7047     		bx	lr
+ 197              		.cfi_endproc
+ 198              	.LFE66:
+ 199              		.size	get_max_rotational_degree, .-get_max_rotational_degree
+ 200              		.text
+ 201              	.Letext0:
+ 202              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.2\\psoc creator\\import\\gnu\\arm\\4.8.
+ 203              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\3.2\\psoc creator\\import\\gnu\\arm\\4.8.
+ 204              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 205              		.file 5 ".\\Servo_Driver.h"
+ 206              		.file 6 "Generated_Source\\PSoC5/Servo_A.h"
+ 207              		.file 7 "Generated_Source\\PSoC5/Servo_B.h"
+ 208              		.file 8 "Generated_Source\\PSoC5/core_cm3.h"
+ 209              		.section	.debug_info,"",%progbits
+ 210              	.Ldebug_info0:
+ 211 0000 3A020000 		.4byte	0x23a
+ 212 0004 0400     		.2byte	0x4
+ 213 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 214 000a 04       		.byte	0x4
+ 215 000b 01       		.uleb128 0x1
+ 216 000c 49010000 		.4byte	.LASF32
+ 217 0010 01       		.byte	0x1
+ 218 0011 4D020000 		.4byte	.LASF33
+ 219 0015 12010000 		.4byte	.LASF34
+ 220 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 221 001d 00000000 		.4byte	0
+ 222 0021 00000000 		.4byte	.Ldebug_line0
+ 223 0025 02       		.uleb128 0x2
+ 224 0026 08       		.byte	0x8
+ 225 0027 07       		.byte	0x7
+ 226 0028 FB000000 		.4byte	.LASF0
+ 227 002c 03       		.uleb128 0x3
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 6
+
+
+ 228 002d 04       		.byte	0x4
+ 229 002e 05       		.byte	0x5
+ 230 002f 696E7400 		.ascii	"int\000"
+ 231 0033 02       		.uleb128 0x2
+ 232 0034 04       		.byte	0x4
+ 233 0035 07       		.byte	0x7
+ 234 0036 EE000000 		.4byte	.LASF1
+ 235 003a 02       		.uleb128 0x2
+ 236 003b 01       		.byte	0x1
+ 237 003c 06       		.byte	0x6
+ 238 003d 6D020000 		.4byte	.LASF2
+ 239 0041 02       		.uleb128 0x2
+ 240 0042 01       		.byte	0x1
+ 241 0043 08       		.byte	0x8
+ 242 0044 4C000000 		.4byte	.LASF3
+ 243 0048 02       		.uleb128 0x2
+ 244 0049 02       		.byte	0x2
+ 245 004a 05       		.byte	0x5
+ 246 004b 27020000 		.4byte	.LASF4
+ 247 004f 02       		.uleb128 0x2
+ 248 0050 02       		.byte	0x2
+ 249 0051 07       		.byte	0x7
+ 250 0052 71000000 		.4byte	.LASF5
+ 251 0056 04       		.uleb128 0x4
+ 252 0057 18000000 		.4byte	.LASF9
+ 253 005b 02       		.byte	0x2
+ 254 005c 37       		.byte	0x37
+ 255 005d 61000000 		.4byte	0x61
+ 256 0061 02       		.uleb128 0x2
+ 257 0062 04       		.byte	0x4
+ 258 0063 05       		.byte	0x5
+ 259 0064 5E020000 		.4byte	.LASF6
+ 260 0068 02       		.uleb128 0x2
+ 261 0069 04       		.byte	0x4
+ 262 006a 07       		.byte	0x7
+ 263 006b 5A000000 		.4byte	.LASF7
+ 264 006f 02       		.uleb128 0x2
+ 265 0070 08       		.byte	0x8
+ 266 0071 05       		.byte	0x5
+ 267 0072 E4010000 		.4byte	.LASF8
+ 268 0076 04       		.uleb128 0x4
+ 269 0077 28000000 		.4byte	.LASF10
+ 270 007b 03       		.byte	0x3
+ 271 007c 41       		.byte	0x41
+ 272 007d 56000000 		.4byte	0x56
+ 273 0081 04       		.uleb128 0x4
+ 274 0082 3E020000 		.4byte	.LASF11
+ 275 0086 04       		.byte	0x4
+ 276 0087 B3       		.byte	0xb3
+ 277 0088 41000000 		.4byte	0x41
+ 278 008c 04       		.uleb128 0x4
+ 279 008d BF000000 		.4byte	.LASF12
+ 280 0091 04       		.byte	0x4
+ 281 0092 B4       		.byte	0xb4
+ 282 0093 4F000000 		.4byte	0x4f
+ 283 0097 02       		.uleb128 0x2
+ 284 0098 04       		.byte	0x4
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 7
+
+
+ 285 0099 04       		.byte	0x4
+ 286 009a 46000000 		.4byte	.LASF13
+ 287 009e 02       		.uleb128 0x2
+ 288 009f 08       		.byte	0x8
+ 289 00a0 04       		.byte	0x4
+ 290 00a1 9E000000 		.4byte	.LASF14
+ 291 00a5 02       		.uleb128 0x2
+ 292 00a6 01       		.byte	0x1
+ 293 00a7 08       		.byte	0x8
+ 294 00a8 22020000 		.4byte	.LASF15
+ 295 00ac 02       		.uleb128 0x2
+ 296 00ad 04       		.byte	0x4
+ 297 00ae 07       		.byte	0x7
+ 298 00af C5010000 		.4byte	.LASF16
+ 299 00b3 05       		.uleb128 0x5
+ 300 00b4 01       		.byte	0x1
+ 301 00b5 05       		.byte	0x5
+ 302 00b6 11       		.byte	0x11
+ 303 00b7 D4000000 		.4byte	0xd4
+ 304 00bb 06       		.uleb128 0x6
+ 305 00bc 00000000 		.4byte	.LASF17
+ 306 00c0 00       		.sleb128 0
+ 307 00c1 06       		.uleb128 0x6
+ 308 00c2 09000000 		.4byte	.LASF18
+ 309 00c6 01       		.sleb128 1
+ 310 00c7 06       		.uleb128 0x6
+ 311 00c8 DC000000 		.4byte	.LASF19
+ 312 00cc 02       		.sleb128 2
+ 313 00cd 06       		.uleb128 0x6
+ 314 00ce E5000000 		.4byte	.LASF20
+ 315 00d2 03       		.sleb128 3
+ 316 00d3 00       		.byte	0
+ 317 00d4 07       		.uleb128 0x7
+ 318 00d5 22000000 		.4byte	.LASF35
+ 319 00d9 06       		.byte	0x6
+ 320 00da 05       		.byte	0x5
+ 321 00db 17       		.byte	0x17
+ 322 00dc 05010000 		.4byte	0x105
+ 323 00e0 08       		.uleb128 0x8
+ 324 00e1 CE010000 		.4byte	.LASF21
+ 325 00e5 05       		.byte	0x5
+ 326 00e6 18       		.byte	0x18
+ 327 00e7 8C000000 		.4byte	0x8c
+ 328 00eb 00       		.byte	0
+ 329 00ec 08       		.uleb128 0x8
+ 330 00ed 44020000 		.4byte	.LASF22
+ 331 00f1 05       		.byte	0x5
+ 332 00f2 19       		.byte	0x19
+ 333 00f3 8C000000 		.4byte	0x8c
+ 334 00f7 02       		.byte	0x2
+ 335 00f8 08       		.uleb128 0x8
+ 336 00f9 67020000 		.4byte	.LASF23
+ 337 00fd 05       		.byte	0x5
+ 338 00fe 1A       		.byte	0x1a
+ 339 00ff 81000000 		.4byte	0x81
+ 340 0103 04       		.byte	0x4
+ 341 0104 00       		.byte	0
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 8
+
+
+ 342 0105 09       		.uleb128 0x9
+ 343 0106 31020000 		.4byte	.LASF24
+ 344 010a 01       		.byte	0x1
+ 345 010b 0F       		.byte	0xf
+ 346 010c 00000000 		.4byte	.LFB63
+ 347 0110 90000000 		.4byte	.LFE63-.LFB63
+ 348 0114 01       		.uleb128 0x1
+ 349 0115 9C       		.byte	0x9c
+ 350 0116 6A010000 		.4byte	0x16a
+ 351 011a 0A       		.uleb128 0xa
+ 352 011b 44020000 		.4byte	.LASF22
+ 353 011f 01       		.byte	0x1
+ 354 0120 0F       		.byte	0xf
+ 355 0121 8C000000 		.4byte	0x8c
+ 356 0125 00000000 		.4byte	.LLST0
+ 357 0129 0B       		.uleb128 0xb
+ 358 012a 7300     		.ascii	"s\000"
+ 359 012c 01       		.byte	0x1
+ 360 012d 0F       		.byte	0xf
+ 361 012e 6A010000 		.4byte	0x16a
+ 362 0132 6C000000 		.4byte	.LLST1
+ 363 0136 0C       		.uleb128 0xc
+ 364 0137 6C000000 		.4byte	.LASF36
+ 365 013b 01       		.byte	0x1
+ 366 013c 11       		.byte	0x11
+ 367 013d 8C000000 		.4byte	0x8c
+ 368 0141 D8000000 		.4byte	.LLST2
+ 369 0145 0D       		.uleb128 0xd
+ 370 0146 38000000 		.4byte	.LVL4
+ 371 014a FD010000 		.4byte	0x1fd
+ 372 014e 0D       		.uleb128 0xd
+ 373 014f 52000000 		.4byte	.LVL9
+ 374 0153 0E020000 		.4byte	0x20e
+ 375 0157 0D       		.uleb128 0xd
+ 376 0158 6C000000 		.4byte	.LVL14
+ 377 015c 1F020000 		.4byte	0x21f
+ 378 0160 0D       		.uleb128 0xd
+ 379 0161 86000000 		.4byte	.LVL19
+ 380 0165 30020000 		.4byte	0x230
+ 381 0169 00       		.byte	0
+ 382 016a 0E       		.uleb128 0xe
+ 383 016b 04       		.byte	0x4
+ 384 016c D4000000 		.4byte	0xd4
+ 385 0170 0F       		.uleb128 0xf
+ 386 0171 91000000 		.4byte	.LASF27
+ 387 0175 01       		.byte	0x1
+ 388 0176 2E       		.byte	0x2e
+ 389 0177 8C000000 		.4byte	0x8c
+ 390 017b 00000000 		.4byte	.LFB64
+ 391 017f 04000000 		.4byte	.LFE64-.LFB64
+ 392 0183 01       		.uleb128 0x1
+ 393 0184 9C       		.byte	0x9c
+ 394 0185 97010000 		.4byte	0x197
+ 395 0189 0B       		.uleb128 0xb
+ 396 018a 7300     		.ascii	"s\000"
+ 397 018c 01       		.byte	0x1
+ 398 018d 2E       		.byte	0x2e
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 9
+
+
+ 399 018e 6A010000 		.4byte	0x16a
+ 400 0192 C5010000 		.4byte	.LLST3
+ 401 0196 00       		.byte	0
+ 402 0197 09       		.uleb128 0x9
+ 403 0198 A5000000 		.4byte	.LASF25
+ 404 019c 01       		.byte	0x1
+ 405 019d 33       		.byte	0x33
+ 406 019e 00000000 		.4byte	.LFB65
+ 407 01a2 04000000 		.4byte	.LFE65-.LFB65
+ 408 01a6 01       		.uleb128 0x1
+ 409 01a7 9C       		.byte	0x9c
+ 410 01a8 C5010000 		.4byte	0x1c5
+ 411 01ac 10       		.uleb128 0x10
+ 412 01ad 12000000 		.4byte	.LASF26
+ 413 01b1 01       		.byte	0x1
+ 414 01b2 33       		.byte	0x33
+ 415 01b3 8C000000 		.4byte	0x8c
+ 416 01b7 01       		.uleb128 0x1
+ 417 01b8 50       		.byte	0x50
+ 418 01b9 11       		.uleb128 0x11
+ 419 01ba 7300     		.ascii	"s\000"
+ 420 01bc 01       		.byte	0x1
+ 421 01bd 33       		.byte	0x33
+ 422 01be 6A010000 		.4byte	0x16a
+ 423 01c2 01       		.uleb128 0x1
+ 424 01c3 51       		.byte	0x51
+ 425 01c4 00       		.byte	0
+ 426 01c5 0F       		.uleb128 0xf
+ 427 01c6 F2010000 		.4byte	.LASF28
+ 428 01ca 01       		.byte	0x1
+ 429 01cb 37       		.byte	0x37
+ 430 01cc 8C000000 		.4byte	0x8c
+ 431 01d0 00000000 		.4byte	.LFB66
+ 432 01d4 04000000 		.4byte	.LFE66-.LFB66
+ 433 01d8 01       		.uleb128 0x1
+ 434 01d9 9C       		.byte	0x9c
+ 435 01da EC010000 		.4byte	0x1ec
+ 436 01de 0B       		.uleb128 0xb
+ 437 01df 7300     		.ascii	"s\000"
+ 438 01e1 01       		.byte	0x1
+ 439 01e2 37       		.byte	0x37
+ 440 01e3 6A010000 		.4byte	0x16a
+ 441 01e7 E6010000 		.4byte	.LLST4
+ 442 01eb 00       		.byte	0
+ 443 01ec 12       		.uleb128 0x12
+ 444 01ed 84000000 		.4byte	.LASF37
+ 445 01f1 08       		.byte	0x8
+ 446 01f2 2A06     		.2byte	0x62a
+ 447 01f4 F8010000 		.4byte	0x1f8
+ 448 01f8 13       		.uleb128 0x13
+ 449 01f9 76000000 		.4byte	0x76
+ 450 01fd 14       		.uleb128 0x14
+ 451 01fe 79020000 		.4byte	.LASF29
+ 452 0202 06       		.byte	0x6
+ 453 0203 C7       		.byte	0xc7
+ 454 0204 0E020000 		.4byte	0x20e
+ 455 0208 15       		.uleb128 0x15
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 10
+
+
+ 456 0209 8C000000 		.4byte	0x8c
+ 457 020d 00       		.byte	0
+ 458 020e 14       		.uleb128 0x14
+ 459 020f 30000000 		.4byte	.LASF30
+ 460 0213 06       		.byte	0x6
+ 461 0214 CA       		.byte	0xca
+ 462 0215 1F020000 		.4byte	0x21f
+ 463 0219 15       		.uleb128 0x15
+ 464 021a 8C000000 		.4byte	0x8c
+ 465 021e 00       		.byte	0
+ 466 021f 14       		.uleb128 0x14
+ 467 0220 0C020000 		.4byte	.LASF31
+ 468 0224 07       		.byte	0x7
+ 469 0225 C7       		.byte	0xc7
+ 470 0226 30020000 		.4byte	0x230
+ 471 022a 15       		.uleb128 0x15
+ 472 022b 8C000000 		.4byte	0x8c
+ 473 022f 00       		.byte	0
+ 474 0230 16       		.uleb128 0x16
+ 475 0231 C6000000 		.4byte	.LASF38
+ 476 0235 07       		.byte	0x7
+ 477 0236 CA       		.byte	0xca
+ 478 0237 15       		.uleb128 0x15
+ 479 0238 8C000000 		.4byte	0x8c
+ 480 023c 00       		.byte	0
+ 481 023d 00       		.byte	0
+ 482              		.section	.debug_abbrev,"",%progbits
+ 483              	.Ldebug_abbrev0:
+ 484 0000 01       		.uleb128 0x1
+ 485 0001 11       		.uleb128 0x11
+ 486 0002 01       		.byte	0x1
+ 487 0003 25       		.uleb128 0x25
+ 488 0004 0E       		.uleb128 0xe
+ 489 0005 13       		.uleb128 0x13
+ 490 0006 0B       		.uleb128 0xb
+ 491 0007 03       		.uleb128 0x3
+ 492 0008 0E       		.uleb128 0xe
+ 493 0009 1B       		.uleb128 0x1b
+ 494 000a 0E       		.uleb128 0xe
+ 495 000b 55       		.uleb128 0x55
+ 496 000c 17       		.uleb128 0x17
+ 497 000d 11       		.uleb128 0x11
+ 498 000e 01       		.uleb128 0x1
+ 499 000f 10       		.uleb128 0x10
+ 500 0010 17       		.uleb128 0x17
+ 501 0011 00       		.byte	0
+ 502 0012 00       		.byte	0
+ 503 0013 02       		.uleb128 0x2
+ 504 0014 24       		.uleb128 0x24
+ 505 0015 00       		.byte	0
+ 506 0016 0B       		.uleb128 0xb
+ 507 0017 0B       		.uleb128 0xb
+ 508 0018 3E       		.uleb128 0x3e
+ 509 0019 0B       		.uleb128 0xb
+ 510 001a 03       		.uleb128 0x3
+ 511 001b 0E       		.uleb128 0xe
+ 512 001c 00       		.byte	0
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 11
+
+
+ 513 001d 00       		.byte	0
+ 514 001e 03       		.uleb128 0x3
+ 515 001f 24       		.uleb128 0x24
+ 516 0020 00       		.byte	0
+ 517 0021 0B       		.uleb128 0xb
+ 518 0022 0B       		.uleb128 0xb
+ 519 0023 3E       		.uleb128 0x3e
+ 520 0024 0B       		.uleb128 0xb
+ 521 0025 03       		.uleb128 0x3
+ 522 0026 08       		.uleb128 0x8
+ 523 0027 00       		.byte	0
+ 524 0028 00       		.byte	0
+ 525 0029 04       		.uleb128 0x4
+ 526 002a 16       		.uleb128 0x16
+ 527 002b 00       		.byte	0
+ 528 002c 03       		.uleb128 0x3
+ 529 002d 0E       		.uleb128 0xe
+ 530 002e 3A       		.uleb128 0x3a
+ 531 002f 0B       		.uleb128 0xb
+ 532 0030 3B       		.uleb128 0x3b
+ 533 0031 0B       		.uleb128 0xb
+ 534 0032 49       		.uleb128 0x49
+ 535 0033 13       		.uleb128 0x13
+ 536 0034 00       		.byte	0
+ 537 0035 00       		.byte	0
+ 538 0036 05       		.uleb128 0x5
+ 539 0037 04       		.uleb128 0x4
+ 540 0038 01       		.byte	0x1
+ 541 0039 0B       		.uleb128 0xb
+ 542 003a 0B       		.uleb128 0xb
+ 543 003b 3A       		.uleb128 0x3a
+ 544 003c 0B       		.uleb128 0xb
+ 545 003d 3B       		.uleb128 0x3b
+ 546 003e 0B       		.uleb128 0xb
+ 547 003f 01       		.uleb128 0x1
+ 548 0040 13       		.uleb128 0x13
+ 549 0041 00       		.byte	0
+ 550 0042 00       		.byte	0
+ 551 0043 06       		.uleb128 0x6
+ 552 0044 28       		.uleb128 0x28
+ 553 0045 00       		.byte	0
+ 554 0046 03       		.uleb128 0x3
+ 555 0047 0E       		.uleb128 0xe
+ 556 0048 1C       		.uleb128 0x1c
+ 557 0049 0D       		.uleb128 0xd
+ 558 004a 00       		.byte	0
+ 559 004b 00       		.byte	0
+ 560 004c 07       		.uleb128 0x7
+ 561 004d 13       		.uleb128 0x13
+ 562 004e 01       		.byte	0x1
+ 563 004f 03       		.uleb128 0x3
+ 564 0050 0E       		.uleb128 0xe
+ 565 0051 0B       		.uleb128 0xb
+ 566 0052 0B       		.uleb128 0xb
+ 567 0053 3A       		.uleb128 0x3a
+ 568 0054 0B       		.uleb128 0xb
+ 569 0055 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 12
+
+
+ 570 0056 0B       		.uleb128 0xb
+ 571 0057 01       		.uleb128 0x1
+ 572 0058 13       		.uleb128 0x13
+ 573 0059 00       		.byte	0
+ 574 005a 00       		.byte	0
+ 575 005b 08       		.uleb128 0x8
+ 576 005c 0D       		.uleb128 0xd
+ 577 005d 00       		.byte	0
+ 578 005e 03       		.uleb128 0x3
+ 579 005f 0E       		.uleb128 0xe
+ 580 0060 3A       		.uleb128 0x3a
+ 581 0061 0B       		.uleb128 0xb
+ 582 0062 3B       		.uleb128 0x3b
+ 583 0063 0B       		.uleb128 0xb
+ 584 0064 49       		.uleb128 0x49
+ 585 0065 13       		.uleb128 0x13
+ 586 0066 38       		.uleb128 0x38
+ 587 0067 0B       		.uleb128 0xb
+ 588 0068 00       		.byte	0
+ 589 0069 00       		.byte	0
+ 590 006a 09       		.uleb128 0x9
+ 591 006b 2E       		.uleb128 0x2e
+ 592 006c 01       		.byte	0x1
+ 593 006d 3F       		.uleb128 0x3f
+ 594 006e 19       		.uleb128 0x19
+ 595 006f 03       		.uleb128 0x3
+ 596 0070 0E       		.uleb128 0xe
+ 597 0071 3A       		.uleb128 0x3a
+ 598 0072 0B       		.uleb128 0xb
+ 599 0073 3B       		.uleb128 0x3b
+ 600 0074 0B       		.uleb128 0xb
+ 601 0075 27       		.uleb128 0x27
+ 602 0076 19       		.uleb128 0x19
+ 603 0077 11       		.uleb128 0x11
+ 604 0078 01       		.uleb128 0x1
+ 605 0079 12       		.uleb128 0x12
+ 606 007a 06       		.uleb128 0x6
+ 607 007b 40       		.uleb128 0x40
+ 608 007c 18       		.uleb128 0x18
+ 609 007d 9742     		.uleb128 0x2117
+ 610 007f 19       		.uleb128 0x19
+ 611 0080 01       		.uleb128 0x1
+ 612 0081 13       		.uleb128 0x13
+ 613 0082 00       		.byte	0
+ 614 0083 00       		.byte	0
+ 615 0084 0A       		.uleb128 0xa
+ 616 0085 05       		.uleb128 0x5
+ 617 0086 00       		.byte	0
+ 618 0087 03       		.uleb128 0x3
+ 619 0088 0E       		.uleb128 0xe
+ 620 0089 3A       		.uleb128 0x3a
+ 621 008a 0B       		.uleb128 0xb
+ 622 008b 3B       		.uleb128 0x3b
+ 623 008c 0B       		.uleb128 0xb
+ 624 008d 49       		.uleb128 0x49
+ 625 008e 13       		.uleb128 0x13
+ 626 008f 02       		.uleb128 0x2
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 13
+
+
+ 627 0090 17       		.uleb128 0x17
+ 628 0091 00       		.byte	0
+ 629 0092 00       		.byte	0
+ 630 0093 0B       		.uleb128 0xb
+ 631 0094 05       		.uleb128 0x5
+ 632 0095 00       		.byte	0
+ 633 0096 03       		.uleb128 0x3
+ 634 0097 08       		.uleb128 0x8
+ 635 0098 3A       		.uleb128 0x3a
+ 636 0099 0B       		.uleb128 0xb
+ 637 009a 3B       		.uleb128 0x3b
+ 638 009b 0B       		.uleb128 0xb
+ 639 009c 49       		.uleb128 0x49
+ 640 009d 13       		.uleb128 0x13
+ 641 009e 02       		.uleb128 0x2
+ 642 009f 17       		.uleb128 0x17
+ 643 00a0 00       		.byte	0
+ 644 00a1 00       		.byte	0
+ 645 00a2 0C       		.uleb128 0xc
+ 646 00a3 34       		.uleb128 0x34
+ 647 00a4 00       		.byte	0
+ 648 00a5 03       		.uleb128 0x3
+ 649 00a6 0E       		.uleb128 0xe
+ 650 00a7 3A       		.uleb128 0x3a
+ 651 00a8 0B       		.uleb128 0xb
+ 652 00a9 3B       		.uleb128 0x3b
+ 653 00aa 0B       		.uleb128 0xb
+ 654 00ab 49       		.uleb128 0x49
+ 655 00ac 13       		.uleb128 0x13
+ 656 00ad 02       		.uleb128 0x2
+ 657 00ae 17       		.uleb128 0x17
+ 658 00af 00       		.byte	0
+ 659 00b0 00       		.byte	0
+ 660 00b1 0D       		.uleb128 0xd
+ 661 00b2 898201   		.uleb128 0x4109
+ 662 00b5 00       		.byte	0
+ 663 00b6 11       		.uleb128 0x11
+ 664 00b7 01       		.uleb128 0x1
+ 665 00b8 31       		.uleb128 0x31
+ 666 00b9 13       		.uleb128 0x13
+ 667 00ba 00       		.byte	0
+ 668 00bb 00       		.byte	0
+ 669 00bc 0E       		.uleb128 0xe
+ 670 00bd 0F       		.uleb128 0xf
+ 671 00be 00       		.byte	0
+ 672 00bf 0B       		.uleb128 0xb
+ 673 00c0 0B       		.uleb128 0xb
+ 674 00c1 49       		.uleb128 0x49
+ 675 00c2 13       		.uleb128 0x13
+ 676 00c3 00       		.byte	0
+ 677 00c4 00       		.byte	0
+ 678 00c5 0F       		.uleb128 0xf
+ 679 00c6 2E       		.uleb128 0x2e
+ 680 00c7 01       		.byte	0x1
+ 681 00c8 3F       		.uleb128 0x3f
+ 682 00c9 19       		.uleb128 0x19
+ 683 00ca 03       		.uleb128 0x3
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 14
+
+
+ 684 00cb 0E       		.uleb128 0xe
+ 685 00cc 3A       		.uleb128 0x3a
+ 686 00cd 0B       		.uleb128 0xb
+ 687 00ce 3B       		.uleb128 0x3b
+ 688 00cf 0B       		.uleb128 0xb
+ 689 00d0 27       		.uleb128 0x27
+ 690 00d1 19       		.uleb128 0x19
+ 691 00d2 49       		.uleb128 0x49
+ 692 00d3 13       		.uleb128 0x13
+ 693 00d4 11       		.uleb128 0x11
+ 694 00d5 01       		.uleb128 0x1
+ 695 00d6 12       		.uleb128 0x12
+ 696 00d7 06       		.uleb128 0x6
+ 697 00d8 40       		.uleb128 0x40
+ 698 00d9 18       		.uleb128 0x18
+ 699 00da 9742     		.uleb128 0x2117
+ 700 00dc 19       		.uleb128 0x19
+ 701 00dd 01       		.uleb128 0x1
+ 702 00de 13       		.uleb128 0x13
+ 703 00df 00       		.byte	0
+ 704 00e0 00       		.byte	0
+ 705 00e1 10       		.uleb128 0x10
+ 706 00e2 05       		.uleb128 0x5
+ 707 00e3 00       		.byte	0
+ 708 00e4 03       		.uleb128 0x3
+ 709 00e5 0E       		.uleb128 0xe
+ 710 00e6 3A       		.uleb128 0x3a
+ 711 00e7 0B       		.uleb128 0xb
+ 712 00e8 3B       		.uleb128 0x3b
+ 713 00e9 0B       		.uleb128 0xb
+ 714 00ea 49       		.uleb128 0x49
+ 715 00eb 13       		.uleb128 0x13
+ 716 00ec 02       		.uleb128 0x2
+ 717 00ed 18       		.uleb128 0x18
+ 718 00ee 00       		.byte	0
+ 719 00ef 00       		.byte	0
+ 720 00f0 11       		.uleb128 0x11
+ 721 00f1 05       		.uleb128 0x5
+ 722 00f2 00       		.byte	0
+ 723 00f3 03       		.uleb128 0x3
+ 724 00f4 08       		.uleb128 0x8
+ 725 00f5 3A       		.uleb128 0x3a
+ 726 00f6 0B       		.uleb128 0xb
+ 727 00f7 3B       		.uleb128 0x3b
+ 728 00f8 0B       		.uleb128 0xb
+ 729 00f9 49       		.uleb128 0x49
+ 730 00fa 13       		.uleb128 0x13
+ 731 00fb 02       		.uleb128 0x2
+ 732 00fc 18       		.uleb128 0x18
+ 733 00fd 00       		.byte	0
+ 734 00fe 00       		.byte	0
+ 735 00ff 12       		.uleb128 0x12
+ 736 0100 34       		.uleb128 0x34
+ 737 0101 00       		.byte	0
+ 738 0102 03       		.uleb128 0x3
+ 739 0103 0E       		.uleb128 0xe
+ 740 0104 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 15
+
+
+ 741 0105 0B       		.uleb128 0xb
+ 742 0106 3B       		.uleb128 0x3b
+ 743 0107 05       		.uleb128 0x5
+ 744 0108 49       		.uleb128 0x49
+ 745 0109 13       		.uleb128 0x13
+ 746 010a 3F       		.uleb128 0x3f
+ 747 010b 19       		.uleb128 0x19
+ 748 010c 3C       		.uleb128 0x3c
+ 749 010d 19       		.uleb128 0x19
+ 750 010e 00       		.byte	0
+ 751 010f 00       		.byte	0
+ 752 0110 13       		.uleb128 0x13
+ 753 0111 35       		.uleb128 0x35
+ 754 0112 00       		.byte	0
+ 755 0113 49       		.uleb128 0x49
+ 756 0114 13       		.uleb128 0x13
+ 757 0115 00       		.byte	0
+ 758 0116 00       		.byte	0
+ 759 0117 14       		.uleb128 0x14
+ 760 0118 2E       		.uleb128 0x2e
+ 761 0119 01       		.byte	0x1
+ 762 011a 3F       		.uleb128 0x3f
+ 763 011b 19       		.uleb128 0x19
+ 764 011c 03       		.uleb128 0x3
+ 765 011d 0E       		.uleb128 0xe
+ 766 011e 3A       		.uleb128 0x3a
+ 767 011f 0B       		.uleb128 0xb
+ 768 0120 3B       		.uleb128 0x3b
+ 769 0121 0B       		.uleb128 0xb
+ 770 0122 27       		.uleb128 0x27
+ 771 0123 19       		.uleb128 0x19
+ 772 0124 3C       		.uleb128 0x3c
+ 773 0125 19       		.uleb128 0x19
+ 774 0126 01       		.uleb128 0x1
+ 775 0127 13       		.uleb128 0x13
+ 776 0128 00       		.byte	0
+ 777 0129 00       		.byte	0
+ 778 012a 15       		.uleb128 0x15
+ 779 012b 05       		.uleb128 0x5
+ 780 012c 00       		.byte	0
+ 781 012d 49       		.uleb128 0x49
+ 782 012e 13       		.uleb128 0x13
+ 783 012f 00       		.byte	0
+ 784 0130 00       		.byte	0
+ 785 0131 16       		.uleb128 0x16
+ 786 0132 2E       		.uleb128 0x2e
+ 787 0133 01       		.byte	0x1
+ 788 0134 3F       		.uleb128 0x3f
+ 789 0135 19       		.uleb128 0x19
+ 790 0136 03       		.uleb128 0x3
+ 791 0137 0E       		.uleb128 0xe
+ 792 0138 3A       		.uleb128 0x3a
+ 793 0139 0B       		.uleb128 0xb
+ 794 013a 3B       		.uleb128 0x3b
+ 795 013b 0B       		.uleb128 0xb
+ 796 013c 27       		.uleb128 0x27
+ 797 013d 19       		.uleb128 0x19
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 16
+
+
+ 798 013e 3C       		.uleb128 0x3c
+ 799 013f 19       		.uleb128 0x19
+ 800 0140 00       		.byte	0
+ 801 0141 00       		.byte	0
+ 802 0142 00       		.byte	0
+ 803              		.section	.debug_loc,"",%progbits
+ 804              	.Ldebug_loc0:
+ 805              	.LLST0:
+ 806 0000 00000000 		.4byte	.LVL0
+ 807 0004 22000000 		.4byte	.LVL1
+ 808 0008 0100     		.2byte	0x1
+ 809 000a 50       		.byte	0x50
+ 810 000b 22000000 		.4byte	.LVL1
+ 811 000f 3A000000 		.4byte	.LVL5
+ 812 0013 0400     		.2byte	0x4
+ 813 0015 F3       		.byte	0xf3
+ 814 0016 01       		.uleb128 0x1
+ 815 0017 50       		.byte	0x50
+ 816 0018 9F       		.byte	0x9f
+ 817 0019 3A000000 		.4byte	.LVL5
+ 818 001d 3E000000 		.4byte	.LVL6
+ 819 0021 0100     		.2byte	0x1
+ 820 0023 50       		.byte	0x50
+ 821 0024 3E000000 		.4byte	.LVL6
+ 822 0028 54000000 		.4byte	.LVL10
+ 823 002c 0400     		.2byte	0x4
+ 824 002e F3       		.byte	0xf3
+ 825 002f 01       		.uleb128 0x1
+ 826 0030 50       		.byte	0x50
+ 827 0031 9F       		.byte	0x9f
+ 828 0032 54000000 		.4byte	.LVL10
+ 829 0036 58000000 		.4byte	.LVL11
+ 830 003a 0100     		.2byte	0x1
+ 831 003c 50       		.byte	0x50
+ 832 003d 58000000 		.4byte	.LVL11
+ 833 0041 6E000000 		.4byte	.LVL15
+ 834 0045 0400     		.2byte	0x4
+ 835 0047 F3       		.byte	0xf3
+ 836 0048 01       		.uleb128 0x1
+ 837 0049 50       		.byte	0x50
+ 838 004a 9F       		.byte	0x9f
+ 839 004b 6E000000 		.4byte	.LVL15
+ 840 004f 72000000 		.4byte	.LVL16
+ 841 0053 0100     		.2byte	0x1
+ 842 0055 50       		.byte	0x50
+ 843 0056 72000000 		.4byte	.LVL16
+ 844 005a 90000000 		.4byte	.LFE63
+ 845 005e 0400     		.2byte	0x4
+ 846 0060 F3       		.byte	0xf3
+ 847 0061 01       		.uleb128 0x1
+ 848 0062 50       		.byte	0x50
+ 849 0063 9F       		.byte	0x9f
+ 850 0064 00000000 		.4byte	0
+ 851 0068 00000000 		.4byte	0
+ 852              	.LLST1:
+ 853 006c 00000000 		.4byte	.LVL0
+ 854 0070 37000000 		.4byte	.LVL4-1
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 17
+
+
+ 855 0074 0100     		.2byte	0x1
+ 856 0076 51       		.byte	0x51
+ 857 0077 37000000 		.4byte	.LVL4-1
+ 858 007b 3A000000 		.4byte	.LVL5
+ 859 007f 0400     		.2byte	0x4
+ 860 0081 F3       		.byte	0xf3
+ 861 0082 01       		.uleb128 0x1
+ 862 0083 51       		.byte	0x51
+ 863 0084 9F       		.byte	0x9f
+ 864 0085 3A000000 		.4byte	.LVL5
+ 865 0089 51000000 		.4byte	.LVL9-1
+ 866 008d 0100     		.2byte	0x1
+ 867 008f 51       		.byte	0x51
+ 868 0090 51000000 		.4byte	.LVL9-1
+ 869 0094 54000000 		.4byte	.LVL10
+ 870 0098 0400     		.2byte	0x4
+ 871 009a F3       		.byte	0xf3
+ 872 009b 01       		.uleb128 0x1
+ 873 009c 51       		.byte	0x51
+ 874 009d 9F       		.byte	0x9f
+ 875 009e 54000000 		.4byte	.LVL10
+ 876 00a2 6B000000 		.4byte	.LVL14-1
+ 877 00a6 0100     		.2byte	0x1
+ 878 00a8 51       		.byte	0x51
+ 879 00a9 6B000000 		.4byte	.LVL14-1
+ 880 00ad 6E000000 		.4byte	.LVL15
+ 881 00b1 0400     		.2byte	0x4
+ 882 00b3 F3       		.byte	0xf3
+ 883 00b4 01       		.uleb128 0x1
+ 884 00b5 51       		.byte	0x51
+ 885 00b6 9F       		.byte	0x9f
+ 886 00b7 6E000000 		.4byte	.LVL15
+ 887 00bb 85000000 		.4byte	.LVL19-1
+ 888 00bf 0100     		.2byte	0x1
+ 889 00c1 51       		.byte	0x51
+ 890 00c2 85000000 		.4byte	.LVL19-1
+ 891 00c6 90000000 		.4byte	.LFE63
+ 892 00ca 0400     		.2byte	0x4
+ 893 00cc F3       		.byte	0xf3
+ 894 00cd 01       		.uleb128 0x1
+ 895 00ce 51       		.byte	0x51
+ 896 00cf 9F       		.byte	0x9f
+ 897 00d0 00000000 		.4byte	0
+ 898 00d4 00000000 		.4byte	0
+ 899              	.LLST2:
+ 900 00d8 32000000 		.4byte	.LVL2
+ 901 00dc 34000000 		.4byte	.LVL3
+ 902 00e0 0100     		.2byte	0x1
+ 903 00e2 50       		.byte	0x50
+ 904 00e3 34000000 		.4byte	.LVL3
+ 905 00e7 37000000 		.4byte	.LVL4-1
+ 906 00eb 2E00     		.2byte	0x2e
+ 907 00ed 71       		.byte	0x71
+ 908 00ee 02       		.sleb128 2
+ 909 00ef 94       		.byte	0x94
+ 910 00f0 02       		.byte	0x2
+ 911 00f1 0A       		.byte	0xa
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 18
+
+
+ 912 00f2 FFFF     		.2byte	0xffff
+ 913 00f4 1A       		.byte	0x1a
+ 914 00f5 08       		.byte	0x8
+ 915 00f6 21       		.byte	0x21
+ 916 00f7 1E       		.byte	0x1e
+ 917 00f8 33       		.byte	0x33
+ 918 00f9 24       		.byte	0x24
+ 919 00fa 71       		.byte	0x71
+ 920 00fb 02       		.sleb128 2
+ 921 00fc 94       		.byte	0x94
+ 922 00fd 02       		.byte	0x2
+ 923 00fe 0A       		.byte	0xa
+ 924 00ff FFFF     		.2byte	0xffff
+ 925 0101 1A       		.byte	0x1a
+ 926 0102 22       		.byte	0x22
+ 927 0103 F7       		.byte	0xf7
+ 928 0104 2C       		.uleb128 0x2c
+ 929 0105 F7       		.byte	0xf7
+ 930 0106 25       		.uleb128 0x25
+ 931 0107 72       		.byte	0x72
+ 932 0108 00       		.sleb128 0
+ 933 0109 F7       		.byte	0xf7
+ 934 010a 2C       		.uleb128 0x2c
+ 935 010b F7       		.byte	0xf7
+ 936 010c 25       		.uleb128 0x25
+ 937 010d 1E       		.byte	0x1e
+ 938 010e 08       		.byte	0x8
+ 939 010f 20       		.byte	0x20
+ 940 0110 F7       		.byte	0xf7
+ 941 0111 25       		.uleb128 0x25
+ 942 0112 25       		.byte	0x25
+ 943 0113 F7       		.byte	0xf7
+ 944 0114 33       		.uleb128 0x33
+ 945 0115 31       		.byte	0x31
+ 946 0116 26       		.byte	0x26
+ 947 0117 23       		.byte	0x23
+ 948 0118 880E     		.uleb128 0x708
+ 949 011a 9F       		.byte	0x9f
+ 950 011b 4C000000 		.4byte	.LVL7
+ 951 011f 4E000000 		.4byte	.LVL8
+ 952 0123 0100     		.2byte	0x1
+ 953 0125 50       		.byte	0x50
+ 954 0126 4E000000 		.4byte	.LVL8
+ 955 012a 51000000 		.4byte	.LVL9-1
+ 956 012e 2100     		.2byte	0x21
+ 957 0130 71       		.byte	0x71
+ 958 0131 02       		.sleb128 2
+ 959 0132 94       		.byte	0x94
+ 960 0133 02       		.byte	0x2
+ 961 0134 0A       		.byte	0xa
+ 962 0135 FFFF     		.2byte	0xffff
+ 963 0137 1A       		.byte	0x1a
+ 964 0138 08       		.byte	0x8
+ 965 0139 32       		.byte	0x32
+ 966 013a 1E       		.byte	0x1e
+ 967 013b F7       		.byte	0xf7
+ 968 013c 2C       		.uleb128 0x2c
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 19
+
+
+ 969 013d F7       		.byte	0xf7
+ 970 013e 25       		.uleb128 0x25
+ 971 013f 73       		.byte	0x73
+ 972 0140 00       		.sleb128 0
+ 973 0141 F7       		.byte	0xf7
+ 974 0142 2C       		.uleb128 0x2c
+ 975 0143 F7       		.byte	0xf7
+ 976 0144 25       		.uleb128 0x25
+ 977 0145 1E       		.byte	0x1e
+ 978 0146 08       		.byte	0x8
+ 979 0147 20       		.byte	0x20
+ 980 0148 F7       		.byte	0xf7
+ 981 0149 25       		.uleb128 0x25
+ 982 014a 25       		.byte	0x25
+ 983 014b F7       		.byte	0xf7
+ 984 014c 33       		.uleb128 0x33
+ 985 014d 23       		.byte	0x23
+ 986 014e B817     		.uleb128 0xbb8
+ 987 0150 9F       		.byte	0x9f
+ 988 0151 66000000 		.4byte	.LVL12
+ 989 0155 68000000 		.4byte	.LVL13
+ 990 0159 0100     		.2byte	0x1
+ 991 015b 50       		.byte	0x50
+ 992 015c 68000000 		.4byte	.LVL13
+ 993 0160 6B000000 		.4byte	.LVL14-1
+ 994 0164 2100     		.2byte	0x21
+ 995 0166 71       		.byte	0x71
+ 996 0167 02       		.sleb128 2
+ 997 0168 94       		.byte	0x94
+ 998 0169 02       		.byte	0x2
+ 999 016a 0A       		.byte	0xa
+ 1000 016b FFFF     		.2byte	0xffff
+ 1001 016d 1A       		.byte	0x1a
+ 1002 016e 08       		.byte	0x8
+ 1003 016f 32       		.byte	0x32
+ 1004 0170 1E       		.byte	0x1e
+ 1005 0171 F7       		.byte	0xf7
+ 1006 0172 2C       		.uleb128 0x2c
+ 1007 0173 F7       		.byte	0xf7
+ 1008 0174 25       		.uleb128 0x25
+ 1009 0175 73       		.byte	0x73
+ 1010 0176 00       		.sleb128 0
+ 1011 0177 F7       		.byte	0xf7
+ 1012 0178 2C       		.uleb128 0x2c
+ 1013 0179 F7       		.byte	0xf7
+ 1014 017a 25       		.uleb128 0x25
+ 1015 017b 1E       		.byte	0x1e
+ 1016 017c 08       		.byte	0x8
+ 1017 017d 20       		.byte	0x20
+ 1018 017e F7       		.byte	0xf7
+ 1019 017f 25       		.uleb128 0x25
+ 1020 0180 25       		.byte	0x25
+ 1021 0181 F7       		.byte	0xf7
+ 1022 0182 33       		.uleb128 0x33
+ 1023 0183 23       		.byte	0x23
+ 1024 0184 B817     		.uleb128 0xbb8
+ 1025 0186 9F       		.byte	0x9f
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 20
+
+
+ 1026 0187 80000000 		.4byte	.LVL17
+ 1027 018b 82000000 		.4byte	.LVL18
+ 1028 018f 0100     		.2byte	0x1
+ 1029 0191 50       		.byte	0x50
+ 1030 0192 82000000 		.4byte	.LVL18
+ 1031 0196 85000000 		.4byte	.LVL19-1
+ 1032 019a 2100     		.2byte	0x21
+ 1033 019c 71       		.byte	0x71
+ 1034 019d 02       		.sleb128 2
+ 1035 019e 94       		.byte	0x94
+ 1036 019f 02       		.byte	0x2
+ 1037 01a0 0A       		.byte	0xa
+ 1038 01a1 FFFF     		.2byte	0xffff
+ 1039 01a3 1A       		.byte	0x1a
+ 1040 01a4 08       		.byte	0x8
+ 1041 01a5 32       		.byte	0x32
+ 1042 01a6 1E       		.byte	0x1e
+ 1043 01a7 F7       		.byte	0xf7
+ 1044 01a8 2C       		.uleb128 0x2c
+ 1045 01a9 F7       		.byte	0xf7
+ 1046 01aa 25       		.uleb128 0x25
+ 1047 01ab 73       		.byte	0x73
+ 1048 01ac 00       		.sleb128 0
+ 1049 01ad F7       		.byte	0xf7
+ 1050 01ae 2C       		.uleb128 0x2c
+ 1051 01af F7       		.byte	0xf7
+ 1052 01b0 25       		.uleb128 0x25
+ 1053 01b1 1E       		.byte	0x1e
+ 1054 01b2 08       		.byte	0x8
+ 1055 01b3 20       		.byte	0x20
+ 1056 01b4 F7       		.byte	0xf7
+ 1057 01b5 25       		.uleb128 0x25
+ 1058 01b6 25       		.byte	0x25
+ 1059 01b7 F7       		.byte	0xf7
+ 1060 01b8 33       		.uleb128 0x33
+ 1061 01b9 23       		.byte	0x23
+ 1062 01ba B817     		.uleb128 0xbb8
+ 1063 01bc 9F       		.byte	0x9f
+ 1064 01bd 00000000 		.4byte	0
+ 1065 01c1 00000000 		.4byte	0
+ 1066              	.LLST3:
+ 1067 01c5 00000000 		.4byte	.LVL20
+ 1068 01c9 02000000 		.4byte	.LVL21
+ 1069 01cd 0100     		.2byte	0x1
+ 1070 01cf 50       		.byte	0x50
+ 1071 01d0 02000000 		.4byte	.LVL21
+ 1072 01d4 04000000 		.4byte	.LFE64
+ 1073 01d8 0400     		.2byte	0x4
+ 1074 01da F3       		.byte	0xf3
+ 1075 01db 01       		.uleb128 0x1
+ 1076 01dc 50       		.byte	0x50
+ 1077 01dd 9F       		.byte	0x9f
+ 1078 01de 00000000 		.4byte	0
+ 1079 01e2 00000000 		.4byte	0
+ 1080              	.LLST4:
+ 1081 01e6 00000000 		.4byte	.LVL23
+ 1082 01ea 02000000 		.4byte	.LVL24
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 21
+
+
+ 1083 01ee 0100     		.2byte	0x1
+ 1084 01f0 50       		.byte	0x50
+ 1085 01f1 02000000 		.4byte	.LVL24
+ 1086 01f5 04000000 		.4byte	.LFE66
+ 1087 01f9 0400     		.2byte	0x4
+ 1088 01fb F3       		.byte	0xf3
+ 1089 01fc 01       		.uleb128 0x1
+ 1090 01fd 50       		.byte	0x50
+ 1091 01fe 9F       		.byte	0x9f
+ 1092 01ff 00000000 		.4byte	0
+ 1093 0203 00000000 		.4byte	0
+ 1094              		.section	.debug_aranges,"",%progbits
+ 1095 0000 34000000 		.4byte	0x34
+ 1096 0004 0200     		.2byte	0x2
+ 1097 0006 00000000 		.4byte	.Ldebug_info0
+ 1098 000a 04       		.byte	0x4
+ 1099 000b 00       		.byte	0
+ 1100 000c 0000     		.2byte	0
+ 1101 000e 0000     		.2byte	0
+ 1102 0010 00000000 		.4byte	.LFB63
+ 1103 0014 90000000 		.4byte	.LFE63-.LFB63
+ 1104 0018 00000000 		.4byte	.LFB64
+ 1105 001c 04000000 		.4byte	.LFE64-.LFB64
+ 1106 0020 00000000 		.4byte	.LFB65
+ 1107 0024 04000000 		.4byte	.LFE65-.LFB65
+ 1108 0028 00000000 		.4byte	.LFB66
+ 1109 002c 04000000 		.4byte	.LFE66-.LFB66
+ 1110 0030 00000000 		.4byte	0
+ 1111 0034 00000000 		.4byte	0
+ 1112              		.section	.debug_ranges,"",%progbits
+ 1113              	.Ldebug_ranges0:
+ 1114 0000 00000000 		.4byte	.LFB63
+ 1115 0004 90000000 		.4byte	.LFE63
+ 1116 0008 00000000 		.4byte	.LFB64
+ 1117 000c 04000000 		.4byte	.LFE64
+ 1118 0010 00000000 		.4byte	.LFB65
+ 1119 0014 04000000 		.4byte	.LFE65
+ 1120 0018 00000000 		.4byte	.LFB66
+ 1121 001c 04000000 		.4byte	.LFE66
+ 1122 0020 00000000 		.4byte	0
+ 1123 0024 00000000 		.4byte	0
+ 1124              		.section	.debug_line,"",%progbits
+ 1125              	.Ldebug_line0:
+ 1126 0000 D3010000 		.section	.debug_str,"MS",%progbits,1
+ 1126      02007F01 
+ 1126      00000201 
+ 1126      FB0E0D00 
+ 1126      01010101 
+ 1127              	.LASF17:
+ 1128 0000 53455256 		.ascii	"SERVO_1A\000"
+ 1128      4F5F3141 
+ 1128      00
+ 1129              	.LASF18:
+ 1130 0009 53455256 		.ascii	"SERVO_1B\000"
+ 1130      4F5F3142 
+ 1130      00
+ 1131              	.LASF26:
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 22
+
+
+ 1132 0012 76616C75 		.ascii	"value\000"
+ 1132      6500
+ 1133              	.LASF9:
+ 1134 0018 5F5F696E 		.ascii	"__int32_t\000"
+ 1134      7433325F 
+ 1134      7400
+ 1135              	.LASF35:
+ 1136 0022 53657276 		.ascii	"Servo\000"
+ 1136      6F00
+ 1137              	.LASF10:
+ 1138 0028 696E7433 		.ascii	"int32_t\000"
+ 1138      325F7400 
+ 1139              	.LASF30:
+ 1140 0030 53657276 		.ascii	"Servo_A_WriteCompare2\000"
+ 1140      6F5F415F 
+ 1140      57726974 
+ 1140      65436F6D 
+ 1140      70617265 
+ 1141              	.LASF13:
+ 1142 0046 666C6F61 		.ascii	"float\000"
+ 1142      7400
+ 1143              	.LASF3:
+ 1144 004c 756E7369 		.ascii	"unsigned char\000"
+ 1144      676E6564 
+ 1144      20636861 
+ 1144      7200
+ 1145              	.LASF7:
+ 1146 005a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1146      20756E73 
+ 1146      69676E65 
+ 1146      6420696E 
+ 1146      7400
+ 1147              	.LASF36:
+ 1148 006c 74656D70 		.ascii	"temp\000"
+ 1148      00
+ 1149              	.LASF5:
+ 1150 0071 73686F72 		.ascii	"short unsigned int\000"
+ 1150      7420756E 
+ 1150      7369676E 
+ 1150      65642069 
+ 1150      6E7400
+ 1151              	.LASF37:
+ 1152 0084 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1152      52784275 
+ 1152      66666572 
+ 1152      00
+ 1153              	.LASF27:
+ 1154 0091 6765745F 		.ascii	"get_position\000"
+ 1154      706F7369 
+ 1154      74696F6E 
+ 1154      00
+ 1155              	.LASF14:
+ 1156 009e 646F7562 		.ascii	"double\000"
+ 1156      6C6500
+ 1157              	.LASF25:
+ 1158 00a5 7365745F 		.ascii	"set_max_rotational_degree\000"
+ 1158      6D61785F 
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 23
+
+
+ 1158      726F7461 
+ 1158      74696F6E 
+ 1158      616C5F64 
+ 1159              	.LASF12:
+ 1160 00bf 75696E74 		.ascii	"uint16\000"
+ 1160      313600
+ 1161              	.LASF38:
+ 1162 00c6 53657276 		.ascii	"Servo_B_WriteCompare2\000"
+ 1162      6F5F425F 
+ 1162      57726974 
+ 1162      65436F6D 
+ 1162      70617265 
+ 1163              	.LASF19:
+ 1164 00dc 53455256 		.ascii	"SERVO_2A\000"
+ 1164      4F5F3241 
+ 1164      00
+ 1165              	.LASF20:
+ 1166 00e5 53455256 		.ascii	"SERVO_2B\000"
+ 1166      4F5F3242 
+ 1166      00
+ 1167              	.LASF1:
+ 1168 00ee 756E7369 		.ascii	"unsigned int\000"
+ 1168      676E6564 
+ 1168      20696E74 
+ 1168      00
+ 1169              	.LASF0:
+ 1170 00fb 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1170      206C6F6E 
+ 1170      6720756E 
+ 1170      7369676E 
+ 1170      65642069 
+ 1171              	.LASF34:
+ 1172 0112 433A5C55 		.ascii	"C:\\Users\\Jorden\\Documents\\PSoC Creator\\Test\\T"
+ 1172      73657273 
+ 1172      5C4A6F72 
+ 1172      64656E5C 
+ 1172      446F6375 
+ 1173 013f 6573742E 		.ascii	"est.cydsn\000"
+ 1173      63796473 
+ 1173      6E00
+ 1174              	.LASF32:
+ 1175 0149 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 1175      4320342E 
+ 1175      382E3420 
+ 1175      32303134 
+ 1175      30353236 
+ 1176 017c 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 1176      20726576 
+ 1176      6973696F 
+ 1176      6E203231 
+ 1176      31333538 
+ 1177 01af 67202D66 		.ascii	"g -ffunction-sections\000"
+ 1177      66756E63 
+ 1177      74696F6E 
+ 1177      2D736563 
+ 1177      74696F6E 
+ 1178              	.LASF16:
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 24
+
+
+ 1179 01c5 73697A65 		.ascii	"sizetype\000"
+ 1179      74797065 
+ 1179      00
+ 1180              	.LASF21:
+ 1181 01ce 6D61785F 		.ascii	"max_rotational_degree\000"
+ 1181      726F7461 
+ 1181      74696F6E 
+ 1181      616C5F64 
+ 1181      65677265 
+ 1182              	.LASF8:
+ 1183 01e4 6C6F6E67 		.ascii	"long long int\000"
+ 1183      206C6F6E 
+ 1183      6720696E 
+ 1183      7400
+ 1184              	.LASF28:
+ 1185 01f2 6765745F 		.ascii	"get_max_rotational_degree\000"
+ 1185      6D61785F 
+ 1185      726F7461 
+ 1185      74696F6E 
+ 1185      616C5F64 
+ 1186              	.LASF31:
+ 1187 020c 53657276 		.ascii	"Servo_B_WriteCompare1\000"
+ 1187      6F5F425F 
+ 1187      57726974 
+ 1187      65436F6D 
+ 1187      70617265 
+ 1188              	.LASF15:
+ 1189 0222 63686172 		.ascii	"char\000"
+ 1189      00
+ 1190              	.LASF4:
+ 1191 0227 73686F72 		.ascii	"short int\000"
+ 1191      7420696E 
+ 1191      7400
+ 1192              	.LASF24:
+ 1193 0231 7365745F 		.ascii	"set_position\000"
+ 1193      706F7369 
+ 1193      74696F6E 
+ 1193      00
+ 1194              	.LASF11:
+ 1195 023e 75696E74 		.ascii	"uint8\000"
+ 1195      3800
+ 1196              	.LASF22:
+ 1197 0244 706F7369 		.ascii	"position\000"
+ 1197      74696F6E 
+ 1197      00
+ 1198              	.LASF33:
+ 1199 024d 2E5C5365 		.ascii	".\\Servo_Driver.c\000"
+ 1199      72766F5F 
+ 1199      44726976 
+ 1199      65722E63 
+ 1199      00
+ 1200              	.LASF6:
+ 1201 025e 6C6F6E67 		.ascii	"long int\000"
+ 1201      20696E74 
+ 1201      00
+ 1202              	.LASF23:
+ 1203 0267 73657276 		.ascii	"servo\000"
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccaNvniA.s 			page 25
+
+
+ 1203      6F00
+ 1204              	.LASF2:
+ 1205 026d 7369676E 		.ascii	"signed char\000"
+ 1205      65642063 
+ 1205      68617200 
+ 1206              	.LASF29:
+ 1207 0279 53657276 		.ascii	"Servo_A_WriteCompare1\000"
+ 1207      6F5F415F 
+ 1207      57726974 
+ 1207      65436F6D 
+ 1207      70617265 
+ 1208              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

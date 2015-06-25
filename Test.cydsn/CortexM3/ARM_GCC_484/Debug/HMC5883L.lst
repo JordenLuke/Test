@@ -1,0 +1,2209 @@
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"HMC5883L.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.HMC5883L_Config,"ax",%progbits
+  19              		.align	2
+  20              		.global	HMC5883L_Config
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	HMC5883L_Config, %function
+  24              	HMC5883L_Config:
+  25              	.LFB63:
+  26              		.file 1 ".\\HMC5883L.c"
+   1:.\HMC5883L.c  **** /* ========================================
+   2:.\HMC5883L.c  ****  *
+   3:.\HMC5883L.c  ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\HMC5883L.c  ****  * All Rights Reserved
+   5:.\HMC5883L.c  ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\HMC5883L.c  ****  *
+   7:.\HMC5883L.c  ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\HMC5883L.c  ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\HMC5883L.c  ****  *
+  10:.\HMC5883L.c  ****  * ========================================
+  11:.\HMC5883L.c  **** */
+  12:.\HMC5883L.c  **** #include<HMC5883L.h>
+  13:.\HMC5883L.c  **** #include<project.h>
+  14:.\HMC5883L.c  **** /** Power on and prepare for general usage.
+  15:.\HMC5883L.c  ****  * This will prepare the magnetometer with default settings, ready for single-
+  16:.\HMC5883L.c  ****  * use mode (very low power requirements). Default settings include 8-sample
+  17:.\HMC5883L.c  ****  * averaging, 15 Hz data output rate, normal measurement bias, a,d 1090 gain (in
+  18:.\HMC5883L.c  ****  * terms of LSB/Gauss). Be sure to adjust any settings you need specifically
+  19:.\HMC5883L.c  ****  * after initialization, especially the gain settings if you happen to be seeing
+  20:.\HMC5883L.c  ****  * a lot of -4096 values (see the datasheet for mor information).
+  21:.\HMC5883L.c  ****  */
+  22:.\HMC5883L.c  **** void HMC5883L_Config()
+  23:.\HMC5883L.c  **** {
+  27              		.loc 1 23 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 8
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 30B5     		push	{r4, r5, lr}
+  32              		.cfi_def_cfa_offset 12
+  33              		.cfi_offset 4, -12
+  34              		.cfi_offset 5, -8
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 2
+
+
+  35              		.cfi_offset 14, -4
+  36 0002 83B0     		sub	sp, sp, #12
+  37              		.cfi_def_cfa_offset 24
+  24:.\HMC5883L.c  ****     I2C_Start();
+  38              		.loc 1 24 0
+  39 0004 FFF7FEFF 		bl	I2C_Start
+  40              	.LVL0:
+  25:.\HMC5883L.c  ****     
+  26:.\HMC5883L.c  **** 	uint8 array[2];
+  27:.\HMC5883L.c  ****     array [0] = HMC5883L_RA_CONFIG_A;
+  41              		.loc 1 27 0
+  42 0008 0024     		movs	r4, #0
+  43 000a 8DF80440 		strb	r4, [sp, #4]
+  28:.\HMC5883L.c  ****     array [1] = (HMC5883L_AVERAGING_8 << (HMC5883L_CRA_AVERAGE_BIT - HMC5883L_CRA_AVERAGE_LENGTH + 
+  44              		.loc 1 28 0
+  45 000e 7023     		movs	r3, #112
+  46 0010 8DF80530 		strb	r3, [sp, #5]
+  29:.\HMC5883L.c  ****         (HMC5883L_RATE_15     << (HMC5883L_CRA_RATE_BIT - HMC5883L_CRA_RATE_LENGTH + 1)) |
+  30:.\HMC5883L.c  ****         (HMC5883L_BIAS_NORMAL << (HMC5883L_CRA_BIAS_BIT - HMC5883L_CRA_BIAS_LENGTH + 1));
+  31:.\HMC5883L.c  ****     I2C_MasterClearStatus();
+  47              		.loc 1 31 0
+  48 0014 FFF7FEFF 		bl	I2C_MasterClearStatus
+  49              	.LVL1:
+  32:.\HMC5883L.c  ****     I2C_MasterWriteBuf(HMC5883L_ADDRESS,array,2,I2C_MODE_COMPLETE_XFER);
+  50              		.loc 1 32 0
+  51 0018 1E20     		movs	r0, #30
+  52 001a 01A9     		add	r1, sp, #4
+  53 001c 0222     		movs	r2, #2
+  54 001e 2346     		mov	r3, r4
+  55 0020 FFF7FEFF 		bl	I2C_MasterWriteBuf
+  56              	.LVL2:
+  57              	.L2:
+  33:.\HMC5883L.c  ****     while(0u == (I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT));
+  58              		.loc 1 33 0 discriminator 1
+  59 0024 FFF7FEFF 		bl	I2C_MasterStatus
+  60              	.LVL3:
+  61 0028 10F0010F 		tst	r0, #1
+  62 002c FAD0     		beq	.L2
+  34:.\HMC5883L.c  ****     array [0] = HMC5883L_RA_MODE;
+  63              		.loc 1 34 0
+  64 002e 0225     		movs	r5, #2
+  65 0030 8DF80450 		strb	r5, [sp, #4]
+  35:.\HMC5883L.c  ****     array [1] = HMC5883L_MODE_CONTINUOUS;
+  66              		.loc 1 35 0
+  67 0034 0024     		movs	r4, #0
+  68 0036 8DF80540 		strb	r4, [sp, #5]
+  36:.\HMC5883L.c  ****     I2C_MasterClearStatus();
+  69              		.loc 1 36 0
+  70 003a FFF7FEFF 		bl	I2C_MasterClearStatus
+  71              	.LVL4:
+  37:.\HMC5883L.c  ****     I2C_MasterWriteBuf(HMC5883L_ADDRESS,array,2,I2C_MODE_COMPLETE_XFER);
+  72              		.loc 1 37 0
+  73 003e 1E20     		movs	r0, #30
+  74 0040 01A9     		add	r1, sp, #4
+  75 0042 2A46     		mov	r2, r5
+  76 0044 2346     		mov	r3, r4
+  77 0046 FFF7FEFF 		bl	I2C_MasterWriteBuf
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 3
+
+
+  78              	.LVL5:
+  79              	.L3:
+  38:.\HMC5883L.c  ****     while(0u == (I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT));
+  80              		.loc 1 38 0 discriminator 1
+  81 004a FFF7FEFF 		bl	I2C_MasterStatus
+  82              	.LVL6:
+  83 004e 10F0010F 		tst	r0, #1
+  84 0052 FAD0     		beq	.L3
+  39:.\HMC5883L.c  **** }
+  85              		.loc 1 39 0
+  86 0054 03B0     		add	sp, sp, #12
+  87              		@ sp needed
+  88 0056 30BD     		pop	{r4, r5, pc}
+  89              		.cfi_endproc
+  90              	.LFE63:
+  91              		.size	HMC5883L_Config, .-HMC5883L_Config
+  92              		.section	.text.read_HMC5883L_reg,"ax",%progbits
+  93              		.align	2
+  94              		.global	read_HMC5883L_reg
+  95              		.thumb
+  96              		.thumb_func
+  97              		.type	read_HMC5883L_reg, %function
+  98              	read_HMC5883L_reg:
+  99              	.LFB64:
+  40:.\HMC5883L.c  **** uint8 read_HMC5883L_reg(uint8 reg)
+  41:.\HMC5883L.c  **** {
+ 100              		.loc 1 41 0
+ 101              		.cfi_startproc
+ 102              		@ args = 0, pretend = 0, frame = 8
+ 103              		@ frame_needed = 0, uses_anonymous_args = 0
+ 104              	.LVL7:
+ 105 0000 00B5     		push	{lr}
+ 106              		.cfi_def_cfa_offset 4
+ 107              		.cfi_offset 14, -4
+ 108 0002 83B0     		sub	sp, sp, #12
+ 109              		.cfi_def_cfa_offset 16
+  42:.\HMC5883L.c  ****     
+  43:.\HMC5883L.c  ****     int16 value;
+  44:.\HMC5883L.c  ****     uint8 array[2];
+  45:.\HMC5883L.c  ****     array[0] = reg;
+ 110              		.loc 1 45 0
+ 111 0004 02A9     		add	r1, sp, #8
+ 112 0006 01F8040D 		strb	r0, [r1, #-4]!
+  46:.\HMC5883L.c  ****     I2C_MasterWriteBuf(HMC5883L_ADDRESS,array,1,I2C_MODE_COMPLETE_XFER);
+ 113              		.loc 1 46 0
+ 114 000a 1E20     		movs	r0, #30
+ 115              	.LVL8:
+ 116 000c 0122     		movs	r2, #1
+ 117 000e 0023     		movs	r3, #0
+ 118 0010 FFF7FEFF 		bl	I2C_MasterWriteBuf
+ 119              	.LVL9:
+ 120              	.L7:
+  47:.\HMC5883L.c  ****     while(0u == (I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT));
+ 121              		.loc 1 47 0 discriminator 1
+ 122 0014 FFF7FEFF 		bl	I2C_MasterStatus
+ 123              	.LVL10:
+ 124 0018 10F0010F 		tst	r0, #1
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 4
+
+
+ 125 001c FAD0     		beq	.L7
+  48:.\HMC5883L.c  ****     
+  49:.\HMC5883L.c  ****     I2C_MasterReadBuf(HMC5883L_ADDRESS, array, 1,I2C_MODE_COMPLETE_XFER);
+ 126              		.loc 1 49 0
+ 127 001e 1E20     		movs	r0, #30
+ 128 0020 01A9     		add	r1, sp, #4
+ 129 0022 0122     		movs	r2, #1
+ 130 0024 0023     		movs	r3, #0
+ 131 0026 FFF7FEFF 		bl	I2C_MasterReadBuf
+ 132              	.LVL11:
+ 133              	.L8:
+  50:.\HMC5883L.c  ****     while(0u == (I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT));
+ 134              		.loc 1 50 0 discriminator 1
+ 135 002a FFF7FEFF 		bl	I2C_MasterStatus
+ 136              	.LVL12:
+ 137 002e 10F0010F 		tst	r0, #1
+ 138 0032 FAD0     		beq	.L8
+ 139              	.LVL13:
+  51:.\HMC5883L.c  ****     value = (uint16) array[0];
+  52:.\HMC5883L.c  ****     return value;
+  53:.\HMC5883L.c  **** }
+ 140              		.loc 1 53 0
+ 141 0034 9DF80400 		ldrb	r0, [sp, #4]	@ zero_extendqisi2
+ 142 0038 03B0     		add	sp, sp, #12
+ 143              		@ sp needed
+ 144 003a 5DF804FB 		ldr	pc, [sp], #4
+ 145              		.cfi_endproc
+ 146              	.LFE64:
+ 147              		.size	read_HMC5883L_reg, .-read_HMC5883L_reg
+ 148 003e 00BF     		.section	.text.write_HMC5883L_reg,"ax",%progbits
+ 149              		.align	2
+ 150              		.global	write_HMC5883L_reg
+ 151              		.thumb
+ 152              		.thumb_func
+ 153              		.type	write_HMC5883L_reg, %function
+ 154              	write_HMC5883L_reg:
+ 155              	.LFB65:
+  54:.\HMC5883L.c  **** 
+  55:.\HMC5883L.c  **** uint8 write_HMC5883L_reg(uint8 reg, uint8 data)
+  56:.\HMC5883L.c  **** {
+ 156              		.loc 1 56 0
+ 157              		.cfi_startproc
+ 158              		@ args = 0, pretend = 0, frame = 8
+ 159              		@ frame_needed = 0, uses_anonymous_args = 0
+ 160              	.LVL14:
+ 161 0000 00B5     		push	{lr}
+ 162              		.cfi_def_cfa_offset 4
+ 163              		.cfi_offset 14, -4
+ 164 0002 83B0     		sub	sp, sp, #12
+ 165              		.cfi_def_cfa_offset 16
+  57:.\HMC5883L.c  ****     uint8 array[2];
+  58:.\HMC5883L.c  ****     array[0] = reg;
+ 166              		.loc 1 58 0
+ 167 0004 8DF80400 		strb	r0, [sp, #4]
+  59:.\HMC5883L.c  ****     array[1] = data;
+ 168              		.loc 1 59 0
+ 169 0008 8DF80510 		strb	r1, [sp, #5]
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 5
+
+
+  60:.\HMC5883L.c  ****     
+  61:.\HMC5883L.c  ****     I2C_MasterWriteBuf(HMC5883L_ADDRESS,array,2,I2C_MODE_COMPLETE_XFER);
+ 170              		.loc 1 61 0
+ 171 000c 1E20     		movs	r0, #30
+ 172              	.LVL15:
+ 173 000e 01A9     		add	r1, sp, #4
+ 174              	.LVL16:
+ 175 0010 0222     		movs	r2, #2
+ 176 0012 0023     		movs	r3, #0
+ 177 0014 FFF7FEFF 		bl	I2C_MasterWriteBuf
+ 178              	.LVL17:
+ 179              	.L12:
+  62:.\HMC5883L.c  ****     while(0u == (I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT));
+ 180              		.loc 1 62 0 discriminator 1
+ 181 0018 FFF7FEFF 		bl	I2C_MasterStatus
+ 182              	.LVL18:
+ 183 001c 10F0010F 		tst	r0, #1
+ 184 0020 FAD0     		beq	.L12
+  63:.\HMC5883L.c  ****     
+  64:.\HMC5883L.c  ****     return 0;
+  65:.\HMC5883L.c  **** }
+ 185              		.loc 1 65 0
+ 186 0022 0020     		movs	r0, #0
+ 187 0024 03B0     		add	sp, sp, #12
+ 188              		@ sp needed
+ 189 0026 5DF804FB 		ldr	pc, [sp], #4
+ 190              		.cfi_endproc
+ 191              	.LFE65:
+ 192              		.size	write_HMC5883L_reg, .-write_HMC5883L_reg
+ 193 002a 00BF     		.section	.text.getHeading,"ax",%progbits
+ 194              		.align	2
+ 195              		.global	getHeading
+ 196              		.thumb
+ 197              		.thumb_func
+ 198              		.type	getHeading, %function
+ 199              	getHeading:
+ 200              	.LFB66:
+  66:.\HMC5883L.c  **** uint8 testConnection();
+  67:.\HMC5883L.c  **** 
+  68:.\HMC5883L.c  **** //This function only works in continous mode
+  69:.\HMC5883L.c  **** void getHeading(int16_t *x, int16_t *y, int16_t *z)
+  70:.\HMC5883L.c  **** {
+ 201              		.loc 1 70 0
+ 202              		.cfi_startproc
+ 203              		@ args = 0, pretend = 0, frame = 8
+ 204              		@ frame_needed = 0, uses_anonymous_args = 0
+ 205              	.LVL19:
+ 206 0000 00B5     		push	{lr}
+ 207              		.cfi_def_cfa_offset 4
+ 208              		.cfi_offset 14, -4
+ 209 0002 83B0     		sub	sp, sp, #12
+ 210              		.cfi_def_cfa_offset 16
+  71:.\HMC5883L.c  ****     
+  72:.\HMC5883L.c  ****     uint8 array[6];
+  73:.\HMC5883L.c  ****     array[0] = 0x06;
+ 211              		.loc 1 73 0
+ 212 0004 02A9     		add	r1, sp, #8
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 6
+
+
+ 213              	.LVL20:
+ 214 0006 0623     		movs	r3, #6
+ 215 0008 01F8083D 		strb	r3, [r1, #-8]!
+  74:.\HMC5883L.c  ****     union HMC5883L data;
+  75:.\HMC5883L.c  ****     I2C_MasterWriteBuf(HMC5883L_ADDRESS,array,1,I2C_MODE_COMPLETE_XFER);
+ 216              		.loc 1 75 0
+ 217 000c 1E20     		movs	r0, #30
+ 218              	.LVL21:
+ 219 000e 6946     		mov	r1, sp
+ 220 0010 0122     		movs	r2, #1
+ 221              	.LVL22:
+ 222 0012 0023     		movs	r3, #0
+ 223 0014 FFF7FEFF 		bl	I2C_MasterWriteBuf
+ 224              	.LVL23:
+ 225              	.L15:
+  76:.\HMC5883L.c  ****     while(0u == (I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT));
+ 226              		.loc 1 76 0 discriminator 1
+ 227 0018 FFF7FEFF 		bl	I2C_MasterStatus
+ 228              	.LVL24:
+ 229 001c 10F0010F 		tst	r0, #1
+ 230 0020 FAD0     		beq	.L15
+  77:.\HMC5883L.c  ****     
+  78:.\HMC5883L.c  ****     I2C_MasterReadBuf(HMC5883L_ADDRESS,array,6,I2C_MODE_COMPLETE_XFER);
+ 231              		.loc 1 78 0
+ 232 0022 1E20     		movs	r0, #30
+ 233 0024 6946     		mov	r1, sp
+ 234 0026 0622     		movs	r2, #6
+ 235 0028 0023     		movs	r3, #0
+ 236 002a FFF7FEFF 		bl	I2C_MasterReadBuf
+ 237              	.LVL25:
+ 238              	.L16:
+  79:.\HMC5883L.c  ****     while(0u == (I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT));
+ 239              		.loc 1 79 0 discriminator 1
+ 240 002e FFF7FEFF 		bl	I2C_MasterStatus
+ 241              	.LVL26:
+ 242 0032 10F0010F 		tst	r0, #1
+ 243 0036 FAD0     		beq	.L16
+ 244              	.LVL27:
+  80:.\HMC5883L.c  ****     
+  81:.\HMC5883L.c  ****     *data.array = *array;
+  82:.\HMC5883L.c  ****     x = &data.Data.x;
+  83:.\HMC5883L.c  ****     y = &data.Data.y;
+  84:.\HMC5883L.c  ****     z = &data.Data.z;
+  85:.\HMC5883L.c  ****     array[0] = 0x03;
+ 245              		.loc 1 85 0
+ 246 0038 02A9     		add	r1, sp, #8
+ 247 003a 0323     		movs	r3, #3
+ 248 003c 01F8083D 		strb	r3, [r1, #-8]!
+  86:.\HMC5883L.c  ****     
+  87:.\HMC5883L.c  ****     I2C_MasterWriteBuf(HMC5883L_ADDRESS,array,1,I2C_MODE_COMPLETE_XFER);
+ 249              		.loc 1 87 0
+ 250 0040 1E20     		movs	r0, #30
+ 251 0042 6946     		mov	r1, sp
+ 252 0044 0122     		movs	r2, #1
+ 253 0046 0023     		movs	r3, #0
+ 254 0048 FFF7FEFF 		bl	I2C_MasterWriteBuf
+ 255              	.LVL28:
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 7
+
+
+ 256              	.L17:
+  88:.\HMC5883L.c  ****     while(0u == (I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT));
+ 257              		.loc 1 88 0 discriminator 1
+ 258 004c FFF7FEFF 		bl	I2C_MasterStatus
+ 259              	.LVL29:
+ 260 0050 10F0010F 		tst	r0, #1
+ 261 0054 FAD0     		beq	.L17
+  89:.\HMC5883L.c  **** }
+ 262              		.loc 1 89 0
+ 263 0056 03B0     		add	sp, sp, #12
+ 264              		@ sp needed
+ 265 0058 5DF804FB 		ldr	pc, [sp], #4
+ 266              		.cfi_endproc
+ 267              	.LFE66:
+ 268              		.size	getHeading, .-getHeading
+ 269              		.section	.text.getHeadingX,"ax",%progbits
+ 270              		.align	2
+ 271              		.global	getHeadingX
+ 272              		.thumb
+ 273              		.thumb_func
+ 274              		.type	getHeadingX, %function
+ 275              	getHeadingX:
+ 276              	.LFB67:
+  90:.\HMC5883L.c  **** int16_t getHeadingX()
+  91:.\HMC5883L.c  **** {
+ 277              		.loc 1 91 0
+ 278              		.cfi_startproc
+ 279              		@ args = 0, pretend = 0, frame = 0
+ 280              		@ frame_needed = 0, uses_anonymous_args = 0
+ 281              		@ link register save eliminated.
+  92:.\HMC5883L.c  ****     
+  93:.\HMC5883L.c  ****     return 0;   
+  94:.\HMC5883L.c  **** }
+ 282              		.loc 1 94 0
+ 283 0000 0020     		movs	r0, #0
+ 284 0002 7047     		bx	lr
+ 285              		.cfi_endproc
+ 286              	.LFE67:
+ 287              		.size	getHeadingX, .-getHeadingX
+ 288              		.section	.text.getHeadingY,"ax",%progbits
+ 289              		.align	2
+ 290              		.global	getHeadingY
+ 291              		.thumb
+ 292              		.thumb_func
+ 293              		.type	getHeadingY, %function
+ 294              	getHeadingY:
+ 295              	.LFB68:
+  95:.\HMC5883L.c  **** int16_t getHeadingY()
+  96:.\HMC5883L.c  **** {
+ 296              		.loc 1 96 0
+ 297              		.cfi_startproc
+ 298              		@ args = 0, pretend = 0, frame = 0
+ 299              		@ frame_needed = 0, uses_anonymous_args = 0
+ 300              		@ link register save eliminated.
+  97:.\HMC5883L.c  ****  
+  98:.\HMC5883L.c  ****     return 0; 
+  99:.\HMC5883L.c  **** }
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 8
+
+
+ 301              		.loc 1 99 0
+ 302 0000 0020     		movs	r0, #0
+ 303 0002 7047     		bx	lr
+ 304              		.cfi_endproc
+ 305              	.LFE68:
+ 306              		.size	getHeadingY, .-getHeadingY
+ 307              		.section	.text.getHeadingZ,"ax",%progbits
+ 308              		.align	2
+ 309              		.global	getHeadingZ
+ 310              		.thumb
+ 311              		.thumb_func
+ 312              		.type	getHeadingZ, %function
+ 313              	getHeadingZ:
+ 314              	.LFB69:
+ 100:.\HMC5883L.c  **** int16_t getHeadingZ()
+ 101:.\HMC5883L.c  **** {
+ 315              		.loc 1 101 0
+ 316              		.cfi_startproc
+ 317              		@ args = 0, pretend = 0, frame = 0
+ 318              		@ frame_needed = 0, uses_anonymous_args = 0
+ 319              		@ link register save eliminated.
+ 102:.\HMC5883L.c  ****     return 0;    
+ 103:.\HMC5883L.c  **** }
+ 320              		.loc 1 103 0
+ 321 0000 0020     		movs	r0, #0
+ 322 0002 7047     		bx	lr
+ 323              		.cfi_endproc
+ 324              	.LFE69:
+ 325              		.size	getHeadingZ, .-getHeadingZ
+ 326              		.section	.text.get_HMC5883L_Data,"ax",%progbits
+ 327              		.align	2
+ 328              		.global	get_HMC5883L_Data
+ 329              		.thumb
+ 330              		.thumb_func
+ 331              		.type	get_HMC5883L_Data, %function
+ 332              	get_HMC5883L_Data:
+ 333              	.LFB70:
+ 104:.\HMC5883L.c  **** 
+ 105:.\HMC5883L.c  **** uint16 get_HMC5883L_Data(union HMC5883L *Data)
+ 106:.\HMC5883L.c  **** {
+ 334              		.loc 1 106 0
+ 335              		.cfi_startproc
+ 336              		@ args = 0, pretend = 0, frame = 8
+ 337              		@ frame_needed = 0, uses_anonymous_args = 0
+ 338              	.LVL30:
+ 339 0000 10B5     		push	{r4, lr}
+ 340              		.cfi_def_cfa_offset 8
+ 341              		.cfi_offset 4, -8
+ 342              		.cfi_offset 14, -4
+ 343 0002 82B0     		sub	sp, sp, #8
+ 344              		.cfi_def_cfa_offset 16
+ 345 0004 0446     		mov	r4, r0
+ 107:.\HMC5883L.c  ****     
+ 108:.\HMC5883L.c  ****     uint8 array[6];
+ 109:.\HMC5883L.c  ****     array[0] = 0x06;
+ 346              		.loc 1 109 0
+ 347 0006 02A9     		add	r1, sp, #8
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 9
+
+
+ 348 0008 0623     		movs	r3, #6
+ 349 000a 01F8083D 		strb	r3, [r1, #-8]!
+ 110:.\HMC5883L.c  ****     I2C_MasterWriteBuf(HMC5883L_ADDRESS,array,1,I2C_MODE_COMPLETE_XFER);
+ 350              		.loc 1 110 0
+ 351 000e 1E20     		movs	r0, #30
+ 352              	.LVL31:
+ 353 0010 6946     		mov	r1, sp
+ 354 0012 0122     		movs	r2, #1
+ 355 0014 0023     		movs	r3, #0
+ 356 0016 FFF7FEFF 		bl	I2C_MasterWriteBuf
+ 357              	.LVL32:
+ 358              	.L25:
+ 111:.\HMC5883L.c  ****     while(0u == (I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT));
+ 359              		.loc 1 111 0 discriminator 1
+ 360 001a FFF7FEFF 		bl	I2C_MasterStatus
+ 361              	.LVL33:
+ 362 001e 10F0010F 		tst	r0, #1
+ 363 0022 FAD0     		beq	.L25
+ 112:.\HMC5883L.c  ****     
+ 113:.\HMC5883L.c  ****     I2C_MasterReadBuf(HMC5883L_ADDRESS,array,6,I2C_MODE_COMPLETE_XFER);
+ 364              		.loc 1 113 0
+ 365 0024 1E20     		movs	r0, #30
+ 366 0026 6946     		mov	r1, sp
+ 367 0028 0622     		movs	r2, #6
+ 368 002a 0023     		movs	r3, #0
+ 369 002c FFF7FEFF 		bl	I2C_MasterReadBuf
+ 370              	.LVL34:
+ 371              	.L26:
+ 114:.\HMC5883L.c  ****     while(0u == (I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT));
+ 372              		.loc 1 114 0 discriminator 1
+ 373 0030 FFF7FEFF 		bl	I2C_MasterStatus
+ 374              	.LVL35:
+ 375 0034 10F0010F 		tst	r0, #1
+ 376 0038 FAD0     		beq	.L26
+ 115:.\HMC5883L.c  ****     
+ 116:.\HMC5883L.c  ****     *Data->array = *array;
+ 377              		.loc 1 116 0
+ 378 003a 9DF80030 		ldrb	r3, [sp]	@ zero_extendqisi2
+ 379 003e 2370     		strb	r3, [r4]
+ 117:.\HMC5883L.c  ****     array[0] = 0x03;
+ 380              		.loc 1 117 0
+ 381 0040 02A9     		add	r1, sp, #8
+ 382 0042 0323     		movs	r3, #3
+ 383 0044 01F8083D 		strb	r3, [r1, #-8]!
+ 118:.\HMC5883L.c  ****     
+ 119:.\HMC5883L.c  ****     I2C_MasterWriteBuf(HMC5883L_ADDRESS,array,1,I2C_MODE_COMPLETE_XFER);
+ 384              		.loc 1 119 0
+ 385 0048 1E20     		movs	r0, #30
+ 386 004a 6946     		mov	r1, sp
+ 387 004c 0122     		movs	r2, #1
+ 388 004e 0023     		movs	r3, #0
+ 389 0050 FFF7FEFF 		bl	I2C_MasterWriteBuf
+ 390              	.LVL36:
+ 391              	.L27:
+ 120:.\HMC5883L.c  ****     while(0u == (I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT));
+ 392              		.loc 1 120 0 discriminator 1
+ 393 0054 FFF7FEFF 		bl	I2C_MasterStatus
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 10
+
+
+ 394              	.LVL37:
+ 395 0058 10F0010F 		tst	r0, #1
+ 396 005c FAD0     		beq	.L27
+ 121:.\HMC5883L.c  ****     return I2C_MasterStatus();
+ 397              		.loc 1 121 0
+ 398 005e FFF7FEFF 		bl	I2C_MasterStatus
+ 399              	.LVL38:
+ 122:.\HMC5883L.c  **** }
+ 400              		.loc 1 122 0
+ 401 0062 02B0     		add	sp, sp, #8
+ 402              		@ sp needed
+ 403 0064 10BD     		pop	{r4, pc}
+ 404              		.cfi_endproc
+ 405              	.LFE70:
+ 406              		.size	get_HMC5883L_Data, .-get_HMC5883L_Data
+ 407 0066 00BF     		.text
+ 408              	.Letext0:
+ 409              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.2\\psoc creator\\import\\gnu\\arm\\4.8.
+ 410              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\3.2\\psoc creator\\import\\gnu\\arm\\4.8.
+ 411              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 412              		.file 5 "./HMC5883L.h"
+ 413              		.file 6 "Generated_Source\\PSoC5/I2C.h"
+ 414              		.file 7 "Generated_Source\\PSoC5/core_cm3.h"
+ 415              		.section	.debug_info,"",%progbits
+ 416              	.Ldebug_info0:
+ 417 0000 4F050000 		.4byte	0x54f
+ 418 0004 0400     		.2byte	0x4
+ 419 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 420 000a 04       		.byte	0x4
+ 421 000b 01       		.uleb128 0x1
+ 422 000c 9C010000 		.4byte	.LASF32
+ 423 0010 01       		.byte	0x1
+ 424 0011 45020000 		.4byte	.LASF33
+ 425 0015 65010000 		.4byte	.LASF34
+ 426 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 427 001d 00000000 		.4byte	0
+ 428 0021 00000000 		.4byte	.Ldebug_line0
+ 429 0025 02       		.uleb128 0x2
+ 430 0026 01       		.byte	0x1
+ 431 0027 06       		.byte	0x6
+ 432 0028 66000000 		.4byte	.LASF0
+ 433 002c 02       		.uleb128 0x2
+ 434 002d 01       		.byte	0x1
+ 435 002e 08       		.byte	0x8
+ 436 002f 90000000 		.4byte	.LASF1
+ 437 0033 03       		.uleb128 0x3
+ 438 0034 02010000 		.4byte	.LASF4
+ 439 0038 02       		.byte	0x2
+ 440 0039 25       		.byte	0x25
+ 441 003a 3E000000 		.4byte	0x3e
+ 442 003e 02       		.uleb128 0x2
+ 443 003f 02       		.byte	0x2
+ 444 0040 05       		.byte	0x5
+ 445 0041 52020000 		.4byte	.LASF2
+ 446 0045 02       		.uleb128 0x2
+ 447 0046 02       		.byte	0x2
+ 448 0047 07       		.byte	0x7
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 11
+
+
+ 449 0048 C9000000 		.4byte	.LASF3
+ 450 004c 03       		.uleb128 0x3
+ 451 004d 11000000 		.4byte	.LASF5
+ 452 0051 02       		.byte	0x2
+ 453 0052 37       		.byte	0x37
+ 454 0053 57000000 		.4byte	0x57
+ 455 0057 02       		.uleb128 0x2
+ 456 0058 04       		.byte	0x4
+ 457 0059 05       		.byte	0x5
+ 458 005a 75020000 		.4byte	.LASF6
+ 459 005e 02       		.uleb128 0x2
+ 460 005f 04       		.byte	0x4
+ 461 0060 07       		.byte	0x7
+ 462 0061 B7000000 		.4byte	.LASF7
+ 463 0065 02       		.uleb128 0x2
+ 464 0066 08       		.byte	0x8
+ 465 0067 05       		.byte	0x5
+ 466 0068 21020000 		.4byte	.LASF8
+ 467 006c 02       		.uleb128 0x2
+ 468 006d 08       		.byte	0x8
+ 469 006e 07       		.byte	0x7
+ 470 006f 3D010000 		.4byte	.LASF9
+ 471 0073 04       		.uleb128 0x4
+ 472 0074 04       		.byte	0x4
+ 473 0075 05       		.byte	0x5
+ 474 0076 696E7400 		.ascii	"int\000"
+ 475 007a 02       		.uleb128 0x2
+ 476 007b 04       		.byte	0x4
+ 477 007c 07       		.byte	0x7
+ 478 007d 0C010000 		.4byte	.LASF10
+ 479 0081 03       		.uleb128 0x3
+ 480 0082 5D010000 		.4byte	.LASF11
+ 481 0086 03       		.byte	0x3
+ 482 0087 35       		.byte	0x35
+ 483 0088 33000000 		.4byte	0x33
+ 484 008c 03       		.uleb128 0x3
+ 485 008d 53000000 		.4byte	.LASF12
+ 486 0091 03       		.byte	0x3
+ 487 0092 41       		.byte	0x41
+ 488 0093 4C000000 		.4byte	0x4c
+ 489 0097 03       		.uleb128 0x3
+ 490 0098 5C020000 		.4byte	.LASF13
+ 491 009c 04       		.byte	0x4
+ 492 009d B3       		.byte	0xb3
+ 493 009e 2C000000 		.4byte	0x2c
+ 494 00a2 03       		.uleb128 0x3
+ 495 00a3 FB000000 		.4byte	.LASF14
+ 496 00a7 04       		.byte	0x4
+ 497 00a8 B4       		.byte	0xb4
+ 498 00a9 45000000 		.4byte	0x45
+ 499 00ad 03       		.uleb128 0x3
+ 500 00ae B1000000 		.4byte	.LASF15
+ 501 00b2 04       		.byte	0x4
+ 502 00b3 B7       		.byte	0xb7
+ 503 00b4 3E000000 		.4byte	0x3e
+ 504 00b8 02       		.uleb128 0x2
+ 505 00b9 04       		.byte	0x4
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 12
+
+
+ 506 00ba 04       		.byte	0x4
+ 507 00bb 5B000000 		.4byte	.LASF16
+ 508 00bf 02       		.uleb128 0x2
+ 509 00c0 08       		.byte	0x8
+ 510 00c1 04       		.byte	0x4
+ 511 00c2 EF000000 		.4byte	.LASF17
+ 512 00c6 02       		.uleb128 0x2
+ 513 00c7 01       		.byte	0x1
+ 514 00c8 08       		.byte	0x8
+ 515 00c9 2F020000 		.4byte	.LASF18
+ 516 00cd 02       		.uleb128 0x2
+ 517 00ce 04       		.byte	0x4
+ 518 00cf 07       		.byte	0x7
+ 519 00d0 18020000 		.4byte	.LASF19
+ 520 00d4 05       		.uleb128 0x5
+ 521 00d5 8E020000 		.4byte	.LASF35
+ 522 00d9 06       		.byte	0x6
+ 523 00da 05       		.byte	0x5
+ 524 00db 52       		.byte	0x52
+ 525 00dc FF000000 		.4byte	0xff
+ 526 00e0 06       		.uleb128 0x6
+ 527 00e1 7800     		.ascii	"x\000"
+ 528 00e3 05       		.byte	0x5
+ 529 00e4 53       		.byte	0x53
+ 530 00e5 AD000000 		.4byte	0xad
+ 531 00e9 00       		.byte	0
+ 532 00ea 06       		.uleb128 0x6
+ 533 00eb 7900     		.ascii	"y\000"
+ 534 00ed 05       		.byte	0x5
+ 535 00ee 54       		.byte	0x54
+ 536 00ef AD000000 		.4byte	0xad
+ 537 00f3 02       		.byte	0x2
+ 538 00f4 06       		.uleb128 0x6
+ 539 00f5 7A00     		.ascii	"z\000"
+ 540 00f7 05       		.byte	0x5
+ 541 00f8 55       		.byte	0x55
+ 542 00f9 AD000000 		.4byte	0xad
+ 543 00fd 04       		.byte	0x4
+ 544 00fe 00       		.byte	0
+ 545 00ff 07       		.uleb128 0x7
+ 546 0100 54010000 		.4byte	.LASF36
+ 547 0104 06       		.byte	0x6
+ 548 0105 05       		.byte	0x5
+ 549 0106 58       		.byte	0x58
+ 550 0107 22010000 		.4byte	0x122
+ 551 010b 08       		.uleb128 0x8
+ 552 010c DC000000 		.4byte	.LASF20
+ 553 0110 05       		.byte	0x5
+ 554 0111 5A       		.byte	0x5a
+ 555 0112 22010000 		.4byte	0x122
+ 556 0116 08       		.uleb128 0x8
+ 557 0117 F6000000 		.4byte	.LASF21
+ 558 011b 05       		.byte	0x5
+ 559 011c 5B       		.byte	0x5b
+ 560 011d D4000000 		.4byte	0xd4
+ 561 0121 00       		.byte	0
+ 562 0122 09       		.uleb128 0x9
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 13
+
+
+ 563 0123 97000000 		.4byte	0x97
+ 564 0127 32010000 		.4byte	0x132
+ 565 012b 0A       		.uleb128 0xa
+ 566 012c CD000000 		.4byte	0xcd
+ 567 0130 05       		.byte	0x5
+ 568 0131 00       		.byte	0
+ 569 0132 0B       		.uleb128 0xb
+ 570 0133 7E020000 		.4byte	.LASF37
+ 571 0137 01       		.byte	0x1
+ 572 0138 16       		.byte	0x16
+ 573 0139 00000000 		.4byte	.LFB63
+ 574 013d 58000000 		.4byte	.LFE63-.LFB63
+ 575 0141 01       		.uleb128 0x1
+ 576 0142 9C       		.byte	0x9c
+ 577 0143 CC010000 		.4byte	0x1cc
+ 578 0147 0C       		.uleb128 0xc
+ 579 0148 DC000000 		.4byte	.LASF20
+ 580 014c 01       		.byte	0x1
+ 581 014d 1A       		.byte	0x1a
+ 582 014e CC010000 		.4byte	0x1cc
+ 583 0152 02       		.uleb128 0x2
+ 584 0153 91       		.byte	0x91
+ 585 0154 6C       		.sleb128 -20
+ 586 0155 0D       		.uleb128 0xd
+ 587 0156 08000000 		.4byte	.LVL0
+ 588 015a EB040000 		.4byte	0x4eb
+ 589 015e 0D       		.uleb128 0xd
+ 590 015f 18000000 		.4byte	.LVL1
+ 591 0163 F2040000 		.4byte	0x4f2
+ 592 0167 0E       		.uleb128 0xe
+ 593 0168 24000000 		.4byte	.LVL2
+ 594 016c FD040000 		.4byte	0x4fd
+ 595 0170 8B010000 		.4byte	0x18b
+ 596 0174 0F       		.uleb128 0xf
+ 597 0175 01       		.uleb128 0x1
+ 598 0176 53       		.byte	0x53
+ 599 0177 02       		.uleb128 0x2
+ 600 0178 74       		.byte	0x74
+ 601 0179 00       		.sleb128 0
+ 602 017a 0F       		.uleb128 0xf
+ 603 017b 01       		.uleb128 0x1
+ 604 017c 52       		.byte	0x52
+ 605 017d 01       		.uleb128 0x1
+ 606 017e 32       		.byte	0x32
+ 607 017f 0F       		.uleb128 0xf
+ 608 0180 01       		.uleb128 0x1
+ 609 0181 51       		.byte	0x51
+ 610 0182 02       		.uleb128 0x2
+ 611 0183 91       		.byte	0x91
+ 612 0184 6C       		.sleb128 -20
+ 613 0185 0F       		.uleb128 0xf
+ 614 0186 01       		.uleb128 0x1
+ 615 0187 50       		.byte	0x50
+ 616 0188 01       		.uleb128 0x1
+ 617 0189 4E       		.byte	0x4e
+ 618 018a 00       		.byte	0
+ 619 018b 0D       		.uleb128 0xd
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 14
+
+
+ 620 018c 28000000 		.4byte	.LVL3
+ 621 0190 27050000 		.4byte	0x527
+ 622 0194 0D       		.uleb128 0xd
+ 623 0195 3E000000 		.4byte	.LVL4
+ 624 0199 F2040000 		.4byte	0x4f2
+ 625 019d 0E       		.uleb128 0xe
+ 626 019e 4A000000 		.4byte	.LVL5
+ 627 01a2 FD040000 		.4byte	0x4fd
+ 628 01a6 C2010000 		.4byte	0x1c2
+ 629 01aa 0F       		.uleb128 0xf
+ 630 01ab 01       		.uleb128 0x1
+ 631 01ac 53       		.byte	0x53
+ 632 01ad 02       		.uleb128 0x2
+ 633 01ae 74       		.byte	0x74
+ 634 01af 00       		.sleb128 0
+ 635 01b0 0F       		.uleb128 0xf
+ 636 01b1 01       		.uleb128 0x1
+ 637 01b2 52       		.byte	0x52
+ 638 01b3 02       		.uleb128 0x2
+ 639 01b4 75       		.byte	0x75
+ 640 01b5 00       		.sleb128 0
+ 641 01b6 0F       		.uleb128 0xf
+ 642 01b7 01       		.uleb128 0x1
+ 643 01b8 51       		.byte	0x51
+ 644 01b9 02       		.uleb128 0x2
+ 645 01ba 91       		.byte	0x91
+ 646 01bb 6C       		.sleb128 -20
+ 647 01bc 0F       		.uleb128 0xf
+ 648 01bd 01       		.uleb128 0x1
+ 649 01be 50       		.byte	0x50
+ 650 01bf 01       		.uleb128 0x1
+ 651 01c0 4E       		.byte	0x4e
+ 652 01c1 00       		.byte	0
+ 653 01c2 0D       		.uleb128 0xd
+ 654 01c3 4E000000 		.4byte	.LVL6
+ 655 01c7 27050000 		.4byte	0x527
+ 656 01cb 00       		.byte	0
+ 657 01cc 09       		.uleb128 0x9
+ 658 01cd 97000000 		.4byte	0x97
+ 659 01d1 DC010000 		.4byte	0x1dc
+ 660 01d5 0A       		.uleb128 0xa
+ 661 01d6 CD000000 		.4byte	0xcd
+ 662 01da 01       		.byte	0x1
+ 663 01db 00       		.byte	0
+ 664 01dc 10       		.uleb128 0x10
+ 665 01dd 19010000 		.4byte	.LASF23
+ 666 01e1 01       		.byte	0x1
+ 667 01e2 28       		.byte	0x28
+ 668 01e3 97000000 		.4byte	0x97
+ 669 01e7 00000000 		.4byte	.LFB64
+ 670 01eb 3E000000 		.4byte	.LFE64-.LFB64
+ 671 01ef 01       		.uleb128 0x1
+ 672 01f0 9C       		.byte	0x9c
+ 673 01f1 7F020000 		.4byte	0x27f
+ 674 01f5 11       		.uleb128 0x11
+ 675 01f6 72656700 		.ascii	"reg\000"
+ 676 01fa 01       		.byte	0x1
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 15
+
+
+ 677 01fb 28       		.byte	0x28
+ 678 01fc 97000000 		.4byte	0x97
+ 679 0200 00000000 		.4byte	.LLST0
+ 680 0204 0C       		.uleb128 0xc
+ 681 0205 0B000000 		.4byte	.LASF22
+ 682 0209 01       		.byte	0x1
+ 683 020a 2B       		.byte	0x2b
+ 684 020b AD000000 		.4byte	0xad
+ 685 020f 08       		.uleb128 0x8
+ 686 0210 91       		.byte	0x91
+ 687 0211 74       		.sleb128 -12
+ 688 0212 94       		.byte	0x94
+ 689 0213 01       		.byte	0x1
+ 690 0214 08       		.byte	0x8
+ 691 0215 FF       		.byte	0xff
+ 692 0216 1A       		.byte	0x1a
+ 693 0217 9F       		.byte	0x9f
+ 694 0218 0C       		.uleb128 0xc
+ 695 0219 DC000000 		.4byte	.LASF20
+ 696 021d 01       		.byte	0x1
+ 697 021e 2C       		.byte	0x2c
+ 698 021f CC010000 		.4byte	0x1cc
+ 699 0223 02       		.uleb128 0x2
+ 700 0224 91       		.byte	0x91
+ 701 0225 74       		.sleb128 -12
+ 702 0226 0E       		.uleb128 0xe
+ 703 0227 14000000 		.4byte	.LVL9
+ 704 022b FD040000 		.4byte	0x4fd
+ 705 022f 49020000 		.4byte	0x249
+ 706 0233 0F       		.uleb128 0xf
+ 707 0234 01       		.uleb128 0x1
+ 708 0235 53       		.byte	0x53
+ 709 0236 01       		.uleb128 0x1
+ 710 0237 30       		.byte	0x30
+ 711 0238 0F       		.uleb128 0xf
+ 712 0239 01       		.uleb128 0x1
+ 713 023a 52       		.byte	0x52
+ 714 023b 01       		.uleb128 0x1
+ 715 023c 31       		.byte	0x31
+ 716 023d 0F       		.uleb128 0xf
+ 717 023e 01       		.uleb128 0x1
+ 718 023f 51       		.byte	0x51
+ 719 0240 02       		.uleb128 0x2
+ 720 0241 91       		.byte	0x91
+ 721 0242 74       		.sleb128 -12
+ 722 0243 0F       		.uleb128 0xf
+ 723 0244 01       		.uleb128 0x1
+ 724 0245 50       		.byte	0x50
+ 725 0246 01       		.uleb128 0x1
+ 726 0247 4E       		.byte	0x4e
+ 727 0248 00       		.byte	0
+ 728 0249 0D       		.uleb128 0xd
+ 729 024a 18000000 		.4byte	.LVL10
+ 730 024e 27050000 		.4byte	0x527
+ 731 0252 0E       		.uleb128 0xe
+ 732 0253 2A000000 		.4byte	.LVL11
+ 733 0257 32050000 		.4byte	0x532
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 16
+
+
+ 734 025b 75020000 		.4byte	0x275
+ 735 025f 0F       		.uleb128 0xf
+ 736 0260 01       		.uleb128 0x1
+ 737 0261 53       		.byte	0x53
+ 738 0262 01       		.uleb128 0x1
+ 739 0263 30       		.byte	0x30
+ 740 0264 0F       		.uleb128 0xf
+ 741 0265 01       		.uleb128 0x1
+ 742 0266 52       		.byte	0x52
+ 743 0267 01       		.uleb128 0x1
+ 744 0268 31       		.byte	0x31
+ 745 0269 0F       		.uleb128 0xf
+ 746 026a 01       		.uleb128 0x1
+ 747 026b 51       		.byte	0x51
+ 748 026c 02       		.uleb128 0x2
+ 749 026d 91       		.byte	0x91
+ 750 026e 74       		.sleb128 -12
+ 751 026f 0F       		.uleb128 0xf
+ 752 0270 01       		.uleb128 0x1
+ 753 0271 50       		.byte	0x50
+ 754 0272 01       		.uleb128 0x1
+ 755 0273 4E       		.byte	0x4e
+ 756 0274 00       		.byte	0
+ 757 0275 0D       		.uleb128 0xd
+ 758 0276 2E000000 		.4byte	.LVL12
+ 759 027a 27050000 		.4byte	0x527
+ 760 027e 00       		.byte	0
+ 761 027f 10       		.uleb128 0x10
+ 762 0280 62020000 		.4byte	.LASF24
+ 763 0284 01       		.byte	0x1
+ 764 0285 37       		.byte	0x37
+ 765 0286 97000000 		.4byte	0x97
+ 766 028a 00000000 		.4byte	.LFB65
+ 767 028e 2A000000 		.4byte	.LFE65-.LFB65
+ 768 0292 01       		.uleb128 0x1
+ 769 0293 9C       		.byte	0x9c
+ 770 0294 F1020000 		.4byte	0x2f1
+ 771 0298 11       		.uleb128 0x11
+ 772 0299 72656700 		.ascii	"reg\000"
+ 773 029d 01       		.byte	0x1
+ 774 029e 37       		.byte	0x37
+ 775 029f 97000000 		.4byte	0x97
+ 776 02a3 2D000000 		.4byte	.LLST1
+ 777 02a7 12       		.uleb128 0x12
+ 778 02a8 61000000 		.4byte	.LASF25
+ 779 02ac 01       		.byte	0x1
+ 780 02ad 37       		.byte	0x37
+ 781 02ae 97000000 		.4byte	0x97
+ 782 02b2 66000000 		.4byte	.LLST2
+ 783 02b6 0C       		.uleb128 0xc
+ 784 02b7 DC000000 		.4byte	.LASF20
+ 785 02bb 01       		.byte	0x1
+ 786 02bc 39       		.byte	0x39
+ 787 02bd CC010000 		.4byte	0x1cc
+ 788 02c1 02       		.uleb128 0x2
+ 789 02c2 91       		.byte	0x91
+ 790 02c3 74       		.sleb128 -12
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 17
+
+
+ 791 02c4 0E       		.uleb128 0xe
+ 792 02c5 18000000 		.4byte	.LVL17
+ 793 02c9 FD040000 		.4byte	0x4fd
+ 794 02cd E7020000 		.4byte	0x2e7
+ 795 02d1 0F       		.uleb128 0xf
+ 796 02d2 01       		.uleb128 0x1
+ 797 02d3 53       		.byte	0x53
+ 798 02d4 01       		.uleb128 0x1
+ 799 02d5 30       		.byte	0x30
+ 800 02d6 0F       		.uleb128 0xf
+ 801 02d7 01       		.uleb128 0x1
+ 802 02d8 52       		.byte	0x52
+ 803 02d9 01       		.uleb128 0x1
+ 804 02da 32       		.byte	0x32
+ 805 02db 0F       		.uleb128 0xf
+ 806 02dc 01       		.uleb128 0x1
+ 807 02dd 51       		.byte	0x51
+ 808 02de 02       		.uleb128 0x2
+ 809 02df 91       		.byte	0x91
+ 810 02e0 74       		.sleb128 -12
+ 811 02e1 0F       		.uleb128 0xf
+ 812 02e2 01       		.uleb128 0x1
+ 813 02e3 50       		.byte	0x50
+ 814 02e4 01       		.uleb128 0x1
+ 815 02e5 4E       		.byte	0x4e
+ 816 02e6 00       		.byte	0
+ 817 02e7 0D       		.uleb128 0xd
+ 818 02e8 1C000000 		.4byte	.LVL18
+ 819 02ec 27050000 		.4byte	0x527
+ 820 02f0 00       		.byte	0
+ 821 02f1 13       		.uleb128 0x13
+ 822 02f2 00000000 		.4byte	.LASF38
+ 823 02f6 01       		.byte	0x1
+ 824 02f7 45       		.byte	0x45
+ 825 02f8 00000000 		.4byte	.LFB66
+ 826 02fc 5C000000 		.4byte	.LFE66-.LFB66
+ 827 0300 01       		.uleb128 0x1
+ 828 0301 9C       		.byte	0x9c
+ 829 0302 CB030000 		.4byte	0x3cb
+ 830 0306 11       		.uleb128 0x11
+ 831 0307 7800     		.ascii	"x\000"
+ 832 0309 01       		.byte	0x1
+ 833 030a 45       		.byte	0x45
+ 834 030b CB030000 		.4byte	0x3cb
+ 835 030f 93000000 		.4byte	.LLST3
+ 836 0313 11       		.uleb128 0x11
+ 837 0314 7900     		.ascii	"y\000"
+ 838 0316 01       		.byte	0x1
+ 839 0317 45       		.byte	0x45
+ 840 0318 CB030000 		.4byte	0x3cb
+ 841 031c C4000000 		.4byte	.LLST4
+ 842 0320 11       		.uleb128 0x11
+ 843 0321 7A00     		.ascii	"z\000"
+ 844 0323 01       		.byte	0x1
+ 845 0324 45       		.byte	0x45
+ 846 0325 CB030000 		.4byte	0x3cb
+ 847 0329 F5000000 		.4byte	.LLST5
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 18
+
+
+ 848 032d 0C       		.uleb128 0xc
+ 849 032e DC000000 		.4byte	.LASF20
+ 850 0332 01       		.byte	0x1
+ 851 0333 48       		.byte	0x48
+ 852 0334 22010000 		.4byte	0x122
+ 853 0338 02       		.uleb128 0x2
+ 854 0339 91       		.byte	0x91
+ 855 033a 70       		.sleb128 -16
+ 856 033b 14       		.uleb128 0x14
+ 857 033c 61000000 		.4byte	.LASF25
+ 858 0340 01       		.byte	0x1
+ 859 0341 4A       		.byte	0x4a
+ 860 0342 FF000000 		.4byte	0xff
+ 861 0346 0E       		.uleb128 0xe
+ 862 0347 18000000 		.4byte	.LVL23
+ 863 034b FD040000 		.4byte	0x4fd
+ 864 034f 69030000 		.4byte	0x369
+ 865 0353 0F       		.uleb128 0xf
+ 866 0354 01       		.uleb128 0x1
+ 867 0355 53       		.byte	0x53
+ 868 0356 01       		.uleb128 0x1
+ 869 0357 30       		.byte	0x30
+ 870 0358 0F       		.uleb128 0xf
+ 871 0359 01       		.uleb128 0x1
+ 872 035a 52       		.byte	0x52
+ 873 035b 01       		.uleb128 0x1
+ 874 035c 31       		.byte	0x31
+ 875 035d 0F       		.uleb128 0xf
+ 876 035e 01       		.uleb128 0x1
+ 877 035f 51       		.byte	0x51
+ 878 0360 02       		.uleb128 0x2
+ 879 0361 7D       		.byte	0x7d
+ 880 0362 00       		.sleb128 0
+ 881 0363 0F       		.uleb128 0xf
+ 882 0364 01       		.uleb128 0x1
+ 883 0365 50       		.byte	0x50
+ 884 0366 01       		.uleb128 0x1
+ 885 0367 4E       		.byte	0x4e
+ 886 0368 00       		.byte	0
+ 887 0369 0D       		.uleb128 0xd
+ 888 036a 1C000000 		.4byte	.LVL24
+ 889 036e 27050000 		.4byte	0x527
+ 890 0372 0E       		.uleb128 0xe
+ 891 0373 2E000000 		.4byte	.LVL25
+ 892 0377 32050000 		.4byte	0x532
+ 893 037b 95030000 		.4byte	0x395
+ 894 037f 0F       		.uleb128 0xf
+ 895 0380 01       		.uleb128 0x1
+ 896 0381 53       		.byte	0x53
+ 897 0382 01       		.uleb128 0x1
+ 898 0383 30       		.byte	0x30
+ 899 0384 0F       		.uleb128 0xf
+ 900 0385 01       		.uleb128 0x1
+ 901 0386 52       		.byte	0x52
+ 902 0387 01       		.uleb128 0x1
+ 903 0388 36       		.byte	0x36
+ 904 0389 0F       		.uleb128 0xf
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 19
+
+
+ 905 038a 01       		.uleb128 0x1
+ 906 038b 51       		.byte	0x51
+ 907 038c 02       		.uleb128 0x2
+ 908 038d 7D       		.byte	0x7d
+ 909 038e 00       		.sleb128 0
+ 910 038f 0F       		.uleb128 0xf
+ 911 0390 01       		.uleb128 0x1
+ 912 0391 50       		.byte	0x50
+ 913 0392 01       		.uleb128 0x1
+ 914 0393 4E       		.byte	0x4e
+ 915 0394 00       		.byte	0
+ 916 0395 0D       		.uleb128 0xd
+ 917 0396 32000000 		.4byte	.LVL26
+ 918 039a 27050000 		.4byte	0x527
+ 919 039e 0E       		.uleb128 0xe
+ 920 039f 4C000000 		.4byte	.LVL28
+ 921 03a3 FD040000 		.4byte	0x4fd
+ 922 03a7 C1030000 		.4byte	0x3c1
+ 923 03ab 0F       		.uleb128 0xf
+ 924 03ac 01       		.uleb128 0x1
+ 925 03ad 53       		.byte	0x53
+ 926 03ae 01       		.uleb128 0x1
+ 927 03af 30       		.byte	0x30
+ 928 03b0 0F       		.uleb128 0xf
+ 929 03b1 01       		.uleb128 0x1
+ 930 03b2 52       		.byte	0x52
+ 931 03b3 01       		.uleb128 0x1
+ 932 03b4 31       		.byte	0x31
+ 933 03b5 0F       		.uleb128 0xf
+ 934 03b6 01       		.uleb128 0x1
+ 935 03b7 51       		.byte	0x51
+ 936 03b8 02       		.uleb128 0x2
+ 937 03b9 7D       		.byte	0x7d
+ 938 03ba 00       		.sleb128 0
+ 939 03bb 0F       		.uleb128 0xf
+ 940 03bc 01       		.uleb128 0x1
+ 941 03bd 50       		.byte	0x50
+ 942 03be 01       		.uleb128 0x1
+ 943 03bf 4E       		.byte	0x4e
+ 944 03c0 00       		.byte	0
+ 945 03c1 0D       		.uleb128 0xd
+ 946 03c2 50000000 		.4byte	.LVL29
+ 947 03c6 27050000 		.4byte	0x527
+ 948 03ca 00       		.byte	0
+ 949 03cb 15       		.uleb128 0x15
+ 950 03cc 04       		.byte	0x4
+ 951 03cd 81000000 		.4byte	0x81
+ 952 03d1 16       		.uleb128 0x16
+ 953 03d2 1B000000 		.4byte	.LASF26
+ 954 03d6 01       		.byte	0x1
+ 955 03d7 5A       		.byte	0x5a
+ 956 03d8 81000000 		.4byte	0x81
+ 957 03dc 00000000 		.4byte	.LFB67
+ 958 03e0 04000000 		.4byte	.LFE67-.LFB67
+ 959 03e4 01       		.uleb128 0x1
+ 960 03e5 9C       		.byte	0x9c
+ 961 03e6 16       		.uleb128 0x16
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 20
+
+
+ 962 03e7 72000000 		.4byte	.LASF27
+ 963 03eb 01       		.byte	0x1
+ 964 03ec 5F       		.byte	0x5f
+ 965 03ed 81000000 		.4byte	0x81
+ 966 03f1 00000000 		.4byte	.LFB68
+ 967 03f5 04000000 		.4byte	.LFE68-.LFB68
+ 968 03f9 01       		.uleb128 0x1
+ 969 03fa 9C       		.byte	0x9c
+ 970 03fb 16       		.uleb128 0x16
+ 971 03fc 3D000000 		.4byte	.LASF28
+ 972 0400 01       		.byte	0x1
+ 973 0401 64       		.byte	0x64
+ 974 0402 81000000 		.4byte	0x81
+ 975 0406 00000000 		.4byte	.LFB69
+ 976 040a 04000000 		.4byte	.LFE69-.LFB69
+ 977 040e 01       		.uleb128 0x1
+ 978 040f 9C       		.byte	0x9c
+ 979 0410 10       		.uleb128 0x10
+ 980 0411 2B010000 		.4byte	.LASF29
+ 981 0415 01       		.byte	0x1
+ 982 0416 69       		.byte	0x69
+ 983 0417 A2000000 		.4byte	0xa2
+ 984 041b 00000000 		.4byte	.LFB70
+ 985 041f 66000000 		.4byte	.LFE70-.LFB70
+ 986 0423 01       		.uleb128 0x1
+ 987 0424 9C       		.byte	0x9c
+ 988 0425 D4040000 		.4byte	0x4d4
+ 989 0429 12       		.uleb128 0x12
+ 990 042a F6000000 		.4byte	.LASF21
+ 991 042e 01       		.byte	0x1
+ 992 042f 69       		.byte	0x69
+ 993 0430 D4040000 		.4byte	0x4d4
+ 994 0434 26010000 		.4byte	.LLST6
+ 995 0438 0C       		.uleb128 0xc
+ 996 0439 DC000000 		.4byte	.LASF20
+ 997 043d 01       		.byte	0x1
+ 998 043e 6C       		.byte	0x6c
+ 999 043f 22010000 		.4byte	0x122
+ 1000 0443 02       		.uleb128 0x2
+ 1001 0444 91       		.byte	0x91
+ 1002 0445 70       		.sleb128 -16
+ 1003 0446 0E       		.uleb128 0xe
+ 1004 0447 1A000000 		.4byte	.LVL32
+ 1005 044b FD040000 		.4byte	0x4fd
+ 1006 044f 69040000 		.4byte	0x469
+ 1007 0453 0F       		.uleb128 0xf
+ 1008 0454 01       		.uleb128 0x1
+ 1009 0455 53       		.byte	0x53
+ 1010 0456 01       		.uleb128 0x1
+ 1011 0457 30       		.byte	0x30
+ 1012 0458 0F       		.uleb128 0xf
+ 1013 0459 01       		.uleb128 0x1
+ 1014 045a 52       		.byte	0x52
+ 1015 045b 01       		.uleb128 0x1
+ 1016 045c 31       		.byte	0x31
+ 1017 045d 0F       		.uleb128 0xf
+ 1018 045e 01       		.uleb128 0x1
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 21
+
+
+ 1019 045f 51       		.byte	0x51
+ 1020 0460 02       		.uleb128 0x2
+ 1021 0461 7D       		.byte	0x7d
+ 1022 0462 00       		.sleb128 0
+ 1023 0463 0F       		.uleb128 0xf
+ 1024 0464 01       		.uleb128 0x1
+ 1025 0465 50       		.byte	0x50
+ 1026 0466 01       		.uleb128 0x1
+ 1027 0467 4E       		.byte	0x4e
+ 1028 0468 00       		.byte	0
+ 1029 0469 0D       		.uleb128 0xd
+ 1030 046a 1E000000 		.4byte	.LVL33
+ 1031 046e 27050000 		.4byte	0x527
+ 1032 0472 0E       		.uleb128 0xe
+ 1033 0473 30000000 		.4byte	.LVL34
+ 1034 0477 32050000 		.4byte	0x532
+ 1035 047b 95040000 		.4byte	0x495
+ 1036 047f 0F       		.uleb128 0xf
+ 1037 0480 01       		.uleb128 0x1
+ 1038 0481 53       		.byte	0x53
+ 1039 0482 01       		.uleb128 0x1
+ 1040 0483 30       		.byte	0x30
+ 1041 0484 0F       		.uleb128 0xf
+ 1042 0485 01       		.uleb128 0x1
+ 1043 0486 52       		.byte	0x52
+ 1044 0487 01       		.uleb128 0x1
+ 1045 0488 36       		.byte	0x36
+ 1046 0489 0F       		.uleb128 0xf
+ 1047 048a 01       		.uleb128 0x1
+ 1048 048b 51       		.byte	0x51
+ 1049 048c 02       		.uleb128 0x2
+ 1050 048d 7D       		.byte	0x7d
+ 1051 048e 00       		.sleb128 0
+ 1052 048f 0F       		.uleb128 0xf
+ 1053 0490 01       		.uleb128 0x1
+ 1054 0491 50       		.byte	0x50
+ 1055 0492 01       		.uleb128 0x1
+ 1056 0493 4E       		.byte	0x4e
+ 1057 0494 00       		.byte	0
+ 1058 0495 0D       		.uleb128 0xd
+ 1059 0496 34000000 		.4byte	.LVL35
+ 1060 049a 27050000 		.4byte	0x527
+ 1061 049e 0E       		.uleb128 0xe
+ 1062 049f 54000000 		.4byte	.LVL36
+ 1063 04a3 FD040000 		.4byte	0x4fd
+ 1064 04a7 C1040000 		.4byte	0x4c1
+ 1065 04ab 0F       		.uleb128 0xf
+ 1066 04ac 01       		.uleb128 0x1
+ 1067 04ad 53       		.byte	0x53
+ 1068 04ae 01       		.uleb128 0x1
+ 1069 04af 30       		.byte	0x30
+ 1070 04b0 0F       		.uleb128 0xf
+ 1071 04b1 01       		.uleb128 0x1
+ 1072 04b2 52       		.byte	0x52
+ 1073 04b3 01       		.uleb128 0x1
+ 1074 04b4 31       		.byte	0x31
+ 1075 04b5 0F       		.uleb128 0xf
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 22
+
+
+ 1076 04b6 01       		.uleb128 0x1
+ 1077 04b7 51       		.byte	0x51
+ 1078 04b8 02       		.uleb128 0x2
+ 1079 04b9 7D       		.byte	0x7d
+ 1080 04ba 00       		.sleb128 0
+ 1081 04bb 0F       		.uleb128 0xf
+ 1082 04bc 01       		.uleb128 0x1
+ 1083 04bd 50       		.byte	0x50
+ 1084 04be 01       		.uleb128 0x1
+ 1085 04bf 4E       		.byte	0x4e
+ 1086 04c0 00       		.byte	0
+ 1087 04c1 0D       		.uleb128 0xd
+ 1088 04c2 58000000 		.4byte	.LVL37
+ 1089 04c6 27050000 		.4byte	0x527
+ 1090 04ca 0D       		.uleb128 0xd
+ 1091 04cb 62000000 		.4byte	.LVL38
+ 1092 04cf 27050000 		.4byte	0x527
+ 1093 04d3 00       		.byte	0
+ 1094 04d4 15       		.uleb128 0x15
+ 1095 04d5 04       		.byte	0x4
+ 1096 04d6 FF000000 		.4byte	0xff
+ 1097 04da 17       		.uleb128 0x17
+ 1098 04db E2000000 		.4byte	.LASF39
+ 1099 04df 07       		.byte	0x7
+ 1100 04e0 2A06     		.2byte	0x62a
+ 1101 04e2 E6040000 		.4byte	0x4e6
+ 1102 04e6 18       		.uleb128 0x18
+ 1103 04e7 8C000000 		.4byte	0x8c
+ 1104 04eb 19       		.uleb128 0x19
+ 1105 04ec 49000000 		.4byte	.LASF40
+ 1106 04f0 06       		.byte	0x6
+ 1107 04f1 93       		.byte	0x93
+ 1108 04f2 1A       		.uleb128 0x1a
+ 1109 04f3 27000000 		.4byte	.LASF30
+ 1110 04f7 06       		.byte	0x6
+ 1111 04f8 A4       		.byte	0xa4
+ 1112 04f9 97000000 		.4byte	0x97
+ 1113 04fd 1B       		.uleb128 0x1b
+ 1114 04fe 9E000000 		.4byte	.LASF41
+ 1115 0502 06       		.byte	0x6
+ 1116 0503 A7       		.byte	0xa7
+ 1117 0504 97000000 		.4byte	0x97
+ 1118 0508 21050000 		.4byte	0x521
+ 1119 050c 1C       		.uleb128 0x1c
+ 1120 050d 97000000 		.4byte	0x97
+ 1121 0511 1C       		.uleb128 0x1c
+ 1122 0512 21050000 		.4byte	0x521
+ 1123 0516 1C       		.uleb128 0x1c
+ 1124 0517 97000000 		.4byte	0x97
+ 1125 051b 1C       		.uleb128 0x1c
+ 1126 051c 97000000 		.4byte	0x97
+ 1127 0520 00       		.byte	0
+ 1128 0521 15       		.uleb128 0x15
+ 1129 0522 04       		.byte	0x4
+ 1130 0523 97000000 		.4byte	0x97
+ 1131 0527 1A       		.uleb128 0x1a
+ 1132 0528 34020000 		.4byte	.LASF31
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 23
+
+
+ 1133 052c 06       		.byte	0x6
+ 1134 052d A3       		.byte	0xa3
+ 1135 052e 97000000 		.4byte	0x97
+ 1136 0532 1D       		.uleb128 0x1d
+ 1137 0533 7E000000 		.4byte	.LASF42
+ 1138 0537 06       		.byte	0x6
+ 1139 0538 A9       		.byte	0xa9
+ 1140 0539 97000000 		.4byte	0x97
+ 1141 053d 1C       		.uleb128 0x1c
+ 1142 053e 97000000 		.4byte	0x97
+ 1143 0542 1C       		.uleb128 0x1c
+ 1144 0543 21050000 		.4byte	0x521
+ 1145 0547 1C       		.uleb128 0x1c
+ 1146 0548 97000000 		.4byte	0x97
+ 1147 054c 1C       		.uleb128 0x1c
+ 1148 054d 97000000 		.4byte	0x97
+ 1149 0551 00       		.byte	0
+ 1150 0552 00       		.byte	0
+ 1151              		.section	.debug_abbrev,"",%progbits
+ 1152              	.Ldebug_abbrev0:
+ 1153 0000 01       		.uleb128 0x1
+ 1154 0001 11       		.uleb128 0x11
+ 1155 0002 01       		.byte	0x1
+ 1156 0003 25       		.uleb128 0x25
+ 1157 0004 0E       		.uleb128 0xe
+ 1158 0005 13       		.uleb128 0x13
+ 1159 0006 0B       		.uleb128 0xb
+ 1160 0007 03       		.uleb128 0x3
+ 1161 0008 0E       		.uleb128 0xe
+ 1162 0009 1B       		.uleb128 0x1b
+ 1163 000a 0E       		.uleb128 0xe
+ 1164 000b 55       		.uleb128 0x55
+ 1165 000c 17       		.uleb128 0x17
+ 1166 000d 11       		.uleb128 0x11
+ 1167 000e 01       		.uleb128 0x1
+ 1168 000f 10       		.uleb128 0x10
+ 1169 0010 17       		.uleb128 0x17
+ 1170 0011 00       		.byte	0
+ 1171 0012 00       		.byte	0
+ 1172 0013 02       		.uleb128 0x2
+ 1173 0014 24       		.uleb128 0x24
+ 1174 0015 00       		.byte	0
+ 1175 0016 0B       		.uleb128 0xb
+ 1176 0017 0B       		.uleb128 0xb
+ 1177 0018 3E       		.uleb128 0x3e
+ 1178 0019 0B       		.uleb128 0xb
+ 1179 001a 03       		.uleb128 0x3
+ 1180 001b 0E       		.uleb128 0xe
+ 1181 001c 00       		.byte	0
+ 1182 001d 00       		.byte	0
+ 1183 001e 03       		.uleb128 0x3
+ 1184 001f 16       		.uleb128 0x16
+ 1185 0020 00       		.byte	0
+ 1186 0021 03       		.uleb128 0x3
+ 1187 0022 0E       		.uleb128 0xe
+ 1188 0023 3A       		.uleb128 0x3a
+ 1189 0024 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 24
+
+
+ 1190 0025 3B       		.uleb128 0x3b
+ 1191 0026 0B       		.uleb128 0xb
+ 1192 0027 49       		.uleb128 0x49
+ 1193 0028 13       		.uleb128 0x13
+ 1194 0029 00       		.byte	0
+ 1195 002a 00       		.byte	0
+ 1196 002b 04       		.uleb128 0x4
+ 1197 002c 24       		.uleb128 0x24
+ 1198 002d 00       		.byte	0
+ 1199 002e 0B       		.uleb128 0xb
+ 1200 002f 0B       		.uleb128 0xb
+ 1201 0030 3E       		.uleb128 0x3e
+ 1202 0031 0B       		.uleb128 0xb
+ 1203 0032 03       		.uleb128 0x3
+ 1204 0033 08       		.uleb128 0x8
+ 1205 0034 00       		.byte	0
+ 1206 0035 00       		.byte	0
+ 1207 0036 05       		.uleb128 0x5
+ 1208 0037 13       		.uleb128 0x13
+ 1209 0038 01       		.byte	0x1
+ 1210 0039 03       		.uleb128 0x3
+ 1211 003a 0E       		.uleb128 0xe
+ 1212 003b 0B       		.uleb128 0xb
+ 1213 003c 0B       		.uleb128 0xb
+ 1214 003d 3A       		.uleb128 0x3a
+ 1215 003e 0B       		.uleb128 0xb
+ 1216 003f 3B       		.uleb128 0x3b
+ 1217 0040 0B       		.uleb128 0xb
+ 1218 0041 01       		.uleb128 0x1
+ 1219 0042 13       		.uleb128 0x13
+ 1220 0043 00       		.byte	0
+ 1221 0044 00       		.byte	0
+ 1222 0045 06       		.uleb128 0x6
+ 1223 0046 0D       		.uleb128 0xd
+ 1224 0047 00       		.byte	0
+ 1225 0048 03       		.uleb128 0x3
+ 1226 0049 08       		.uleb128 0x8
+ 1227 004a 3A       		.uleb128 0x3a
+ 1228 004b 0B       		.uleb128 0xb
+ 1229 004c 3B       		.uleb128 0x3b
+ 1230 004d 0B       		.uleb128 0xb
+ 1231 004e 49       		.uleb128 0x49
+ 1232 004f 13       		.uleb128 0x13
+ 1233 0050 38       		.uleb128 0x38
+ 1234 0051 0B       		.uleb128 0xb
+ 1235 0052 00       		.byte	0
+ 1236 0053 00       		.byte	0
+ 1237 0054 07       		.uleb128 0x7
+ 1238 0055 17       		.uleb128 0x17
+ 1239 0056 01       		.byte	0x1
+ 1240 0057 03       		.uleb128 0x3
+ 1241 0058 0E       		.uleb128 0xe
+ 1242 0059 0B       		.uleb128 0xb
+ 1243 005a 0B       		.uleb128 0xb
+ 1244 005b 3A       		.uleb128 0x3a
+ 1245 005c 0B       		.uleb128 0xb
+ 1246 005d 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 25
+
+
+ 1247 005e 0B       		.uleb128 0xb
+ 1248 005f 01       		.uleb128 0x1
+ 1249 0060 13       		.uleb128 0x13
+ 1250 0061 00       		.byte	0
+ 1251 0062 00       		.byte	0
+ 1252 0063 08       		.uleb128 0x8
+ 1253 0064 0D       		.uleb128 0xd
+ 1254 0065 00       		.byte	0
+ 1255 0066 03       		.uleb128 0x3
+ 1256 0067 0E       		.uleb128 0xe
+ 1257 0068 3A       		.uleb128 0x3a
+ 1258 0069 0B       		.uleb128 0xb
+ 1259 006a 3B       		.uleb128 0x3b
+ 1260 006b 0B       		.uleb128 0xb
+ 1261 006c 49       		.uleb128 0x49
+ 1262 006d 13       		.uleb128 0x13
+ 1263 006e 00       		.byte	0
+ 1264 006f 00       		.byte	0
+ 1265 0070 09       		.uleb128 0x9
+ 1266 0071 01       		.uleb128 0x1
+ 1267 0072 01       		.byte	0x1
+ 1268 0073 49       		.uleb128 0x49
+ 1269 0074 13       		.uleb128 0x13
+ 1270 0075 01       		.uleb128 0x1
+ 1271 0076 13       		.uleb128 0x13
+ 1272 0077 00       		.byte	0
+ 1273 0078 00       		.byte	0
+ 1274 0079 0A       		.uleb128 0xa
+ 1275 007a 21       		.uleb128 0x21
+ 1276 007b 00       		.byte	0
+ 1277 007c 49       		.uleb128 0x49
+ 1278 007d 13       		.uleb128 0x13
+ 1279 007e 2F       		.uleb128 0x2f
+ 1280 007f 0B       		.uleb128 0xb
+ 1281 0080 00       		.byte	0
+ 1282 0081 00       		.byte	0
+ 1283 0082 0B       		.uleb128 0xb
+ 1284 0083 2E       		.uleb128 0x2e
+ 1285 0084 01       		.byte	0x1
+ 1286 0085 3F       		.uleb128 0x3f
+ 1287 0086 19       		.uleb128 0x19
+ 1288 0087 03       		.uleb128 0x3
+ 1289 0088 0E       		.uleb128 0xe
+ 1290 0089 3A       		.uleb128 0x3a
+ 1291 008a 0B       		.uleb128 0xb
+ 1292 008b 3B       		.uleb128 0x3b
+ 1293 008c 0B       		.uleb128 0xb
+ 1294 008d 11       		.uleb128 0x11
+ 1295 008e 01       		.uleb128 0x1
+ 1296 008f 12       		.uleb128 0x12
+ 1297 0090 06       		.uleb128 0x6
+ 1298 0091 40       		.uleb128 0x40
+ 1299 0092 18       		.uleb128 0x18
+ 1300 0093 9742     		.uleb128 0x2117
+ 1301 0095 19       		.uleb128 0x19
+ 1302 0096 01       		.uleb128 0x1
+ 1303 0097 13       		.uleb128 0x13
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 26
+
+
+ 1304 0098 00       		.byte	0
+ 1305 0099 00       		.byte	0
+ 1306 009a 0C       		.uleb128 0xc
+ 1307 009b 34       		.uleb128 0x34
+ 1308 009c 00       		.byte	0
+ 1309 009d 03       		.uleb128 0x3
+ 1310 009e 0E       		.uleb128 0xe
+ 1311 009f 3A       		.uleb128 0x3a
+ 1312 00a0 0B       		.uleb128 0xb
+ 1313 00a1 3B       		.uleb128 0x3b
+ 1314 00a2 0B       		.uleb128 0xb
+ 1315 00a3 49       		.uleb128 0x49
+ 1316 00a4 13       		.uleb128 0x13
+ 1317 00a5 02       		.uleb128 0x2
+ 1318 00a6 18       		.uleb128 0x18
+ 1319 00a7 00       		.byte	0
+ 1320 00a8 00       		.byte	0
+ 1321 00a9 0D       		.uleb128 0xd
+ 1322 00aa 898201   		.uleb128 0x4109
+ 1323 00ad 00       		.byte	0
+ 1324 00ae 11       		.uleb128 0x11
+ 1325 00af 01       		.uleb128 0x1
+ 1326 00b0 31       		.uleb128 0x31
+ 1327 00b1 13       		.uleb128 0x13
+ 1328 00b2 00       		.byte	0
+ 1329 00b3 00       		.byte	0
+ 1330 00b4 0E       		.uleb128 0xe
+ 1331 00b5 898201   		.uleb128 0x4109
+ 1332 00b8 01       		.byte	0x1
+ 1333 00b9 11       		.uleb128 0x11
+ 1334 00ba 01       		.uleb128 0x1
+ 1335 00bb 31       		.uleb128 0x31
+ 1336 00bc 13       		.uleb128 0x13
+ 1337 00bd 01       		.uleb128 0x1
+ 1338 00be 13       		.uleb128 0x13
+ 1339 00bf 00       		.byte	0
+ 1340 00c0 00       		.byte	0
+ 1341 00c1 0F       		.uleb128 0xf
+ 1342 00c2 8A8201   		.uleb128 0x410a
+ 1343 00c5 00       		.byte	0
+ 1344 00c6 02       		.uleb128 0x2
+ 1345 00c7 18       		.uleb128 0x18
+ 1346 00c8 9142     		.uleb128 0x2111
+ 1347 00ca 18       		.uleb128 0x18
+ 1348 00cb 00       		.byte	0
+ 1349 00cc 00       		.byte	0
+ 1350 00cd 10       		.uleb128 0x10
+ 1351 00ce 2E       		.uleb128 0x2e
+ 1352 00cf 01       		.byte	0x1
+ 1353 00d0 3F       		.uleb128 0x3f
+ 1354 00d1 19       		.uleb128 0x19
+ 1355 00d2 03       		.uleb128 0x3
+ 1356 00d3 0E       		.uleb128 0xe
+ 1357 00d4 3A       		.uleb128 0x3a
+ 1358 00d5 0B       		.uleb128 0xb
+ 1359 00d6 3B       		.uleb128 0x3b
+ 1360 00d7 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 27
+
+
+ 1361 00d8 27       		.uleb128 0x27
+ 1362 00d9 19       		.uleb128 0x19
+ 1363 00da 49       		.uleb128 0x49
+ 1364 00db 13       		.uleb128 0x13
+ 1365 00dc 11       		.uleb128 0x11
+ 1366 00dd 01       		.uleb128 0x1
+ 1367 00de 12       		.uleb128 0x12
+ 1368 00df 06       		.uleb128 0x6
+ 1369 00e0 40       		.uleb128 0x40
+ 1370 00e1 18       		.uleb128 0x18
+ 1371 00e2 9742     		.uleb128 0x2117
+ 1372 00e4 19       		.uleb128 0x19
+ 1373 00e5 01       		.uleb128 0x1
+ 1374 00e6 13       		.uleb128 0x13
+ 1375 00e7 00       		.byte	0
+ 1376 00e8 00       		.byte	0
+ 1377 00e9 11       		.uleb128 0x11
+ 1378 00ea 05       		.uleb128 0x5
+ 1379 00eb 00       		.byte	0
+ 1380 00ec 03       		.uleb128 0x3
+ 1381 00ed 08       		.uleb128 0x8
+ 1382 00ee 3A       		.uleb128 0x3a
+ 1383 00ef 0B       		.uleb128 0xb
+ 1384 00f0 3B       		.uleb128 0x3b
+ 1385 00f1 0B       		.uleb128 0xb
+ 1386 00f2 49       		.uleb128 0x49
+ 1387 00f3 13       		.uleb128 0x13
+ 1388 00f4 02       		.uleb128 0x2
+ 1389 00f5 17       		.uleb128 0x17
+ 1390 00f6 00       		.byte	0
+ 1391 00f7 00       		.byte	0
+ 1392 00f8 12       		.uleb128 0x12
+ 1393 00f9 05       		.uleb128 0x5
+ 1394 00fa 00       		.byte	0
+ 1395 00fb 03       		.uleb128 0x3
+ 1396 00fc 0E       		.uleb128 0xe
+ 1397 00fd 3A       		.uleb128 0x3a
+ 1398 00fe 0B       		.uleb128 0xb
+ 1399 00ff 3B       		.uleb128 0x3b
+ 1400 0100 0B       		.uleb128 0xb
+ 1401 0101 49       		.uleb128 0x49
+ 1402 0102 13       		.uleb128 0x13
+ 1403 0103 02       		.uleb128 0x2
+ 1404 0104 17       		.uleb128 0x17
+ 1405 0105 00       		.byte	0
+ 1406 0106 00       		.byte	0
+ 1407 0107 13       		.uleb128 0x13
+ 1408 0108 2E       		.uleb128 0x2e
+ 1409 0109 01       		.byte	0x1
+ 1410 010a 3F       		.uleb128 0x3f
+ 1411 010b 19       		.uleb128 0x19
+ 1412 010c 03       		.uleb128 0x3
+ 1413 010d 0E       		.uleb128 0xe
+ 1414 010e 3A       		.uleb128 0x3a
+ 1415 010f 0B       		.uleb128 0xb
+ 1416 0110 3B       		.uleb128 0x3b
+ 1417 0111 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 28
+
+
+ 1418 0112 27       		.uleb128 0x27
+ 1419 0113 19       		.uleb128 0x19
+ 1420 0114 11       		.uleb128 0x11
+ 1421 0115 01       		.uleb128 0x1
+ 1422 0116 12       		.uleb128 0x12
+ 1423 0117 06       		.uleb128 0x6
+ 1424 0118 40       		.uleb128 0x40
+ 1425 0119 18       		.uleb128 0x18
+ 1426 011a 9742     		.uleb128 0x2117
+ 1427 011c 19       		.uleb128 0x19
+ 1428 011d 01       		.uleb128 0x1
+ 1429 011e 13       		.uleb128 0x13
+ 1430 011f 00       		.byte	0
+ 1431 0120 00       		.byte	0
+ 1432 0121 14       		.uleb128 0x14
+ 1433 0122 34       		.uleb128 0x34
+ 1434 0123 00       		.byte	0
+ 1435 0124 03       		.uleb128 0x3
+ 1436 0125 0E       		.uleb128 0xe
+ 1437 0126 3A       		.uleb128 0x3a
+ 1438 0127 0B       		.uleb128 0xb
+ 1439 0128 3B       		.uleb128 0x3b
+ 1440 0129 0B       		.uleb128 0xb
+ 1441 012a 49       		.uleb128 0x49
+ 1442 012b 13       		.uleb128 0x13
+ 1443 012c 00       		.byte	0
+ 1444 012d 00       		.byte	0
+ 1445 012e 15       		.uleb128 0x15
+ 1446 012f 0F       		.uleb128 0xf
+ 1447 0130 00       		.byte	0
+ 1448 0131 0B       		.uleb128 0xb
+ 1449 0132 0B       		.uleb128 0xb
+ 1450 0133 49       		.uleb128 0x49
+ 1451 0134 13       		.uleb128 0x13
+ 1452 0135 00       		.byte	0
+ 1453 0136 00       		.byte	0
+ 1454 0137 16       		.uleb128 0x16
+ 1455 0138 2E       		.uleb128 0x2e
+ 1456 0139 00       		.byte	0
+ 1457 013a 3F       		.uleb128 0x3f
+ 1458 013b 19       		.uleb128 0x19
+ 1459 013c 03       		.uleb128 0x3
+ 1460 013d 0E       		.uleb128 0xe
+ 1461 013e 3A       		.uleb128 0x3a
+ 1462 013f 0B       		.uleb128 0xb
+ 1463 0140 3B       		.uleb128 0x3b
+ 1464 0141 0B       		.uleb128 0xb
+ 1465 0142 49       		.uleb128 0x49
+ 1466 0143 13       		.uleb128 0x13
+ 1467 0144 11       		.uleb128 0x11
+ 1468 0145 01       		.uleb128 0x1
+ 1469 0146 12       		.uleb128 0x12
+ 1470 0147 06       		.uleb128 0x6
+ 1471 0148 40       		.uleb128 0x40
+ 1472 0149 18       		.uleb128 0x18
+ 1473 014a 9742     		.uleb128 0x2117
+ 1474 014c 19       		.uleb128 0x19
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 29
+
+
+ 1475 014d 00       		.byte	0
+ 1476 014e 00       		.byte	0
+ 1477 014f 17       		.uleb128 0x17
+ 1478 0150 34       		.uleb128 0x34
+ 1479 0151 00       		.byte	0
+ 1480 0152 03       		.uleb128 0x3
+ 1481 0153 0E       		.uleb128 0xe
+ 1482 0154 3A       		.uleb128 0x3a
+ 1483 0155 0B       		.uleb128 0xb
+ 1484 0156 3B       		.uleb128 0x3b
+ 1485 0157 05       		.uleb128 0x5
+ 1486 0158 49       		.uleb128 0x49
+ 1487 0159 13       		.uleb128 0x13
+ 1488 015a 3F       		.uleb128 0x3f
+ 1489 015b 19       		.uleb128 0x19
+ 1490 015c 3C       		.uleb128 0x3c
+ 1491 015d 19       		.uleb128 0x19
+ 1492 015e 00       		.byte	0
+ 1493 015f 00       		.byte	0
+ 1494 0160 18       		.uleb128 0x18
+ 1495 0161 35       		.uleb128 0x35
+ 1496 0162 00       		.byte	0
+ 1497 0163 49       		.uleb128 0x49
+ 1498 0164 13       		.uleb128 0x13
+ 1499 0165 00       		.byte	0
+ 1500 0166 00       		.byte	0
+ 1501 0167 19       		.uleb128 0x19
+ 1502 0168 2E       		.uleb128 0x2e
+ 1503 0169 00       		.byte	0
+ 1504 016a 3F       		.uleb128 0x3f
+ 1505 016b 19       		.uleb128 0x19
+ 1506 016c 03       		.uleb128 0x3
+ 1507 016d 0E       		.uleb128 0xe
+ 1508 016e 3A       		.uleb128 0x3a
+ 1509 016f 0B       		.uleb128 0xb
+ 1510 0170 3B       		.uleb128 0x3b
+ 1511 0171 0B       		.uleb128 0xb
+ 1512 0172 27       		.uleb128 0x27
+ 1513 0173 19       		.uleb128 0x19
+ 1514 0174 3C       		.uleb128 0x3c
+ 1515 0175 19       		.uleb128 0x19
+ 1516 0176 00       		.byte	0
+ 1517 0177 00       		.byte	0
+ 1518 0178 1A       		.uleb128 0x1a
+ 1519 0179 2E       		.uleb128 0x2e
+ 1520 017a 00       		.byte	0
+ 1521 017b 3F       		.uleb128 0x3f
+ 1522 017c 19       		.uleb128 0x19
+ 1523 017d 03       		.uleb128 0x3
+ 1524 017e 0E       		.uleb128 0xe
+ 1525 017f 3A       		.uleb128 0x3a
+ 1526 0180 0B       		.uleb128 0xb
+ 1527 0181 3B       		.uleb128 0x3b
+ 1528 0182 0B       		.uleb128 0xb
+ 1529 0183 27       		.uleb128 0x27
+ 1530 0184 19       		.uleb128 0x19
+ 1531 0185 49       		.uleb128 0x49
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 30
+
+
+ 1532 0186 13       		.uleb128 0x13
+ 1533 0187 3C       		.uleb128 0x3c
+ 1534 0188 19       		.uleb128 0x19
+ 1535 0189 00       		.byte	0
+ 1536 018a 00       		.byte	0
+ 1537 018b 1B       		.uleb128 0x1b
+ 1538 018c 2E       		.uleb128 0x2e
+ 1539 018d 01       		.byte	0x1
+ 1540 018e 3F       		.uleb128 0x3f
+ 1541 018f 19       		.uleb128 0x19
+ 1542 0190 03       		.uleb128 0x3
+ 1543 0191 0E       		.uleb128 0xe
+ 1544 0192 3A       		.uleb128 0x3a
+ 1545 0193 0B       		.uleb128 0xb
+ 1546 0194 3B       		.uleb128 0x3b
+ 1547 0195 0B       		.uleb128 0xb
+ 1548 0196 27       		.uleb128 0x27
+ 1549 0197 19       		.uleb128 0x19
+ 1550 0198 49       		.uleb128 0x49
+ 1551 0199 13       		.uleb128 0x13
+ 1552 019a 3C       		.uleb128 0x3c
+ 1553 019b 19       		.uleb128 0x19
+ 1554 019c 01       		.uleb128 0x1
+ 1555 019d 13       		.uleb128 0x13
+ 1556 019e 00       		.byte	0
+ 1557 019f 00       		.byte	0
+ 1558 01a0 1C       		.uleb128 0x1c
+ 1559 01a1 05       		.uleb128 0x5
+ 1560 01a2 00       		.byte	0
+ 1561 01a3 49       		.uleb128 0x49
+ 1562 01a4 13       		.uleb128 0x13
+ 1563 01a5 00       		.byte	0
+ 1564 01a6 00       		.byte	0
+ 1565 01a7 1D       		.uleb128 0x1d
+ 1566 01a8 2E       		.uleb128 0x2e
+ 1567 01a9 01       		.byte	0x1
+ 1568 01aa 3F       		.uleb128 0x3f
+ 1569 01ab 19       		.uleb128 0x19
+ 1570 01ac 03       		.uleb128 0x3
+ 1571 01ad 0E       		.uleb128 0xe
+ 1572 01ae 3A       		.uleb128 0x3a
+ 1573 01af 0B       		.uleb128 0xb
+ 1574 01b0 3B       		.uleb128 0x3b
+ 1575 01b1 0B       		.uleb128 0xb
+ 1576 01b2 27       		.uleb128 0x27
+ 1577 01b3 19       		.uleb128 0x19
+ 1578 01b4 49       		.uleb128 0x49
+ 1579 01b5 13       		.uleb128 0x13
+ 1580 01b6 3C       		.uleb128 0x3c
+ 1581 01b7 19       		.uleb128 0x19
+ 1582 01b8 00       		.byte	0
+ 1583 01b9 00       		.byte	0
+ 1584 01ba 00       		.byte	0
+ 1585              		.section	.debug_loc,"",%progbits
+ 1586              	.Ldebug_loc0:
+ 1587              	.LLST0:
+ 1588 0000 00000000 		.4byte	.LVL7
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 31
+
+
+ 1589 0004 0C000000 		.4byte	.LVL8
+ 1590 0008 0100     		.2byte	0x1
+ 1591 000a 50       		.byte	0x50
+ 1592 000b 0C000000 		.4byte	.LVL8
+ 1593 000f 13000000 		.4byte	.LVL9-1
+ 1594 0013 0200     		.2byte	0x2
+ 1595 0015 71       		.byte	0x71
+ 1596 0016 00       		.sleb128 0
+ 1597 0017 13000000 		.4byte	.LVL9-1
+ 1598 001b 3E000000 		.4byte	.LFE64
+ 1599 001f 0400     		.2byte	0x4
+ 1600 0021 F3       		.byte	0xf3
+ 1601 0022 01       		.uleb128 0x1
+ 1602 0023 50       		.byte	0x50
+ 1603 0024 9F       		.byte	0x9f
+ 1604 0025 00000000 		.4byte	0
+ 1605 0029 00000000 		.4byte	0
+ 1606              	.LLST1:
+ 1607 002d 00000000 		.4byte	.LVL14
+ 1608 0031 0E000000 		.4byte	.LVL15
+ 1609 0035 0100     		.2byte	0x1
+ 1610 0037 50       		.byte	0x50
+ 1611 0038 0E000000 		.4byte	.LVL15
+ 1612 003c 10000000 		.4byte	.LVL16
+ 1613 0040 0200     		.2byte	0x2
+ 1614 0042 91       		.byte	0x91
+ 1615 0043 74       		.sleb128 -12
+ 1616 0044 10000000 		.4byte	.LVL16
+ 1617 0048 17000000 		.4byte	.LVL17-1
+ 1618 004c 0200     		.2byte	0x2
+ 1619 004e 71       		.byte	0x71
+ 1620 004f 00       		.sleb128 0
+ 1621 0050 17000000 		.4byte	.LVL17-1
+ 1622 0054 2A000000 		.4byte	.LFE65
+ 1623 0058 0400     		.2byte	0x4
+ 1624 005a F3       		.byte	0xf3
+ 1625 005b 01       		.uleb128 0x1
+ 1626 005c 50       		.byte	0x50
+ 1627 005d 9F       		.byte	0x9f
+ 1628 005e 00000000 		.4byte	0
+ 1629 0062 00000000 		.4byte	0
+ 1630              	.LLST2:
+ 1631 0066 00000000 		.4byte	.LVL14
+ 1632 006a 10000000 		.4byte	.LVL16
+ 1633 006e 0100     		.2byte	0x1
+ 1634 0070 51       		.byte	0x51
+ 1635 0071 10000000 		.4byte	.LVL16
+ 1636 0075 17000000 		.4byte	.LVL17-1
+ 1637 0079 0200     		.2byte	0x2
+ 1638 007b 91       		.byte	0x91
+ 1639 007c 75       		.sleb128 -11
+ 1640 007d 17000000 		.4byte	.LVL17-1
+ 1641 0081 2A000000 		.4byte	.LFE65
+ 1642 0085 0400     		.2byte	0x4
+ 1643 0087 F3       		.byte	0xf3
+ 1644 0088 01       		.uleb128 0x1
+ 1645 0089 51       		.byte	0x51
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 32
+
+
+ 1646 008a 9F       		.byte	0x9f
+ 1647 008b 00000000 		.4byte	0
+ 1648 008f 00000000 		.4byte	0
+ 1649              	.LLST3:
+ 1650 0093 00000000 		.4byte	.LVL19
+ 1651 0097 0E000000 		.4byte	.LVL21
+ 1652 009b 0100     		.2byte	0x1
+ 1653 009d 50       		.byte	0x50
+ 1654 009e 0E000000 		.4byte	.LVL21
+ 1655 00a2 38000000 		.4byte	.LVL27
+ 1656 00a6 0400     		.2byte	0x4
+ 1657 00a8 F3       		.byte	0xf3
+ 1658 00a9 01       		.uleb128 0x1
+ 1659 00aa 50       		.byte	0x50
+ 1660 00ab 9F       		.byte	0x9f
+ 1661 00ac 38000000 		.4byte	.LVL27
+ 1662 00b0 5C000000 		.4byte	.LFE66
+ 1663 00b4 0600     		.2byte	0x6
+ 1664 00b6 F2       		.byte	0xf2
+ 1665 00b7 3B030000 		.4byte	.Ldebug_info0+827
+ 1666 00bb 00       		.sleb128 0
+ 1667 00bc 00000000 		.4byte	0
+ 1668 00c0 00000000 		.4byte	0
+ 1669              	.LLST4:
+ 1670 00c4 00000000 		.4byte	.LVL19
+ 1671 00c8 06000000 		.4byte	.LVL20
+ 1672 00cc 0100     		.2byte	0x1
+ 1673 00ce 51       		.byte	0x51
+ 1674 00cf 06000000 		.4byte	.LVL20
+ 1675 00d3 38000000 		.4byte	.LVL27
+ 1676 00d7 0400     		.2byte	0x4
+ 1677 00d9 F3       		.byte	0xf3
+ 1678 00da 01       		.uleb128 0x1
+ 1679 00db 51       		.byte	0x51
+ 1680 00dc 9F       		.byte	0x9f
+ 1681 00dd 38000000 		.4byte	.LVL27
+ 1682 00e1 5C000000 		.4byte	.LFE66
+ 1683 00e5 0600     		.2byte	0x6
+ 1684 00e7 F2       		.byte	0xf2
+ 1685 00e8 3B030000 		.4byte	.Ldebug_info0+827
+ 1686 00ec 02       		.sleb128 2
+ 1687 00ed 00000000 		.4byte	0
+ 1688 00f1 00000000 		.4byte	0
+ 1689              	.LLST5:
+ 1690 00f5 00000000 		.4byte	.LVL19
+ 1691 00f9 12000000 		.4byte	.LVL22
+ 1692 00fd 0100     		.2byte	0x1
+ 1693 00ff 52       		.byte	0x52
+ 1694 0100 12000000 		.4byte	.LVL22
+ 1695 0104 38000000 		.4byte	.LVL27
+ 1696 0108 0400     		.2byte	0x4
+ 1697 010a F3       		.byte	0xf3
+ 1698 010b 01       		.uleb128 0x1
+ 1699 010c 52       		.byte	0x52
+ 1700 010d 9F       		.byte	0x9f
+ 1701 010e 38000000 		.4byte	.LVL27
+ 1702 0112 5C000000 		.4byte	.LFE66
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 33
+
+
+ 1703 0116 0600     		.2byte	0x6
+ 1704 0118 F2       		.byte	0xf2
+ 1705 0119 3B030000 		.4byte	.Ldebug_info0+827
+ 1706 011d 04       		.sleb128 4
+ 1707 011e 00000000 		.4byte	0
+ 1708 0122 00000000 		.4byte	0
+ 1709              	.LLST6:
+ 1710 0126 00000000 		.4byte	.LVL30
+ 1711 012a 10000000 		.4byte	.LVL31
+ 1712 012e 0100     		.2byte	0x1
+ 1713 0130 50       		.byte	0x50
+ 1714 0131 10000000 		.4byte	.LVL31
+ 1715 0135 66000000 		.4byte	.LFE70
+ 1716 0139 0100     		.2byte	0x1
+ 1717 013b 54       		.byte	0x54
+ 1718 013c 00000000 		.4byte	0
+ 1719 0140 00000000 		.4byte	0
+ 1720              		.section	.debug_aranges,"",%progbits
+ 1721 0000 54000000 		.4byte	0x54
+ 1722 0004 0200     		.2byte	0x2
+ 1723 0006 00000000 		.4byte	.Ldebug_info0
+ 1724 000a 04       		.byte	0x4
+ 1725 000b 00       		.byte	0
+ 1726 000c 0000     		.2byte	0
+ 1727 000e 0000     		.2byte	0
+ 1728 0010 00000000 		.4byte	.LFB63
+ 1729 0014 58000000 		.4byte	.LFE63-.LFB63
+ 1730 0018 00000000 		.4byte	.LFB64
+ 1731 001c 3E000000 		.4byte	.LFE64-.LFB64
+ 1732 0020 00000000 		.4byte	.LFB65
+ 1733 0024 2A000000 		.4byte	.LFE65-.LFB65
+ 1734 0028 00000000 		.4byte	.LFB66
+ 1735 002c 5C000000 		.4byte	.LFE66-.LFB66
+ 1736 0030 00000000 		.4byte	.LFB67
+ 1737 0034 04000000 		.4byte	.LFE67-.LFB67
+ 1738 0038 00000000 		.4byte	.LFB68
+ 1739 003c 04000000 		.4byte	.LFE68-.LFB68
+ 1740 0040 00000000 		.4byte	.LFB69
+ 1741 0044 04000000 		.4byte	.LFE69-.LFB69
+ 1742 0048 00000000 		.4byte	.LFB70
+ 1743 004c 66000000 		.4byte	.LFE70-.LFB70
+ 1744 0050 00000000 		.4byte	0
+ 1745 0054 00000000 		.4byte	0
+ 1746              		.section	.debug_ranges,"",%progbits
+ 1747              	.Ldebug_ranges0:
+ 1748 0000 00000000 		.4byte	.LFB63
+ 1749 0004 58000000 		.4byte	.LFE63
+ 1750 0008 00000000 		.4byte	.LFB64
+ 1751 000c 3E000000 		.4byte	.LFE64
+ 1752 0010 00000000 		.4byte	.LFB65
+ 1753 0014 2A000000 		.4byte	.LFE65
+ 1754 0018 00000000 		.4byte	.LFB66
+ 1755 001c 5C000000 		.4byte	.LFE66
+ 1756 0020 00000000 		.4byte	.LFB67
+ 1757 0024 04000000 		.4byte	.LFE67
+ 1758 0028 00000000 		.4byte	.LFB68
+ 1759 002c 04000000 		.4byte	.LFE68
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 34
+
+
+ 1760 0030 00000000 		.4byte	.LFB69
+ 1761 0034 04000000 		.4byte	.LFE69
+ 1762 0038 00000000 		.4byte	.LFB70
+ 1763 003c 66000000 		.4byte	.LFE70
+ 1764 0040 00000000 		.4byte	0
+ 1765 0044 00000000 		.4byte	0
+ 1766              		.section	.debug_line,"",%progbits
+ 1767              	.Ldebug_line0:
+ 1768 0000 43020000 		.section	.debug_str,"MS",%progbits,1
+ 1768      02006601 
+ 1768      00000201 
+ 1768      FB0E0D00 
+ 1768      01010101 
+ 1769              	.LASF38:
+ 1770 0000 67657448 		.ascii	"getHeading\000"
+ 1770      65616469 
+ 1770      6E6700
+ 1771              	.LASF22:
+ 1772 000b 76616C75 		.ascii	"value\000"
+ 1772      6500
+ 1773              	.LASF5:
+ 1774 0011 5F5F696E 		.ascii	"__int32_t\000"
+ 1774      7433325F 
+ 1774      7400
+ 1775              	.LASF26:
+ 1776 001b 67657448 		.ascii	"getHeadingX\000"
+ 1776      65616469 
+ 1776      6E675800 
+ 1777              	.LASF30:
+ 1778 0027 4932435F 		.ascii	"I2C_MasterClearStatus\000"
+ 1778      4D617374 
+ 1778      6572436C 
+ 1778      65617253 
+ 1778      74617475 
+ 1779              	.LASF28:
+ 1780 003d 67657448 		.ascii	"getHeadingZ\000"
+ 1780      65616469 
+ 1780      6E675A00 
+ 1781              	.LASF40:
+ 1782 0049 4932435F 		.ascii	"I2C_Start\000"
+ 1782      53746172 
+ 1782      7400
+ 1783              	.LASF12:
+ 1784 0053 696E7433 		.ascii	"int32_t\000"
+ 1784      325F7400 
+ 1785              	.LASF16:
+ 1786 005b 666C6F61 		.ascii	"float\000"
+ 1786      7400
+ 1787              	.LASF25:
+ 1788 0061 64617461 		.ascii	"data\000"
+ 1788      00
+ 1789              	.LASF0:
+ 1790 0066 7369676E 		.ascii	"signed char\000"
+ 1790      65642063 
+ 1790      68617200 
+ 1791              	.LASF27:
+ 1792 0072 67657448 		.ascii	"getHeadingY\000"
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 35
+
+
+ 1792      65616469 
+ 1792      6E675900 
+ 1793              	.LASF42:
+ 1794 007e 4932435F 		.ascii	"I2C_MasterReadBuf\000"
+ 1794      4D617374 
+ 1794      65725265 
+ 1794      61644275 
+ 1794      6600
+ 1795              	.LASF1:
+ 1796 0090 756E7369 		.ascii	"unsigned char\000"
+ 1796      676E6564 
+ 1796      20636861 
+ 1796      7200
+ 1797              	.LASF41:
+ 1798 009e 4932435F 		.ascii	"I2C_MasterWriteBuf\000"
+ 1798      4D617374 
+ 1798      65725772 
+ 1798      69746542 
+ 1798      756600
+ 1799              	.LASF15:
+ 1800 00b1 696E7431 		.ascii	"int16\000"
+ 1800      3600
+ 1801              	.LASF7:
+ 1802 00b7 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1802      20756E73 
+ 1802      69676E65 
+ 1802      6420696E 
+ 1802      7400
+ 1803              	.LASF3:
+ 1804 00c9 73686F72 		.ascii	"short unsigned int\000"
+ 1804      7420756E 
+ 1804      7369676E 
+ 1804      65642069 
+ 1804      6E7400
+ 1805              	.LASF20:
+ 1806 00dc 61727261 		.ascii	"array\000"
+ 1806      7900
+ 1807              	.LASF39:
+ 1808 00e2 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1808      52784275 
+ 1808      66666572 
+ 1808      00
+ 1809              	.LASF17:
+ 1810 00ef 646F7562 		.ascii	"double\000"
+ 1810      6C6500
+ 1811              	.LASF21:
+ 1812 00f6 44617461 		.ascii	"Data\000"
+ 1812      00
+ 1813              	.LASF14:
+ 1814 00fb 75696E74 		.ascii	"uint16\000"
+ 1814      313600
+ 1815              	.LASF4:
+ 1816 0102 5F5F696E 		.ascii	"__int16_t\000"
+ 1816      7431365F 
+ 1816      7400
+ 1817              	.LASF10:
+ 1818 010c 756E7369 		.ascii	"unsigned int\000"
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 36
+
+
+ 1818      676E6564 
+ 1818      20696E74 
+ 1818      00
+ 1819              	.LASF23:
+ 1820 0119 72656164 		.ascii	"read_HMC5883L_reg\000"
+ 1820      5F484D43 
+ 1820      35383833 
+ 1820      4C5F7265 
+ 1820      6700
+ 1821              	.LASF29:
+ 1822 012b 6765745F 		.ascii	"get_HMC5883L_Data\000"
+ 1822      484D4335 
+ 1822      3838334C 
+ 1822      5F446174 
+ 1822      6100
+ 1823              	.LASF9:
+ 1824 013d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1824      206C6F6E 
+ 1824      6720756E 
+ 1824      7369676E 
+ 1824      65642069 
+ 1825              	.LASF36:
+ 1826 0154 484D4335 		.ascii	"HMC5883L\000"
+ 1826      3838334C 
+ 1826      00
+ 1827              	.LASF11:
+ 1828 015d 696E7431 		.ascii	"int16_t\000"
+ 1828      365F7400 
+ 1829              	.LASF34:
+ 1830 0165 433A5C55 		.ascii	"C:\\Users\\Jorden\\Documents\\PSoC Creator\\Test\\T"
+ 1830      73657273 
+ 1830      5C4A6F72 
+ 1830      64656E5C 
+ 1830      446F6375 
+ 1831 0192 6573742E 		.ascii	"est.cydsn\000"
+ 1831      63796473 
+ 1831      6E00
+ 1832              	.LASF32:
+ 1833 019c 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 1833      4320342E 
+ 1833      382E3420 
+ 1833      32303134 
+ 1833      30353236 
+ 1834 01cf 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 1834      20726576 
+ 1834      6973696F 
+ 1834      6E203231 
+ 1834      31333538 
+ 1835 0202 67202D66 		.ascii	"g -ffunction-sections\000"
+ 1835      66756E63 
+ 1835      74696F6E 
+ 1835      2D736563 
+ 1835      74696F6E 
+ 1836              	.LASF19:
+ 1837 0218 73697A65 		.ascii	"sizetype\000"
+ 1837      74797065 
+ 1837      00
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccG5N1sK.s 			page 37
+
+
+ 1838              	.LASF8:
+ 1839 0221 6C6F6E67 		.ascii	"long long int\000"
+ 1839      206C6F6E 
+ 1839      6720696E 
+ 1839      7400
+ 1840              	.LASF18:
+ 1841 022f 63686172 		.ascii	"char\000"
+ 1841      00
+ 1842              	.LASF31:
+ 1843 0234 4932435F 		.ascii	"I2C_MasterStatus\000"
+ 1843      4D617374 
+ 1843      65725374 
+ 1843      61747573 
+ 1843      00
+ 1844              	.LASF33:
+ 1845 0245 2E5C484D 		.ascii	".\\HMC5883L.c\000"
+ 1845      43353838 
+ 1845      334C2E63 
+ 1845      00
+ 1846              	.LASF2:
+ 1847 0252 73686F72 		.ascii	"short int\000"
+ 1847      7420696E 
+ 1847      7400
+ 1848              	.LASF13:
+ 1849 025c 75696E74 		.ascii	"uint8\000"
+ 1849      3800
+ 1850              	.LASF24:
+ 1851 0262 77726974 		.ascii	"write_HMC5883L_reg\000"
+ 1851      655F484D 
+ 1851      43353838 
+ 1851      334C5F72 
+ 1851      656700
+ 1852              	.LASF6:
+ 1853 0275 6C6F6E67 		.ascii	"long int\000"
+ 1853      20696E74 
+ 1853      00
+ 1854              	.LASF37:
+ 1855 027e 484D4335 		.ascii	"HMC5883L_Config\000"
+ 1855      3838334C 
+ 1855      5F436F6E 
+ 1855      66696700 
+ 1856              	.LASF35:
+ 1857 028e 58595A5F 		.ascii	"XYZ_Cord\000"
+ 1857      436F7264 
+ 1857      00
+ 1858              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

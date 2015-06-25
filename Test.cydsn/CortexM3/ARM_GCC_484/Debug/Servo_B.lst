@@ -1,0 +1,2738 @@
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"Servo_B.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.Servo_B_Enable,"ax",%progbits
+  19              		.align	2
+  20              		.global	Servo_B_Enable
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	Servo_B_Enable, %function
+  24              	Servo_B_Enable:
+  25              	.LFB2:
+  26              		.file 1 ".\\Generated_Source\\PSoC5\\Servo_B.c"
+   1:.\Generated_Source\PSoC5/Servo_B.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/Servo_B.c **** * File Name: Servo_B.c
+   3:.\Generated_Source\PSoC5/Servo_B.c **** * Version 3.30
+   4:.\Generated_Source\PSoC5/Servo_B.c **** *
+   5:.\Generated_Source\PSoC5/Servo_B.c **** * Description:
+   6:.\Generated_Source\PSoC5/Servo_B.c **** *  The PWM User Module consist of an 8 or 16-bit counter with two 8 or 16-bit
+   7:.\Generated_Source\PSoC5/Servo_B.c **** *  comparitors. Each instance of this user module is capable of generating
+   8:.\Generated_Source\PSoC5/Servo_B.c **** *  two PWM outputs with the same period. The pulse width is selectable between
+   9:.\Generated_Source\PSoC5/Servo_B.c **** *  1 and 255/65535. The period is selectable between 2 and 255/65536 clocks.
+  10:.\Generated_Source\PSoC5/Servo_B.c **** *  The compare value output may be configured to be active when the present
+  11:.\Generated_Source\PSoC5/Servo_B.c **** *  counter is less than or less than/equal to the compare value.
+  12:.\Generated_Source\PSoC5/Servo_B.c **** *  A terminal count output is also provided. It generates a pulse one clock
+  13:.\Generated_Source\PSoC5/Servo_B.c **** *  width wide when the counter is equal to zero.
+  14:.\Generated_Source\PSoC5/Servo_B.c **** *
+  15:.\Generated_Source\PSoC5/Servo_B.c **** * Note:
+  16:.\Generated_Source\PSoC5/Servo_B.c **** *
+  17:.\Generated_Source\PSoC5/Servo_B.c **** *******************************************************************************
+  18:.\Generated_Source\PSoC5/Servo_B.c **** * Copyright 2008-2014, Cypress Semiconductor Corporation.  All rights reserved.
+  19:.\Generated_Source\PSoC5/Servo_B.c **** * You may use this file only in accordance with the license, terms, conditions,
+  20:.\Generated_Source\PSoC5/Servo_B.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  21:.\Generated_Source\PSoC5/Servo_B.c **** * the software package with which this file was provided.
+  22:.\Generated_Source\PSoC5/Servo_B.c **** ********************************************************************************/
+  23:.\Generated_Source\PSoC5/Servo_B.c **** 
+  24:.\Generated_Source\PSoC5/Servo_B.c **** #include "Servo_B.h"
+  25:.\Generated_Source\PSoC5/Servo_B.c **** 
+  26:.\Generated_Source\PSoC5/Servo_B.c **** /* Error message for removed <resource> through optimization */
+  27:.\Generated_Source\PSoC5/Servo_B.c **** #ifdef Servo_B_PWMUDB_genblk1_ctrlreg__REMOVED
+  28:.\Generated_Source\PSoC5/Servo_B.c ****     #error PWM_v3_30 detected with a constant 0 for the enable or \
+  29:.\Generated_Source\PSoC5/Servo_B.c ****          constant 1 for reset. This will prevent the component from operating.
+  30:.\Generated_Source\PSoC5/Servo_B.c **** #endif /* Servo_B_PWMUDB_genblk1_ctrlreg__REMOVED */
+  31:.\Generated_Source\PSoC5/Servo_B.c **** 
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 2
+
+
+  32:.\Generated_Source\PSoC5/Servo_B.c **** uint8 Servo_B_initVar = 0u;
+  33:.\Generated_Source\PSoC5/Servo_B.c **** 
+  34:.\Generated_Source\PSoC5/Servo_B.c **** 
+  35:.\Generated_Source\PSoC5/Servo_B.c **** /*******************************************************************************
+  36:.\Generated_Source\PSoC5/Servo_B.c **** * Function Name: Servo_B_Start
+  37:.\Generated_Source\PSoC5/Servo_B.c **** ********************************************************************************
+  38:.\Generated_Source\PSoC5/Servo_B.c **** *
+  39:.\Generated_Source\PSoC5/Servo_B.c **** * Summary:
+  40:.\Generated_Source\PSoC5/Servo_B.c **** *  The start function initializes the pwm with the default values, the
+  41:.\Generated_Source\PSoC5/Servo_B.c **** *  enables the counter to begin counting.  It does not enable interrupts,
+  42:.\Generated_Source\PSoC5/Servo_B.c **** *  the EnableInt command should be called if interrupt generation is required.
+  43:.\Generated_Source\PSoC5/Servo_B.c **** *
+  44:.\Generated_Source\PSoC5/Servo_B.c **** * Parameters:
+  45:.\Generated_Source\PSoC5/Servo_B.c **** *  None
+  46:.\Generated_Source\PSoC5/Servo_B.c **** *
+  47:.\Generated_Source\PSoC5/Servo_B.c **** * Return:
+  48:.\Generated_Source\PSoC5/Servo_B.c **** *  None
+  49:.\Generated_Source\PSoC5/Servo_B.c **** *
+  50:.\Generated_Source\PSoC5/Servo_B.c **** * Global variables:
+  51:.\Generated_Source\PSoC5/Servo_B.c **** *  Servo_B_initVar: Is modified when this function is called for the
+  52:.\Generated_Source\PSoC5/Servo_B.c **** *   first time. Is used to ensure that initialization happens only once.
+  53:.\Generated_Source\PSoC5/Servo_B.c **** *
+  54:.\Generated_Source\PSoC5/Servo_B.c **** *******************************************************************************/
+  55:.\Generated_Source\PSoC5/Servo_B.c **** void Servo_B_Start(void) 
+  56:.\Generated_Source\PSoC5/Servo_B.c **** {
+  57:.\Generated_Source\PSoC5/Servo_B.c ****     /* If not Initialized then initialize all required hardware and software */
+  58:.\Generated_Source\PSoC5/Servo_B.c ****     if(Servo_B_initVar == 0u)
+  59:.\Generated_Source\PSoC5/Servo_B.c ****     {
+  60:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_Init();
+  61:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_initVar = 1u;
+  62:.\Generated_Source\PSoC5/Servo_B.c ****     }
+  63:.\Generated_Source\PSoC5/Servo_B.c ****     Servo_B_Enable();
+  64:.\Generated_Source\PSoC5/Servo_B.c **** 
+  65:.\Generated_Source\PSoC5/Servo_B.c **** }
+  66:.\Generated_Source\PSoC5/Servo_B.c **** 
+  67:.\Generated_Source\PSoC5/Servo_B.c **** 
+  68:.\Generated_Source\PSoC5/Servo_B.c **** /*******************************************************************************
+  69:.\Generated_Source\PSoC5/Servo_B.c **** * Function Name: Servo_B_Init
+  70:.\Generated_Source\PSoC5/Servo_B.c **** ********************************************************************************
+  71:.\Generated_Source\PSoC5/Servo_B.c **** *
+  72:.\Generated_Source\PSoC5/Servo_B.c **** * Summary:
+  73:.\Generated_Source\PSoC5/Servo_B.c **** *  Initialize component's parameters to the parameters set by user in the
+  74:.\Generated_Source\PSoC5/Servo_B.c **** *  customizer of the component placed onto schematic. Usually called in
+  75:.\Generated_Source\PSoC5/Servo_B.c **** *  Servo_B_Start().
+  76:.\Generated_Source\PSoC5/Servo_B.c **** *
+  77:.\Generated_Source\PSoC5/Servo_B.c **** * Parameters:
+  78:.\Generated_Source\PSoC5/Servo_B.c **** *  None
+  79:.\Generated_Source\PSoC5/Servo_B.c **** *
+  80:.\Generated_Source\PSoC5/Servo_B.c **** * Return:
+  81:.\Generated_Source\PSoC5/Servo_B.c **** *  None
+  82:.\Generated_Source\PSoC5/Servo_B.c **** *
+  83:.\Generated_Source\PSoC5/Servo_B.c **** *******************************************************************************/
+  84:.\Generated_Source\PSoC5/Servo_B.c **** void Servo_B_Init(void) 
+  85:.\Generated_Source\PSoC5/Servo_B.c **** {
+  86:.\Generated_Source\PSoC5/Servo_B.c ****     #if (Servo_B_UsingFixedFunction || Servo_B_UseControl)
+  87:.\Generated_Source\PSoC5/Servo_B.c ****         uint8 ctrl;
+  88:.\Generated_Source\PSoC5/Servo_B.c ****     #endif /* (Servo_B_UsingFixedFunction || Servo_B_UseControl) */
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 3
+
+
+  89:.\Generated_Source\PSoC5/Servo_B.c **** 
+  90:.\Generated_Source\PSoC5/Servo_B.c ****     #if(!Servo_B_UsingFixedFunction)
+  91:.\Generated_Source\PSoC5/Servo_B.c ****         #if(Servo_B_UseStatus)
+  92:.\Generated_Source\PSoC5/Servo_B.c ****             /* Interrupt State Backup for Critical Region*/
+  93:.\Generated_Source\PSoC5/Servo_B.c ****             uint8 Servo_B_interruptState;
+  94:.\Generated_Source\PSoC5/Servo_B.c ****         #endif /* (Servo_B_UseStatus) */
+  95:.\Generated_Source\PSoC5/Servo_B.c ****     #endif /* (!Servo_B_UsingFixedFunction) */
+  96:.\Generated_Source\PSoC5/Servo_B.c **** 
+  97:.\Generated_Source\PSoC5/Servo_B.c ****     #if (Servo_B_UsingFixedFunction)
+  98:.\Generated_Source\PSoC5/Servo_B.c ****         /* You are allowed to write the compare value (FF only) */
+  99:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_CONTROL |= Servo_B_CFG0_MODE;
+ 100:.\Generated_Source\PSoC5/Servo_B.c ****         #if (Servo_B_DeadBand2_4)
+ 101:.\Generated_Source\PSoC5/Servo_B.c ****             Servo_B_CONTROL |= Servo_B_CFG0_DB;
+ 102:.\Generated_Source\PSoC5/Servo_B.c ****         #endif /* (Servo_B_DeadBand2_4) */
+ 103:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 104:.\Generated_Source\PSoC5/Servo_B.c ****         ctrl = Servo_B_CONTROL3 & ((uint8 )(~Servo_B_CTRL_CMPMODE1_MASK));
+ 105:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_CONTROL3 = ctrl | Servo_B_DEFAULT_COMPARE1_MODE;
+ 106:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 107:.\Generated_Source\PSoC5/Servo_B.c ****          /* Clear and Set SYNCTC and SYNCCMP bits of RT1 register */
+ 108:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_RT1 &= ((uint8)(~Servo_B_RT1_MASK));
+ 109:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_RT1 |= Servo_B_SYNC;
+ 110:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 111:.\Generated_Source\PSoC5/Servo_B.c ****         /*Enable DSI Sync all all inputs of the PWM*/
+ 112:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_RT1 &= ((uint8)(~Servo_B_SYNCDSI_MASK));
+ 113:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_RT1 |= Servo_B_SYNCDSI_EN;
+ 114:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 115:.\Generated_Source\PSoC5/Servo_B.c ****     #elif (Servo_B_UseControl)
+ 116:.\Generated_Source\PSoC5/Servo_B.c ****         /* Set the default compare mode defined in the parameter */
+ 117:.\Generated_Source\PSoC5/Servo_B.c ****         ctrl = Servo_B_CONTROL & ((uint8)(~Servo_B_CTRL_CMPMODE2_MASK)) &
+ 118:.\Generated_Source\PSoC5/Servo_B.c ****                 ((uint8)(~Servo_B_CTRL_CMPMODE1_MASK));
+ 119:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_CONTROL = ctrl | Servo_B_DEFAULT_COMPARE2_MODE |
+ 120:.\Generated_Source\PSoC5/Servo_B.c ****                                    Servo_B_DEFAULT_COMPARE1_MODE;
+ 121:.\Generated_Source\PSoC5/Servo_B.c ****     #endif /* (Servo_B_UsingFixedFunction) */
+ 122:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 123:.\Generated_Source\PSoC5/Servo_B.c ****     #if (!Servo_B_UsingFixedFunction)
+ 124:.\Generated_Source\PSoC5/Servo_B.c ****         #if (Servo_B_Resolution == 8)
+ 125:.\Generated_Source\PSoC5/Servo_B.c ****             /* Set FIFO 0 to 1 byte register for period*/
+ 126:.\Generated_Source\PSoC5/Servo_B.c ****             Servo_B_AUX_CONTROLDP0 |= (Servo_B_AUX_CTRL_FIFO0_CLR);
+ 127:.\Generated_Source\PSoC5/Servo_B.c ****         #else /* (Servo_B_Resolution == 16)*/
+ 128:.\Generated_Source\PSoC5/Servo_B.c ****             /* Set FIFO 0 to 1 byte register for period */
+ 129:.\Generated_Source\PSoC5/Servo_B.c ****             Servo_B_AUX_CONTROLDP0 |= (Servo_B_AUX_CTRL_FIFO0_CLR);
+ 130:.\Generated_Source\PSoC5/Servo_B.c ****             Servo_B_AUX_CONTROLDP1 |= (Servo_B_AUX_CTRL_FIFO0_CLR);
+ 131:.\Generated_Source\PSoC5/Servo_B.c ****         #endif /* (Servo_B_Resolution == 8) */
+ 132:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 133:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_WriteCounter(Servo_B_INIT_PERIOD_VALUE);
+ 134:.\Generated_Source\PSoC5/Servo_B.c ****     #endif /* (!Servo_B_UsingFixedFunction) */
+ 135:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 136:.\Generated_Source\PSoC5/Servo_B.c ****     Servo_B_WritePeriod(Servo_B_INIT_PERIOD_VALUE);
+ 137:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 138:.\Generated_Source\PSoC5/Servo_B.c ****         #if (Servo_B_UseOneCompareMode)
+ 139:.\Generated_Source\PSoC5/Servo_B.c ****             Servo_B_WriteCompare(Servo_B_INIT_COMPARE_VALUE1);
+ 140:.\Generated_Source\PSoC5/Servo_B.c ****         #else
+ 141:.\Generated_Source\PSoC5/Servo_B.c ****             Servo_B_WriteCompare1(Servo_B_INIT_COMPARE_VALUE1);
+ 142:.\Generated_Source\PSoC5/Servo_B.c ****             Servo_B_WriteCompare2(Servo_B_INIT_COMPARE_VALUE2);
+ 143:.\Generated_Source\PSoC5/Servo_B.c ****         #endif /* (Servo_B_UseOneCompareMode) */
+ 144:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 145:.\Generated_Source\PSoC5/Servo_B.c ****         #if (Servo_B_KillModeMinTime)
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 4
+
+
+ 146:.\Generated_Source\PSoC5/Servo_B.c ****             Servo_B_WriteKillTime(Servo_B_MinimumKillTime);
+ 147:.\Generated_Source\PSoC5/Servo_B.c ****         #endif /* (Servo_B_KillModeMinTime) */
+ 148:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 149:.\Generated_Source\PSoC5/Servo_B.c ****         #if (Servo_B_DeadBandUsed)
+ 150:.\Generated_Source\PSoC5/Servo_B.c ****             Servo_B_WriteDeadTime(Servo_B_INIT_DEAD_TIME);
+ 151:.\Generated_Source\PSoC5/Servo_B.c ****         #endif /* (Servo_B_DeadBandUsed) */
+ 152:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 153:.\Generated_Source\PSoC5/Servo_B.c ****     #if (Servo_B_UseStatus || Servo_B_UsingFixedFunction)
+ 154:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_SetInterruptMode(Servo_B_INIT_INTERRUPTS_MODE);
+ 155:.\Generated_Source\PSoC5/Servo_B.c ****     #endif /* (Servo_B_UseStatus || Servo_B_UsingFixedFunction) */
+ 156:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 157:.\Generated_Source\PSoC5/Servo_B.c ****     #if (Servo_B_UsingFixedFunction)
+ 158:.\Generated_Source\PSoC5/Servo_B.c ****         /* Globally Enable the Fixed Function Block chosen */
+ 159:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_GLOBAL_ENABLE |= Servo_B_BLOCK_EN_MASK;
+ 160:.\Generated_Source\PSoC5/Servo_B.c ****         /* Set the Interrupt source to come from the status register */
+ 161:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_CONTROL2 |= Servo_B_CTRL2_IRQ_SEL;
+ 162:.\Generated_Source\PSoC5/Servo_B.c ****     #else
+ 163:.\Generated_Source\PSoC5/Servo_B.c ****         #if(Servo_B_UseStatus)
+ 164:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 165:.\Generated_Source\PSoC5/Servo_B.c ****             /* CyEnterCriticalRegion and CyExitCriticalRegion are used to mark following region cri
+ 166:.\Generated_Source\PSoC5/Servo_B.c ****             /* Enter Critical Region*/
+ 167:.\Generated_Source\PSoC5/Servo_B.c ****             Servo_B_interruptState = CyEnterCriticalSection();
+ 168:.\Generated_Source\PSoC5/Servo_B.c ****             /* Use the interrupt output of the status register for IRQ output */
+ 169:.\Generated_Source\PSoC5/Servo_B.c ****             Servo_B_STATUS_AUX_CTRL |= Servo_B_STATUS_ACTL_INT_EN_MASK;
+ 170:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 171:.\Generated_Source\PSoC5/Servo_B.c ****              /* Exit Critical Region*/
+ 172:.\Generated_Source\PSoC5/Servo_B.c ****             CyExitCriticalSection(Servo_B_interruptState);
+ 173:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 174:.\Generated_Source\PSoC5/Servo_B.c ****             /* Clear the FIFO to enable the Servo_B_STATUS_FIFOFULL
+ 175:.\Generated_Source\PSoC5/Servo_B.c ****                    bit to be set on FIFO full. */
+ 176:.\Generated_Source\PSoC5/Servo_B.c ****             Servo_B_ClearFIFO();
+ 177:.\Generated_Source\PSoC5/Servo_B.c ****         #endif /* (Servo_B_UseStatus) */
+ 178:.\Generated_Source\PSoC5/Servo_B.c ****     #endif /* (Servo_B_UsingFixedFunction) */
+ 179:.\Generated_Source\PSoC5/Servo_B.c **** }
+ 180:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 181:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 182:.\Generated_Source\PSoC5/Servo_B.c **** /*******************************************************************************
+ 183:.\Generated_Source\PSoC5/Servo_B.c **** * Function Name: Servo_B_Enable
+ 184:.\Generated_Source\PSoC5/Servo_B.c **** ********************************************************************************
+ 185:.\Generated_Source\PSoC5/Servo_B.c **** *
+ 186:.\Generated_Source\PSoC5/Servo_B.c **** * Summary:
+ 187:.\Generated_Source\PSoC5/Servo_B.c **** *  Enables the PWM block operation
+ 188:.\Generated_Source\PSoC5/Servo_B.c **** *
+ 189:.\Generated_Source\PSoC5/Servo_B.c **** * Parameters:
+ 190:.\Generated_Source\PSoC5/Servo_B.c **** *  None
+ 191:.\Generated_Source\PSoC5/Servo_B.c **** *
+ 192:.\Generated_Source\PSoC5/Servo_B.c **** * Return:
+ 193:.\Generated_Source\PSoC5/Servo_B.c **** *  None
+ 194:.\Generated_Source\PSoC5/Servo_B.c **** *
+ 195:.\Generated_Source\PSoC5/Servo_B.c **** * Side Effects:
+ 196:.\Generated_Source\PSoC5/Servo_B.c **** *  This works only if software enable mode is chosen
+ 197:.\Generated_Source\PSoC5/Servo_B.c **** *
+ 198:.\Generated_Source\PSoC5/Servo_B.c **** *******************************************************************************/
+ 199:.\Generated_Source\PSoC5/Servo_B.c **** void Servo_B_Enable(void) 
+ 200:.\Generated_Source\PSoC5/Servo_B.c **** {
+  27              		.loc 1 200 0
+  28              		.cfi_startproc
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 5
+
+
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+ 201:.\Generated_Source\PSoC5/Servo_B.c ****     /* Globally Enable the Fixed Function Block chosen */
+ 202:.\Generated_Source\PSoC5/Servo_B.c ****     #if (Servo_B_UsingFixedFunction)
+ 203:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_GLOBAL_ENABLE |= Servo_B_BLOCK_EN_MASK;
+ 204:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_GLOBAL_STBY_ENABLE |= Servo_B_BLOCK_STBY_EN_MASK;
+ 205:.\Generated_Source\PSoC5/Servo_B.c ****     #endif /* (Servo_B_UsingFixedFunction) */
+ 206:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 207:.\Generated_Source\PSoC5/Servo_B.c ****     /* Enable the PWM from the control register  */
+ 208:.\Generated_Source\PSoC5/Servo_B.c ****     #if (Servo_B_UseControl || Servo_B_UsingFixedFunction)
+ 209:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_CONTROL |= Servo_B_CTRL_ENABLE;
+  32              		.loc 1 209 0
+  33 0000 024B     		ldr	r3, .L2
+  34 0002 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+  35 0004 42F08002 		orr	r2, r2, #128
+  36 0008 1A70     		strb	r2, [r3]
+  37 000a 7047     		bx	lr
+  38              	.L3:
+  39              		.align	2
+  40              	.L2:
+  41 000c 74640040 		.word	1073767540
+  42              		.cfi_endproc
+  43              	.LFE2:
+  44              		.size	Servo_B_Enable, .-Servo_B_Enable
+  45              		.section	.text.Servo_B_Stop,"ax",%progbits
+  46              		.align	2
+  47              		.global	Servo_B_Stop
+  48              		.thumb
+  49              		.thumb_func
+  50              		.type	Servo_B_Stop, %function
+  51              	Servo_B_Stop:
+  52              	.LFB3:
+ 210:.\Generated_Source\PSoC5/Servo_B.c ****     #endif /* (Servo_B_UseControl || Servo_B_UsingFixedFunction) */
+ 211:.\Generated_Source\PSoC5/Servo_B.c **** }
+ 212:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 213:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 214:.\Generated_Source\PSoC5/Servo_B.c **** /*******************************************************************************
+ 215:.\Generated_Source\PSoC5/Servo_B.c **** * Function Name: Servo_B_Stop
+ 216:.\Generated_Source\PSoC5/Servo_B.c **** ********************************************************************************
+ 217:.\Generated_Source\PSoC5/Servo_B.c **** *
+ 218:.\Generated_Source\PSoC5/Servo_B.c **** * Summary:
+ 219:.\Generated_Source\PSoC5/Servo_B.c **** *  The stop function halts the PWM, but does not change any modes or disable
+ 220:.\Generated_Source\PSoC5/Servo_B.c **** *  interrupts.
+ 221:.\Generated_Source\PSoC5/Servo_B.c **** *
+ 222:.\Generated_Source\PSoC5/Servo_B.c **** * Parameters:
+ 223:.\Generated_Source\PSoC5/Servo_B.c **** *  None
+ 224:.\Generated_Source\PSoC5/Servo_B.c **** *
+ 225:.\Generated_Source\PSoC5/Servo_B.c **** * Return:
+ 226:.\Generated_Source\PSoC5/Servo_B.c **** *  None
+ 227:.\Generated_Source\PSoC5/Servo_B.c **** *
+ 228:.\Generated_Source\PSoC5/Servo_B.c **** * Side Effects:
+ 229:.\Generated_Source\PSoC5/Servo_B.c **** *  If the Enable mode is set to Hardware only then this function
+ 230:.\Generated_Source\PSoC5/Servo_B.c **** *  has no effect on the operation of the PWM
+ 231:.\Generated_Source\PSoC5/Servo_B.c **** *
+ 232:.\Generated_Source\PSoC5/Servo_B.c **** *******************************************************************************/
+ 233:.\Generated_Source\PSoC5/Servo_B.c **** void Servo_B_Stop(void) 
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 6
+
+
+ 234:.\Generated_Source\PSoC5/Servo_B.c **** {
+  53              		.loc 1 234 0
+  54              		.cfi_startproc
+  55              		@ args = 0, pretend = 0, frame = 0
+  56              		@ frame_needed = 0, uses_anonymous_args = 0
+  57              		@ link register save eliminated.
+ 235:.\Generated_Source\PSoC5/Servo_B.c ****     #if (Servo_B_UseControl || Servo_B_UsingFixedFunction)
+ 236:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_CONTROL &= ((uint8)(~Servo_B_CTRL_ENABLE));
+  58              		.loc 1 236 0
+  59 0000 024B     		ldr	r3, .L5
+  60 0002 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+  61 0004 02F07F02 		and	r2, r2, #127
+  62 0008 1A70     		strb	r2, [r3]
+  63 000a 7047     		bx	lr
+  64              	.L6:
+  65              		.align	2
+  66              	.L5:
+  67 000c 74640040 		.word	1073767540
+  68              		.cfi_endproc
+  69              	.LFE3:
+  70              		.size	Servo_B_Stop, .-Servo_B_Stop
+  71              		.section	.text.Servo_B_WriteCounter,"ax",%progbits
+  72              		.align	2
+  73              		.global	Servo_B_WriteCounter
+  74              		.thumb
+  75              		.thumb_func
+  76              		.type	Servo_B_WriteCounter, %function
+  77              	Servo_B_WriteCounter:
+  78              	.LFB4:
+ 237:.\Generated_Source\PSoC5/Servo_B.c ****     #endif /* (Servo_B_UseControl || Servo_B_UsingFixedFunction) */
+ 238:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 239:.\Generated_Source\PSoC5/Servo_B.c ****     /* Globally disable the Fixed Function Block chosen */
+ 240:.\Generated_Source\PSoC5/Servo_B.c ****     #if (Servo_B_UsingFixedFunction)
+ 241:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_GLOBAL_ENABLE &= ((uint8)(~Servo_B_BLOCK_EN_MASK));
+ 242:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_GLOBAL_STBY_ENABLE &= ((uint8)(~Servo_B_BLOCK_STBY_EN_MASK));
+ 243:.\Generated_Source\PSoC5/Servo_B.c ****     #endif /* (Servo_B_UsingFixedFunction) */
+ 244:.\Generated_Source\PSoC5/Servo_B.c **** }
+ 245:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 246:.\Generated_Source\PSoC5/Servo_B.c **** #if (Servo_B_UseOneCompareMode)
+ 247:.\Generated_Source\PSoC5/Servo_B.c ****     #if (Servo_B_CompareMode1SW)
+ 248:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 249:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 250:.\Generated_Source\PSoC5/Servo_B.c ****         /*******************************************************************************
+ 251:.\Generated_Source\PSoC5/Servo_B.c ****         * Function Name: Servo_B_SetCompareMode
+ 252:.\Generated_Source\PSoC5/Servo_B.c ****         ********************************************************************************
+ 253:.\Generated_Source\PSoC5/Servo_B.c ****         *
+ 254:.\Generated_Source\PSoC5/Servo_B.c ****         * Summary:
+ 255:.\Generated_Source\PSoC5/Servo_B.c ****         *  This function writes the Compare Mode for the pwm output when in Dither mode,
+ 256:.\Generated_Source\PSoC5/Servo_B.c ****         *  Center Align Mode or One Output Mode.
+ 257:.\Generated_Source\PSoC5/Servo_B.c ****         *
+ 258:.\Generated_Source\PSoC5/Servo_B.c ****         * Parameters:
+ 259:.\Generated_Source\PSoC5/Servo_B.c ****         *  comparemode:  The new compare mode for the PWM output. Use the compare types
+ 260:.\Generated_Source\PSoC5/Servo_B.c ****         *                defined in the H file as input arguments.
+ 261:.\Generated_Source\PSoC5/Servo_B.c ****         *
+ 262:.\Generated_Source\PSoC5/Servo_B.c ****         * Return:
+ 263:.\Generated_Source\PSoC5/Servo_B.c ****         *  None
+ 264:.\Generated_Source\PSoC5/Servo_B.c ****         *
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 7
+
+
+ 265:.\Generated_Source\PSoC5/Servo_B.c ****         *******************************************************************************/
+ 266:.\Generated_Source\PSoC5/Servo_B.c ****         void Servo_B_SetCompareMode(uint8 comparemode) 
+ 267:.\Generated_Source\PSoC5/Servo_B.c ****         {
+ 268:.\Generated_Source\PSoC5/Servo_B.c ****             #if(Servo_B_UsingFixedFunction)
+ 269:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 270:.\Generated_Source\PSoC5/Servo_B.c ****                 #if(0 != Servo_B_CTRL_CMPMODE1_SHIFT)
+ 271:.\Generated_Source\PSoC5/Servo_B.c ****                     uint8 comparemodemasked = ((uint8)((uint8)comparemode << Servo_B_CTRL_CMPMODE1_
+ 272:.\Generated_Source\PSoC5/Servo_B.c ****                 #else
+ 273:.\Generated_Source\PSoC5/Servo_B.c ****                     uint8 comparemodemasked = comparemode;
+ 274:.\Generated_Source\PSoC5/Servo_B.c ****                 #endif /* (0 != Servo_B_CTRL_CMPMODE1_SHIFT) */
+ 275:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 276:.\Generated_Source\PSoC5/Servo_B.c ****                 Servo_B_CONTROL3 &= ((uint8)(~Servo_B_CTRL_CMPMODE1_MASK)); /*Clear Existing Data *
+ 277:.\Generated_Source\PSoC5/Servo_B.c ****                 Servo_B_CONTROL3 |= comparemodemasked;
+ 278:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 279:.\Generated_Source\PSoC5/Servo_B.c ****             #elif (Servo_B_UseControl)
+ 280:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 281:.\Generated_Source\PSoC5/Servo_B.c ****                 #if(0 != Servo_B_CTRL_CMPMODE1_SHIFT)
+ 282:.\Generated_Source\PSoC5/Servo_B.c ****                     uint8 comparemode1masked = ((uint8)((uint8)comparemode << Servo_B_CTRL_CMPMODE1
+ 283:.\Generated_Source\PSoC5/Servo_B.c ****                                                 Servo_B_CTRL_CMPMODE1_MASK;
+ 284:.\Generated_Source\PSoC5/Servo_B.c ****                 #else
+ 285:.\Generated_Source\PSoC5/Servo_B.c ****                     uint8 comparemode1masked = comparemode & Servo_B_CTRL_CMPMODE1_MASK;
+ 286:.\Generated_Source\PSoC5/Servo_B.c ****                 #endif /* (0 != Servo_B_CTRL_CMPMODE1_SHIFT) */
+ 287:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 288:.\Generated_Source\PSoC5/Servo_B.c ****                 #if(0 != Servo_B_CTRL_CMPMODE2_SHIFT)
+ 289:.\Generated_Source\PSoC5/Servo_B.c ****                     uint8 comparemode2masked = ((uint8)((uint8)comparemode << Servo_B_CTRL_CMPMODE2
+ 290:.\Generated_Source\PSoC5/Servo_B.c ****                                                Servo_B_CTRL_CMPMODE2_MASK;
+ 291:.\Generated_Source\PSoC5/Servo_B.c ****                 #else
+ 292:.\Generated_Source\PSoC5/Servo_B.c ****                     uint8 comparemode2masked = comparemode & Servo_B_CTRL_CMPMODE2_MASK;
+ 293:.\Generated_Source\PSoC5/Servo_B.c ****                 #endif /* (0 != Servo_B_CTRL_CMPMODE2_SHIFT) */
+ 294:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 295:.\Generated_Source\PSoC5/Servo_B.c ****                 /*Clear existing mode */
+ 296:.\Generated_Source\PSoC5/Servo_B.c ****                 Servo_B_CONTROL &= ((uint8)(~(Servo_B_CTRL_CMPMODE1_MASK |
+ 297:.\Generated_Source\PSoC5/Servo_B.c ****                                             Servo_B_CTRL_CMPMODE2_MASK)));
+ 298:.\Generated_Source\PSoC5/Servo_B.c ****                 Servo_B_CONTROL |= (comparemode1masked | comparemode2masked);
+ 299:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 300:.\Generated_Source\PSoC5/Servo_B.c ****             #else
+ 301:.\Generated_Source\PSoC5/Servo_B.c ****                 uint8 temp = comparemode;
+ 302:.\Generated_Source\PSoC5/Servo_B.c ****             #endif /* (Servo_B_UsingFixedFunction) */
+ 303:.\Generated_Source\PSoC5/Servo_B.c ****         }
+ 304:.\Generated_Source\PSoC5/Servo_B.c ****     #endif /* Servo_B_CompareMode1SW */
+ 305:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 306:.\Generated_Source\PSoC5/Servo_B.c **** #else /* UseOneCompareMode */
+ 307:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 308:.\Generated_Source\PSoC5/Servo_B.c ****     #if (Servo_B_CompareMode1SW)
+ 309:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 310:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 311:.\Generated_Source\PSoC5/Servo_B.c ****         /*******************************************************************************
+ 312:.\Generated_Source\PSoC5/Servo_B.c ****         * Function Name: Servo_B_SetCompareMode1
+ 313:.\Generated_Source\PSoC5/Servo_B.c ****         ********************************************************************************
+ 314:.\Generated_Source\PSoC5/Servo_B.c ****         *
+ 315:.\Generated_Source\PSoC5/Servo_B.c ****         * Summary:
+ 316:.\Generated_Source\PSoC5/Servo_B.c ****         *  This function writes the Compare Mode for the pwm or pwm1 output
+ 317:.\Generated_Source\PSoC5/Servo_B.c ****         *
+ 318:.\Generated_Source\PSoC5/Servo_B.c ****         * Parameters:
+ 319:.\Generated_Source\PSoC5/Servo_B.c ****         *  comparemode:  The new compare mode for the PWM output. Use the compare types
+ 320:.\Generated_Source\PSoC5/Servo_B.c ****         *                defined in the H file as input arguments.
+ 321:.\Generated_Source\PSoC5/Servo_B.c ****         *
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 8
+
+
+ 322:.\Generated_Source\PSoC5/Servo_B.c ****         * Return:
+ 323:.\Generated_Source\PSoC5/Servo_B.c ****         *  None
+ 324:.\Generated_Source\PSoC5/Servo_B.c ****         *
+ 325:.\Generated_Source\PSoC5/Servo_B.c ****         *******************************************************************************/
+ 326:.\Generated_Source\PSoC5/Servo_B.c ****         void Servo_B_SetCompareMode1(uint8 comparemode) 
+ 327:.\Generated_Source\PSoC5/Servo_B.c ****         {
+ 328:.\Generated_Source\PSoC5/Servo_B.c ****             #if(0 != Servo_B_CTRL_CMPMODE1_SHIFT)
+ 329:.\Generated_Source\PSoC5/Servo_B.c ****                 uint8 comparemodemasked = ((uint8)((uint8)comparemode << Servo_B_CTRL_CMPMODE1_SHIF
+ 330:.\Generated_Source\PSoC5/Servo_B.c ****                                            Servo_B_CTRL_CMPMODE1_MASK;
+ 331:.\Generated_Source\PSoC5/Servo_B.c ****             #else
+ 332:.\Generated_Source\PSoC5/Servo_B.c ****                 uint8 comparemodemasked = comparemode & Servo_B_CTRL_CMPMODE1_MASK;
+ 333:.\Generated_Source\PSoC5/Servo_B.c ****             #endif /* (0 != Servo_B_CTRL_CMPMODE1_SHIFT) */
+ 334:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 335:.\Generated_Source\PSoC5/Servo_B.c ****             #if (Servo_B_UseControl)
+ 336:.\Generated_Source\PSoC5/Servo_B.c ****                 Servo_B_CONTROL &= ((uint8)(~Servo_B_CTRL_CMPMODE1_MASK)); /*Clear existing mode */
+ 337:.\Generated_Source\PSoC5/Servo_B.c ****                 Servo_B_CONTROL |= comparemodemasked;
+ 338:.\Generated_Source\PSoC5/Servo_B.c ****             #endif /* (Servo_B_UseControl) */
+ 339:.\Generated_Source\PSoC5/Servo_B.c ****         }
+ 340:.\Generated_Source\PSoC5/Servo_B.c ****     #endif /* Servo_B_CompareMode1SW */
+ 341:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 342:.\Generated_Source\PSoC5/Servo_B.c **** #if (Servo_B_CompareMode2SW)
+ 343:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 344:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 345:.\Generated_Source\PSoC5/Servo_B.c ****     /*******************************************************************************
+ 346:.\Generated_Source\PSoC5/Servo_B.c ****     * Function Name: Servo_B_SetCompareMode2
+ 347:.\Generated_Source\PSoC5/Servo_B.c ****     ********************************************************************************
+ 348:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 349:.\Generated_Source\PSoC5/Servo_B.c ****     * Summary:
+ 350:.\Generated_Source\PSoC5/Servo_B.c ****     *  This function writes the Compare Mode for the pwm or pwm2 output
+ 351:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 352:.\Generated_Source\PSoC5/Servo_B.c ****     * Parameters:
+ 353:.\Generated_Source\PSoC5/Servo_B.c ****     *  comparemode:  The new compare mode for the PWM output. Use the compare types
+ 354:.\Generated_Source\PSoC5/Servo_B.c ****     *                defined in the H file as input arguments.
+ 355:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 356:.\Generated_Source\PSoC5/Servo_B.c ****     * Return:
+ 357:.\Generated_Source\PSoC5/Servo_B.c ****     *  None
+ 358:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 359:.\Generated_Source\PSoC5/Servo_B.c ****     *******************************************************************************/
+ 360:.\Generated_Source\PSoC5/Servo_B.c ****     void Servo_B_SetCompareMode2(uint8 comparemode) 
+ 361:.\Generated_Source\PSoC5/Servo_B.c ****     {
+ 362:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 363:.\Generated_Source\PSoC5/Servo_B.c ****         #if(0 != Servo_B_CTRL_CMPMODE2_SHIFT)
+ 364:.\Generated_Source\PSoC5/Servo_B.c ****             uint8 comparemodemasked = ((uint8)((uint8)comparemode << Servo_B_CTRL_CMPMODE2_SHIFT)) 
+ 365:.\Generated_Source\PSoC5/Servo_B.c ****                                                  Servo_B_CTRL_CMPMODE2_MASK;
+ 366:.\Generated_Source\PSoC5/Servo_B.c ****         #else
+ 367:.\Generated_Source\PSoC5/Servo_B.c ****             uint8 comparemodemasked = comparemode & Servo_B_CTRL_CMPMODE2_MASK;
+ 368:.\Generated_Source\PSoC5/Servo_B.c ****         #endif /* (0 != Servo_B_CTRL_CMPMODE2_SHIFT) */
+ 369:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 370:.\Generated_Source\PSoC5/Servo_B.c ****         #if (Servo_B_UseControl)
+ 371:.\Generated_Source\PSoC5/Servo_B.c ****             Servo_B_CONTROL &= ((uint8)(~Servo_B_CTRL_CMPMODE2_MASK)); /*Clear existing mode */
+ 372:.\Generated_Source\PSoC5/Servo_B.c ****             Servo_B_CONTROL |= comparemodemasked;
+ 373:.\Generated_Source\PSoC5/Servo_B.c ****         #endif /* (Servo_B_UseControl) */
+ 374:.\Generated_Source\PSoC5/Servo_B.c ****     }
+ 375:.\Generated_Source\PSoC5/Servo_B.c ****     #endif /*Servo_B_CompareMode2SW */
+ 376:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 377:.\Generated_Source\PSoC5/Servo_B.c **** #endif /* UseOneCompareMode */
+ 378:.\Generated_Source\PSoC5/Servo_B.c **** 
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 9
+
+
+ 379:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 380:.\Generated_Source\PSoC5/Servo_B.c **** #if (!Servo_B_UsingFixedFunction)
+ 381:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 382:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 383:.\Generated_Source\PSoC5/Servo_B.c ****     /*******************************************************************************
+ 384:.\Generated_Source\PSoC5/Servo_B.c ****     * Function Name: Servo_B_WriteCounter
+ 385:.\Generated_Source\PSoC5/Servo_B.c ****     ********************************************************************************
+ 386:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 387:.\Generated_Source\PSoC5/Servo_B.c ****     * Summary:
+ 388:.\Generated_Source\PSoC5/Servo_B.c ****     *  Writes a new counter value directly to the counter register. This will be
+ 389:.\Generated_Source\PSoC5/Servo_B.c ****     *  implemented for that currently running period and only that period. This API
+ 390:.\Generated_Source\PSoC5/Servo_B.c ****     *  is valid only for UDB implementation and not available for fixed function
+ 391:.\Generated_Source\PSoC5/Servo_B.c ****     *  PWM implementation.
+ 392:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 393:.\Generated_Source\PSoC5/Servo_B.c ****     * Parameters:
+ 394:.\Generated_Source\PSoC5/Servo_B.c ****     *  counter:  The period new period counter value.
+ 395:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 396:.\Generated_Source\PSoC5/Servo_B.c ****     * Return:
+ 397:.\Generated_Source\PSoC5/Servo_B.c ****     *  None
+ 398:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 399:.\Generated_Source\PSoC5/Servo_B.c ****     * Side Effects:
+ 400:.\Generated_Source\PSoC5/Servo_B.c ****     *  The PWM Period will be reloaded when a counter value will be a zero
+ 401:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 402:.\Generated_Source\PSoC5/Servo_B.c ****     *******************************************************************************/
+ 403:.\Generated_Source\PSoC5/Servo_B.c ****     void Servo_B_WriteCounter(uint16 counter) \
+ 404:.\Generated_Source\PSoC5/Servo_B.c ****                                        
+ 405:.\Generated_Source\PSoC5/Servo_B.c ****     {
+  79              		.loc 1 405 0
+  80              		.cfi_startproc
+  81              		@ args = 0, pretend = 0, frame = 0
+  82              		@ frame_needed = 0, uses_anonymous_args = 0
+  83              		@ link register save eliminated.
+  84              	.LVL0:
+ 406:.\Generated_Source\PSoC5/Servo_B.c ****         CY_SET_REG16(Servo_B_COUNTER_LSB_PTR, counter);
+  85              		.loc 1 406 0
+  86 0000 014B     		ldr	r3, .L8
+  87 0002 1880     		strh	r0, [r3]	@ movhi
+  88 0004 7047     		bx	lr
+  89              	.L9:
+  90 0006 00BF     		.align	2
+  91              	.L8:
+  92 0008 08680040 		.word	1073768456
+  93              		.cfi_endproc
+  94              	.LFE4:
+  95              		.size	Servo_B_WriteCounter, .-Servo_B_WriteCounter
+  96              		.section	.text.Servo_B_ReadCounter,"ax",%progbits
+  97              		.align	2
+  98              		.global	Servo_B_ReadCounter
+  99              		.thumb
+ 100              		.thumb_func
+ 101              		.type	Servo_B_ReadCounter, %function
+ 102              	Servo_B_ReadCounter:
+ 103              	.LFB5:
+ 407:.\Generated_Source\PSoC5/Servo_B.c ****     }
+ 408:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 409:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 410:.\Generated_Source\PSoC5/Servo_B.c ****     /*******************************************************************************
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 10
+
+
+ 411:.\Generated_Source\PSoC5/Servo_B.c ****     * Function Name: Servo_B_ReadCounter
+ 412:.\Generated_Source\PSoC5/Servo_B.c ****     ********************************************************************************
+ 413:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 414:.\Generated_Source\PSoC5/Servo_B.c ****     * Summary:
+ 415:.\Generated_Source\PSoC5/Servo_B.c ****     *  This function returns the current value of the counter.  It doesn't matter
+ 416:.\Generated_Source\PSoC5/Servo_B.c ****     *  if the counter is enabled or running.
+ 417:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 418:.\Generated_Source\PSoC5/Servo_B.c ****     * Parameters:
+ 419:.\Generated_Source\PSoC5/Servo_B.c ****     *  None
+ 420:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 421:.\Generated_Source\PSoC5/Servo_B.c ****     * Return:
+ 422:.\Generated_Source\PSoC5/Servo_B.c ****     *  The current value of the counter.
+ 423:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 424:.\Generated_Source\PSoC5/Servo_B.c ****     *******************************************************************************/
+ 425:.\Generated_Source\PSoC5/Servo_B.c ****     uint16 Servo_B_ReadCounter(void) 
+ 426:.\Generated_Source\PSoC5/Servo_B.c ****     {
+ 104              		.loc 1 426 0
+ 105              		.cfi_startproc
+ 106              		@ args = 0, pretend = 0, frame = 0
+ 107              		@ frame_needed = 0, uses_anonymous_args = 0
+ 108              		@ link register save eliminated.
+ 427:.\Generated_Source\PSoC5/Servo_B.c ****         /* Force capture by reading Accumulator */
+ 428:.\Generated_Source\PSoC5/Servo_B.c ****         /* Must first do a software capture to be able to read the counter */
+ 429:.\Generated_Source\PSoC5/Servo_B.c ****         /* It is up to the user code to make sure there isn't already captured data in the FIFO */
+ 430:.\Generated_Source\PSoC5/Servo_B.c ****           (void)CY_GET_REG8(Servo_B_COUNTERCAP_LSB_PTR_8BIT);
+ 109              		.loc 1 430 0
+ 110 0000 024B     		ldr	r3, .L11
+ 111 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 431:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 432:.\Generated_Source\PSoC5/Servo_B.c ****         /* Read the data from the FIFO */
+ 433:.\Generated_Source\PSoC5/Servo_B.c ****         return (CY_GET_REG16(Servo_B_CAPTURE_LSB_PTR));
+ 112              		.loc 1 433 0
+ 113 0004 024B     		ldr	r3, .L11+4
+ 114 0006 1888     		ldrh	r0, [r3]
+ 434:.\Generated_Source\PSoC5/Servo_B.c ****     }
+ 115              		.loc 1 434 0
+ 116 0008 80B2     		uxth	r0, r0
+ 117 000a 7047     		bx	lr
+ 118              	.L12:
+ 119              		.align	2
+ 120              	.L11:
+ 121 000c 14640040 		.word	1073767444
+ 122 0010 A8680040 		.word	1073768616
+ 123              		.cfi_endproc
+ 124              	.LFE5:
+ 125              		.size	Servo_B_ReadCounter, .-Servo_B_ReadCounter
+ 126              		.section	.text.Servo_B_WritePeriod,"ax",%progbits
+ 127              		.align	2
+ 128              		.global	Servo_B_WritePeriod
+ 129              		.thumb
+ 130              		.thumb_func
+ 131              		.type	Servo_B_WritePeriod, %function
+ 132              	Servo_B_WritePeriod:
+ 133              	.LFB7:
+ 435:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 436:.\Generated_Source\PSoC5/Servo_B.c ****     #if (Servo_B_UseStatus)
+ 437:.\Generated_Source\PSoC5/Servo_B.c **** 
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 11
+
+
+ 438:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 439:.\Generated_Source\PSoC5/Servo_B.c ****         /*******************************************************************************
+ 440:.\Generated_Source\PSoC5/Servo_B.c ****         * Function Name: Servo_B_ClearFIFO
+ 441:.\Generated_Source\PSoC5/Servo_B.c ****         ********************************************************************************
+ 442:.\Generated_Source\PSoC5/Servo_B.c ****         *
+ 443:.\Generated_Source\PSoC5/Servo_B.c ****         * Summary:
+ 444:.\Generated_Source\PSoC5/Servo_B.c ****         *  This function clears all capture data from the capture FIFO
+ 445:.\Generated_Source\PSoC5/Servo_B.c ****         *
+ 446:.\Generated_Source\PSoC5/Servo_B.c ****         * Parameters:
+ 447:.\Generated_Source\PSoC5/Servo_B.c ****         *  None
+ 448:.\Generated_Source\PSoC5/Servo_B.c ****         *
+ 449:.\Generated_Source\PSoC5/Servo_B.c ****         * Return:
+ 450:.\Generated_Source\PSoC5/Servo_B.c ****         *  None
+ 451:.\Generated_Source\PSoC5/Servo_B.c ****         *
+ 452:.\Generated_Source\PSoC5/Servo_B.c ****         *******************************************************************************/
+ 453:.\Generated_Source\PSoC5/Servo_B.c ****         void Servo_B_ClearFIFO(void) 
+ 454:.\Generated_Source\PSoC5/Servo_B.c ****         {
+ 455:.\Generated_Source\PSoC5/Servo_B.c ****             while(0u != (Servo_B_ReadStatusRegister() & Servo_B_STATUS_FIFONEMPTY))
+ 456:.\Generated_Source\PSoC5/Servo_B.c ****             {
+ 457:.\Generated_Source\PSoC5/Servo_B.c ****                 (void)Servo_B_ReadCapture();
+ 458:.\Generated_Source\PSoC5/Servo_B.c ****             }
+ 459:.\Generated_Source\PSoC5/Servo_B.c ****         }
+ 460:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 461:.\Generated_Source\PSoC5/Servo_B.c ****     #endif /* Servo_B_UseStatus */
+ 462:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 463:.\Generated_Source\PSoC5/Servo_B.c **** #endif /* !Servo_B_UsingFixedFunction */
+ 464:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 465:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 466:.\Generated_Source\PSoC5/Servo_B.c **** /*******************************************************************************
+ 467:.\Generated_Source\PSoC5/Servo_B.c **** * Function Name: Servo_B_WritePeriod
+ 468:.\Generated_Source\PSoC5/Servo_B.c **** ********************************************************************************
+ 469:.\Generated_Source\PSoC5/Servo_B.c **** *
+ 470:.\Generated_Source\PSoC5/Servo_B.c **** * Summary:
+ 471:.\Generated_Source\PSoC5/Servo_B.c **** *  This function is used to change the period of the counter.  The new period
+ 472:.\Generated_Source\PSoC5/Servo_B.c **** *  will be loaded the next time terminal count is detected.
+ 473:.\Generated_Source\PSoC5/Servo_B.c **** *
+ 474:.\Generated_Source\PSoC5/Servo_B.c **** * Parameters:
+ 475:.\Generated_Source\PSoC5/Servo_B.c **** *  period:  Period value. May be between 1 and (2^Resolution)-1.  A value of 0
+ 476:.\Generated_Source\PSoC5/Servo_B.c **** *           will result in the counter remaining at zero.
+ 477:.\Generated_Source\PSoC5/Servo_B.c **** *
+ 478:.\Generated_Source\PSoC5/Servo_B.c **** * Return:
+ 479:.\Generated_Source\PSoC5/Servo_B.c **** *  None
+ 480:.\Generated_Source\PSoC5/Servo_B.c **** *
+ 481:.\Generated_Source\PSoC5/Servo_B.c **** *******************************************************************************/
+ 482:.\Generated_Source\PSoC5/Servo_B.c **** void Servo_B_WritePeriod(uint16 period) 
+ 483:.\Generated_Source\PSoC5/Servo_B.c **** {
+ 134              		.loc 1 483 0
+ 135              		.cfi_startproc
+ 136              		@ args = 0, pretend = 0, frame = 0
+ 137              		@ frame_needed = 0, uses_anonymous_args = 0
+ 138              		@ link register save eliminated.
+ 139              	.LVL1:
+ 484:.\Generated_Source\PSoC5/Servo_B.c ****     #if(Servo_B_UsingFixedFunction)
+ 485:.\Generated_Source\PSoC5/Servo_B.c ****         CY_SET_REG16(Servo_B_PERIOD_LSB_PTR, (uint16)period);
+ 486:.\Generated_Source\PSoC5/Servo_B.c ****     #else
+ 487:.\Generated_Source\PSoC5/Servo_B.c ****         CY_SET_REG16(Servo_B_PERIOD_LSB_PTR, period);
+ 140              		.loc 1 487 0
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 12
+
+
+ 141 0000 014B     		ldr	r3, .L14
+ 142 0002 1880     		strh	r0, [r3]	@ movhi
+ 143 0004 7047     		bx	lr
+ 144              	.L15:
+ 145 0006 00BF     		.align	2
+ 146              	.L14:
+ 147 0008 88680040 		.word	1073768584
+ 148              		.cfi_endproc
+ 149              	.LFE7:
+ 150              		.size	Servo_B_WritePeriod, .-Servo_B_WritePeriod
+ 151              		.section	.text.Servo_B_WriteCompare1,"ax",%progbits
+ 152              		.align	2
+ 153              		.global	Servo_B_WriteCompare1
+ 154              		.thumb
+ 155              		.thumb_func
+ 156              		.type	Servo_B_WriteCompare1, %function
+ 157              	Servo_B_WriteCompare1:
+ 158              	.LFB8:
+ 488:.\Generated_Source\PSoC5/Servo_B.c ****     #endif /* (Servo_B_UsingFixedFunction) */
+ 489:.\Generated_Source\PSoC5/Servo_B.c **** }
+ 490:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 491:.\Generated_Source\PSoC5/Servo_B.c **** #if (Servo_B_UseOneCompareMode)
+ 492:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 493:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 494:.\Generated_Source\PSoC5/Servo_B.c ****     /*******************************************************************************
+ 495:.\Generated_Source\PSoC5/Servo_B.c ****     * Function Name: Servo_B_WriteCompare
+ 496:.\Generated_Source\PSoC5/Servo_B.c ****     ********************************************************************************
+ 497:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 498:.\Generated_Source\PSoC5/Servo_B.c ****     * Summary:
+ 499:.\Generated_Source\PSoC5/Servo_B.c ****     *  This funtion is used to change the compare1 value when the PWM is in Dither
+ 500:.\Generated_Source\PSoC5/Servo_B.c ****     *  mode. The compare output will reflect the new value on the next UDB clock.
+ 501:.\Generated_Source\PSoC5/Servo_B.c ****     *  The compare output will be driven high when the present counter value is
+ 502:.\Generated_Source\PSoC5/Servo_B.c ****     *  compared to the compare value based on the compare mode defined in
+ 503:.\Generated_Source\PSoC5/Servo_B.c ****     *  Dither Mode.
+ 504:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 505:.\Generated_Source\PSoC5/Servo_B.c ****     * Parameters:
+ 506:.\Generated_Source\PSoC5/Servo_B.c ****     *  compare:  New compare value.
+ 507:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 508:.\Generated_Source\PSoC5/Servo_B.c ****     * Return:
+ 509:.\Generated_Source\PSoC5/Servo_B.c ****     *  None
+ 510:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 511:.\Generated_Source\PSoC5/Servo_B.c ****     * Side Effects:
+ 512:.\Generated_Source\PSoC5/Servo_B.c ****     *  This function is only available if the PWM mode parameter is set to
+ 513:.\Generated_Source\PSoC5/Servo_B.c ****     *  Dither Mode, Center Aligned Mode or One Output Mode
+ 514:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 515:.\Generated_Source\PSoC5/Servo_B.c ****     *******************************************************************************/
+ 516:.\Generated_Source\PSoC5/Servo_B.c ****     void Servo_B_WriteCompare(uint16 compare) \
+ 517:.\Generated_Source\PSoC5/Servo_B.c ****                                        
+ 518:.\Generated_Source\PSoC5/Servo_B.c ****     {
+ 519:.\Generated_Source\PSoC5/Servo_B.c ****         #if(Servo_B_UsingFixedFunction)
+ 520:.\Generated_Source\PSoC5/Servo_B.c ****             CY_SET_REG16(Servo_B_COMPARE1_LSB_PTR, (uint16)compare);
+ 521:.\Generated_Source\PSoC5/Servo_B.c ****         #else
+ 522:.\Generated_Source\PSoC5/Servo_B.c ****             CY_SET_REG16(Servo_B_COMPARE1_LSB_PTR, compare);
+ 523:.\Generated_Source\PSoC5/Servo_B.c ****         #endif /* (Servo_B_UsingFixedFunction) */
+ 524:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 525:.\Generated_Source\PSoC5/Servo_B.c ****         #if (Servo_B_PWMMode == Servo_B__B_PWM__DITHER)
+ 526:.\Generated_Source\PSoC5/Servo_B.c ****             #if(Servo_B_UsingFixedFunction)
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 13
+
+
+ 527:.\Generated_Source\PSoC5/Servo_B.c ****                 CY_SET_REG16(Servo_B_COMPARE2_LSB_PTR, (uint16)(compare + 1u));
+ 528:.\Generated_Source\PSoC5/Servo_B.c ****             #else
+ 529:.\Generated_Source\PSoC5/Servo_B.c ****                 CY_SET_REG16(Servo_B_COMPARE2_LSB_PTR, (compare + 1u));
+ 530:.\Generated_Source\PSoC5/Servo_B.c ****             #endif /* (Servo_B_UsingFixedFunction) */
+ 531:.\Generated_Source\PSoC5/Servo_B.c ****         #endif /* (Servo_B_PWMMode == Servo_B__B_PWM__DITHER) */
+ 532:.\Generated_Source\PSoC5/Servo_B.c ****     }
+ 533:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 534:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 535:.\Generated_Source\PSoC5/Servo_B.c **** #else
+ 536:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 537:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 538:.\Generated_Source\PSoC5/Servo_B.c ****     /*******************************************************************************
+ 539:.\Generated_Source\PSoC5/Servo_B.c ****     * Function Name: Servo_B_WriteCompare1
+ 540:.\Generated_Source\PSoC5/Servo_B.c ****     ********************************************************************************
+ 541:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 542:.\Generated_Source\PSoC5/Servo_B.c ****     * Summary:
+ 543:.\Generated_Source\PSoC5/Servo_B.c ****     *  This funtion is used to change the compare1 value.  The compare output will
+ 544:.\Generated_Source\PSoC5/Servo_B.c ****     *  reflect the new value on the next UDB clock.  The compare output will be
+ 545:.\Generated_Source\PSoC5/Servo_B.c ****     *  driven high when the present counter value is less than or less than or
+ 546:.\Generated_Source\PSoC5/Servo_B.c ****     *  equal to the compare register, depending on the mode.
+ 547:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 548:.\Generated_Source\PSoC5/Servo_B.c ****     * Parameters:
+ 549:.\Generated_Source\PSoC5/Servo_B.c ****     *  compare:  New compare value.
+ 550:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 551:.\Generated_Source\PSoC5/Servo_B.c ****     * Return:
+ 552:.\Generated_Source\PSoC5/Servo_B.c ****     *  None
+ 553:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 554:.\Generated_Source\PSoC5/Servo_B.c ****     *******************************************************************************/
+ 555:.\Generated_Source\PSoC5/Servo_B.c ****     void Servo_B_WriteCompare1(uint16 compare) \
+ 556:.\Generated_Source\PSoC5/Servo_B.c ****                                         
+ 557:.\Generated_Source\PSoC5/Servo_B.c ****     {
+ 159              		.loc 1 557 0
+ 160              		.cfi_startproc
+ 161              		@ args = 0, pretend = 0, frame = 0
+ 162              		@ frame_needed = 0, uses_anonymous_args = 0
+ 163              		@ link register save eliminated.
+ 164              	.LVL2:
+ 558:.\Generated_Source\PSoC5/Servo_B.c ****         #if(Servo_B_UsingFixedFunction)
+ 559:.\Generated_Source\PSoC5/Servo_B.c ****             CY_SET_REG16(Servo_B_COMPARE1_LSB_PTR, (uint16)compare);
+ 560:.\Generated_Source\PSoC5/Servo_B.c ****         #else
+ 561:.\Generated_Source\PSoC5/Servo_B.c ****             CY_SET_REG16(Servo_B_COMPARE1_LSB_PTR, compare);
+ 165              		.loc 1 561 0
+ 166 0000 014B     		ldr	r3, .L17
+ 167 0002 1880     		strh	r0, [r3]	@ movhi
+ 168 0004 7047     		bx	lr
+ 169              	.L18:
+ 170 0006 00BF     		.align	2
+ 171              	.L17:
+ 172 0008 48680040 		.word	1073768520
+ 173              		.cfi_endproc
+ 174              	.LFE8:
+ 175              		.size	Servo_B_WriteCompare1, .-Servo_B_WriteCompare1
+ 176              		.section	.text.Servo_B_WriteCompare2,"ax",%progbits
+ 177              		.align	2
+ 178              		.global	Servo_B_WriteCompare2
+ 179              		.thumb
+ 180              		.thumb_func
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 14
+
+
+ 181              		.type	Servo_B_WriteCompare2, %function
+ 182              	Servo_B_WriteCompare2:
+ 183              	.LFB9:
+ 562:.\Generated_Source\PSoC5/Servo_B.c ****         #endif /* (Servo_B_UsingFixedFunction) */
+ 563:.\Generated_Source\PSoC5/Servo_B.c ****     }
+ 564:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 565:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 566:.\Generated_Source\PSoC5/Servo_B.c ****     /*******************************************************************************
+ 567:.\Generated_Source\PSoC5/Servo_B.c ****     * Function Name: Servo_B_WriteCompare2
+ 568:.\Generated_Source\PSoC5/Servo_B.c ****     ********************************************************************************
+ 569:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 570:.\Generated_Source\PSoC5/Servo_B.c ****     * Summary:
+ 571:.\Generated_Source\PSoC5/Servo_B.c ****     *  This funtion is used to change the compare value, for compare1 output.
+ 572:.\Generated_Source\PSoC5/Servo_B.c ****     *  The compare output will reflect the new value on the next UDB clock.
+ 573:.\Generated_Source\PSoC5/Servo_B.c ****     *  The compare output will be driven high when the present counter value is
+ 574:.\Generated_Source\PSoC5/Servo_B.c ****     *  less than or less than or equal to the compare register, depending on the
+ 575:.\Generated_Source\PSoC5/Servo_B.c ****     *  mode.
+ 576:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 577:.\Generated_Source\PSoC5/Servo_B.c ****     * Parameters:
+ 578:.\Generated_Source\PSoC5/Servo_B.c ****     *  compare:  New compare value.
+ 579:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 580:.\Generated_Source\PSoC5/Servo_B.c ****     * Return:
+ 581:.\Generated_Source\PSoC5/Servo_B.c ****     *  None
+ 582:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 583:.\Generated_Source\PSoC5/Servo_B.c ****     *******************************************************************************/
+ 584:.\Generated_Source\PSoC5/Servo_B.c ****     void Servo_B_WriteCompare2(uint16 compare) \
+ 585:.\Generated_Source\PSoC5/Servo_B.c ****                                         
+ 586:.\Generated_Source\PSoC5/Servo_B.c ****     {
+ 184              		.loc 1 586 0
+ 185              		.cfi_startproc
+ 186              		@ args = 0, pretend = 0, frame = 0
+ 187              		@ frame_needed = 0, uses_anonymous_args = 0
+ 188              		@ link register save eliminated.
+ 189              	.LVL3:
+ 587:.\Generated_Source\PSoC5/Servo_B.c ****         #if(Servo_B_UsingFixedFunction)
+ 588:.\Generated_Source\PSoC5/Servo_B.c ****             CY_SET_REG16(Servo_B_COMPARE2_LSB_PTR, compare);
+ 589:.\Generated_Source\PSoC5/Servo_B.c ****         #else
+ 590:.\Generated_Source\PSoC5/Servo_B.c ****             CY_SET_REG16(Servo_B_COMPARE2_LSB_PTR, compare);
+ 190              		.loc 1 590 0
+ 191 0000 014B     		ldr	r3, .L20
+ 192 0002 1880     		strh	r0, [r3]	@ movhi
+ 193 0004 7047     		bx	lr
+ 194              	.L21:
+ 195 0006 00BF     		.align	2
+ 196              	.L20:
+ 197 0008 68680040 		.word	1073768552
+ 198              		.cfi_endproc
+ 199              	.LFE9:
+ 200              		.size	Servo_B_WriteCompare2, .-Servo_B_WriteCompare2
+ 201              		.section	.text.Servo_B_SetInterruptMode,"ax",%progbits
+ 202              		.align	2
+ 203              		.global	Servo_B_SetInterruptMode
+ 204              		.thumb
+ 205              		.thumb_func
+ 206              		.type	Servo_B_SetInterruptMode, %function
+ 207              	Servo_B_SetInterruptMode:
+ 208              	.LFB10:
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 15
+
+
+ 591:.\Generated_Source\PSoC5/Servo_B.c ****         #endif /* (Servo_B_UsingFixedFunction) */
+ 592:.\Generated_Source\PSoC5/Servo_B.c ****     }
+ 593:.\Generated_Source\PSoC5/Servo_B.c **** #endif /* UseOneCompareMode */
+ 594:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 595:.\Generated_Source\PSoC5/Servo_B.c **** #if (Servo_B_DeadBandUsed)
+ 596:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 597:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 598:.\Generated_Source\PSoC5/Servo_B.c ****     /*******************************************************************************
+ 599:.\Generated_Source\PSoC5/Servo_B.c ****     * Function Name: Servo_B_WriteDeadTime
+ 600:.\Generated_Source\PSoC5/Servo_B.c ****     ********************************************************************************
+ 601:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 602:.\Generated_Source\PSoC5/Servo_B.c ****     * Summary:
+ 603:.\Generated_Source\PSoC5/Servo_B.c ****     *  This function writes the dead-band counts to the corresponding register
+ 604:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 605:.\Generated_Source\PSoC5/Servo_B.c ****     * Parameters:
+ 606:.\Generated_Source\PSoC5/Servo_B.c ****     *  deadtime:  Number of counts for dead time
+ 607:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 608:.\Generated_Source\PSoC5/Servo_B.c ****     * Return:
+ 609:.\Generated_Source\PSoC5/Servo_B.c ****     *  None
+ 610:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 611:.\Generated_Source\PSoC5/Servo_B.c ****     *******************************************************************************/
+ 612:.\Generated_Source\PSoC5/Servo_B.c ****     void Servo_B_WriteDeadTime(uint8 deadtime) 
+ 613:.\Generated_Source\PSoC5/Servo_B.c ****     {
+ 614:.\Generated_Source\PSoC5/Servo_B.c ****         /* If using the Dead Band 1-255 mode then just write the register */
+ 615:.\Generated_Source\PSoC5/Servo_B.c ****         #if(!Servo_B_DeadBand2_4)
+ 616:.\Generated_Source\PSoC5/Servo_B.c ****             CY_SET_REG8(Servo_B_DEADBAND_COUNT_PTR, deadtime);
+ 617:.\Generated_Source\PSoC5/Servo_B.c ****         #else
+ 618:.\Generated_Source\PSoC5/Servo_B.c ****             /* Otherwise the data has to be masked and offset */
+ 619:.\Generated_Source\PSoC5/Servo_B.c ****             /* Clear existing data */
+ 620:.\Generated_Source\PSoC5/Servo_B.c ****             Servo_B_DEADBAND_COUNT &= ((uint8)(~Servo_B_DEADBAND_COUNT_MASK));
+ 621:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 622:.\Generated_Source\PSoC5/Servo_B.c ****             /* Set new dead time */
+ 623:.\Generated_Source\PSoC5/Servo_B.c ****             #if(Servo_B_DEADBAND_COUNT_SHIFT)
+ 624:.\Generated_Source\PSoC5/Servo_B.c ****                 Servo_B_DEADBAND_COUNT |= ((uint8)((uint8)deadtime << Servo_B_DEADBAND_COUNT_SHIFT)
+ 625:.\Generated_Source\PSoC5/Servo_B.c ****                                                     Servo_B_DEADBAND_COUNT_MASK;
+ 626:.\Generated_Source\PSoC5/Servo_B.c ****             #else
+ 627:.\Generated_Source\PSoC5/Servo_B.c ****                 Servo_B_DEADBAND_COUNT |= deadtime & Servo_B_DEADBAND_COUNT_MASK;
+ 628:.\Generated_Source\PSoC5/Servo_B.c ****             #endif /* (Servo_B_DEADBAND_COUNT_SHIFT) */
+ 629:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 630:.\Generated_Source\PSoC5/Servo_B.c ****         #endif /* (!Servo_B_DeadBand2_4) */
+ 631:.\Generated_Source\PSoC5/Servo_B.c ****     }
+ 632:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 633:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 634:.\Generated_Source\PSoC5/Servo_B.c ****     /*******************************************************************************
+ 635:.\Generated_Source\PSoC5/Servo_B.c ****     * Function Name: Servo_B_ReadDeadTime
+ 636:.\Generated_Source\PSoC5/Servo_B.c ****     ********************************************************************************
+ 637:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 638:.\Generated_Source\PSoC5/Servo_B.c ****     * Summary:
+ 639:.\Generated_Source\PSoC5/Servo_B.c ****     *  This function reads the dead-band counts from the corresponding register
+ 640:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 641:.\Generated_Source\PSoC5/Servo_B.c ****     * Parameters:
+ 642:.\Generated_Source\PSoC5/Servo_B.c ****     *  None
+ 643:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 644:.\Generated_Source\PSoC5/Servo_B.c ****     * Return:
+ 645:.\Generated_Source\PSoC5/Servo_B.c ****     *  Dead Band Counts
+ 646:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 647:.\Generated_Source\PSoC5/Servo_B.c ****     *******************************************************************************/
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 16
+
+
+ 648:.\Generated_Source\PSoC5/Servo_B.c ****     uint8 Servo_B_ReadDeadTime(void) 
+ 649:.\Generated_Source\PSoC5/Servo_B.c ****     {
+ 650:.\Generated_Source\PSoC5/Servo_B.c ****         /* If using the Dead Band 1-255 mode then just read the register */
+ 651:.\Generated_Source\PSoC5/Servo_B.c ****         #if(!Servo_B_DeadBand2_4)
+ 652:.\Generated_Source\PSoC5/Servo_B.c ****             return (CY_GET_REG8(Servo_B_DEADBAND_COUNT_PTR));
+ 653:.\Generated_Source\PSoC5/Servo_B.c ****         #else
+ 654:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 655:.\Generated_Source\PSoC5/Servo_B.c ****             /* Otherwise the data has to be masked and offset */
+ 656:.\Generated_Source\PSoC5/Servo_B.c ****             #if(Servo_B_DEADBAND_COUNT_SHIFT)
+ 657:.\Generated_Source\PSoC5/Servo_B.c ****                 return ((uint8)(((uint8)(Servo_B_DEADBAND_COUNT & Servo_B_DEADBAND_COUNT_MASK)) >>
+ 658:.\Generated_Source\PSoC5/Servo_B.c ****                                                                            Servo_B_DEADBAND_COUNT_S
+ 659:.\Generated_Source\PSoC5/Servo_B.c ****             #else
+ 660:.\Generated_Source\PSoC5/Servo_B.c ****                 return (Servo_B_DEADBAND_COUNT & Servo_B_DEADBAND_COUNT_MASK);
+ 661:.\Generated_Source\PSoC5/Servo_B.c ****             #endif /* (Servo_B_DEADBAND_COUNT_SHIFT) */
+ 662:.\Generated_Source\PSoC5/Servo_B.c ****         #endif /* (!Servo_B_DeadBand2_4) */
+ 663:.\Generated_Source\PSoC5/Servo_B.c ****     }
+ 664:.\Generated_Source\PSoC5/Servo_B.c **** #endif /* DeadBandUsed */
+ 665:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 666:.\Generated_Source\PSoC5/Servo_B.c **** #if (Servo_B_UseStatus || Servo_B_UsingFixedFunction)
+ 667:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 668:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 669:.\Generated_Source\PSoC5/Servo_B.c ****     /*******************************************************************************
+ 670:.\Generated_Source\PSoC5/Servo_B.c ****     * Function Name: Servo_B_SetInterruptMode
+ 671:.\Generated_Source\PSoC5/Servo_B.c ****     ********************************************************************************
+ 672:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 673:.\Generated_Source\PSoC5/Servo_B.c ****     * Summary:
+ 674:.\Generated_Source\PSoC5/Servo_B.c ****     *  This function configures the interrupts mask control of theinterrupt
+ 675:.\Generated_Source\PSoC5/Servo_B.c ****     *  source status register.
+ 676:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 677:.\Generated_Source\PSoC5/Servo_B.c ****     * Parameters:
+ 678:.\Generated_Source\PSoC5/Servo_B.c ****     *  uint8 interruptMode: Bit field containing the interrupt sources enabled
+ 679:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 680:.\Generated_Source\PSoC5/Servo_B.c ****     * Return:
+ 681:.\Generated_Source\PSoC5/Servo_B.c ****     *  None
+ 682:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 683:.\Generated_Source\PSoC5/Servo_B.c ****     *******************************************************************************/
+ 684:.\Generated_Source\PSoC5/Servo_B.c ****     void Servo_B_SetInterruptMode(uint8 interruptMode) 
+ 685:.\Generated_Source\PSoC5/Servo_B.c ****     {
+ 209              		.loc 1 685 0
+ 210              		.cfi_startproc
+ 211              		@ args = 0, pretend = 0, frame = 0
+ 212              		@ frame_needed = 0, uses_anonymous_args = 0
+ 213              		@ link register save eliminated.
+ 214              	.LVL4:
+ 686:.\Generated_Source\PSoC5/Servo_B.c ****         CY_SET_REG8(Servo_B_STATUS_MASK_PTR, interruptMode);
+ 215              		.loc 1 686 0
+ 216 0000 014B     		ldr	r3, .L23
+ 217 0002 1870     		strb	r0, [r3]
+ 218 0004 7047     		bx	lr
+ 219              	.L24:
+ 220 0006 00BF     		.align	2
+ 221              	.L23:
+ 222 0008 82640040 		.word	1073767554
+ 223              		.cfi_endproc
+ 224              	.LFE10:
+ 225              		.size	Servo_B_SetInterruptMode, .-Servo_B_SetInterruptMode
+ 226              		.section	.text.Servo_B_ReadStatusRegister,"ax",%progbits
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 17
+
+
+ 227              		.align	2
+ 228              		.global	Servo_B_ReadStatusRegister
+ 229              		.thumb
+ 230              		.thumb_func
+ 231              		.type	Servo_B_ReadStatusRegister, %function
+ 232              	Servo_B_ReadStatusRegister:
+ 233              	.LFB11:
+ 687:.\Generated_Source\PSoC5/Servo_B.c ****     }
+ 688:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 689:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 690:.\Generated_Source\PSoC5/Servo_B.c ****     /*******************************************************************************
+ 691:.\Generated_Source\PSoC5/Servo_B.c ****     * Function Name: Servo_B_ReadStatusRegister
+ 692:.\Generated_Source\PSoC5/Servo_B.c ****     ********************************************************************************
+ 693:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 694:.\Generated_Source\PSoC5/Servo_B.c ****     * Summary:
+ 695:.\Generated_Source\PSoC5/Servo_B.c ****     *  This function returns the current state of the status register.
+ 696:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 697:.\Generated_Source\PSoC5/Servo_B.c ****     * Parameters:
+ 698:.\Generated_Source\PSoC5/Servo_B.c ****     *  None
+ 699:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 700:.\Generated_Source\PSoC5/Servo_B.c ****     * Return:
+ 701:.\Generated_Source\PSoC5/Servo_B.c ****     *  uint8 : Current status register value. The status register bits are:
+ 702:.\Generated_Source\PSoC5/Servo_B.c ****     *  [7:6] : Unused(0)
+ 703:.\Generated_Source\PSoC5/Servo_B.c ****     *  [5]   : Kill event output
+ 704:.\Generated_Source\PSoC5/Servo_B.c ****     *  [4]   : FIFO not empty
+ 705:.\Generated_Source\PSoC5/Servo_B.c ****     *  [3]   : FIFO full
+ 706:.\Generated_Source\PSoC5/Servo_B.c ****     *  [2]   : Terminal count
+ 707:.\Generated_Source\PSoC5/Servo_B.c ****     *  [1]   : Compare output 2
+ 708:.\Generated_Source\PSoC5/Servo_B.c ****     *  [0]   : Compare output 1
+ 709:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 710:.\Generated_Source\PSoC5/Servo_B.c ****     *******************************************************************************/
+ 711:.\Generated_Source\PSoC5/Servo_B.c ****     uint8 Servo_B_ReadStatusRegister(void) 
+ 712:.\Generated_Source\PSoC5/Servo_B.c ****     {
+ 234              		.loc 1 712 0
+ 235              		.cfi_startproc
+ 236              		@ args = 0, pretend = 0, frame = 0
+ 237              		@ frame_needed = 0, uses_anonymous_args = 0
+ 238              		@ link register save eliminated.
+ 713:.\Generated_Source\PSoC5/Servo_B.c ****         return (CY_GET_REG8(Servo_B_STATUS_PTR));
+ 239              		.loc 1 713 0
+ 240 0000 014B     		ldr	r3, .L26
+ 241 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 714:.\Generated_Source\PSoC5/Servo_B.c ****     }
+ 242              		.loc 1 714 0
+ 243 0004 7047     		bx	lr
+ 244              	.L27:
+ 245 0006 00BF     		.align	2
+ 246              	.L26:
+ 247 0008 62640040 		.word	1073767522
+ 248              		.cfi_endproc
+ 249              	.LFE11:
+ 250              		.size	Servo_B_ReadStatusRegister, .-Servo_B_ReadStatusRegister
+ 251              		.section	.text.Servo_B_ReadControlRegister,"ax",%progbits
+ 252              		.align	2
+ 253              		.global	Servo_B_ReadControlRegister
+ 254              		.thumb
+ 255              		.thumb_func
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 18
+
+
+ 256              		.type	Servo_B_ReadControlRegister, %function
+ 257              	Servo_B_ReadControlRegister:
+ 258              	.LFB12:
+ 715:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 716:.\Generated_Source\PSoC5/Servo_B.c **** #endif /* (Servo_B_UseStatus || Servo_B_UsingFixedFunction) */
+ 717:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 718:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 719:.\Generated_Source\PSoC5/Servo_B.c **** #if (Servo_B_UseControl)
+ 720:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 721:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 722:.\Generated_Source\PSoC5/Servo_B.c ****     /*******************************************************************************
+ 723:.\Generated_Source\PSoC5/Servo_B.c ****     * Function Name: Servo_B_ReadControlRegister
+ 724:.\Generated_Source\PSoC5/Servo_B.c ****     ********************************************************************************
+ 725:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 726:.\Generated_Source\PSoC5/Servo_B.c ****     * Summary:
+ 727:.\Generated_Source\PSoC5/Servo_B.c ****     *  Returns the current state of the control register. This API is available
+ 728:.\Generated_Source\PSoC5/Servo_B.c ****     *  only if the control register is not removed.
+ 729:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 730:.\Generated_Source\PSoC5/Servo_B.c ****     * Parameters:
+ 731:.\Generated_Source\PSoC5/Servo_B.c ****     *  None
+ 732:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 733:.\Generated_Source\PSoC5/Servo_B.c ****     * Return:
+ 734:.\Generated_Source\PSoC5/Servo_B.c ****     *  uint8 : Current control register value
+ 735:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 736:.\Generated_Source\PSoC5/Servo_B.c ****     *******************************************************************************/
+ 737:.\Generated_Source\PSoC5/Servo_B.c ****     uint8 Servo_B_ReadControlRegister(void) 
+ 738:.\Generated_Source\PSoC5/Servo_B.c ****     {
+ 259              		.loc 1 738 0
+ 260              		.cfi_startproc
+ 261              		@ args = 0, pretend = 0, frame = 0
+ 262              		@ frame_needed = 0, uses_anonymous_args = 0
+ 263              		@ link register save eliminated.
+ 739:.\Generated_Source\PSoC5/Servo_B.c ****         uint8 result;
+ 740:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 741:.\Generated_Source\PSoC5/Servo_B.c ****         result = CY_GET_REG8(Servo_B_CONTROL_PTR);
+ 264              		.loc 1 741 0
+ 265 0000 014B     		ldr	r3, .L29
+ 266 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 267              	.LVL5:
+ 742:.\Generated_Source\PSoC5/Servo_B.c ****         return (result);
+ 743:.\Generated_Source\PSoC5/Servo_B.c ****     }
+ 268              		.loc 1 743 0
+ 269 0004 7047     		bx	lr
+ 270              	.L30:
+ 271 0006 00BF     		.align	2
+ 272              	.L29:
+ 273 0008 74640040 		.word	1073767540
+ 274              		.cfi_endproc
+ 275              	.LFE12:
+ 276              		.size	Servo_B_ReadControlRegister, .-Servo_B_ReadControlRegister
+ 277              		.section	.text.Servo_B_WriteControlRegister,"ax",%progbits
+ 278              		.align	2
+ 279              		.global	Servo_B_WriteControlRegister
+ 280              		.thumb
+ 281              		.thumb_func
+ 282              		.type	Servo_B_WriteControlRegister, %function
+ 283              	Servo_B_WriteControlRegister:
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 19
+
+
+ 284              	.LFB13:
+ 744:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 745:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 746:.\Generated_Source\PSoC5/Servo_B.c ****     /*******************************************************************************
+ 747:.\Generated_Source\PSoC5/Servo_B.c ****     * Function Name: Servo_B_WriteControlRegister
+ 748:.\Generated_Source\PSoC5/Servo_B.c ****     ********************************************************************************
+ 749:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 750:.\Generated_Source\PSoC5/Servo_B.c ****     * Summary:
+ 751:.\Generated_Source\PSoC5/Servo_B.c ****     *  Sets the bit field of the control register. This API is available only if
+ 752:.\Generated_Source\PSoC5/Servo_B.c ****     *  the control register is not removed.
+ 753:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 754:.\Generated_Source\PSoC5/Servo_B.c ****     * Parameters:
+ 755:.\Generated_Source\PSoC5/Servo_B.c ****     *  uint8 control: Control register bit field, The status register bits are:
+ 756:.\Generated_Source\PSoC5/Servo_B.c ****     *  [7]   : PWM Enable
+ 757:.\Generated_Source\PSoC5/Servo_B.c ****     *  [6]   : Reset
+ 758:.\Generated_Source\PSoC5/Servo_B.c ****     *  [5:3] : Compare Mode2
+ 759:.\Generated_Source\PSoC5/Servo_B.c ****     *  [2:0] : Compare Mode2
+ 760:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 761:.\Generated_Source\PSoC5/Servo_B.c ****     * Return:
+ 762:.\Generated_Source\PSoC5/Servo_B.c ****     *  None
+ 763:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 764:.\Generated_Source\PSoC5/Servo_B.c ****     *******************************************************************************/
+ 765:.\Generated_Source\PSoC5/Servo_B.c ****     void Servo_B_WriteControlRegister(uint8 control) 
+ 766:.\Generated_Source\PSoC5/Servo_B.c ****     {
+ 285              		.loc 1 766 0
+ 286              		.cfi_startproc
+ 287              		@ args = 0, pretend = 0, frame = 0
+ 288              		@ frame_needed = 0, uses_anonymous_args = 0
+ 289              		@ link register save eliminated.
+ 290              	.LVL6:
+ 767:.\Generated_Source\PSoC5/Servo_B.c ****         CY_SET_REG8(Servo_B_CONTROL_PTR, control);
+ 291              		.loc 1 767 0
+ 292 0000 014B     		ldr	r3, .L32
+ 293 0002 1870     		strb	r0, [r3]
+ 294 0004 7047     		bx	lr
+ 295              	.L33:
+ 296 0006 00BF     		.align	2
+ 297              	.L32:
+ 298 0008 74640040 		.word	1073767540
+ 299              		.cfi_endproc
+ 300              	.LFE13:
+ 301              		.size	Servo_B_WriteControlRegister, .-Servo_B_WriteControlRegister
+ 302              		.section	.text.Servo_B_ReadCapture,"ax",%progbits
+ 303              		.align	2
+ 304              		.global	Servo_B_ReadCapture
+ 305              		.thumb
+ 306              		.thumb_func
+ 307              		.type	Servo_B_ReadCapture, %function
+ 308              	Servo_B_ReadCapture:
+ 309              	.LFB14:
+ 768:.\Generated_Source\PSoC5/Servo_B.c ****     }
+ 769:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 770:.\Generated_Source\PSoC5/Servo_B.c **** #endif /* (Servo_B_UseControl) */
+ 771:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 772:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 773:.\Generated_Source\PSoC5/Servo_B.c **** #if (!Servo_B_UsingFixedFunction)
+ 774:.\Generated_Source\PSoC5/Servo_B.c **** 
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 20
+
+
+ 775:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 776:.\Generated_Source\PSoC5/Servo_B.c ****     /*******************************************************************************
+ 777:.\Generated_Source\PSoC5/Servo_B.c ****     * Function Name: Servo_B_ReadCapture
+ 778:.\Generated_Source\PSoC5/Servo_B.c ****     ********************************************************************************
+ 779:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 780:.\Generated_Source\PSoC5/Servo_B.c ****     * Summary:
+ 781:.\Generated_Source\PSoC5/Servo_B.c ****     *  Reads the capture value from the capture FIFO.
+ 782:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 783:.\Generated_Source\PSoC5/Servo_B.c ****     * Parameters:
+ 784:.\Generated_Source\PSoC5/Servo_B.c ****     *  None
+ 785:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 786:.\Generated_Source\PSoC5/Servo_B.c ****     * Return:
+ 787:.\Generated_Source\PSoC5/Servo_B.c ****     *  uint8/uint16: The current capture value
+ 788:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 789:.\Generated_Source\PSoC5/Servo_B.c ****     *******************************************************************************/
+ 790:.\Generated_Source\PSoC5/Servo_B.c ****     uint16 Servo_B_ReadCapture(void) 
+ 791:.\Generated_Source\PSoC5/Servo_B.c ****     {
+ 310              		.loc 1 791 0
+ 311              		.cfi_startproc
+ 312              		@ args = 0, pretend = 0, frame = 0
+ 313              		@ frame_needed = 0, uses_anonymous_args = 0
+ 314              		@ link register save eliminated.
+ 792:.\Generated_Source\PSoC5/Servo_B.c ****         return (CY_GET_REG16(Servo_B_CAPTURE_LSB_PTR));
+ 315              		.loc 1 792 0
+ 316 0000 014B     		ldr	r3, .L35
+ 317 0002 1888     		ldrh	r0, [r3]
+ 793:.\Generated_Source\PSoC5/Servo_B.c ****     }
+ 318              		.loc 1 793 0
+ 319 0004 80B2     		uxth	r0, r0
+ 320 0006 7047     		bx	lr
+ 321              	.L36:
+ 322              		.align	2
+ 323              	.L35:
+ 324 0008 A8680040 		.word	1073768616
+ 325              		.cfi_endproc
+ 326              	.LFE14:
+ 327              		.size	Servo_B_ReadCapture, .-Servo_B_ReadCapture
+ 328              		.section	.text.Servo_B_ClearFIFO,"ax",%progbits
+ 329              		.align	2
+ 330              		.global	Servo_B_ClearFIFO
+ 331              		.thumb
+ 332              		.thumb_func
+ 333              		.type	Servo_B_ClearFIFO, %function
+ 334              	Servo_B_ClearFIFO:
+ 335              	.LFB6:
+ 454:.\Generated_Source\PSoC5/Servo_B.c ****         {
+ 336              		.loc 1 454 0
+ 337              		.cfi_startproc
+ 338              		@ args = 0, pretend = 0, frame = 0
+ 339              		@ frame_needed = 0, uses_anonymous_args = 0
+ 340 0000 08B5     		push	{r3, lr}
+ 341              		.cfi_def_cfa_offset 8
+ 342              		.cfi_offset 3, -8
+ 343              		.cfi_offset 14, -4
+ 455:.\Generated_Source\PSoC5/Servo_B.c ****             while(0u != (Servo_B_ReadStatusRegister() & Servo_B_STATUS_FIFONEMPTY))
+ 344              		.loc 1 455 0
+ 345 0002 01E0     		b	.L38
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 21
+
+
+ 346              	.L39:
+ 457:.\Generated_Source\PSoC5/Servo_B.c ****                 (void)Servo_B_ReadCapture();
+ 347              		.loc 1 457 0
+ 348 0004 FFF7FEFF 		bl	Servo_B_ReadCapture
+ 349              	.LVL7:
+ 350              	.L38:
+ 455:.\Generated_Source\PSoC5/Servo_B.c ****             while(0u != (Servo_B_ReadStatusRegister() & Servo_B_STATUS_FIFONEMPTY))
+ 351              		.loc 1 455 0 discriminator 1
+ 352 0008 FFF7FEFF 		bl	Servo_B_ReadStatusRegister
+ 353              	.LVL8:
+ 354 000c 10F0100F 		tst	r0, #16
+ 355 0010 F8D1     		bne	.L39
+ 459:.\Generated_Source\PSoC5/Servo_B.c ****         }
+ 356              		.loc 1 459 0
+ 357 0012 08BD     		pop	{r3, pc}
+ 358              		.cfi_endproc
+ 359              	.LFE6:
+ 360              		.size	Servo_B_ClearFIFO, .-Servo_B_ClearFIFO
+ 361              		.section	.text.Servo_B_Init,"ax",%progbits
+ 362              		.align	2
+ 363              		.global	Servo_B_Init
+ 364              		.thumb
+ 365              		.thumb_func
+ 366              		.type	Servo_B_Init, %function
+ 367              	Servo_B_Init:
+ 368              	.LFB1:
+  85:.\Generated_Source\PSoC5/Servo_B.c **** {
+ 369              		.loc 1 85 0
+ 370              		.cfi_startproc
+ 371              		@ args = 0, pretend = 0, frame = 0
+ 372              		@ frame_needed = 0, uses_anonymous_args = 0
+ 373 0000 08B5     		push	{r3, lr}
+ 374              		.cfi_def_cfa_offset 8
+ 375              		.cfi_offset 3, -8
+ 376              		.cfi_offset 14, -4
+ 117:.\Generated_Source\PSoC5/Servo_B.c ****         ctrl = Servo_B_CONTROL & ((uint8)(~Servo_B_CTRL_CMPMODE2_MASK)) &
+ 377              		.loc 1 117 0
+ 378 0002 184B     		ldr	r3, .L41
+ 379 0004 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 380 0006 02F0C002 		and	r2, r2, #192
+ 381              	.LVL9:
+ 119:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_CONTROL = ctrl | Servo_B_DEFAULT_COMPARE2_MODE |
+ 382              		.loc 1 119 0
+ 383 000a 42F00902 		orr	r2, r2, #9
+ 384              	.LVL10:
+ 385 000e 1A70     		strb	r2, [r3]
+ 129:.\Generated_Source\PSoC5/Servo_B.c ****             Servo_B_AUX_CONTROLDP0 |= (Servo_B_AUX_CTRL_FIFO0_CLR);
+ 386              		.loc 1 129 0
+ 387 0010 2033     		adds	r3, r3, #32
+ 388 0012 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 389 0014 42F00102 		orr	r2, r2, #1
+ 390 0018 1A70     		strb	r2, [r3]
+ 130:.\Generated_Source\PSoC5/Servo_B.c ****             Servo_B_AUX_CONTROLDP1 |= (Servo_B_AUX_CTRL_FIFO0_CLR);
+ 391              		.loc 1 130 0
+ 392 001a 0133     		adds	r3, r3, #1
+ 393 001c 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 394 001e 42F00102 		orr	r2, r2, #1
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 22
+
+
+ 395 0022 1A70     		strb	r2, [r3]
+ 133:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_WriteCounter(Servo_B_INIT_PERIOD_VALUE);
+ 396              		.loc 1 133 0
+ 397 0024 4EF66020 		movw	r0, #60000
+ 398 0028 FFF7FEFF 		bl	Servo_B_WriteCounter
+ 399              	.LVL11:
+ 136:.\Generated_Source\PSoC5/Servo_B.c ****     Servo_B_WritePeriod(Servo_B_INIT_PERIOD_VALUE);
+ 400              		.loc 1 136 0
+ 401 002c 4EF66020 		movw	r0, #60000
+ 402 0030 FFF7FEFF 		bl	Servo_B_WritePeriod
+ 403              	.LVL12:
+ 141:.\Generated_Source\PSoC5/Servo_B.c ****             Servo_B_WriteCompare1(Servo_B_INIT_COMPARE_VALUE1);
+ 404              		.loc 1 141 0
+ 405 0034 47F23050 		movw	r0, #30000
+ 406 0038 FFF7FEFF 		bl	Servo_B_WriteCompare1
+ 407              	.LVL13:
+ 142:.\Generated_Source\PSoC5/Servo_B.c ****             Servo_B_WriteCompare2(Servo_B_INIT_COMPARE_VALUE2);
+ 408              		.loc 1 142 0
+ 409 003c 47F23050 		movw	r0, #30000
+ 410 0040 FFF7FEFF 		bl	Servo_B_WriteCompare2
+ 411              	.LVL14:
+ 154:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_SetInterruptMode(Servo_B_INIT_INTERRUPTS_MODE);
+ 412              		.loc 1 154 0
+ 413 0044 0020     		movs	r0, #0
+ 414 0046 FFF7FEFF 		bl	Servo_B_SetInterruptMode
+ 415              	.LVL15:
+ 167:.\Generated_Source\PSoC5/Servo_B.c ****             Servo_B_interruptState = CyEnterCriticalSection();
+ 416              		.loc 1 167 0
+ 417 004a FFF7FEFF 		bl	CyEnterCriticalSection
+ 418              	.LVL16:
+ 169:.\Generated_Source\PSoC5/Servo_B.c ****             Servo_B_STATUS_AUX_CTRL |= Servo_B_STATUS_ACTL_INT_EN_MASK;
+ 419              		.loc 1 169 0
+ 420 004e 064B     		ldr	r3, .L41+4
+ 421 0050 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 422 0052 42F01002 		orr	r2, r2, #16
+ 423 0056 1A70     		strb	r2, [r3]
+ 172:.\Generated_Source\PSoC5/Servo_B.c ****             CyExitCriticalSection(Servo_B_interruptState);
+ 424              		.loc 1 172 0
+ 425 0058 FFF7FEFF 		bl	CyExitCriticalSection
+ 426              	.LVL17:
+ 176:.\Generated_Source\PSoC5/Servo_B.c ****             Servo_B_ClearFIFO();
+ 427              		.loc 1 176 0
+ 428 005c FFF7FEFF 		bl	Servo_B_ClearFIFO
+ 429              	.LVL18:
+ 430 0060 08BD     		pop	{r3, pc}
+ 431              	.L42:
+ 432 0062 00BF     		.align	2
+ 433              	.L41:
+ 434 0064 74640040 		.word	1073767540
+ 435 0068 92640040 		.word	1073767570
+ 436              		.cfi_endproc
+ 437              	.LFE1:
+ 438              		.size	Servo_B_Init, .-Servo_B_Init
+ 439              		.section	.text.Servo_B_Start,"ax",%progbits
+ 440              		.align	2
+ 441              		.global	Servo_B_Start
+ 442              		.thumb
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 23
+
+
+ 443              		.thumb_func
+ 444              		.type	Servo_B_Start, %function
+ 445              	Servo_B_Start:
+ 446              	.LFB0:
+  56:.\Generated_Source\PSoC5/Servo_B.c **** {
+ 447              		.loc 1 56 0
+ 448              		.cfi_startproc
+ 449              		@ args = 0, pretend = 0, frame = 0
+ 450              		@ frame_needed = 0, uses_anonymous_args = 0
+ 451 0000 08B5     		push	{r3, lr}
+ 452              		.cfi_def_cfa_offset 8
+ 453              		.cfi_offset 3, -8
+ 454              		.cfi_offset 14, -4
+  58:.\Generated_Source\PSoC5/Servo_B.c ****     if(Servo_B_initVar == 0u)
+ 455              		.loc 1 58 0
+ 456 0002 054B     		ldr	r3, .L45
+ 457 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 458 0006 23B9     		cbnz	r3, .L44
+  60:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_Init();
+ 459              		.loc 1 60 0
+ 460 0008 FFF7FEFF 		bl	Servo_B_Init
+ 461              	.LVL19:
+  61:.\Generated_Source\PSoC5/Servo_B.c ****         Servo_B_initVar = 1u;
+ 462              		.loc 1 61 0
+ 463 000c 0122     		movs	r2, #1
+ 464 000e 024B     		ldr	r3, .L45
+ 465 0010 1A70     		strb	r2, [r3]
+ 466              	.L44:
+  63:.\Generated_Source\PSoC5/Servo_B.c ****     Servo_B_Enable();
+ 467              		.loc 1 63 0
+ 468 0012 FFF7FEFF 		bl	Servo_B_Enable
+ 469              	.LVL20:
+ 470 0016 08BD     		pop	{r3, pc}
+ 471              	.L46:
+ 472              		.align	2
+ 473              	.L45:
+ 474 0018 00000000 		.word	.LANCHOR0
+ 475              		.cfi_endproc
+ 476              	.LFE0:
+ 477              		.size	Servo_B_Start, .-Servo_B_Start
+ 478              		.section	.text.Servo_B_ReadCompare1,"ax",%progbits
+ 479              		.align	2
+ 480              		.global	Servo_B_ReadCompare1
+ 481              		.thumb
+ 482              		.thumb_func
+ 483              		.type	Servo_B_ReadCompare1, %function
+ 484              	Servo_B_ReadCompare1:
+ 485              	.LFB15:
+ 794:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 795:.\Generated_Source\PSoC5/Servo_B.c **** #endif /* (!Servo_B_UsingFixedFunction) */
+ 796:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 797:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 798:.\Generated_Source\PSoC5/Servo_B.c **** #if (Servo_B_UseOneCompareMode)
+ 799:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 800:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 801:.\Generated_Source\PSoC5/Servo_B.c ****     /*******************************************************************************
+ 802:.\Generated_Source\PSoC5/Servo_B.c ****     * Function Name: Servo_B_ReadCompare
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 24
+
+
+ 803:.\Generated_Source\PSoC5/Servo_B.c ****     ********************************************************************************
+ 804:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 805:.\Generated_Source\PSoC5/Servo_B.c ****     * Summary:
+ 806:.\Generated_Source\PSoC5/Servo_B.c ****     *  Reads the compare value for the compare output when the PWM Mode parameter is
+ 807:.\Generated_Source\PSoC5/Servo_B.c ****     *  set to Dither mode, Center Aligned mode, or One Output mode.
+ 808:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 809:.\Generated_Source\PSoC5/Servo_B.c ****     * Parameters:
+ 810:.\Generated_Source\PSoC5/Servo_B.c ****     *  None
+ 811:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 812:.\Generated_Source\PSoC5/Servo_B.c ****     * Return:
+ 813:.\Generated_Source\PSoC5/Servo_B.c ****     *  uint8/uint16: Current compare value
+ 814:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 815:.\Generated_Source\PSoC5/Servo_B.c ****     *******************************************************************************/
+ 816:.\Generated_Source\PSoC5/Servo_B.c ****     uint16 Servo_B_ReadCompare(void) 
+ 817:.\Generated_Source\PSoC5/Servo_B.c ****     {
+ 818:.\Generated_Source\PSoC5/Servo_B.c ****         #if(Servo_B_UsingFixedFunction)
+ 819:.\Generated_Source\PSoC5/Servo_B.c ****             return ((uint16)CY_GET_REG16(Servo_B_COMPARE1_LSB_PTR));
+ 820:.\Generated_Source\PSoC5/Servo_B.c ****         #else
+ 821:.\Generated_Source\PSoC5/Servo_B.c ****             return (CY_GET_REG16(Servo_B_COMPARE1_LSB_PTR));
+ 822:.\Generated_Source\PSoC5/Servo_B.c ****         #endif /* (Servo_B_UsingFixedFunction) */
+ 823:.\Generated_Source\PSoC5/Servo_B.c ****     }
+ 824:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 825:.\Generated_Source\PSoC5/Servo_B.c **** #else
+ 826:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 827:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 828:.\Generated_Source\PSoC5/Servo_B.c ****     /*******************************************************************************
+ 829:.\Generated_Source\PSoC5/Servo_B.c ****     * Function Name: Servo_B_ReadCompare1
+ 830:.\Generated_Source\PSoC5/Servo_B.c ****     ********************************************************************************
+ 831:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 832:.\Generated_Source\PSoC5/Servo_B.c ****     * Summary:
+ 833:.\Generated_Source\PSoC5/Servo_B.c ****     *  Reads the compare value for the compare1 output.
+ 834:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 835:.\Generated_Source\PSoC5/Servo_B.c ****     * Parameters:
+ 836:.\Generated_Source\PSoC5/Servo_B.c ****     *  None
+ 837:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 838:.\Generated_Source\PSoC5/Servo_B.c ****     * Return:
+ 839:.\Generated_Source\PSoC5/Servo_B.c ****     *  uint8/uint16: Current compare value.
+ 840:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 841:.\Generated_Source\PSoC5/Servo_B.c ****     *******************************************************************************/
+ 842:.\Generated_Source\PSoC5/Servo_B.c ****     uint16 Servo_B_ReadCompare1(void) 
+ 843:.\Generated_Source\PSoC5/Servo_B.c ****     {
+ 486              		.loc 1 843 0
+ 487              		.cfi_startproc
+ 488              		@ args = 0, pretend = 0, frame = 0
+ 489              		@ frame_needed = 0, uses_anonymous_args = 0
+ 490              		@ link register save eliminated.
+ 844:.\Generated_Source\PSoC5/Servo_B.c ****         return (CY_GET_REG16(Servo_B_COMPARE1_LSB_PTR));
+ 491              		.loc 1 844 0
+ 492 0000 014B     		ldr	r3, .L48
+ 493 0002 1888     		ldrh	r0, [r3]
+ 845:.\Generated_Source\PSoC5/Servo_B.c ****     }
+ 494              		.loc 1 845 0
+ 495 0004 80B2     		uxth	r0, r0
+ 496 0006 7047     		bx	lr
+ 497              	.L49:
+ 498              		.align	2
+ 499              	.L48:
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 25
+
+
+ 500 0008 48680040 		.word	1073768520
+ 501              		.cfi_endproc
+ 502              	.LFE15:
+ 503              		.size	Servo_B_ReadCompare1, .-Servo_B_ReadCompare1
+ 504              		.section	.text.Servo_B_ReadCompare2,"ax",%progbits
+ 505              		.align	2
+ 506              		.global	Servo_B_ReadCompare2
+ 507              		.thumb
+ 508              		.thumb_func
+ 509              		.type	Servo_B_ReadCompare2, %function
+ 510              	Servo_B_ReadCompare2:
+ 511              	.LFB16:
+ 846:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 847:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 848:.\Generated_Source\PSoC5/Servo_B.c ****     /*******************************************************************************
+ 849:.\Generated_Source\PSoC5/Servo_B.c ****     * Function Name: Servo_B_ReadCompare2
+ 850:.\Generated_Source\PSoC5/Servo_B.c ****     ********************************************************************************
+ 851:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 852:.\Generated_Source\PSoC5/Servo_B.c ****     * Summary:
+ 853:.\Generated_Source\PSoC5/Servo_B.c ****     *  Reads the compare value for the compare2 output.
+ 854:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 855:.\Generated_Source\PSoC5/Servo_B.c ****     * Parameters:
+ 856:.\Generated_Source\PSoC5/Servo_B.c ****     *  None
+ 857:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 858:.\Generated_Source\PSoC5/Servo_B.c ****     * Return:
+ 859:.\Generated_Source\PSoC5/Servo_B.c ****     *  uint8/uint16: Current compare value.
+ 860:.\Generated_Source\PSoC5/Servo_B.c ****     *
+ 861:.\Generated_Source\PSoC5/Servo_B.c ****     *******************************************************************************/
+ 862:.\Generated_Source\PSoC5/Servo_B.c ****     uint16 Servo_B_ReadCompare2(void) 
+ 863:.\Generated_Source\PSoC5/Servo_B.c ****     {
+ 512              		.loc 1 863 0
+ 513              		.cfi_startproc
+ 514              		@ args = 0, pretend = 0, frame = 0
+ 515              		@ frame_needed = 0, uses_anonymous_args = 0
+ 516              		@ link register save eliminated.
+ 864:.\Generated_Source\PSoC5/Servo_B.c ****         return (CY_GET_REG16(Servo_B_COMPARE2_LSB_PTR));
+ 517              		.loc 1 864 0
+ 518 0000 014B     		ldr	r3, .L51
+ 519 0002 1888     		ldrh	r0, [r3]
+ 865:.\Generated_Source\PSoC5/Servo_B.c ****     }
+ 520              		.loc 1 865 0
+ 521 0004 80B2     		uxth	r0, r0
+ 522 0006 7047     		bx	lr
+ 523              	.L52:
+ 524              		.align	2
+ 525              	.L51:
+ 526 0008 68680040 		.word	1073768552
+ 527              		.cfi_endproc
+ 528              	.LFE16:
+ 529              		.size	Servo_B_ReadCompare2, .-Servo_B_ReadCompare2
+ 530              		.section	.text.Servo_B_ReadPeriod,"ax",%progbits
+ 531              		.align	2
+ 532              		.global	Servo_B_ReadPeriod
+ 533              		.thumb
+ 534              		.thumb_func
+ 535              		.type	Servo_B_ReadPeriod, %function
+ 536              	Servo_B_ReadPeriod:
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 26
+
+
+ 537              	.LFB17:
+ 866:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 867:.\Generated_Source\PSoC5/Servo_B.c **** #endif /* (Servo_B_UseOneCompareMode) */
+ 868:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 869:.\Generated_Source\PSoC5/Servo_B.c **** 
+ 870:.\Generated_Source\PSoC5/Servo_B.c **** /*******************************************************************************
+ 871:.\Generated_Source\PSoC5/Servo_B.c **** * Function Name: Servo_B_ReadPeriod
+ 872:.\Generated_Source\PSoC5/Servo_B.c **** ********************************************************************************
+ 873:.\Generated_Source\PSoC5/Servo_B.c **** *
+ 874:.\Generated_Source\PSoC5/Servo_B.c **** * Summary:
+ 875:.\Generated_Source\PSoC5/Servo_B.c **** *  Reads the period value used by the PWM hardware.
+ 876:.\Generated_Source\PSoC5/Servo_B.c **** *
+ 877:.\Generated_Source\PSoC5/Servo_B.c **** * Parameters:
+ 878:.\Generated_Source\PSoC5/Servo_B.c **** *  None
+ 879:.\Generated_Source\PSoC5/Servo_B.c **** *
+ 880:.\Generated_Source\PSoC5/Servo_B.c **** * Return:
+ 881:.\Generated_Source\PSoC5/Servo_B.c **** *  uint8/16: Period value
+ 882:.\Generated_Source\PSoC5/Servo_B.c **** *
+ 883:.\Generated_Source\PSoC5/Servo_B.c **** *******************************************************************************/
+ 884:.\Generated_Source\PSoC5/Servo_B.c **** uint16 Servo_B_ReadPeriod(void) 
+ 885:.\Generated_Source\PSoC5/Servo_B.c **** {
+ 538              		.loc 1 885 0
+ 539              		.cfi_startproc
+ 540              		@ args = 0, pretend = 0, frame = 0
+ 541              		@ frame_needed = 0, uses_anonymous_args = 0
+ 542              		@ link register save eliminated.
+ 886:.\Generated_Source\PSoC5/Servo_B.c ****     #if(Servo_B_UsingFixedFunction)
+ 887:.\Generated_Source\PSoC5/Servo_B.c ****         return ((uint16)CY_GET_REG16(Servo_B_PERIOD_LSB_PTR));
+ 888:.\Generated_Source\PSoC5/Servo_B.c ****     #else
+ 889:.\Generated_Source\PSoC5/Servo_B.c ****         return (CY_GET_REG16(Servo_B_PERIOD_LSB_PTR));
+ 543              		.loc 1 889 0
+ 544 0000 014B     		ldr	r3, .L54
+ 545 0002 1888     		ldrh	r0, [r3]
+ 890:.\Generated_Source\PSoC5/Servo_B.c ****     #endif /* (Servo_B_UsingFixedFunction) */
+ 891:.\Generated_Source\PSoC5/Servo_B.c **** }
+ 546              		.loc 1 891 0
+ 547 0004 80B2     		uxth	r0, r0
+ 548 0006 7047     		bx	lr
+ 549              	.L55:
+ 550              		.align	2
+ 551              	.L54:
+ 552 0008 88680040 		.word	1073768584
+ 553              		.cfi_endproc
+ 554              	.LFE17:
+ 555              		.size	Servo_B_ReadPeriod, .-Servo_B_ReadPeriod
+ 556              		.global	Servo_B_initVar
+ 557              		.bss
+ 558              		.set	.LANCHOR0,. + 0
+ 559              		.type	Servo_B_initVar, %object
+ 560              		.size	Servo_B_initVar, 1
+ 561              	Servo_B_initVar:
+ 562 0000 00       		.space	1
+ 563              		.text
+ 564              	.Letext0:
+ 565              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 566              		.file 3 ".\\Generated_Source\\PSoC5\\CyLib.h"
+ 567              		.section	.debug_info,"",%progbits
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 27
+
+
+ 568              	.Ldebug_info0:
+ 569 0000 99030000 		.4byte	0x399
+ 570 0004 0400     		.2byte	0x4
+ 571 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 572 000a 04       		.byte	0x4
+ 573 000b 01       		.uleb128 0x1
+ 574 000c 28020000 		.4byte	.LASF42
+ 575 0010 01       		.byte	0x1
+ 576 0011 74010000 		.4byte	.LASF43
+ 577 0015 EC010000 		.4byte	.LASF44
+ 578 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 579 001d 00000000 		.4byte	0
+ 580 0021 00000000 		.4byte	.Ldebug_line0
+ 581 0025 02       		.uleb128 0x2
+ 582 0026 01       		.byte	0x1
+ 583 0027 06       		.byte	0x6
+ 584 0028 4F030000 		.4byte	.LASF0
+ 585 002c 02       		.uleb128 0x2
+ 586 002d 01       		.byte	0x1
+ 587 002e 08       		.byte	0x8
+ 588 002f BE000000 		.4byte	.LASF1
+ 589 0033 02       		.uleb128 0x2
+ 590 0034 02       		.byte	0x2
+ 591 0035 05       		.byte	0x5
+ 592 0036 0D030000 		.4byte	.LASF2
+ 593 003a 02       		.uleb128 0x2
+ 594 003b 02       		.byte	0x2
+ 595 003c 07       		.byte	0x7
+ 596 003d 63030000 		.4byte	.LASF3
+ 597 0041 02       		.uleb128 0x2
+ 598 0042 04       		.byte	0x4
+ 599 0043 05       		.byte	0x5
+ 600 0044 41030000 		.4byte	.LASF4
+ 601 0048 02       		.uleb128 0x2
+ 602 0049 04       		.byte	0x4
+ 603 004a 07       		.byte	0x7
+ 604 004b D1000000 		.4byte	.LASF5
+ 605 004f 02       		.uleb128 0x2
+ 606 0050 08       		.byte	0x8
+ 607 0051 05       		.byte	0x5
+ 608 0052 C6020000 		.4byte	.LASF6
+ 609 0056 02       		.uleb128 0x2
+ 610 0057 08       		.byte	0x8
+ 611 0058 07       		.byte	0x7
+ 612 0059 8C000000 		.4byte	.LASF7
+ 613 005d 03       		.uleb128 0x3
+ 614 005e 04       		.byte	0x4
+ 615 005f 05       		.byte	0x5
+ 616 0060 696E7400 		.ascii	"int\000"
+ 617 0064 02       		.uleb128 0x2
+ 618 0065 04       		.byte	0x4
+ 619 0066 07       		.byte	0x7
+ 620 0067 5D000000 		.4byte	.LASF8
+ 621 006b 04       		.uleb128 0x4
+ 622 006c E3000000 		.4byte	.LASF9
+ 623 0070 02       		.byte	0x2
+ 624 0071 B3       		.byte	0xb3
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 28
+
+
+ 625 0072 2C000000 		.4byte	0x2c
+ 626 0076 04       		.uleb128 0x4
+ 627 0077 28010000 		.4byte	.LASF10
+ 628 007b 02       		.byte	0x2
+ 629 007c B4       		.byte	0xb4
+ 630 007d 3A000000 		.4byte	0x3a
+ 631 0081 02       		.uleb128 0x2
+ 632 0082 04       		.byte	0x4
+ 633 0083 04       		.byte	0x4
+ 634 0084 7E000000 		.4byte	.LASF11
+ 635 0088 02       		.uleb128 0x2
+ 636 0089 08       		.byte	0x8
+ 637 008a 04       		.byte	0x4
+ 638 008b 0D010000 		.4byte	.LASF12
+ 639 008f 02       		.uleb128 0x2
+ 640 0090 01       		.byte	0x1
+ 641 0091 08       		.byte	0x8
+ 642 0092 4A030000 		.4byte	.LASF13
+ 643 0096 05       		.uleb128 0x5
+ 644 0097 CC000000 		.4byte	.LASF14
+ 645 009b 02       		.byte	0x2
+ 646 009c 5D01     		.2byte	0x15d
+ 647 009e A2000000 		.4byte	0xa2
+ 648 00a2 06       		.uleb128 0x6
+ 649 00a3 6B000000 		.4byte	0x6b
+ 650 00a7 05       		.uleb128 0x5
+ 651 00a8 00000000 		.4byte	.LASF15
+ 652 00ac 02       		.byte	0x2
+ 653 00ad 5E01     		.2byte	0x15e
+ 654 00af B3000000 		.4byte	0xb3
+ 655 00b3 06       		.uleb128 0x6
+ 656 00b4 76000000 		.4byte	0x76
+ 657 00b8 02       		.uleb128 0x2
+ 658 00b9 04       		.byte	0x4
+ 659 00ba 07       		.byte	0x7
+ 660 00bb BD020000 		.4byte	.LASF16
+ 661 00bf 07       		.uleb128 0x7
+ 662 00c0 FE000000 		.4byte	.LASF17
+ 663 00c4 01       		.byte	0x1
+ 664 00c5 C7       		.byte	0xc7
+ 665 00c6 00000000 		.4byte	.LFB2
+ 666 00ca 10000000 		.4byte	.LFE2-.LFB2
+ 667 00ce 01       		.uleb128 0x1
+ 668 00cf 9C       		.byte	0x9c
+ 669 00d0 07       		.uleb128 0x7
+ 670 00d1 F1000000 		.4byte	.LASF18
+ 671 00d5 01       		.byte	0x1
+ 672 00d6 E9       		.byte	0xe9
+ 673 00d7 00000000 		.4byte	.LFB3
+ 674 00db 10000000 		.4byte	.LFE3-.LFB3
+ 675 00df 01       		.uleb128 0x1
+ 676 00e0 9C       		.byte	0x9c
+ 677 00e1 08       		.uleb128 0x8
+ 678 00e2 F8020000 		.4byte	.LASF19
+ 679 00e6 01       		.byte	0x1
+ 680 00e7 9301     		.2byte	0x193
+ 681 00e9 00000000 		.4byte	.LFB4
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 29
+
+
+ 682 00ed 0C000000 		.4byte	.LFE4-.LFB4
+ 683 00f1 01       		.uleb128 0x1
+ 684 00f2 9C       		.byte	0x9c
+ 685 00f3 06010000 		.4byte	0x106
+ 686 00f7 09       		.uleb128 0x9
+ 687 00f8 84000000 		.4byte	.LASF21
+ 688 00fc 01       		.byte	0x1
+ 689 00fd 9301     		.2byte	0x193
+ 690 00ff 76000000 		.4byte	0x76
+ 691 0103 01       		.uleb128 0x1
+ 692 0104 50       		.byte	0x50
+ 693 0105 00       		.byte	0
+ 694 0106 0A       		.uleb128 0xa
+ 695 0107 6A000000 		.4byte	.LASF28
+ 696 010b 01       		.byte	0x1
+ 697 010c A901     		.2byte	0x1a9
+ 698 010e 76000000 		.4byte	0x76
+ 699 0112 00000000 		.4byte	.LFB5
+ 700 0116 14000000 		.4byte	.LFE5-.LFB5
+ 701 011a 01       		.uleb128 0x1
+ 702 011b 9C       		.byte	0x9c
+ 703 011c 08       		.uleb128 0x8
+ 704 011d 14010000 		.4byte	.LASF20
+ 705 0121 01       		.byte	0x1
+ 706 0122 E201     		.2byte	0x1e2
+ 707 0124 00000000 		.4byte	.LFB7
+ 708 0128 0C000000 		.4byte	.LFE7-.LFB7
+ 709 012c 01       		.uleb128 0x1
+ 710 012d 9C       		.byte	0x9c
+ 711 012e 41010000 		.4byte	0x141
+ 712 0132 09       		.uleb128 0x9
+ 713 0133 2D000000 		.4byte	.LASF22
+ 714 0137 01       		.byte	0x1
+ 715 0138 E201     		.2byte	0x1e2
+ 716 013a 76000000 		.4byte	0x76
+ 717 013e 01       		.uleb128 0x1
+ 718 013f 50       		.byte	0x50
+ 719 0140 00       		.byte	0
+ 720 0141 08       		.uleb128 0x8
+ 721 0142 D4020000 		.4byte	.LASF23
+ 722 0146 01       		.byte	0x1
+ 723 0147 2B02     		.2byte	0x22b
+ 724 0149 00000000 		.4byte	.LFB8
+ 725 014d 0C000000 		.4byte	.LFE8-.LFB8
+ 726 0151 01       		.uleb128 0x1
+ 727 0152 9C       		.byte	0x9c
+ 728 0153 66010000 		.4byte	0x166
+ 729 0157 09       		.uleb128 0x9
+ 730 0158 5B030000 		.4byte	.LASF24
+ 731 015c 01       		.byte	0x1
+ 732 015d 2B02     		.2byte	0x22b
+ 733 015f 76000000 		.4byte	0x76
+ 734 0163 01       		.uleb128 0x1
+ 735 0164 50       		.byte	0x50
+ 736 0165 00       		.byte	0
+ 737 0166 08       		.uleb128 0x8
+ 738 0167 2F010000 		.4byte	.LASF25
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 30
+
+
+ 739 016b 01       		.byte	0x1
+ 740 016c 4802     		.2byte	0x248
+ 741 016e 00000000 		.4byte	.LFB9
+ 742 0172 0C000000 		.4byte	.LFE9-.LFB9
+ 743 0176 01       		.uleb128 0x1
+ 744 0177 9C       		.byte	0x9c
+ 745 0178 8B010000 		.4byte	0x18b
+ 746 017c 09       		.uleb128 0x9
+ 747 017d 5B030000 		.4byte	.LASF24
+ 748 0181 01       		.byte	0x1
+ 749 0182 4802     		.2byte	0x248
+ 750 0184 76000000 		.4byte	0x76
+ 751 0188 01       		.uleb128 0x1
+ 752 0189 50       		.byte	0x50
+ 753 018a 00       		.byte	0
+ 754 018b 08       		.uleb128 0x8
+ 755 018c A4020000 		.4byte	.LASF26
+ 756 0190 01       		.byte	0x1
+ 757 0191 AC02     		.2byte	0x2ac
+ 758 0193 00000000 		.4byte	.LFB10
+ 759 0197 0C000000 		.4byte	.LFE10-.LFB10
+ 760 019b 01       		.uleb128 0x1
+ 761 019c 9C       		.byte	0x9c
+ 762 019d B0010000 		.4byte	0x1b0
+ 763 01a1 09       		.uleb128 0x9
+ 764 01a2 EA020000 		.4byte	.LASF27
+ 765 01a6 01       		.byte	0x1
+ 766 01a7 AC02     		.2byte	0x2ac
+ 767 01a9 6B000000 		.4byte	0x6b
+ 768 01ad 01       		.uleb128 0x1
+ 769 01ae 50       		.byte	0x50
+ 770 01af 00       		.byte	0
+ 771 01b0 0A       		.uleb128 0xa
+ 772 01b1 A3000000 		.4byte	.LASF29
+ 773 01b5 01       		.byte	0x1
+ 774 01b6 C702     		.2byte	0x2c7
+ 775 01b8 6B000000 		.4byte	0x6b
+ 776 01bc 00000000 		.4byte	.LFB11
+ 777 01c0 0C000000 		.4byte	.LFE11-.LFB11
+ 778 01c4 01       		.uleb128 0x1
+ 779 01c5 9C       		.byte	0x9c
+ 780 01c6 0B       		.uleb128 0xb
+ 781 01c7 34000000 		.4byte	.LASF45
+ 782 01cb 01       		.byte	0x1
+ 783 01cc E102     		.2byte	0x2e1
+ 784 01ce 6B000000 		.4byte	0x6b
+ 785 01d2 00000000 		.4byte	.LFB12
+ 786 01d6 0C000000 		.4byte	.LFE12-.LFB12
+ 787 01da 01       		.uleb128 0x1
+ 788 01db 9C       		.byte	0x9c
+ 789 01dc EF010000 		.4byte	0x1ef
+ 790 01e0 0C       		.uleb128 0xc
+ 791 01e1 E5010000 		.4byte	.LASF35
+ 792 01e5 01       		.byte	0x1
+ 793 01e6 E302     		.2byte	0x2e3
+ 794 01e8 6B000000 		.4byte	0x6b
+ 795 01ec 01       		.uleb128 0x1
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 31
+
+
+ 796 01ed 50       		.byte	0x50
+ 797 01ee 00       		.byte	0
+ 798 01ef 08       		.uleb128 0x8
+ 799 01f0 57010000 		.4byte	.LASF30
+ 800 01f4 01       		.byte	0x1
+ 801 01f5 FD02     		.2byte	0x2fd
+ 802 01f7 00000000 		.4byte	.LFB13
+ 803 01fb 0C000000 		.4byte	.LFE13-.LFB13
+ 804 01ff 01       		.uleb128 0x1
+ 805 0200 9C       		.byte	0x9c
+ 806 0201 14020000 		.4byte	0x214
+ 807 0205 09       		.uleb128 0x9
+ 808 0206 E9000000 		.4byte	.LASF31
+ 809 020a 01       		.byte	0x1
+ 810 020b FD02     		.2byte	0x2fd
+ 811 020d 6B000000 		.4byte	0x6b
+ 812 0211 01       		.uleb128 0x1
+ 813 0212 50       		.byte	0x50
+ 814 0213 00       		.byte	0
+ 815 0214 0A       		.uleb128 0xa
+ 816 0215 76030000 		.4byte	.LASF32
+ 817 0219 01       		.byte	0x1
+ 818 021a 1603     		.2byte	0x316
+ 819 021c 76000000 		.4byte	0x76
+ 820 0220 00000000 		.4byte	.LFB14
+ 821 0224 0C000000 		.4byte	.LFE14-.LFB14
+ 822 0228 01       		.uleb128 0x1
+ 823 0229 9C       		.byte	0x9c
+ 824 022a 08       		.uleb128 0x8
+ 825 022b 45010000 		.4byte	.LASF33
+ 826 022f 01       		.byte	0x1
+ 827 0230 C501     		.2byte	0x1c5
+ 828 0232 00000000 		.4byte	.LFB6
+ 829 0236 14000000 		.4byte	.LFE6-.LFB6
+ 830 023a 01       		.uleb128 0x1
+ 831 023b 9C       		.byte	0x9c
+ 832 023c 53020000 		.4byte	0x253
+ 833 0240 0D       		.uleb128 0xd
+ 834 0241 08000000 		.4byte	.LVL7
+ 835 0245 14020000 		.4byte	0x214
+ 836 0249 0D       		.uleb128 0xd
+ 837 024a 0C000000 		.4byte	.LVL8
+ 838 024e B0010000 		.4byte	0x1b0
+ 839 0252 00       		.byte	0
+ 840 0253 0E       		.uleb128 0xe
+ 841 0254 50000000 		.4byte	.LASF34
+ 842 0258 01       		.byte	0x1
+ 843 0259 54       		.byte	0x54
+ 844 025a 00000000 		.4byte	.LFB1
+ 845 025e 6C000000 		.4byte	.LFE1-.LFB1
+ 846 0262 01       		.uleb128 0x1
+ 847 0263 9C       		.byte	0x9c
+ 848 0264 09030000 		.4byte	0x309
+ 849 0268 0F       		.uleb128 0xf
+ 850 0269 23020000 		.4byte	.LASF36
+ 851 026d 01       		.byte	0x1
+ 852 026e 57       		.byte	0x57
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 32
+
+
+ 853 026f 6B000000 		.4byte	0x6b
+ 854 0273 00000000 		.4byte	.LLST0
+ 855 0277 0F       		.uleb128 0xf
+ 856 0278 16000000 		.4byte	.LASF37
+ 857 027c 01       		.byte	0x1
+ 858 027d 5D       		.byte	0x5d
+ 859 027e 6B000000 		.4byte	0x6b
+ 860 0282 13000000 		.4byte	.LLST1
+ 861 0286 10       		.uleb128 0x10
+ 862 0287 2C000000 		.4byte	.LVL11
+ 863 028b E1000000 		.4byte	0xe1
+ 864 028f 9B020000 		.4byte	0x29b
+ 865 0293 11       		.uleb128 0x11
+ 866 0294 01       		.uleb128 0x1
+ 867 0295 50       		.byte	0x50
+ 868 0296 03       		.uleb128 0x3
+ 869 0297 0B       		.byte	0xb
+ 870 0298 60EA     		.2byte	0xea60
+ 871 029a 00       		.byte	0
+ 872 029b 10       		.uleb128 0x10
+ 873 029c 34000000 		.4byte	.LVL12
+ 874 02a0 1C010000 		.4byte	0x11c
+ 875 02a4 B0020000 		.4byte	0x2b0
+ 876 02a8 11       		.uleb128 0x11
+ 877 02a9 01       		.uleb128 0x1
+ 878 02aa 50       		.byte	0x50
+ 879 02ab 03       		.uleb128 0x3
+ 880 02ac 0B       		.byte	0xb
+ 881 02ad 60EA     		.2byte	0xea60
+ 882 02af 00       		.byte	0
+ 883 02b0 10       		.uleb128 0x10
+ 884 02b1 3C000000 		.4byte	.LVL13
+ 885 02b5 41010000 		.4byte	0x141
+ 886 02b9 C5020000 		.4byte	0x2c5
+ 887 02bd 11       		.uleb128 0x11
+ 888 02be 01       		.uleb128 0x1
+ 889 02bf 50       		.byte	0x50
+ 890 02c0 03       		.uleb128 0x3
+ 891 02c1 0A       		.byte	0xa
+ 892 02c2 3075     		.2byte	0x7530
+ 893 02c4 00       		.byte	0
+ 894 02c5 10       		.uleb128 0x10
+ 895 02c6 44000000 		.4byte	.LVL14
+ 896 02ca 66010000 		.4byte	0x166
+ 897 02ce DA020000 		.4byte	0x2da
+ 898 02d2 11       		.uleb128 0x11
+ 899 02d3 01       		.uleb128 0x1
+ 900 02d4 50       		.byte	0x50
+ 901 02d5 03       		.uleb128 0x3
+ 902 02d6 0A       		.byte	0xa
+ 903 02d7 3075     		.2byte	0x7530
+ 904 02d9 00       		.byte	0
+ 905 02da 10       		.uleb128 0x10
+ 906 02db 4A000000 		.4byte	.LVL15
+ 907 02df 8B010000 		.4byte	0x18b
+ 908 02e3 ED020000 		.4byte	0x2ed
+ 909 02e7 11       		.uleb128 0x11
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 33
+
+
+ 910 02e8 01       		.uleb128 0x1
+ 911 02e9 50       		.byte	0x50
+ 912 02ea 01       		.uleb128 0x1
+ 913 02eb 30       		.byte	0x30
+ 914 02ec 00       		.byte	0
+ 915 02ed 0D       		.uleb128 0xd
+ 916 02ee 4E000000 		.4byte	.LVL16
+ 917 02f2 84030000 		.4byte	0x384
+ 918 02f6 0D       		.uleb128 0xd
+ 919 02f7 5C000000 		.4byte	.LVL17
+ 920 02fb 8F030000 		.4byte	0x38f
+ 921 02ff 0D       		.uleb128 0xd
+ 922 0300 60000000 		.4byte	.LVL18
+ 923 0304 2A020000 		.4byte	0x22a
+ 924 0308 00       		.byte	0
+ 925 0309 0E       		.uleb128 0xe
+ 926 030a D7010000 		.4byte	.LASF38
+ 927 030e 01       		.byte	0x1
+ 928 030f 37       		.byte	0x37
+ 929 0310 00000000 		.4byte	.LFB0
+ 930 0314 1C000000 		.4byte	.LFE0-.LFB0
+ 931 0318 01       		.uleb128 0x1
+ 932 0319 9C       		.byte	0x9c
+ 933 031a 31030000 		.4byte	0x331
+ 934 031e 0D       		.uleb128 0xd
+ 935 031f 0C000000 		.4byte	.LVL19
+ 936 0323 53020000 		.4byte	0x253
+ 937 0327 0D       		.uleb128 0xd
+ 938 0328 16000000 		.4byte	.LVL20
+ 939 032c BF000000 		.4byte	0xbf
+ 940 0330 00       		.byte	0
+ 941 0331 0A       		.uleb128 0xa
+ 942 0332 17030000 		.4byte	.LASF39
+ 943 0336 01       		.byte	0x1
+ 944 0337 4A03     		.2byte	0x34a
+ 945 0339 76000000 		.4byte	0x76
+ 946 033d 00000000 		.4byte	.LFB15
+ 947 0341 0C000000 		.4byte	.LFE15-.LFB15
+ 948 0345 01       		.uleb128 0x1
+ 949 0346 9C       		.byte	0x9c
+ 950 0347 0A       		.uleb128 0xa
+ 951 0348 2C030000 		.4byte	.LASF40
+ 952 034c 01       		.byte	0x1
+ 953 034d 5E03     		.2byte	0x35e
+ 954 034f 76000000 		.4byte	0x76
+ 955 0353 00000000 		.4byte	.LFB16
+ 956 0357 0C000000 		.4byte	.LFE16-.LFB16
+ 957 035b 01       		.uleb128 0x1
+ 958 035c 9C       		.byte	0x9c
+ 959 035d 0A       		.uleb128 0xa
+ 960 035e AE010000 		.4byte	.LASF41
+ 961 0362 01       		.byte	0x1
+ 962 0363 7403     		.2byte	0x374
+ 963 0365 76000000 		.4byte	0x76
+ 964 0369 00000000 		.4byte	.LFB17
+ 965 036d 0C000000 		.4byte	.LFE17-.LFB17
+ 966 0371 01       		.uleb128 0x1
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 34
+
+
+ 967 0372 9C       		.byte	0x9c
+ 968 0373 12       		.uleb128 0x12
+ 969 0374 06000000 		.4byte	.LASF46
+ 970 0378 01       		.byte	0x1
+ 971 0379 20       		.byte	0x20
+ 972 037a 6B000000 		.4byte	0x6b
+ 973 037e 05       		.uleb128 0x5
+ 974 037f 03       		.byte	0x3
+ 975 0380 00000000 		.4byte	Servo_B_initVar
+ 976 0384 13       		.uleb128 0x13
+ 977 0385 97010000 		.4byte	.LASF47
+ 978 0389 03       		.byte	0x3
+ 979 038a 7E       		.byte	0x7e
+ 980 038b 6B000000 		.4byte	0x6b
+ 981 038f 14       		.uleb128 0x14
+ 982 0390 C1010000 		.4byte	.LASF48
+ 983 0394 03       		.byte	0x3
+ 984 0395 7F       		.byte	0x7f
+ 985 0396 15       		.uleb128 0x15
+ 986 0397 6B000000 		.4byte	0x6b
+ 987 039b 00       		.byte	0
+ 988 039c 00       		.byte	0
+ 989              		.section	.debug_abbrev,"",%progbits
+ 990              	.Ldebug_abbrev0:
+ 991 0000 01       		.uleb128 0x1
+ 992 0001 11       		.uleb128 0x11
+ 993 0002 01       		.byte	0x1
+ 994 0003 25       		.uleb128 0x25
+ 995 0004 0E       		.uleb128 0xe
+ 996 0005 13       		.uleb128 0x13
+ 997 0006 0B       		.uleb128 0xb
+ 998 0007 03       		.uleb128 0x3
+ 999 0008 0E       		.uleb128 0xe
+ 1000 0009 1B       		.uleb128 0x1b
+ 1001 000a 0E       		.uleb128 0xe
+ 1002 000b 55       		.uleb128 0x55
+ 1003 000c 17       		.uleb128 0x17
+ 1004 000d 11       		.uleb128 0x11
+ 1005 000e 01       		.uleb128 0x1
+ 1006 000f 10       		.uleb128 0x10
+ 1007 0010 17       		.uleb128 0x17
+ 1008 0011 00       		.byte	0
+ 1009 0012 00       		.byte	0
+ 1010 0013 02       		.uleb128 0x2
+ 1011 0014 24       		.uleb128 0x24
+ 1012 0015 00       		.byte	0
+ 1013 0016 0B       		.uleb128 0xb
+ 1014 0017 0B       		.uleb128 0xb
+ 1015 0018 3E       		.uleb128 0x3e
+ 1016 0019 0B       		.uleb128 0xb
+ 1017 001a 03       		.uleb128 0x3
+ 1018 001b 0E       		.uleb128 0xe
+ 1019 001c 00       		.byte	0
+ 1020 001d 00       		.byte	0
+ 1021 001e 03       		.uleb128 0x3
+ 1022 001f 24       		.uleb128 0x24
+ 1023 0020 00       		.byte	0
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 35
+
+
+ 1024 0021 0B       		.uleb128 0xb
+ 1025 0022 0B       		.uleb128 0xb
+ 1026 0023 3E       		.uleb128 0x3e
+ 1027 0024 0B       		.uleb128 0xb
+ 1028 0025 03       		.uleb128 0x3
+ 1029 0026 08       		.uleb128 0x8
+ 1030 0027 00       		.byte	0
+ 1031 0028 00       		.byte	0
+ 1032 0029 04       		.uleb128 0x4
+ 1033 002a 16       		.uleb128 0x16
+ 1034 002b 00       		.byte	0
+ 1035 002c 03       		.uleb128 0x3
+ 1036 002d 0E       		.uleb128 0xe
+ 1037 002e 3A       		.uleb128 0x3a
+ 1038 002f 0B       		.uleb128 0xb
+ 1039 0030 3B       		.uleb128 0x3b
+ 1040 0031 0B       		.uleb128 0xb
+ 1041 0032 49       		.uleb128 0x49
+ 1042 0033 13       		.uleb128 0x13
+ 1043 0034 00       		.byte	0
+ 1044 0035 00       		.byte	0
+ 1045 0036 05       		.uleb128 0x5
+ 1046 0037 16       		.uleb128 0x16
+ 1047 0038 00       		.byte	0
+ 1048 0039 03       		.uleb128 0x3
+ 1049 003a 0E       		.uleb128 0xe
+ 1050 003b 3A       		.uleb128 0x3a
+ 1051 003c 0B       		.uleb128 0xb
+ 1052 003d 3B       		.uleb128 0x3b
+ 1053 003e 05       		.uleb128 0x5
+ 1054 003f 49       		.uleb128 0x49
+ 1055 0040 13       		.uleb128 0x13
+ 1056 0041 00       		.byte	0
+ 1057 0042 00       		.byte	0
+ 1058 0043 06       		.uleb128 0x6
+ 1059 0044 35       		.uleb128 0x35
+ 1060 0045 00       		.byte	0
+ 1061 0046 49       		.uleb128 0x49
+ 1062 0047 13       		.uleb128 0x13
+ 1063 0048 00       		.byte	0
+ 1064 0049 00       		.byte	0
+ 1065 004a 07       		.uleb128 0x7
+ 1066 004b 2E       		.uleb128 0x2e
+ 1067 004c 00       		.byte	0
+ 1068 004d 3F       		.uleb128 0x3f
+ 1069 004e 19       		.uleb128 0x19
+ 1070 004f 03       		.uleb128 0x3
+ 1071 0050 0E       		.uleb128 0xe
+ 1072 0051 3A       		.uleb128 0x3a
+ 1073 0052 0B       		.uleb128 0xb
+ 1074 0053 3B       		.uleb128 0x3b
+ 1075 0054 0B       		.uleb128 0xb
+ 1076 0055 27       		.uleb128 0x27
+ 1077 0056 19       		.uleb128 0x19
+ 1078 0057 11       		.uleb128 0x11
+ 1079 0058 01       		.uleb128 0x1
+ 1080 0059 12       		.uleb128 0x12
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 36
+
+
+ 1081 005a 06       		.uleb128 0x6
+ 1082 005b 40       		.uleb128 0x40
+ 1083 005c 18       		.uleb128 0x18
+ 1084 005d 9742     		.uleb128 0x2117
+ 1085 005f 19       		.uleb128 0x19
+ 1086 0060 00       		.byte	0
+ 1087 0061 00       		.byte	0
+ 1088 0062 08       		.uleb128 0x8
+ 1089 0063 2E       		.uleb128 0x2e
+ 1090 0064 01       		.byte	0x1
+ 1091 0065 3F       		.uleb128 0x3f
+ 1092 0066 19       		.uleb128 0x19
+ 1093 0067 03       		.uleb128 0x3
+ 1094 0068 0E       		.uleb128 0xe
+ 1095 0069 3A       		.uleb128 0x3a
+ 1096 006a 0B       		.uleb128 0xb
+ 1097 006b 3B       		.uleb128 0x3b
+ 1098 006c 05       		.uleb128 0x5
+ 1099 006d 27       		.uleb128 0x27
+ 1100 006e 19       		.uleb128 0x19
+ 1101 006f 11       		.uleb128 0x11
+ 1102 0070 01       		.uleb128 0x1
+ 1103 0071 12       		.uleb128 0x12
+ 1104 0072 06       		.uleb128 0x6
+ 1105 0073 40       		.uleb128 0x40
+ 1106 0074 18       		.uleb128 0x18
+ 1107 0075 9742     		.uleb128 0x2117
+ 1108 0077 19       		.uleb128 0x19
+ 1109 0078 01       		.uleb128 0x1
+ 1110 0079 13       		.uleb128 0x13
+ 1111 007a 00       		.byte	0
+ 1112 007b 00       		.byte	0
+ 1113 007c 09       		.uleb128 0x9
+ 1114 007d 05       		.uleb128 0x5
+ 1115 007e 00       		.byte	0
+ 1116 007f 03       		.uleb128 0x3
+ 1117 0080 0E       		.uleb128 0xe
+ 1118 0081 3A       		.uleb128 0x3a
+ 1119 0082 0B       		.uleb128 0xb
+ 1120 0083 3B       		.uleb128 0x3b
+ 1121 0084 05       		.uleb128 0x5
+ 1122 0085 49       		.uleb128 0x49
+ 1123 0086 13       		.uleb128 0x13
+ 1124 0087 02       		.uleb128 0x2
+ 1125 0088 18       		.uleb128 0x18
+ 1126 0089 00       		.byte	0
+ 1127 008a 00       		.byte	0
+ 1128 008b 0A       		.uleb128 0xa
+ 1129 008c 2E       		.uleb128 0x2e
+ 1130 008d 00       		.byte	0
+ 1131 008e 3F       		.uleb128 0x3f
+ 1132 008f 19       		.uleb128 0x19
+ 1133 0090 03       		.uleb128 0x3
+ 1134 0091 0E       		.uleb128 0xe
+ 1135 0092 3A       		.uleb128 0x3a
+ 1136 0093 0B       		.uleb128 0xb
+ 1137 0094 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 37
+
+
+ 1138 0095 05       		.uleb128 0x5
+ 1139 0096 27       		.uleb128 0x27
+ 1140 0097 19       		.uleb128 0x19
+ 1141 0098 49       		.uleb128 0x49
+ 1142 0099 13       		.uleb128 0x13
+ 1143 009a 11       		.uleb128 0x11
+ 1144 009b 01       		.uleb128 0x1
+ 1145 009c 12       		.uleb128 0x12
+ 1146 009d 06       		.uleb128 0x6
+ 1147 009e 40       		.uleb128 0x40
+ 1148 009f 18       		.uleb128 0x18
+ 1149 00a0 9742     		.uleb128 0x2117
+ 1150 00a2 19       		.uleb128 0x19
+ 1151 00a3 00       		.byte	0
+ 1152 00a4 00       		.byte	0
+ 1153 00a5 0B       		.uleb128 0xb
+ 1154 00a6 2E       		.uleb128 0x2e
+ 1155 00a7 01       		.byte	0x1
+ 1156 00a8 3F       		.uleb128 0x3f
+ 1157 00a9 19       		.uleb128 0x19
+ 1158 00aa 03       		.uleb128 0x3
+ 1159 00ab 0E       		.uleb128 0xe
+ 1160 00ac 3A       		.uleb128 0x3a
+ 1161 00ad 0B       		.uleb128 0xb
+ 1162 00ae 3B       		.uleb128 0x3b
+ 1163 00af 05       		.uleb128 0x5
+ 1164 00b0 27       		.uleb128 0x27
+ 1165 00b1 19       		.uleb128 0x19
+ 1166 00b2 49       		.uleb128 0x49
+ 1167 00b3 13       		.uleb128 0x13
+ 1168 00b4 11       		.uleb128 0x11
+ 1169 00b5 01       		.uleb128 0x1
+ 1170 00b6 12       		.uleb128 0x12
+ 1171 00b7 06       		.uleb128 0x6
+ 1172 00b8 40       		.uleb128 0x40
+ 1173 00b9 18       		.uleb128 0x18
+ 1174 00ba 9742     		.uleb128 0x2117
+ 1175 00bc 19       		.uleb128 0x19
+ 1176 00bd 01       		.uleb128 0x1
+ 1177 00be 13       		.uleb128 0x13
+ 1178 00bf 00       		.byte	0
+ 1179 00c0 00       		.byte	0
+ 1180 00c1 0C       		.uleb128 0xc
+ 1181 00c2 34       		.uleb128 0x34
+ 1182 00c3 00       		.byte	0
+ 1183 00c4 03       		.uleb128 0x3
+ 1184 00c5 0E       		.uleb128 0xe
+ 1185 00c6 3A       		.uleb128 0x3a
+ 1186 00c7 0B       		.uleb128 0xb
+ 1187 00c8 3B       		.uleb128 0x3b
+ 1188 00c9 05       		.uleb128 0x5
+ 1189 00ca 49       		.uleb128 0x49
+ 1190 00cb 13       		.uleb128 0x13
+ 1191 00cc 02       		.uleb128 0x2
+ 1192 00cd 18       		.uleb128 0x18
+ 1193 00ce 00       		.byte	0
+ 1194 00cf 00       		.byte	0
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 38
+
+
+ 1195 00d0 0D       		.uleb128 0xd
+ 1196 00d1 898201   		.uleb128 0x4109
+ 1197 00d4 00       		.byte	0
+ 1198 00d5 11       		.uleb128 0x11
+ 1199 00d6 01       		.uleb128 0x1
+ 1200 00d7 31       		.uleb128 0x31
+ 1201 00d8 13       		.uleb128 0x13
+ 1202 00d9 00       		.byte	0
+ 1203 00da 00       		.byte	0
+ 1204 00db 0E       		.uleb128 0xe
+ 1205 00dc 2E       		.uleb128 0x2e
+ 1206 00dd 01       		.byte	0x1
+ 1207 00de 3F       		.uleb128 0x3f
+ 1208 00df 19       		.uleb128 0x19
+ 1209 00e0 03       		.uleb128 0x3
+ 1210 00e1 0E       		.uleb128 0xe
+ 1211 00e2 3A       		.uleb128 0x3a
+ 1212 00e3 0B       		.uleb128 0xb
+ 1213 00e4 3B       		.uleb128 0x3b
+ 1214 00e5 0B       		.uleb128 0xb
+ 1215 00e6 27       		.uleb128 0x27
+ 1216 00e7 19       		.uleb128 0x19
+ 1217 00e8 11       		.uleb128 0x11
+ 1218 00e9 01       		.uleb128 0x1
+ 1219 00ea 12       		.uleb128 0x12
+ 1220 00eb 06       		.uleb128 0x6
+ 1221 00ec 40       		.uleb128 0x40
+ 1222 00ed 18       		.uleb128 0x18
+ 1223 00ee 9742     		.uleb128 0x2117
+ 1224 00f0 19       		.uleb128 0x19
+ 1225 00f1 01       		.uleb128 0x1
+ 1226 00f2 13       		.uleb128 0x13
+ 1227 00f3 00       		.byte	0
+ 1228 00f4 00       		.byte	0
+ 1229 00f5 0F       		.uleb128 0xf
+ 1230 00f6 34       		.uleb128 0x34
+ 1231 00f7 00       		.byte	0
+ 1232 00f8 03       		.uleb128 0x3
+ 1233 00f9 0E       		.uleb128 0xe
+ 1234 00fa 3A       		.uleb128 0x3a
+ 1235 00fb 0B       		.uleb128 0xb
+ 1236 00fc 3B       		.uleb128 0x3b
+ 1237 00fd 0B       		.uleb128 0xb
+ 1238 00fe 49       		.uleb128 0x49
+ 1239 00ff 13       		.uleb128 0x13
+ 1240 0100 02       		.uleb128 0x2
+ 1241 0101 17       		.uleb128 0x17
+ 1242 0102 00       		.byte	0
+ 1243 0103 00       		.byte	0
+ 1244 0104 10       		.uleb128 0x10
+ 1245 0105 898201   		.uleb128 0x4109
+ 1246 0108 01       		.byte	0x1
+ 1247 0109 11       		.uleb128 0x11
+ 1248 010a 01       		.uleb128 0x1
+ 1249 010b 31       		.uleb128 0x31
+ 1250 010c 13       		.uleb128 0x13
+ 1251 010d 01       		.uleb128 0x1
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 39
+
+
+ 1252 010e 13       		.uleb128 0x13
+ 1253 010f 00       		.byte	0
+ 1254 0110 00       		.byte	0
+ 1255 0111 11       		.uleb128 0x11
+ 1256 0112 8A8201   		.uleb128 0x410a
+ 1257 0115 00       		.byte	0
+ 1258 0116 02       		.uleb128 0x2
+ 1259 0117 18       		.uleb128 0x18
+ 1260 0118 9142     		.uleb128 0x2111
+ 1261 011a 18       		.uleb128 0x18
+ 1262 011b 00       		.byte	0
+ 1263 011c 00       		.byte	0
+ 1264 011d 12       		.uleb128 0x12
+ 1265 011e 34       		.uleb128 0x34
+ 1266 011f 00       		.byte	0
+ 1267 0120 03       		.uleb128 0x3
+ 1268 0121 0E       		.uleb128 0xe
+ 1269 0122 3A       		.uleb128 0x3a
+ 1270 0123 0B       		.uleb128 0xb
+ 1271 0124 3B       		.uleb128 0x3b
+ 1272 0125 0B       		.uleb128 0xb
+ 1273 0126 49       		.uleb128 0x49
+ 1274 0127 13       		.uleb128 0x13
+ 1275 0128 3F       		.uleb128 0x3f
+ 1276 0129 19       		.uleb128 0x19
+ 1277 012a 02       		.uleb128 0x2
+ 1278 012b 18       		.uleb128 0x18
+ 1279 012c 00       		.byte	0
+ 1280 012d 00       		.byte	0
+ 1281 012e 13       		.uleb128 0x13
+ 1282 012f 2E       		.uleb128 0x2e
+ 1283 0130 00       		.byte	0
+ 1284 0131 3F       		.uleb128 0x3f
+ 1285 0132 19       		.uleb128 0x19
+ 1286 0133 03       		.uleb128 0x3
+ 1287 0134 0E       		.uleb128 0xe
+ 1288 0135 3A       		.uleb128 0x3a
+ 1289 0136 0B       		.uleb128 0xb
+ 1290 0137 3B       		.uleb128 0x3b
+ 1291 0138 0B       		.uleb128 0xb
+ 1292 0139 27       		.uleb128 0x27
+ 1293 013a 19       		.uleb128 0x19
+ 1294 013b 49       		.uleb128 0x49
+ 1295 013c 13       		.uleb128 0x13
+ 1296 013d 3C       		.uleb128 0x3c
+ 1297 013e 19       		.uleb128 0x19
+ 1298 013f 00       		.byte	0
+ 1299 0140 00       		.byte	0
+ 1300 0141 14       		.uleb128 0x14
+ 1301 0142 2E       		.uleb128 0x2e
+ 1302 0143 01       		.byte	0x1
+ 1303 0144 3F       		.uleb128 0x3f
+ 1304 0145 19       		.uleb128 0x19
+ 1305 0146 03       		.uleb128 0x3
+ 1306 0147 0E       		.uleb128 0xe
+ 1307 0148 3A       		.uleb128 0x3a
+ 1308 0149 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 40
+
+
+ 1309 014a 3B       		.uleb128 0x3b
+ 1310 014b 0B       		.uleb128 0xb
+ 1311 014c 27       		.uleb128 0x27
+ 1312 014d 19       		.uleb128 0x19
+ 1313 014e 3C       		.uleb128 0x3c
+ 1314 014f 19       		.uleb128 0x19
+ 1315 0150 00       		.byte	0
+ 1316 0151 00       		.byte	0
+ 1317 0152 15       		.uleb128 0x15
+ 1318 0153 05       		.uleb128 0x5
+ 1319 0154 00       		.byte	0
+ 1320 0155 49       		.uleb128 0x49
+ 1321 0156 13       		.uleb128 0x13
+ 1322 0157 00       		.byte	0
+ 1323 0158 00       		.byte	0
+ 1324 0159 00       		.byte	0
+ 1325              		.section	.debug_loc,"",%progbits
+ 1326              	.Ldebug_loc0:
+ 1327              	.LLST0:
+ 1328 0000 0A000000 		.4byte	.LVL9
+ 1329 0004 0E000000 		.4byte	.LVL10
+ 1330 0008 0100     		.2byte	0x1
+ 1331 000a 52       		.byte	0x52
+ 1332 000b 00000000 		.4byte	0
+ 1333 000f 00000000 		.4byte	0
+ 1334              	.LLST1:
+ 1335 0013 4E000000 		.4byte	.LVL16
+ 1336 0017 5B000000 		.4byte	.LVL17-1
+ 1337 001b 0100     		.2byte	0x1
+ 1338 001d 50       		.byte	0x50
+ 1339 001e 00000000 		.4byte	0
+ 1340 0022 00000000 		.4byte	0
+ 1341              		.section	.debug_aranges,"",%progbits
+ 1342 0000 A4000000 		.4byte	0xa4
+ 1343 0004 0200     		.2byte	0x2
+ 1344 0006 00000000 		.4byte	.Ldebug_info0
+ 1345 000a 04       		.byte	0x4
+ 1346 000b 00       		.byte	0
+ 1347 000c 0000     		.2byte	0
+ 1348 000e 0000     		.2byte	0
+ 1349 0010 00000000 		.4byte	.LFB2
+ 1350 0014 10000000 		.4byte	.LFE2-.LFB2
+ 1351 0018 00000000 		.4byte	.LFB3
+ 1352 001c 10000000 		.4byte	.LFE3-.LFB3
+ 1353 0020 00000000 		.4byte	.LFB4
+ 1354 0024 0C000000 		.4byte	.LFE4-.LFB4
+ 1355 0028 00000000 		.4byte	.LFB5
+ 1356 002c 14000000 		.4byte	.LFE5-.LFB5
+ 1357 0030 00000000 		.4byte	.LFB7
+ 1358 0034 0C000000 		.4byte	.LFE7-.LFB7
+ 1359 0038 00000000 		.4byte	.LFB8
+ 1360 003c 0C000000 		.4byte	.LFE8-.LFB8
+ 1361 0040 00000000 		.4byte	.LFB9
+ 1362 0044 0C000000 		.4byte	.LFE9-.LFB9
+ 1363 0048 00000000 		.4byte	.LFB10
+ 1364 004c 0C000000 		.4byte	.LFE10-.LFB10
+ 1365 0050 00000000 		.4byte	.LFB11
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 41
+
+
+ 1366 0054 0C000000 		.4byte	.LFE11-.LFB11
+ 1367 0058 00000000 		.4byte	.LFB12
+ 1368 005c 0C000000 		.4byte	.LFE12-.LFB12
+ 1369 0060 00000000 		.4byte	.LFB13
+ 1370 0064 0C000000 		.4byte	.LFE13-.LFB13
+ 1371 0068 00000000 		.4byte	.LFB14
+ 1372 006c 0C000000 		.4byte	.LFE14-.LFB14
+ 1373 0070 00000000 		.4byte	.LFB6
+ 1374 0074 14000000 		.4byte	.LFE6-.LFB6
+ 1375 0078 00000000 		.4byte	.LFB1
+ 1376 007c 6C000000 		.4byte	.LFE1-.LFB1
+ 1377 0080 00000000 		.4byte	.LFB0
+ 1378 0084 1C000000 		.4byte	.LFE0-.LFB0
+ 1379 0088 00000000 		.4byte	.LFB15
+ 1380 008c 0C000000 		.4byte	.LFE15-.LFB15
+ 1381 0090 00000000 		.4byte	.LFB16
+ 1382 0094 0C000000 		.4byte	.LFE16-.LFB16
+ 1383 0098 00000000 		.4byte	.LFB17
+ 1384 009c 0C000000 		.4byte	.LFE17-.LFB17
+ 1385 00a0 00000000 		.4byte	0
+ 1386 00a4 00000000 		.4byte	0
+ 1387              		.section	.debug_ranges,"",%progbits
+ 1388              	.Ldebug_ranges0:
+ 1389 0000 00000000 		.4byte	.LFB2
+ 1390 0004 10000000 		.4byte	.LFE2
+ 1391 0008 00000000 		.4byte	.LFB3
+ 1392 000c 10000000 		.4byte	.LFE3
+ 1393 0010 00000000 		.4byte	.LFB4
+ 1394 0014 0C000000 		.4byte	.LFE4
+ 1395 0018 00000000 		.4byte	.LFB5
+ 1396 001c 14000000 		.4byte	.LFE5
+ 1397 0020 00000000 		.4byte	.LFB7
+ 1398 0024 0C000000 		.4byte	.LFE7
+ 1399 0028 00000000 		.4byte	.LFB8
+ 1400 002c 0C000000 		.4byte	.LFE8
+ 1401 0030 00000000 		.4byte	.LFB9
+ 1402 0034 0C000000 		.4byte	.LFE9
+ 1403 0038 00000000 		.4byte	.LFB10
+ 1404 003c 0C000000 		.4byte	.LFE10
+ 1405 0040 00000000 		.4byte	.LFB11
+ 1406 0044 0C000000 		.4byte	.LFE11
+ 1407 0048 00000000 		.4byte	.LFB12
+ 1408 004c 0C000000 		.4byte	.LFE12
+ 1409 0050 00000000 		.4byte	.LFB13
+ 1410 0054 0C000000 		.4byte	.LFE13
+ 1411 0058 00000000 		.4byte	.LFB14
+ 1412 005c 0C000000 		.4byte	.LFE14
+ 1413 0060 00000000 		.4byte	.LFB6
+ 1414 0064 14000000 		.4byte	.LFE6
+ 1415 0068 00000000 		.4byte	.LFB1
+ 1416 006c 6C000000 		.4byte	.LFE1
+ 1417 0070 00000000 		.4byte	.LFB0
+ 1418 0074 1C000000 		.4byte	.LFE0
+ 1419 0078 00000000 		.4byte	.LFB15
+ 1420 007c 0C000000 		.4byte	.LFE15
+ 1421 0080 00000000 		.4byte	.LFB16
+ 1422 0084 0C000000 		.4byte	.LFE16
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 42
+
+
+ 1423 0088 00000000 		.4byte	.LFB17
+ 1424 008c 0C000000 		.4byte	.LFE17
+ 1425 0090 00000000 		.4byte	0
+ 1426 0094 00000000 		.4byte	0
+ 1427              		.section	.debug_line,"",%progbits
+ 1428              	.Ldebug_line0:
+ 1429 0000 B0010000 		.section	.debug_str,"MS",%progbits,1
+ 1429      02005100 
+ 1429      00000201 
+ 1429      FB0E0D00 
+ 1429      01010101 
+ 1430              	.LASF15:
+ 1431 0000 72656731 		.ascii	"reg16\000"
+ 1431      3600
+ 1432              	.LASF46:
+ 1433 0006 53657276 		.ascii	"Servo_B_initVar\000"
+ 1433      6F5F425F 
+ 1433      696E6974 
+ 1433      56617200 
+ 1434              	.LASF37:
+ 1435 0016 53657276 		.ascii	"Servo_B_interruptState\000"
+ 1435      6F5F425F 
+ 1435      696E7465 
+ 1435      72727570 
+ 1435      74537461 
+ 1436              	.LASF22:
+ 1437 002d 70657269 		.ascii	"period\000"
+ 1437      6F6400
+ 1438              	.LASF45:
+ 1439 0034 53657276 		.ascii	"Servo_B_ReadControlRegister\000"
+ 1439      6F5F425F 
+ 1439      52656164 
+ 1439      436F6E74 
+ 1439      726F6C52 
+ 1440              	.LASF34:
+ 1441 0050 53657276 		.ascii	"Servo_B_Init\000"
+ 1441      6F5F425F 
+ 1441      496E6974 
+ 1441      00
+ 1442              	.LASF8:
+ 1443 005d 756E7369 		.ascii	"unsigned int\000"
+ 1443      676E6564 
+ 1443      20696E74 
+ 1443      00
+ 1444              	.LASF28:
+ 1445 006a 53657276 		.ascii	"Servo_B_ReadCounter\000"
+ 1445      6F5F425F 
+ 1445      52656164 
+ 1445      436F756E 
+ 1445      74657200 
+ 1446              	.LASF11:
+ 1447 007e 666C6F61 		.ascii	"float\000"
+ 1447      7400
+ 1448              	.LASF21:
+ 1449 0084 636F756E 		.ascii	"counter\000"
+ 1449      74657200 
+ 1450              	.LASF7:
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 43
+
+
+ 1451 008c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1451      206C6F6E 
+ 1451      6720756E 
+ 1451      7369676E 
+ 1451      65642069 
+ 1452              	.LASF29:
+ 1453 00a3 53657276 		.ascii	"Servo_B_ReadStatusRegister\000"
+ 1453      6F5F425F 
+ 1453      52656164 
+ 1453      53746174 
+ 1453      75735265 
+ 1454              	.LASF1:
+ 1455 00be 756E7369 		.ascii	"unsigned char\000"
+ 1455      676E6564 
+ 1455      20636861 
+ 1455      7200
+ 1456              	.LASF14:
+ 1457 00cc 72656738 		.ascii	"reg8\000"
+ 1457      00
+ 1458              	.LASF5:
+ 1459 00d1 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1459      20756E73 
+ 1459      69676E65 
+ 1459      6420696E 
+ 1459      7400
+ 1460              	.LASF9:
+ 1461 00e3 75696E74 		.ascii	"uint8\000"
+ 1461      3800
+ 1462              	.LASF31:
+ 1463 00e9 636F6E74 		.ascii	"control\000"
+ 1463      726F6C00 
+ 1464              	.LASF18:
+ 1465 00f1 53657276 		.ascii	"Servo_B_Stop\000"
+ 1465      6F5F425F 
+ 1465      53746F70 
+ 1465      00
+ 1466              	.LASF17:
+ 1467 00fe 53657276 		.ascii	"Servo_B_Enable\000"
+ 1467      6F5F425F 
+ 1467      456E6162 
+ 1467      6C6500
+ 1468              	.LASF12:
+ 1469 010d 646F7562 		.ascii	"double\000"
+ 1469      6C6500
+ 1470              	.LASF20:
+ 1471 0114 53657276 		.ascii	"Servo_B_WritePeriod\000"
+ 1471      6F5F425F 
+ 1471      57726974 
+ 1471      65506572 
+ 1471      696F6400 
+ 1472              	.LASF10:
+ 1473 0128 75696E74 		.ascii	"uint16\000"
+ 1473      313600
+ 1474              	.LASF25:
+ 1475 012f 53657276 		.ascii	"Servo_B_WriteCompare2\000"
+ 1475      6F5F425F 
+ 1475      57726974 
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 44
+
+
+ 1475      65436F6D 
+ 1475      70617265 
+ 1476              	.LASF33:
+ 1477 0145 53657276 		.ascii	"Servo_B_ClearFIFO\000"
+ 1477      6F5F425F 
+ 1477      436C6561 
+ 1477      72464946 
+ 1477      4F00
+ 1478              	.LASF30:
+ 1479 0157 53657276 		.ascii	"Servo_B_WriteControlRegister\000"
+ 1479      6F5F425F 
+ 1479      57726974 
+ 1479      65436F6E 
+ 1479      74726F6C 
+ 1480              	.LASF43:
+ 1481 0174 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Servo_B.c\000"
+ 1481      6E657261 
+ 1481      7465645F 
+ 1481      536F7572 
+ 1481      63655C50 
+ 1482              	.LASF47:
+ 1483 0197 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 1483      74657243 
+ 1483      72697469 
+ 1483      63616C53 
+ 1483      65637469 
+ 1484              	.LASF41:
+ 1485 01ae 53657276 		.ascii	"Servo_B_ReadPeriod\000"
+ 1485      6F5F425F 
+ 1485      52656164 
+ 1485      50657269 
+ 1485      6F6400
+ 1486              	.LASF48:
+ 1487 01c1 43794578 		.ascii	"CyExitCriticalSection\000"
+ 1487      69744372 
+ 1487      69746963 
+ 1487      616C5365 
+ 1487      6374696F 
+ 1488              	.LASF38:
+ 1489 01d7 53657276 		.ascii	"Servo_B_Start\000"
+ 1489      6F5F425F 
+ 1489      53746172 
+ 1489      7400
+ 1490              	.LASF35:
+ 1491 01e5 72657375 		.ascii	"result\000"
+ 1491      6C7400
+ 1492              	.LASF44:
+ 1493 01ec 433A5C55 		.ascii	"C:\\Users\\Jorden\\Documents\\PSoC Creator\\Test\\T"
+ 1493      73657273 
+ 1493      5C4A6F72 
+ 1493      64656E5C 
+ 1493      446F6375 
+ 1494 0219 6573742E 		.ascii	"est.cydsn\000"
+ 1494      63796473 
+ 1494      6E00
+ 1495              	.LASF36:
+ 1496 0223 6374726C 		.ascii	"ctrl\000"
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 45
+
+
+ 1496      00
+ 1497              	.LASF42:
+ 1498 0228 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 1498      4320342E 
+ 1498      382E3420 
+ 1498      32303134 
+ 1498      30353236 
+ 1499 025b 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 1499      20726576 
+ 1499      6973696F 
+ 1499      6E203231 
+ 1499      31333538 
+ 1500 028e 67202D66 		.ascii	"g -ffunction-sections\000"
+ 1500      66756E63 
+ 1500      74696F6E 
+ 1500      2D736563 
+ 1500      74696F6E 
+ 1501              	.LASF26:
+ 1502 02a4 53657276 		.ascii	"Servo_B_SetInterruptMode\000"
+ 1502      6F5F425F 
+ 1502      53657449 
+ 1502      6E746572 
+ 1502      72757074 
+ 1503              	.LASF16:
+ 1504 02bd 73697A65 		.ascii	"sizetype\000"
+ 1504      74797065 
+ 1504      00
+ 1505              	.LASF6:
+ 1506 02c6 6C6F6E67 		.ascii	"long long int\000"
+ 1506      206C6F6E 
+ 1506      6720696E 
+ 1506      7400
+ 1507              	.LASF23:
+ 1508 02d4 53657276 		.ascii	"Servo_B_WriteCompare1\000"
+ 1508      6F5F425F 
+ 1508      57726974 
+ 1508      65436F6D 
+ 1508      70617265 
+ 1509              	.LASF27:
+ 1510 02ea 696E7465 		.ascii	"interruptMode\000"
+ 1510      72727570 
+ 1510      744D6F64 
+ 1510      6500
+ 1511              	.LASF19:
+ 1512 02f8 53657276 		.ascii	"Servo_B_WriteCounter\000"
+ 1512      6F5F425F 
+ 1512      57726974 
+ 1512      65436F75 
+ 1512      6E746572 
+ 1513              	.LASF2:
+ 1514 030d 73686F72 		.ascii	"short int\000"
+ 1514      7420696E 
+ 1514      7400
+ 1515              	.LASF39:
+ 1516 0317 53657276 		.ascii	"Servo_B_ReadCompare1\000"
+ 1516      6F5F425F 
+ 1516      52656164 
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccwr1J0u.s 			page 46
+
+
+ 1516      436F6D70 
+ 1516      61726531 
+ 1517              	.LASF40:
+ 1518 032c 53657276 		.ascii	"Servo_B_ReadCompare2\000"
+ 1518      6F5F425F 
+ 1518      52656164 
+ 1518      436F6D70 
+ 1518      61726532 
+ 1519              	.LASF4:
+ 1520 0341 6C6F6E67 		.ascii	"long int\000"
+ 1520      20696E74 
+ 1520      00
+ 1521              	.LASF13:
+ 1522 034a 63686172 		.ascii	"char\000"
+ 1522      00
+ 1523              	.LASF0:
+ 1524 034f 7369676E 		.ascii	"signed char\000"
+ 1524      65642063 
+ 1524      68617200 
+ 1525              	.LASF24:
+ 1526 035b 636F6D70 		.ascii	"compare\000"
+ 1526      61726500 
+ 1527              	.LASF3:
+ 1528 0363 73686F72 		.ascii	"short unsigned int\000"
+ 1528      7420756E 
+ 1528      7369676E 
+ 1528      65642069 
+ 1528      6E7400
+ 1529              	.LASF32:
+ 1530 0376 53657276 		.ascii	"Servo_B_ReadCapture\000"
+ 1530      6F5F425F 
+ 1530      52656164 
+ 1530      43617074 
+ 1530      75726500 
+ 1531              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
