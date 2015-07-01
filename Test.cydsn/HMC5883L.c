@@ -21,7 +21,6 @@
  */
 void HMC5883L_Config()
 {
-    I2C_Start();
     
 	uint8 array[2];
     array [0] = HMC5883L_RA_CONFIG_A;

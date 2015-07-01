@@ -10,6 +10,7 @@
  * ========================================
 */
 #include <project.h>
+#include <stdio.h>
 #include "HMC5883L.h"
 #include "motordriver.h"
 #include "Servo_Driver.h"
@@ -23,7 +24,7 @@ int main()
    CyGlobalIntEnable; /* Enable global interrupts. */
 init();
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
-    uart_test();
+    i2c_test();
     for(;;);
 }
 void init()
@@ -68,5 +69,16 @@ void uart_test()
         }
     }
 }
-void i2c_test();
+void i2c_test()
+{
+    union HMC5883L sensor;
+    char *buffer;
+    int num;
+    HMC5883L_Config();
+    for(;;){
+    get_HMC5883L_Data(&sensor);
+    num = sprintf(buffer, "X: %d \n\r Y: %d \n\r Z: %d \n\r",sensor.Data.x, sensor.Data.y, sensor.Data.z);
+    UART_PutArray( (uint8 *) buffer, (uint8)num);
+    }
+}
 /* [] END OF FILE */

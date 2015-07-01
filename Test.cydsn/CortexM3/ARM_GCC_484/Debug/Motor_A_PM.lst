@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 1
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccfIXtZd.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 1
   29:.\Generated_Source\PSoC5/Motor_A_PM.c **** *
   30:.\Generated_Source\PSoC5/Motor_A_PM.c **** * Summary:
   31:.\Generated_Source\PSoC5/Motor_A_PM.c **** *  Saves the control register value.
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 2
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccfIXtZd.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/Motor_A_PM.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 1
   59:.\Generated_Source\PSoC5/Motor_A_PM.c **** *
   60:.\Generated_Source\PSoC5/Motor_A_PM.c **** *******************************************************************************/
   61:.\Generated_Source\PSoC5/Motor_A_PM.c **** void Motor_A_RestoreConfig(void) 
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 3
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccfIXtZd.s 			page 3
 
 
   62:.\Generated_Source\PSoC5/Motor_A_PM.c **** {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 1
   87              		.cfi_offset 3, -8
   88              		.cfi_offset 14, -4
   83:.\Generated_Source\PSoC5/Motor_A_PM.c ****     Motor_A_SaveConfig();
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 4
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccfIXtZd.s 			page 4
 
 
   89              		.loc 1 83 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 1
  123              		.size	Motor_A_backup, 1
  124              	Motor_A_backup:
  125 0000 00       		.space	1
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 5
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccfIXtZd.s 			page 5
 
 
  126 0001 000000   		.text
@@ -252,45 +252,45 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 1
  134 0006 00000000 		.4byte	.Ldebug_abbrev0
  135 000a 04       		.byte	0x4
  136 000b 01       		.uleb128 0x1
- 137 000c 3E010000 		.4byte	.LASF19
+ 137 000c 35010000 		.4byte	.LASF19
  138 0010 01       		.byte	0x1
- 139 0011 A9000000 		.4byte	.LASF20
- 140 0015 07010000 		.4byte	.LASF21
+ 139 0011 C1000000 		.4byte	.LASF20
+ 140 0015 33000000 		.4byte	.LASF21
  141 0019 00000000 		.4byte	.Ldebug_ranges0+0
  142 001d 00000000 		.4byte	0
  143 0021 00000000 		.4byte	.Ldebug_line0
  144 0025 02       		.uleb128 0x2
  145 0026 01       		.byte	0x1
  146 0027 06       		.byte	0x6
- 147 0028 E6010000 		.4byte	.LASF0
+ 147 0028 DD010000 		.4byte	.LASF0
  148 002c 02       		.uleb128 0x2
  149 002d 01       		.byte	0x1
  150 002e 08       		.byte	0x8
- 151 002f 71000000 		.4byte	.LASF1
+ 151 002f 89000000 		.4byte	.LASF1
  152 0033 02       		.uleb128 0x2
  153 0034 02       		.byte	0x2
  154 0035 05       		.byte	0x5
- 155 0036 CD010000 		.4byte	.LASF2
+ 155 0036 C4010000 		.4byte	.LASF2
  156 003a 02       		.uleb128 0x2
  157 003b 02       		.byte	0x2
  158 003c 07       		.byte	0x7
- 159 003d 96000000 		.4byte	.LASF3
+ 159 003d AE000000 		.4byte	.LASF3
  160 0041 02       		.uleb128 0x2
  161 0042 04       		.byte	0x4
  162 0043 05       		.byte	0x5
- 163 0044 DD010000 		.4byte	.LASF4
+ 163 0044 D4010000 		.4byte	.LASF4
  164 0048 02       		.uleb128 0x2
  165 0049 04       		.byte	0x4
  166 004a 07       		.byte	0x7
- 167 004b 84000000 		.4byte	.LASF5
+ 167 004b 9C000000 		.4byte	.LASF5
  168 004f 02       		.uleb128 0x2
  169 0050 08       		.byte	0x8
  170 0051 05       		.byte	0x5
- 171 0052 BA010000 		.4byte	.LASF6
+ 171 0052 B1010000 		.4byte	.LASF6
  172 0056 02       		.uleb128 0x2
  173 0057 08       		.byte	0x8
  174 0058 07       		.byte	0x7
- 175 0059 F0000000 		.4byte	.LASF7
+ 175 0059 1E010000 		.4byte	.LASF7
  176 005d 03       		.uleb128 0x3
  177 005e 04       		.byte	0x4
  178 005f 05       		.byte	0x5
@@ -298,29 +298,29 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 1
  180 0064 02       		.uleb128 0x2
  181 0065 04       		.byte	0x4
  182 0066 07       		.byte	0x7
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 6
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccfIXtZd.s 			page 6
 
 
- 183 0067 E3000000 		.4byte	.LASF8
+ 183 0067 11010000 		.4byte	.LASF8
  184 006b 04       		.uleb128 0x4
- 185 006c D7010000 		.4byte	.LASF12
+ 185 006c CE010000 		.4byte	.LASF12
  186 0070 02       		.byte	0x2
  187 0071 B3       		.byte	0xb3
  188 0072 2C000000 		.4byte	0x2c
  189 0076 02       		.uleb128 0x2
  190 0077 04       		.byte	0x4
  191 0078 04       		.byte	0x4
- 192 0079 58000000 		.4byte	.LASF9
+ 192 0079 70000000 		.4byte	.LASF9
  193 007d 02       		.uleb128 0x2
  194 007e 08       		.byte	0x8
  195 007f 04       		.byte	0x4
- 196 0080 DC000000 		.4byte	.LASF10
+ 196 0080 F4000000 		.4byte	.LASF10
  197 0084 02       		.uleb128 0x2
  198 0085 01       		.byte	0x1
  199 0086 08       		.byte	0x8
- 200 0087 C8010000 		.4byte	.LASF11
+ 200 0087 BF010000 		.4byte	.LASF11
  201 008b 05       		.uleb128 0x5
- 202 008c 7F000000 		.4byte	.LASF13
+ 202 008c 97000000 		.4byte	.LASF13
  203 0090 02       		.byte	0x2
  204 0091 5D01     		.2byte	0x15d
  205 0093 97000000 		.4byte	0x97
@@ -332,7 +332,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 1
  211 009f 1C       		.byte	0x1c
  212 00a0 B1000000 		.4byte	0xb1
  213 00a4 08       		.uleb128 0x8
- 214 00a5 CF000000 		.4byte	.LASF22
+ 214 00a5 E7000000 		.4byte	.LASF22
  215 00a9 03       		.byte	0x3
  216 00aa 1E       		.byte	0x1e
  217 00ab 6B000000 		.4byte	0x6b
@@ -344,7 +344,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 1
  223 00b7 20       		.byte	0x20
  224 00b8 9C000000 		.4byte	0x9c
  225 00bc 09       		.uleb128 0x9
- 226 00bd 5E000000 		.4byte	.LASF15
+ 226 00bd 76000000 		.4byte	.LASF15
  227 00c1 01       		.byte	0x1
  228 00c2 28       		.byte	0x28
  229 00c3 00000000 		.4byte	.LFB0
@@ -352,13 +352,13 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 1
  231 00cb 01       		.uleb128 0x1
  232 00cc 9C       		.byte	0x9c
  233 00cd 09       		.uleb128 0x9
- 234 00ce 33000000 		.4byte	.LASF16
+ 234 00ce FB000000 		.4byte	.LASF16
  235 00d2 01       		.byte	0x1
  236 00d3 3D       		.byte	0x3d
  237 00d4 00000000 		.4byte	.LFB1
  238 00d8 14000000 		.4byte	.LFE1-.LFB1
  239 00dc 01       		.uleb128 0x1
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 7
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccfIXtZd.s 			page 7
 
 
  240 00dd 9C       		.byte	0x9c
@@ -376,7 +376,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 1
  252 00f8 BC000000 		.4byte	0xbc
  253 00fc 00       		.byte	0
  254 00fd 0A       		.uleb128 0xa
- 255 00fe 49000000 		.4byte	.LASF18
+ 255 00fe 61000000 		.4byte	.LASF18
  256 0102 01       		.byte	0x1
  257 0103 65       		.byte	0x65
  258 0104 00000000 		.4byte	.LFB3
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 1
  294 0010 17       		.uleb128 0x17
  295 0011 00       		.byte	0
  296 0012 00       		.byte	0
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 8
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccfIXtZd.s 			page 8
 
 
  297 0013 02       		.uleb128 0x2
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 1
  351 0049 00       		.byte	0
  352 004a 07       		.uleb128 0x7
  353 004b 13       		.uleb128 0x13
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 9
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccfIXtZd.s 			page 9
 
 
  354 004c 01       		.byte	0x1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 1
  408 0083 03       		.uleb128 0x3
  409 0084 0E       		.uleb128 0xe
  410 0085 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 10
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccfIXtZd.s 			page 10
 
 
  411 0086 0B       		.uleb128 0xb
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 1
  465 0020 00000000 		.4byte	.LFB2
  466 0024 08000000 		.4byte	.LFE2-.LFB2
  467 0028 00000000 		.4byte	.LFB3
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 11
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccfIXtZd.s 			page 11
 
 
  468 002c 08000000 		.4byte	.LFE3-.LFB3
@@ -639,123 +639,121 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 1
  491      725F415F 
  491      536C6565 
  491      7000
- 492              	.LASF16:
- 493 0033 4D6F746F 		.ascii	"Motor_A_RestoreConfig\000"
- 493      725F415F 
- 493      52657374 
- 493      6F726543 
- 493      6F6E6669 
- 494              	.LASF18:
- 495 0049 4D6F746F 		.ascii	"Motor_A_Wakeup\000"
- 495      725F415F 
- 495      57616B65 
- 495      757000
- 496              	.LASF9:
- 497 0058 666C6F61 		.ascii	"float\000"
- 497      7400
- 498              	.LASF15:
- 499 005e 4D6F746F 		.ascii	"Motor_A_SaveConfig\000"
- 499      725F415F 
- 499      53617665 
- 499      436F6E66 
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 12
+ 492              	.LASF21:
+ 493 0033 433A5C55 		.ascii	"C:\\Users\\CSE\\Documents\\GitHub\\Test\\Test.cydsn"
+ 493      73657273 
+ 493      5C435345 
+ 493      5C446F63 
+ 493      756D656E 
+ 494 0060 00       		.ascii	"\000"
+ 495              	.LASF18:
+ 496 0061 4D6F746F 		.ascii	"Motor_A_Wakeup\000"
+ 496      725F415F 
+ 496      57616B65 
+ 496      757000
+ 497              	.LASF9:
+ 498 0070 666C6F61 		.ascii	"float\000"
+ 498      7400
+ 499              	.LASF15:
+ 500 0076 4D6F746F 		.ascii	"Motor_A_SaveConfig\000"
+ 500      725F415F 
+ 500      53617665 
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccfIXtZd.s 			page 12
 
 
- 499      696700
- 500              	.LASF1:
- 501 0071 756E7369 		.ascii	"unsigned char\000"
- 501      676E6564 
- 501      20636861 
- 501      7200
- 502              	.LASF13:
- 503 007f 72656738 		.ascii	"reg8\000"
- 503      00
- 504              	.LASF5:
- 505 0084 6C6F6E67 		.ascii	"long unsigned int\000"
- 505      20756E73 
- 505      69676E65 
- 505      6420696E 
- 505      7400
- 506              	.LASF3:
- 507 0096 73686F72 		.ascii	"short unsigned int\000"
- 507      7420756E 
- 507      7369676E 
- 507      65642069 
- 507      6E7400
- 508              	.LASF20:
- 509 00a9 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Motor_A_PM.c\000"
- 509      6E657261 
- 509      7465645F 
- 509      536F7572 
- 509      63655C50 
- 510              	.LASF22:
- 511 00cf 636F6E74 		.ascii	"controlState\000"
- 511      726F6C53 
- 511      74617465 
- 511      00
- 512              	.LASF10:
- 513 00dc 646F7562 		.ascii	"double\000"
- 513      6C6500
- 514              	.LASF8:
- 515 00e3 756E7369 		.ascii	"unsigned int\000"
- 515      676E6564 
- 515      20696E74 
- 515      00
- 516              	.LASF7:
- 517 00f0 6C6F6E67 		.ascii	"long long unsigned int\000"
- 517      206C6F6E 
- 517      6720756E 
- 517      7369676E 
- 517      65642069 
- 518              	.LASF21:
- 519 0107 433A5C55 		.ascii	"C:\\Users\\Jorden\\Documents\\PSoC Creator\\Test\\T"
- 519      73657273 
- 519      5C4A6F72 
- 519      64656E5C 
- 519      446F6375 
- 520 0134 6573742E 		.ascii	"est.cydsn\000"
- 520      63796473 
- 520      6E00
+ 500      436F6E66 
+ 500      696700
+ 501              	.LASF1:
+ 502 0089 756E7369 		.ascii	"unsigned char\000"
+ 502      676E6564 
+ 502      20636861 
+ 502      7200
+ 503              	.LASF13:
+ 504 0097 72656738 		.ascii	"reg8\000"
+ 504      00
+ 505              	.LASF5:
+ 506 009c 6C6F6E67 		.ascii	"long unsigned int\000"
+ 506      20756E73 
+ 506      69676E65 
+ 506      6420696E 
+ 506      7400
+ 507              	.LASF3:
+ 508 00ae 73686F72 		.ascii	"short unsigned int\000"
+ 508      7420756E 
+ 508      7369676E 
+ 508      65642069 
+ 508      6E7400
+ 509              	.LASF20:
+ 510 00c1 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Motor_A_PM.c\000"
+ 510      6E657261 
+ 510      7465645F 
+ 510      536F7572 
+ 510      63655C50 
+ 511              	.LASF22:
+ 512 00e7 636F6E74 		.ascii	"controlState\000"
+ 512      726F6C53 
+ 512      74617465 
+ 512      00
+ 513              	.LASF10:
+ 514 00f4 646F7562 		.ascii	"double\000"
+ 514      6C6500
+ 515              	.LASF16:
+ 516 00fb 4D6F746F 		.ascii	"Motor_A_RestoreConfig\000"
+ 516      725F415F 
+ 516      52657374 
+ 516      6F726543 
+ 516      6F6E6669 
+ 517              	.LASF8:
+ 518 0111 756E7369 		.ascii	"unsigned int\000"
+ 518      676E6564 
+ 518      20696E74 
+ 518      00
+ 519              	.LASF7:
+ 520 011e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 520      206C6F6E 
+ 520      6720756E 
+ 520      7369676E 
+ 520      65642069 
  521              	.LASF19:
- 522 013e 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccsXsBkf.s 			page 13
-
-
+ 522 0135 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
  522      4320342E 
  522      382E3420 
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccfIXtZd.s 			page 13
+
+
  522      32303134 
  522      30353236 
- 523 0171 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 523 0168 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
  523      20726576 
  523      6973696F 
  523      6E203231 
  523      31333538 
- 524 01a4 67202D66 		.ascii	"g -ffunction-sections\000"
+ 524 019b 67202D66 		.ascii	"g -ffunction-sections\000"
  524      66756E63 
  524      74696F6E 
  524      2D736563 
  524      74696F6E 
  525              	.LASF6:
- 526 01ba 6C6F6E67 		.ascii	"long long int\000"
+ 526 01b1 6C6F6E67 		.ascii	"long long int\000"
  526      206C6F6E 
  526      6720696E 
  526      7400
  527              	.LASF11:
- 528 01c8 63686172 		.ascii	"char\000"
+ 528 01bf 63686172 		.ascii	"char\000"
  528      00
  529              	.LASF2:
- 530 01cd 73686F72 		.ascii	"short int\000"
+ 530 01c4 73686F72 		.ascii	"short int\000"
  530      7420696E 
  530      7400
  531              	.LASF12:
- 532 01d7 75696E74 		.ascii	"uint8\000"
+ 532 01ce 75696E74 		.ascii	"uint8\000"
  532      3800
  533              	.LASF4:
- 534 01dd 6C6F6E67 		.ascii	"long int\000"
+ 534 01d4 6C6F6E67 		.ascii	"long int\000"
  534      20696E74 
  534      00
  535              	.LASF0:
- 536 01e6 7369676E 		.ascii	"signed char\000"
+ 536 01dd 7369676E 		.ascii	"signed char\000"
  536      65642063 
  536      68617200 
  537              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

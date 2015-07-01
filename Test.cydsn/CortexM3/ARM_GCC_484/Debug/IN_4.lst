@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 1
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccePYMgA.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 1
   29:.\Generated_Source\PSoC5/IN_4.c **** * Summary:
   30:.\Generated_Source\PSoC5/IN_4.c **** *  Assign a new value to the digital port's data output register.  
   31:.\Generated_Source\PSoC5/IN_4.c **** *
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 2
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccePYMgA.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/IN_4.c **** * Parameters:  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 1
   52:.\Generated_Source\PSoC5/IN_4.c **** * 
   53:.\Generated_Source\PSoC5/IN_4.c **** * Parameters:  
   54:.\Generated_Source\PSoC5/IN_4.c **** *  mode:  Change the pins to one of the following drive modes.
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 3
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccePYMgA.s 			page 3
 
 
   55:.\Generated_Source\PSoC5/IN_4.c **** *
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 1
   79:.\Generated_Source\PSoC5/IN_4.c **** * Summary:
   80:.\Generated_Source\PSoC5/IN_4.c **** *  Read the current value on the pins of the Digital Port in right justified 
   81:.\Generated_Source\PSoC5/IN_4.c **** *  form.
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 4
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccePYMgA.s 			page 4
 
 
   82:.\Generated_Source\PSoC5/IN_4.c **** *
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 1
  110:.\Generated_Source\PSoC5/IN_4.c **** *  Returns the current value assigned to the Digital Port's data output register
  111:.\Generated_Source\PSoC5/IN_4.c **** *  
  112:.\Generated_Source\PSoC5/IN_4.c **** *******************************************************************************/
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 5
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccePYMgA.s 			page 5
 
 
  113:.\Generated_Source\PSoC5/IN_4.c **** uint8 IN_4_ReadDataReg(void) 
@@ -273,48 +273,48 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 1
  142 0006 00000000 		.4byte	.Ldebug_abbrev0
  143 000a 04       		.byte	0x4
  144 000b 01       		.uleb128 0x1
- 145 000c F3000000 		.4byte	.LASF20
+ 145 000c EA000000 		.4byte	.LASF20
  146 0010 01       		.byte	0x1
- 147 0011 61000000 		.4byte	.LASF21
- 148 0015 BC000000 		.4byte	.LASF22
+ 147 0011 8F000000 		.4byte	.LASF21
+ 148 0015 1C000000 		.4byte	.LASF22
  149 0019 00000000 		.4byte	.Ldebug_ranges0+0
  150 001d 00000000 		.4byte	0
  151 0021 00000000 		.4byte	.Ldebug_line0
  152 0025 02       		.uleb128 0x2
  153 0026 01       		.byte	0x1
  154 0027 06       		.byte	0x6
- 155 0028 B6010000 		.4byte	.LASF0
+ 155 0028 AD010000 		.4byte	.LASF0
  156 002c 02       		.uleb128 0x2
  157 002d 01       		.byte	0x1
  158 002e 08       		.byte	0x8
- 159 002f 22000000 		.4byte	.LASF1
+ 159 002f 50000000 		.4byte	.LASF1
  160 0033 02       		.uleb128 0x2
  161 0034 02       		.byte	0x2
  162 0035 05       		.byte	0x5
- 163 0036 8C010000 		.4byte	.LASF2
+ 163 0036 83010000 		.4byte	.LASF2
  164 003a 02       		.uleb128 0x2
  165 003b 02       		.byte	0x2
  166 003c 07       		.byte	0x7
- 167 003d 47000000 		.4byte	.LASF3
+ 167 003d 75000000 		.4byte	.LASF3
  168 0041 02       		.uleb128 0x2
  169 0042 04       		.byte	0x4
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 6
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccePYMgA.s 			page 6
 
 
  170 0043 05       		.byte	0x5
- 171 0044 AD010000 		.4byte	.LASF4
+ 171 0044 A4010000 		.4byte	.LASF4
  172 0048 02       		.uleb128 0x2
  173 0049 04       		.byte	0x4
  174 004a 07       		.byte	0x7
- 175 004b 35000000 		.4byte	.LASF5
+ 175 004b 63000000 		.4byte	.LASF5
  176 004f 02       		.uleb128 0x2
  177 0050 08       		.byte	0x8
  178 0051 05       		.byte	0x5
- 179 0052 6F010000 		.4byte	.LASF6
+ 179 0052 66010000 		.4byte	.LASF6
  180 0056 02       		.uleb128 0x2
  181 0057 08       		.byte	0x8
  182 0058 07       		.byte	0x7
- 183 0059 A0000000 		.4byte	.LASF7
+ 183 0059 CE000000 		.4byte	.LASF7
  184 005d 03       		.uleb128 0x3
  185 005e 04       		.byte	0x4
  186 005f 05       		.byte	0x5
@@ -322,26 +322,26 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 1
  188 0064 02       		.uleb128 0x2
  189 0065 04       		.byte	0x4
  190 0066 07       		.byte	0x7
- 191 0067 81000000 		.4byte	.LASF8
+ 191 0067 AF000000 		.4byte	.LASF8
  192 006b 04       		.uleb128 0x4
- 193 006c 96010000 		.4byte	.LASF12
+ 193 006c 8D010000 		.4byte	.LASF12
  194 0070 02       		.byte	0x2
  195 0071 B3       		.byte	0xb3
  196 0072 2C000000 		.4byte	0x2c
  197 0076 02       		.uleb128 0x2
  198 0077 04       		.byte	0x4
  199 0078 04       		.byte	0x4
- 200 0079 1C000000 		.4byte	.LASF9
+ 200 0079 4A000000 		.4byte	.LASF9
  201 007d 02       		.uleb128 0x2
  202 007e 08       		.byte	0x8
  203 007f 04       		.byte	0x4
- 204 0080 5A000000 		.4byte	.LASF10
+ 204 0080 88000000 		.4byte	.LASF10
  205 0084 02       		.uleb128 0x2
  206 0085 01       		.byte	0x1
  207 0086 08       		.byte	0x8
- 208 0087 7D010000 		.4byte	.LASF11
+ 208 0087 74010000 		.4byte	.LASF11
  209 008b 05       		.uleb128 0x5
- 210 008c 30000000 		.4byte	.LASF13
+ 210 008c 5E000000 		.4byte	.LASF13
  211 0090 02       		.byte	0x2
  212 0091 5D01     		.2byte	0x15d
  213 0093 97000000 		.4byte	0x97
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 1
  224 00ad D0000000 		.4byte	0xd0
  225 00b1 08       		.uleb128 0x8
  226 00b2 00000000 		.4byte	.LASF16
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 7
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccePYMgA.s 			page 7
 
 
  227 00b6 01       		.byte	0x1
@@ -373,7 +373,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 1
  236 00cb 21000000 		.4byte	.LLST1
  237 00cf 00       		.byte	0
  238 00d0 07       		.uleb128 0x7
- 239 00d1 8E000000 		.4byte	.LASF15
+ 239 00d1 BC000000 		.4byte	.LASF15
  240 00d5 01       		.byte	0x1
  241 00d6 45       		.byte	0x45
  242 00d7 00000000 		.4byte	.LFB1
@@ -382,14 +382,14 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 1
  245 00e0 9C       		.byte	0x9c
  246 00e1 F5000000 		.4byte	0xf5
  247 00e5 08       		.uleb128 0x8
- 248 00e6 B7000000 		.4byte	.LASF17
+ 248 00e6 E5000000 		.4byte	.LASF17
  249 00ea 01       		.byte	0x1
  250 00eb 45       		.byte	0x45
  251 00ec 6B000000 		.4byte	0x6b
  252 00f0 34000000 		.4byte	.LLST2
  253 00f4 00       		.byte	0
  254 00f5 0A       		.uleb128 0xa
- 255 00f6 82010000 		.4byte	.LASF18
+ 255 00f6 79010000 		.4byte	.LASF18
  256 00fa 01       		.byte	0x1
  257 00fb 5D       		.byte	0x5d
  258 00fc 6B000000 		.4byte	0x6b
@@ -398,7 +398,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 1
  261 0108 01       		.uleb128 0x1
  262 0109 9C       		.byte	0x9c
  263 010a 0A       		.uleb128 0xa
- 264 010b 9C010000 		.4byte	.LASF19
+ 264 010b 93010000 		.4byte	.LASF19
  265 010f 01       		.byte	0x1
  266 0110 71       		.byte	0x71
  267 0111 6B000000 		.4byte	0x6b
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 1
  281 0006 0B       		.uleb128 0xb
  282 0007 03       		.uleb128 0x3
  283 0008 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 8
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccePYMgA.s 			page 8
 
 
  284 0009 1B       		.uleb128 0x1b
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 1
  338 003f 49       		.uleb128 0x49
  339 0040 13       		.uleb128 0x13
  340 0041 00       		.byte	0
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 9
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccePYMgA.s 			page 9
 
 
  341 0042 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 1
  395 0079 0B       		.uleb128 0xb
  396 007a 3B       		.uleb128 0x3b
  397 007b 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 10
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccePYMgA.s 			page 10
 
 
  398 007c 49       		.uleb128 0x49
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 1
  452 0030 00000000 		.4byte	0
  453              	.LLST2:
  454 0034 00000000 		.4byte	.LVL4
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 11
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccePYMgA.s 			page 11
 
 
  455 0038 0C000000 		.4byte	.LVL5
@@ -658,126 +658,121 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 1
  503      69634269 
  503      747300
  504              	.LASF14:
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 12
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccePYMgA.s 			page 12
 
 
  505 0011 494E5F34 		.ascii	"IN_4_Write\000"
  505      5F577269 
  505      746500
- 506              	.LASF9:
- 507 001c 666C6F61 		.ascii	"float\000"
- 507      7400
- 508              	.LASF1:
- 509 0022 756E7369 		.ascii	"unsigned char\000"
- 509      676E6564 
- 509      20636861 
- 509      7200
- 510              	.LASF13:
- 511 0030 72656738 		.ascii	"reg8\000"
- 511      00
- 512              	.LASF5:
- 513 0035 6C6F6E67 		.ascii	"long unsigned int\000"
- 513      20756E73 
- 513      69676E65 
- 513      6420696E 
- 513      7400
- 514              	.LASF3:
- 515 0047 73686F72 		.ascii	"short unsigned int\000"
- 515      7420756E 
- 515      7369676E 
- 515      65642069 
- 515      6E7400
- 516              	.LASF10:
- 517 005a 646F7562 		.ascii	"double\000"
- 517      6C6500
- 518              	.LASF21:
- 519 0061 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\IN_4.c\000"
- 519      6E657261 
- 519      7465645F 
- 519      536F7572 
- 519      63655C50 
- 520              	.LASF8:
- 521 0081 756E7369 		.ascii	"unsigned int\000"
- 521      676E6564 
- 521      20696E74 
- 521      00
- 522              	.LASF15:
- 523 008e 494E5F34 		.ascii	"IN_4_SetDriveMode\000"
- 523      5F536574 
- 523      44726976 
- 523      654D6F64 
- 523      6500
- 524              	.LASF7:
- 525 00a0 6C6F6E67 		.ascii	"long long unsigned int\000"
- 525      206C6F6E 
- 525      6720756E 
- 525      7369676E 
- 525      65642069 
- 526              	.LASF17:
- 527 00b7 6D6F6465 		.ascii	"mode\000"
- 527      00
- 528              	.LASF22:
- 529 00bc 433A5C55 		.ascii	"C:\\Users\\Jorden\\Documents\\PSoC Creator\\Test\\T"
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 13
+ 506              	.LASF22:
+ 507 001c 433A5C55 		.ascii	"C:\\Users\\CSE\\Documents\\GitHub\\Test\\Test.cydsn"
+ 507      73657273 
+ 507      5C435345 
+ 507      5C446F63 
+ 507      756D656E 
+ 508 0049 00       		.ascii	"\000"
+ 509              	.LASF9:
+ 510 004a 666C6F61 		.ascii	"float\000"
+ 510      7400
+ 511              	.LASF1:
+ 512 0050 756E7369 		.ascii	"unsigned char\000"
+ 512      676E6564 
+ 512      20636861 
+ 512      7200
+ 513              	.LASF13:
+ 514 005e 72656738 		.ascii	"reg8\000"
+ 514      00
+ 515              	.LASF5:
+ 516 0063 6C6F6E67 		.ascii	"long unsigned int\000"
+ 516      20756E73 
+ 516      69676E65 
+ 516      6420696E 
+ 516      7400
+ 517              	.LASF3:
+ 518 0075 73686F72 		.ascii	"short unsigned int\000"
+ 518      7420756E 
+ 518      7369676E 
+ 518      65642069 
+ 518      6E7400
+ 519              	.LASF10:
+ 520 0088 646F7562 		.ascii	"double\000"
+ 520      6C6500
+ 521              	.LASF21:
+ 522 008f 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\IN_4.c\000"
+ 522      6E657261 
+ 522      7465645F 
+ 522      536F7572 
+ 522      63655C50 
+ 523              	.LASF8:
+ 524 00af 756E7369 		.ascii	"unsigned int\000"
+ 524      676E6564 
+ 524      20696E74 
+ 524      00
+ 525              	.LASF15:
+ 526 00bc 494E5F34 		.ascii	"IN_4_SetDriveMode\000"
+ 526      5F536574 
+ 526      44726976 
+ 526      654D6F64 
+ 526      6500
+ 527              	.LASF7:
+ 528 00ce 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 528      206C6F6E 
+ 528      6720756E 
+ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccePYMgA.s 			page 13
 
 
- 529      73657273 
- 529      5C4A6F72 
- 529      64656E5C 
- 529      446F6375 
- 530 00e9 6573742E 		.ascii	"est.cydsn\000"
- 530      63796473 
- 530      6E00
+ 528      7369676E 
+ 528      65642069 
+ 529              	.LASF17:
+ 530 00e5 6D6F6465 		.ascii	"mode\000"
+ 530      00
  531              	.LASF20:
- 532 00f3 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 532 00ea 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
  532      4320342E 
  532      382E3420 
  532      32303134 
  532      30353236 
- 533 0126 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 533 011d 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
  533      20726576 
  533      6973696F 
  533      6E203231 
  533      31333538 
- 534 0159 67202D66 		.ascii	"g -ffunction-sections\000"
+ 534 0150 67202D66 		.ascii	"g -ffunction-sections\000"
  534      66756E63 
  534      74696F6E 
  534      2D736563 
  534      74696F6E 
  535              	.LASF6:
- 536 016f 6C6F6E67 		.ascii	"long long int\000"
+ 536 0166 6C6F6E67 		.ascii	"long long int\000"
  536      206C6F6E 
  536      6720696E 
  536      7400
  537              	.LASF11:
- 538 017d 63686172 		.ascii	"char\000"
+ 538 0174 63686172 		.ascii	"char\000"
  538      00
  539              	.LASF18:
- 540 0182 494E5F34 		.ascii	"IN_4_Read\000"
+ 540 0179 494E5F34 		.ascii	"IN_4_Read\000"
  540      5F526561 
  540      6400
  541              	.LASF2:
- 542 018c 73686F72 		.ascii	"short int\000"
+ 542 0183 73686F72 		.ascii	"short int\000"
  542      7420696E 
  542      7400
  543              	.LASF12:
- 544 0196 75696E74 		.ascii	"uint8\000"
+ 544 018d 75696E74 		.ascii	"uint8\000"
  544      3800
  545              	.LASF19:
- 546 019c 494E5F34 		.ascii	"IN_4_ReadDataReg\000"
+ 546 0193 494E5F34 		.ascii	"IN_4_ReadDataReg\000"
  546      5F526561 
  546      64446174 
  546      61526567 
  546      00
  547              	.LASF4:
- 548 01ad 6C6F6E67 		.ascii	"long int\000"
+ 548 01a4 6C6F6E67 		.ascii	"long int\000"
  548      20696E74 
  548      00
  549              	.LASF0:
- 550 01b6 7369676E 		.ascii	"signed char\000"
+ 550 01ad 7369676E 		.ascii	"signed char\000"
  550      65642063 
  550      68617200 
  551              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccKkHmmB.s 			page 14
-
-
