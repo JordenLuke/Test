@@ -11,6 +11,7 @@
 */
 #include<HMC5883L.h>
 #include<project.h>
+#include "math.h"
 /** Power on and prepare for general usage.
  * This will prepare the magnetometer with default settings, ready for single-
  * use mode (very low power requirements). Default settings include 8-sample
@@ -23,100 +24,171 @@ void HMC5883L_Config()
 {
     
 	uint8 array[2];
+  
     array [0] = HMC5883L_RA_CONFIG_A;
     array [1] = (HMC5883L_AVERAGING_8 << (HMC5883L_CRA_AVERAGE_BIT - HMC5883L_CRA_AVERAGE_LENGTH + 1)) |
         (HMC5883L_RATE_15     << (HMC5883L_CRA_RATE_BIT - HMC5883L_CRA_RATE_LENGTH + 1)) |
         (HMC5883L_BIAS_NORMAL << (HMC5883L_CRA_BIAS_BIT - HMC5883L_CRA_BIAS_LENGTH + 1));
-    I2C_MasterClearStatus();
-    I2C_MasterWriteBuf(HMC5883L_ADDRESS,array,2,I2C_MODE_COMPLETE_XFER);
-    while(0u == (I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT));
+    I2C_MasterSendStart(HMC5883L_ADDRESS, I2C_WRITE_XFER_MODE);
+    I2C_MasterWriteByte(array[0]);
+    I2C_MasterWriteByte(array[1]);
+    I2C_MasterSendStop();
+    
     array [0] = HMC5883L_RA_MODE;
     array [1] = HMC5883L_MODE_CONTINUOUS;
-    I2C_MasterClearStatus();
-    I2C_MasterWriteBuf(HMC5883L_ADDRESS,array,2,I2C_MODE_COMPLETE_XFER);
-    while(0u == (I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT));
+    
+    I2C_MasterSendStart(HMC5883L_ADDRESS,I2C_WRITE_XFER_MODE);
+    I2C_MasterWriteByte(array[0]);
+    I2C_MasterWriteByte(array[1]);
+    I2C_MasterSendStop();
+    
+//    I2C_MasterSendStart(HMC5883L_ADDRESS,I2C_WRITE_XFER_MODE);
+//    I2C_MasterWriteByte(0x02);
+//    I2C_MasterWriteByte(0xA0);
+//    I2C_MasterSendStop();
+    
+    CyDelay(67);
+    
 }
+
 uint8 read_HMC5883L_reg(uint8 reg)
 {
+    uint8 value;
+    I2C_MasterSendStart(HMC5883L_ADDRESS,I2C_WRITE_XFER_MODE);
+    I2C_MasterWriteByte(reg);
+    I2C_MasterSendRestart(HMC5883L_ADDRESS, I2C_READ_XFER_MODE);
+    value = I2C_MasterReadByte(I2C_ACK_DATA);
     
-    int16 value;
-    uint8 array[2];
-    array[0] = reg;
-    I2C_MasterWriteBuf(HMC5883L_ADDRESS,array,1,I2C_MODE_COMPLETE_XFER);
-    while(0u == (I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT));
-    
-    I2C_MasterReadBuf(HMC5883L_ADDRESS, array, 1,I2C_MODE_COMPLETE_XFER);
-    while(0u == (I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT));
-    value = (uint16) array[0];
     return value;
 }
-
+//used to write to specific reg
 uint8 write_HMC5883L_reg(uint8 reg, uint8 data)
 {
-    uint8 array[2];
-    array[0] = reg;
-    array[1] = data;
-    
-    I2C_MasterWriteBuf(HMC5883L_ADDRESS,array,2,I2C_MODE_COMPLETE_XFER);
-    while(0u == (I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT));
-    
+    I2C_MasterSendStart(HMC5883L_ADDRESS,I2C_WRITE_XFER_MODE);
+    I2C_MasterWriteByte(reg);
+    I2C_MasterWriteByte(data);
+    I2C_MasterSendStop();
     return 0;
 }
-uint8 testConnection();
-
 //This function only works in continous mode
-void getHeading(int16_t *x, int16_t *y, int16_t *z)
+void getHeading(uint16 *x, uint16 *y, uint16*z)
 {
     
-    uint8 array[6];
-    array[0] = 0x06;
-    union HMC5883L data;
-    I2C_MasterWriteBuf(HMC5883L_ADDRESS,array,1,I2C_MODE_COMPLETE_XFER);
-    while(0u == (I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT));
+   uint8 array[6];
+    I2C_MasterSendStart(HMC5883L_ADDRESS,I2C_WRITE_XFER_MODE);
+    I2C_MasterWriteByte(0x03);
+    CyDelay(6);
+    I2C_MasterSendRestart(HMC5883L_ADDRESS, I2C_READ_XFER_MODE);
+    array[0] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[1] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[2] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[3] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[4] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[5] = I2C_MasterReadByte(I2C_NAK_DATA);
+    I2C_MasterSendStop();
     
-    I2C_MasterReadBuf(HMC5883L_ADDRESS,array,6,I2C_MODE_COMPLETE_XFER);
-    while(0u == (I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT));
-    
-    *data.array = *array;
-    x = &data.Data.x;
-    y = &data.Data.y;
-    z = &data.Data.z;
-    array[0] = 0x03;
-    
-    I2C_MasterWriteBuf(HMC5883L_ADDRESS,array,1,I2C_MODE_COMPLETE_XFER);
-    while(0u == (I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT));
+    *x = (((uint16_t)array[0]) << 8) | ((uint16_t)array[1]);
+    *y = (((uint16_t)array[4]) << 8) | ((uint16_t)array[5]);
+    *z = (((uint16_t)array[2]) << 8) | ((uint16_t)array[3]);
 }
 int16_t getHeadingX()
 {
+    uint8 array[6];
+    I2C_MasterSendStart(HMC5883L_ADDRESS,I2C_WRITE_XFER_MODE);
+    I2C_MasterWriteByte(0x03);
+    CyDelay(6);
+    I2C_MasterSendRestart(HMC5883L_ADDRESS, I2C_READ_XFER_MODE);
+    array[0] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[1] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[2] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[3] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[4] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[5] = I2C_MasterReadByte(I2C_NAK_DATA);
+    I2C_MasterSendStop();
     
-    return 0;   
+    return((((uint16_t)array[0]) << 8) | ((uint16_t)array[1]));
 }
 int16_t getHeadingY()
 {
- 
-    return 0; 
+    uint8 array[6];
+    I2C_MasterSendStart(HMC5883L_ADDRESS,I2C_WRITE_XFER_MODE);
+    I2C_MasterWriteByte(0x03);
+    CyDelay(6);
+    I2C_MasterSendRestart(HMC5883L_ADDRESS, I2C_READ_XFER_MODE);
+    array[0] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[1] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[2] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[3] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[4] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[5] = I2C_MasterReadByte(I2C_NAK_DATA);
+    I2C_MasterSendStop();
+   
+    return ((((uint16_t)array[4]) << 8) | ((uint16_t)array[5]));
+
 }
 int16_t getHeadingZ()
 {
-    return 0;    
+    uint8 array[6];
+    I2C_MasterSendStart(HMC5883L_ADDRESS,I2C_WRITE_XFER_MODE);
+    I2C_MasterWriteByte(0x03);
+    CyDelay(6);
+    I2C_MasterSendRestart(HMC5883L_ADDRESS, I2C_READ_XFER_MODE);
+    array[0] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[1] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[2] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[3] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[4] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[5] = I2C_MasterReadByte(I2C_NAK_DATA);
+    I2C_MasterSendStop();
+    
+    return ((((uint16_t)array[2]) << 8) | ((uint16_t)array[3]));
 }
 
-uint16 get_HMC5883L_Data(union HMC5883L *Data)
-{
-    
+uint16 get_HMC5883L_Data(uint16 Data[])
+{  
     uint8 array[6];
-    array[0] = 0x06;
-    I2C_MasterWriteBuf(HMC5883L_ADDRESS,array,1,I2C_MODE_COMPLETE_XFER);
-    while(0u == (I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT));
+    I2C_MasterSendStart(HMC5883L_ADDRESS,I2C_WRITE_XFER_MODE);
+    I2C_MasterWriteByte(0x03);
+    CyDelay(6);
+    I2C_MasterSendRestart(HMC5883L_ADDRESS, I2C_READ_XFER_MODE);
+    array[0] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[1] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[2] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[3] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[4] = I2C_MasterReadByte(I2C_ACK_DATA);
+    array[5] = I2C_MasterReadByte(I2C_NAK_DATA);
+    I2C_MasterSendStop();
     
-    I2C_MasterReadBuf(HMC5883L_ADDRESS,array,6,I2C_MODE_COMPLETE_XFER);
-    while(0u == (I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT));
+    Data[0] = (((uint16)array[0]) << 8) | ((uint16)array[1]);
+    Data[2] = (((uint16)array[2]) << 8) | ((uint16)array[3]);
+    Data[1] = (((uint16)array[4]) << 8) | ((uint16)array[5]);
     
-    *Data->array = *array;
-    array[0] = 0x03;
+    return 0;
+}
+//used to get the bearing in degrees 
+double get_bearing()
+{
+    double bearing;
+    uint16 x;
+    uint16 y;
+    uint16 z;
+    double cx;
+    double cy;
+    double cz;
+    getHeading(&x,&y,&z);
+    cx = (double) x * 10.0;
+    cy = (double) y * 10.0;
+    cz = (double) z * 10.0;
     
-    I2C_MasterWriteBuf(HMC5883L_ADDRESS,array,1,I2C_MODE_COMPLETE_XFER);
-    while(0u == (I2C_MasterStatus() & I2C_MSTAT_RD_CMPLT));
-    return I2C_MasterStatus();
+    bearing = atan2((cy),(cx));
+    
+    if(bearing <0)
+        bearing += 2 * M_PI;
+    if(bearing > 2 * M_PI)
+    {
+        bearing -= 2*M_PI;
+    }
+    bearing = bearing *(180/M_PI);
+    return bearing;
 }
 /* [] END OF FILE */

@@ -11,6 +11,7 @@
 */
 #include <project.h>
 #include <stdio.h>
+#include <math.h>
 #include "HMC5883L.h"
 #include "motordriver.h"
 #include "Servo_Driver.h"
@@ -19,20 +20,24 @@ void init();
 void servo_test(int duration,struct Servo s1);
 void uart_test();
 void i2c_test();
+void motor_test();
 int main()
 {
    CyGlobalIntEnable; /* Enable global interrupts. */
 init();
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
-    i2c_test();
-    for(;;);
+   
+    for(;;)
+    //motor_test();
+   i2c_test();
+    
 }
 void init()
 {
-    //EN_B_PWM_Start();
-    //EN_A_PWM_Start();
-    //Servo_A_Start();
-    //Servo_B_Start();
+    EN_B_PWM_Start();
+    EN_A_PWM_Start();
+    Servo_A_Start();
+    Servo_B_Start();
     I2C_Start();
     UART_Start();
 }
@@ -56,29 +61,47 @@ void servo_test(int duration,struct Servo s1)
 }
 void uart_test()
 {   
-    uint16 num;
-    int i =0;
-    char *buff;
+   
+    char buff = 0x01;
     UART_ClearRxBuffer();
     UART_PutString("Hello World. This is an UART TEST can you see me.");
     UART_PutString("Please send me data and I will Echo it back");
     for(;;)
     {
-        while(UART_GetRxBufferSize() == 1){
-        UART_WriteTxData(UART_GetChar());
+        while(UART_GetRxBufferSize() == 1 && buff != 'q'){
+            buff = UART_GetChar();
+            UART_WriteTxData(buff);
         }
     }
 }
 void i2c_test()
 {
-    union HMC5883L sensor;
-    char *buffer;
+    double bearing = 0;
+    struct HMC5883L_XYZ_Cord data;
+    char buffer[60];
     int num;
+    UART_PutString("Test I2C \n\r");
     HMC5883L_Config();
     for(;;){
-    get_HMC5883L_Data(&sensor);
-    num = sprintf(buffer, "X: %d \n\r Y: %d \n\r Z: %d \n\r",sensor.Data.x, sensor.Data.y, sensor.Data.z);
-    UART_PutArray( (uint8 *) buffer, (uint8)num);
+        
+        bearing = bearing + get_bearing();
+        num = sprintf(buffer, "Bearing: %d \n\r",(int) (10*bearing));
+        UART_PutArray( (uint8 *) buffer, (uint8)num);
+        bearing =0;
+        CyDelay(67);
+    }
+}
+void motor_test()
+{
+    while(1){
+        goBackward();
+        CyDelay(1000);
+        goForward();
+        CyDelay(1000);
+        goLeft();
+        CyDelay(1000);
+        goRight();
+        CyDelay(1000);
     }
 }
 /* [] END OF FILE */

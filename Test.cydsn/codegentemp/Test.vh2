@@ -2,7 +2,7 @@
 --	Conversion of Test.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Fri Jun 26 19:18:21 2015
+--	Mon Jul 20 23:20:56 2015
 --
 
 USE cypress.cypress.all;
@@ -1834,6 +1834,7 @@ SIGNAL \I2C:scl_x_wire\ : bit;
 SIGNAL \I2C:Net_969\ : bit;
 SIGNAL \I2C:Net_968\ : bit;
 SIGNAL \I2C:udb_clk\ : bit;
+SIGNAL \I2C:Net_970\ : bit;
 SIGNAL Net_8321 : bit;
 SIGNAL \I2C:Net_973\ : bit;
 SIGNAL Net_8322 : bit;

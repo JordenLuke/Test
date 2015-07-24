@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccd8G0XX.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
   29:.\Generated_Source\PSoC5/Servo_B_PM.c **** *
   30:.\Generated_Source\PSoC5/Servo_B_PM.c **** * Parameters:
   31:.\Generated_Source\PSoC5/Servo_B_PM.c **** *  None
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 2
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccd8G0XX.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/Servo_B_PM.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
   48              		.loc 1 64 0
   49 0016 FFF7FEFF 		bl	Servo_B_ReadControlRegister
   50              	.LVL2:
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 3
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccd8G0XX.s 			page 3
 
 
   51 001a E071     		strb	r0, [r4, #7]
@@ -127,7 +127,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
   54 001e 00BF     		.align	2
   55              	.L2:
   56 0020 00000000 		.word	.LANCHOR0
-  57 0024 82640040 		.word	1073767554
+  57 0024 85640040 		.word	1073767557
   58              		.cfi_endproc
   59              	.LFE0:
   60              		.size	Servo_B_SaveConfig, .-Servo_B_SaveConfig
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
   77              		.loc 1 92 0
   78 0002 074C     		ldr	r4, .L5
   79 0004 A088     		ldrh	r0, [r4, #4]
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 4
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccd8G0XX.s 			page 4
 
 
   80 0006 FFF7FEFF 		bl	Servo_B_WritePeriod
@@ -219,7 +219,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
   96 001e 00BF     		.align	2
   97              	.L5:
   98 0020 00000000 		.word	.LANCHOR0
-  99 0024 82640040 		.word	1073767554
+  99 0024 85640040 		.word	1073767557
  100              		.cfi_endproc
  101              	.LFE1:
  102              		.size	Servo_B_RestoreConfig, .-Servo_B_RestoreConfig
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  116:.\Generated_Source\PSoC5/Servo_B_PM.c **** 
  117:.\Generated_Source\PSoC5/Servo_B_PM.c **** /*******************************************************************************
  118:.\Generated_Source\PSoC5/Servo_B_PM.c **** * Function Name: Servo_B_Sleep
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 5
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccd8G0XX.s 			page 5
 
 
  119:.\Generated_Source\PSoC5/Servo_B_PM.c **** ********************************************************************************
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  149:.\Generated_Source\PSoC5/Servo_B_PM.c ****     #endif /* (Servo_B_UseControl) */
  150:.\Generated_Source\PSoC5/Servo_B_PM.c **** 
  151:.\Generated_Source\PSoC5/Servo_B_PM.c ****     /* Stop component */
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 6
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccd8G0XX.s 			page 6
 
 
  152:.\Generated_Source\PSoC5/Servo_B_PM.c ****     Servo_B_Stop();
@@ -315,7 +315,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  142              	.L11:
  143              		.align	2
  144              	.L10:
- 145 0024 74640040 		.word	1073767540
+ 145 0024 75640040 		.word	1073767541
  146 0028 00000000 		.word	.LANCHOR0
  147              		.cfi_endproc
  148              	.LFE2:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  161              		@ frame_needed = 0, uses_anonymous_args = 0
  162 0000 08B5     		push	{r3, lr}
  163              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 7
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccd8G0XX.s 			page 7
 
 
  164              		.cfi_offset 3, -8
@@ -408,28 +408,28 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  200 0006 00000000 		.4byte	.Ldebug_abbrev0
  201 000a 04       		.byte	0x4
  202 000b 01       		.uleb128 0x1
- 203 000c C6010000 		.4byte	.LASF34
+ 203 000c CF010000 		.4byte	.LASF34
  204 0010 01       		.byte	0x1
- 205 0011 77020000 		.4byte	.LASF35
- 206 0015 60000000 		.4byte	.LASF36
+ 205 0011 80020000 		.4byte	.LASF35
+ 206 0015 93010000 		.4byte	.LASF36
  207 0019 00000000 		.4byte	.Ldebug_ranges0+0
  208 001d 00000000 		.4byte	0
  209 0021 00000000 		.4byte	.Ldebug_line0
  210 0025 02       		.uleb128 0x2
  211 0026 01       		.byte	0x1
  212 0027 06       		.byte	0x6
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 8
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccd8G0XX.s 			page 8
 
 
- 213 0028 B5020000 		.4byte	.LASF0
+ 213 0028 BE020000 		.4byte	.LASF0
  214 002c 02       		.uleb128 0x2
  215 002d 01       		.byte	0x1
  216 002e 08       		.byte	0x8
- 217 002f D3000000 		.4byte	.LASF1
+ 217 002f A5000000 		.4byte	.LASF1
  218 0033 02       		.uleb128 0x2
  219 0034 02       		.byte	0x2
  220 0035 05       		.byte	0x5
- 221 0036 6D020000 		.4byte	.LASF2
+ 221 0036 76020000 		.4byte	.LASF2
  222 003a 02       		.uleb128 0x2
  223 003b 02       		.byte	0x2
  224 003c 07       		.byte	0x7
@@ -437,19 +437,19 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  226 0041 02       		.uleb128 0x2
  227 0042 04       		.byte	0x4
  228 0043 05       		.byte	0x5
- 229 0044 9D020000 		.4byte	.LASF4
+ 229 0044 A6020000 		.4byte	.LASF4
  230 0048 02       		.uleb128 0x2
  231 0049 04       		.byte	0x4
  232 004a 07       		.byte	0x7
- 233 004b 04010000 		.4byte	.LASF5
+ 233 004b D6000000 		.4byte	.LASF5
  234 004f 02       		.uleb128 0x2
  235 0050 08       		.byte	0x8
  236 0051 05       		.byte	0x5
- 237 0052 4B020000 		.4byte	.LASF6
+ 237 0052 54020000 		.4byte	.LASF6
  238 0056 02       		.uleb128 0x2
  239 0057 08       		.byte	0x8
  240 0058 07       		.byte	0x7
- 241 0059 BC000000 		.4byte	.LASF7
+ 241 0059 8E000000 		.4byte	.LASF7
  242 005d 03       		.uleb128 0x3
  243 005e 04       		.byte	0x4
  244 005f 05       		.byte	0x5
@@ -459,32 +459,32 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  248 0066 07       		.byte	0x7
  249 0067 53000000 		.4byte	.LASF8
  250 006b 04       		.uleb128 0x4
- 251 006c 16010000 		.4byte	.LASF9
+ 251 006c E8000000 		.4byte	.LASF9
  252 0070 02       		.byte	0x2
  253 0071 B3       		.byte	0xb3
  254 0072 2C000000 		.4byte	0x2c
  255 0076 04       		.uleb128 0x4
- 256 0077 77010000 		.4byte	.LASF10
+ 256 0077 49010000 		.4byte	.LASF10
  257 007b 02       		.byte	0x2
  258 007c B4       		.byte	0xb4
  259 007d 3A000000 		.4byte	0x3a
  260 0081 02       		.uleb128 0x2
  261 0082 04       		.byte	0x4
  262 0083 04       		.byte	0x4
- 263 0084 B6000000 		.4byte	.LASF11
+ 263 0084 88000000 		.4byte	.LASF11
  264 0088 02       		.uleb128 0x2
  265 0089 08       		.byte	0x8
  266 008a 04       		.byte	0x4
- 267 008b 5C010000 		.4byte	.LASF12
+ 267 008b 2E010000 		.4byte	.LASF12
  268 008f 02       		.uleb128 0x2
  269 0090 01       		.byte	0x1
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 9
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccd8G0XX.s 			page 9
 
 
  270 0091 08       		.byte	0x8
- 271 0092 59020000 		.4byte	.LASF13
+ 271 0092 62020000 		.4byte	.LASF13
  272 0096 05       		.uleb128 0x5
- 273 0097 C1010000 		.4byte	.LASF14
+ 273 0097 CA010000 		.4byte	.LASF14
  274 009b 02       		.byte	0x2
  275 009c 5D01     		.2byte	0x15d
  276 009e A2000000 		.4byte	0xa2
@@ -493,14 +493,14 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  279 00a7 02       		.uleb128 0x2
  280 00a8 04       		.byte	0x4
  281 00a9 07       		.byte	0x7
- 282 00aa 42020000 		.4byte	.LASF15
+ 282 00aa 4B020000 		.4byte	.LASF15
  283 00ae 07       		.uleb128 0x7
  284 00af 08       		.byte	0x8
  285 00b0 03       		.byte	0x3
  286 00b1 6B       		.byte	0x6b
  287 00b2 F3000000 		.4byte	0xf3
  288 00b6 08       		.uleb128 0x8
- 289 00b7 E1000000 		.4byte	.LASF16
+ 289 00b7 B3000000 		.4byte	.LASF16
  290 00bb 03       		.byte	0x3
  291 00bc 6E       		.byte	0x6e
  292 00bd 6B000000 		.4byte	0x6b
@@ -518,7 +518,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  304 00d5 76000000 		.4byte	0x76
  305 00d9 04       		.byte	0x4
  306 00da 08       		.uleb128 0x8
- 307 00db 7E010000 		.4byte	.LASF19
+ 307 00db 50010000 		.4byte	.LASF19
  308 00df 03       		.byte	0x3
  309 00e0 76       		.byte	0x76
  310 00e1 6B000000 		.4byte	0x6b
@@ -531,14 +531,14 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  317 00f1 07       		.byte	0x7
  318 00f2 00       		.byte	0
  319 00f3 04       		.uleb128 0x4
- 320 00f4 8E000000 		.4byte	.LASF21
+ 320 00f4 60000000 		.4byte	.LASF21
  321 00f8 03       		.byte	0x3
  322 00f9 8B       		.byte	0x8b
  323 00fa AE000000 		.4byte	0xae
  324 00fe 09       		.uleb128 0x9
- 325 00ff A3000000 		.4byte	.LASF22
+ 325 00ff 75000000 		.4byte	.LASF22
  326 0103 01       		.byte	0x1
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 10
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccd8G0XX.s 			page 10
 
 
  327 0104 2A       		.byte	0x2a
@@ -558,7 +558,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  341 012a D7010000 		.4byte	0x1d7
  342 012e 00       		.byte	0
  343 012f 09       		.uleb128 0x9
- 344 0130 2A010000 		.4byte	.LASF23
+ 344 0130 FC000000 		.4byte	.LASF23
  345 0134 01       		.byte	0x1
  346 0135 58       		.byte	0x58
  347 0136 00000000 		.4byte	.LFB1
@@ -577,7 +577,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  360 015b 04020000 		.4byte	0x204
  361 015f 00       		.byte	0
  362 0160 09       		.uleb128 0x9
- 363 0161 1C010000 		.4byte	.LASF24
+ 363 0161 EE000000 		.4byte	.LASF24
  364 0165 01       		.byte	0x1
  365 0166 88       		.byte	0x88
  366 0167 00000000 		.4byte	.LFB2
@@ -593,12 +593,12 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  376 0183 FE000000 		.4byte	0xfe
  377 0187 00       		.byte	0
  378 0188 09       		.uleb128 0x9
- 379 0189 A6020000 		.4byte	.LASF25
+ 379 0189 AF020000 		.4byte	.LASF25
  380 018d 01       		.byte	0x1
  381 018e B2       		.byte	0xb2
  382 018f 00000000 		.4byte	.LFB3
  383 0193 18000000 		.4byte	.LFE3-.LFB3
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 11
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccd8G0XX.s 			page 11
 
 
  384 0197 01       		.uleb128 0x1
@@ -612,7 +612,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  392 01ab 1C020000 		.4byte	0x21c
  393 01af 00       		.byte	0
  394 01b0 0B       		.uleb128 0xb
- 395 01b1 5E020000 		.4byte	.LASF37
+ 395 01b1 67020000 		.4byte	.LASF37
  396 01b5 01       		.byte	0x1
  397 01b6 14       		.byte	0x14
  398 01b7 F3000000 		.4byte	0xf3
@@ -620,12 +620,12 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  400 01bc 03       		.byte	0x3
  401 01bd 00000000 		.4byte	Servo_B_backup
  402 01c1 0C       		.uleb128 0xc
- 403 01c2 91010000 		.4byte	.LASF26
+ 403 01c2 63010000 		.4byte	.LASF26
  404 01c6 03       		.byte	0x3
  405 01c7 C0       		.byte	0xc0
  406 01c8 76000000 		.4byte	0x76
  407 01cc 0C       		.uleb128 0xc
- 408 01cd F0000000 		.4byte	.LASF27
+ 408 01cd C2000000 		.4byte	.LASF27
  409 01d1 03       		.byte	0x3
  410 01d2 B3       		.byte	0xb3
  411 01d3 76000000 		.4byte	0x76
@@ -635,7 +635,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  415 01dd 9D       		.byte	0x9d
  416 01de 6B000000 		.4byte	0x6b
  417 01e2 0D       		.uleb128 0xd
- 418 01e3 63010000 		.4byte	.LASF29
+ 418 01e3 35010000 		.4byte	.LASF29
  419 01e7 03       		.byte	0x3
  420 01e8 BE       		.byte	0xbe
  421 01e9 F3010000 		.4byte	0x1f3
@@ -643,7 +643,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  423 01ee 76000000 		.4byte	0x76
  424 01f2 00       		.byte	0
  425 01f3 0D       		.uleb128 0xd
- 426 01f4 C1020000 		.4byte	.LASF30
+ 426 01f4 CA020000 		.4byte	.LASF30
  427 01f8 03       		.byte	0x3
  428 01f9 BA       		.byte	0xba
  429 01fa 04020000 		.4byte	0x204
@@ -651,22 +651,22 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  431 01ff 76000000 		.4byte	0x76
  432 0203 00       		.byte	0
  433 0204 0D       		.uleb128 0xd
- 434 0205 A4010000 		.4byte	.LASF31
+ 434 0205 76010000 		.4byte	.LASF31
  435 0209 03       		.byte	0x3
  436 020a 9E       		.byte	0x9e
  437 020b 15020000 		.4byte	0x215
  438 020f 0E       		.uleb128 0xe
  439 0210 6B000000 		.4byte	0x6b
  440 0214 00       		.byte	0
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 12
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccd8G0XX.s 			page 12
 
 
  441 0215 0F       		.uleb128 0xf
- 442 0216 40010000 		.4byte	.LASF32
+ 442 0216 12010000 		.4byte	.LASF32
  443 021a 03       		.byte	0x3
  444 021b 93       		.byte	0x93
  445 021c 0F       		.uleb128 0xf
- 446 021d 4D010000 		.4byte	.LASF33
+ 446 021d 1F010000 		.4byte	.LASF33
  447 0221 03       		.byte	0x3
  448 0222 DB       		.byte	0xdb
  449 0223 00       		.byte	0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  495 002b 00       		.byte	0
  496 002c 03       		.uleb128 0x3
  497 002d 0E       		.uleb128 0xe
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 13
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccd8G0XX.s 			page 13
 
 
  498 002e 3A       		.uleb128 0x3a
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  552 0064 00       		.byte	0
  553 0065 00       		.byte	0
  554 0066 09       		.uleb128 0x9
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 14
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccd8G0XX.s 			page 14
 
 
  555 0067 2E       		.uleb128 0x2e
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  609 00a0 0E       		.uleb128 0xe
  610 00a1 3A       		.uleb128 0x3a
  611 00a2 0B       		.uleb128 0xb
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 15
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccd8G0XX.s 			page 15
 
 
  612 00a3 3B       		.uleb128 0x3b
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  666              		.section	.debug_aranges,"",%progbits
  667 0000 34000000 		.4byte	0x34
  668 0004 0200     		.2byte	0x2
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 16
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccd8G0XX.s 			page 16
 
 
  669 0006 00000000 		.4byte	.Ldebug_info0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  708 0040 73686F72 		.ascii	"short unsigned int\000"
  708      7420756E 
  708      7369676E 
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 17
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccd8G0XX.s 			page 17
 
 
  708      65642069 
@@ -968,180 +968,182 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 1
  710      676E6564 
  710      20696E74 
  710      00
- 711              	.LASF36:
- 712 0060 433A5C55 		.ascii	"C:\\Users\\CSE\\Documents\\GitHub\\Test\\Test.cydsn"
- 712      73657273 
- 712      5C435345 
- 712      5C446F63 
- 712      756D656E 
- 713 008d 00       		.ascii	"\000"
- 714              	.LASF21:
- 715 008e 53657276 		.ascii	"Servo_B_backupStruct\000"
- 715      6F5F425F 
- 715      6261636B 
- 715      75705374 
- 715      72756374 
- 716              	.LASF22:
- 717 00a3 53657276 		.ascii	"Servo_B_SaveConfig\000"
- 717      6F5F425F 
- 717      53617665 
- 717      436F6E66 
- 717      696700
- 718              	.LASF11:
- 719 00b6 666C6F61 		.ascii	"float\000"
- 719      7400
- 720              	.LASF7:
- 721 00bc 6C6F6E67 		.ascii	"long long unsigned int\000"
- 721      206C6F6E 
- 721      6720756E 
- 721      7369676E 
- 721      65642069 
- 722              	.LASF1:
- 723 00d3 756E7369 		.ascii	"unsigned char\000"
- 723      676E6564 
- 723      20636861 
- 723      7200
- 724              	.LASF16:
- 725 00e1 50574D45 		.ascii	"PWMEnableState\000"
- 725      6E61626C 
- 725      65537461 
- 725      746500
- 726              	.LASF27:
- 727 00f0 53657276 		.ascii	"Servo_B_ReadCounter\000"
- 727      6F5F425F 
- 727      52656164 
- 727      436F756E 
- 727      74657200 
- 728              	.LASF5:
- 729 0104 6C6F6E67 		.ascii	"long unsigned int\000"
- 729      20756E73 
- 729      69676E65 
- 729      6420696E 
- 729      7400
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 18
+ 711              	.LASF21:
+ 712 0060 53657276 		.ascii	"Servo_B_backupStruct\000"
+ 712      6F5F425F 
+ 712      6261636B 
+ 712      75705374 
+ 712      72756374 
+ 713              	.LASF22:
+ 714 0075 53657276 		.ascii	"Servo_B_SaveConfig\000"
+ 714      6F5F425F 
+ 714      53617665 
+ 714      436F6E66 
+ 714      696700
+ 715              	.LASF11:
+ 716 0088 666C6F61 		.ascii	"float\000"
+ 716      7400
+ 717              	.LASF7:
+ 718 008e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 718      206C6F6E 
+ 718      6720756E 
+ 718      7369676E 
+ 718      65642069 
+ 719              	.LASF1:
+ 720 00a5 756E7369 		.ascii	"unsigned char\000"
+ 720      676E6564 
+ 720      20636861 
+ 720      7200
+ 721              	.LASF16:
+ 722 00b3 50574D45 		.ascii	"PWMEnableState\000"
+ 722      6E61626C 
+ 722      65537461 
+ 722      746500
+ 723              	.LASF27:
+ 724 00c2 53657276 		.ascii	"Servo_B_ReadCounter\000"
+ 724      6F5F425F 
+ 724      52656164 
+ 724      436F756E 
+ 724      74657200 
+ 725              	.LASF5:
+ 726 00d6 6C6F6E67 		.ascii	"long unsigned int\000"
+ 726      20756E73 
+ 726      69676E65 
+ 726      6420696E 
+ 726      7400
+ 727              	.LASF9:
+ 728 00e8 75696E74 		.ascii	"uint8\000"
+ 728      3800
+ 729              	.LASF24:
+ 730 00ee 53657276 		.ascii	"Servo_B_Sleep\000"
+ 730      6F5F425F 
+ 730      536C6565 
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccd8G0XX.s 			page 18
 
 
- 730              	.LASF9:
- 731 0116 75696E74 		.ascii	"uint8\000"
- 731      3800
- 732              	.LASF24:
- 733 011c 53657276 		.ascii	"Servo_B_Sleep\000"
- 733      6F5F425F 
- 733      536C6565 
- 733      7000
- 734              	.LASF23:
- 735 012a 53657276 		.ascii	"Servo_B_RestoreConfig\000"
- 735      6F5F425F 
- 735      52657374 
- 735      6F726543 
- 735      6F6E6669 
- 736              	.LASF32:
- 737 0140 53657276 		.ascii	"Servo_B_Stop\000"
- 737      6F5F425F 
- 737      53746F70 
- 737      00
- 738              	.LASF33:
- 739 014d 53657276 		.ascii	"Servo_B_Enable\000"
- 739      6F5F425F 
- 739      456E6162 
- 739      6C6500
- 740              	.LASF12:
- 741 015c 646F7562 		.ascii	"double\000"
- 741      6C6500
- 742              	.LASF29:
- 743 0163 53657276 		.ascii	"Servo_B_WritePeriod\000"
- 743      6F5F425F 
- 743      57726974 
- 743      65506572 
- 743      696F6400 
- 744              	.LASF10:
- 745 0177 75696E74 		.ascii	"uint16\000"
- 745      313600
- 746              	.LASF19:
- 747 017e 496E7465 		.ascii	"InterruptMaskValue\000"
- 747      72727570 
- 747      744D6173 
- 747      6B56616C 
- 747      756500
- 748              	.LASF26:
- 749 0191 53657276 		.ascii	"Servo_B_ReadPeriod\000"
- 749      6F5F425F 
- 749      52656164 
- 749      50657269 
- 749      6F6400
- 750              	.LASF31:
- 751 01a4 53657276 		.ascii	"Servo_B_WriteControlRegister\000"
- 751      6F5F425F 
- 751      57726974 
- 751      65436F6E 
- 751      74726F6C 
+ 730      7000
+ 731              	.LASF23:
+ 732 00fc 53657276 		.ascii	"Servo_B_RestoreConfig\000"
+ 732      6F5F425F 
+ 732      52657374 
+ 732      6F726543 
+ 732      6F6E6669 
+ 733              	.LASF32:
+ 734 0112 53657276 		.ascii	"Servo_B_Stop\000"
+ 734      6F5F425F 
+ 734      53746F70 
+ 734      00
+ 735              	.LASF33:
+ 736 011f 53657276 		.ascii	"Servo_B_Enable\000"
+ 736      6F5F425F 
+ 736      456E6162 
+ 736      6C6500
+ 737              	.LASF12:
+ 738 012e 646F7562 		.ascii	"double\000"
+ 738      6C6500
+ 739              	.LASF29:
+ 740 0135 53657276 		.ascii	"Servo_B_WritePeriod\000"
+ 740      6F5F425F 
+ 740      57726974 
+ 740      65506572 
+ 740      696F6400 
+ 741              	.LASF10:
+ 742 0149 75696E74 		.ascii	"uint16\000"
+ 742      313600
+ 743              	.LASF19:
+ 744 0150 496E7465 		.ascii	"InterruptMaskValue\000"
+ 744      72727570 
+ 744      744D6173 
+ 744      6B56616C 
+ 744      756500
+ 745              	.LASF26:
+ 746 0163 53657276 		.ascii	"Servo_B_ReadPeriod\000"
+ 746      6F5F425F 
+ 746      52656164 
+ 746      50657269 
+ 746      6F6400
+ 747              	.LASF31:
+ 748 0176 53657276 		.ascii	"Servo_B_WriteControlRegister\000"
+ 748      6F5F425F 
+ 748      57726974 
+ 748      65436F6E 
+ 748      74726F6C 
+ 749              	.LASF36:
+ 750 0193 433A5C55 		.ascii	"C:\\Users\\Jorden\\Documents\\PSoC Creator\\Test\\T"
+ 750      73657273 
+ 750      5C4A6F72 
+ 750      64656E5C 
+ 750      446F6375 
+ 751 01c0 6573742E 		.ascii	"est.cydsn\000"
+ 751      63796473 
+ 751      6E00
  752              	.LASF14:
- 753 01c1 72656738 		.ascii	"reg8\000"
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccd8G0XX.s 			page 19
+
+
+ 753 01ca 72656738 		.ascii	"reg8\000"
  753      00
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 19
-
-
  754              	.LASF34:
- 755 01c6 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 755 01cf 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
  755      4320342E 
  755      382E3420 
  755      32303134 
  755      30353236 
- 756 01f9 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 756 0202 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
  756      20726576 
  756      6973696F 
  756      6E203231 
  756      31333538 
- 757 022c 67202D66 		.ascii	"g -ffunction-sections\000"
+ 757 0235 67202D66 		.ascii	"g -ffunction-sections\000"
  757      66756E63 
  757      74696F6E 
  757      2D736563 
  757      74696F6E 
  758              	.LASF15:
- 759 0242 73697A65 		.ascii	"sizetype\000"
+ 759 024b 73697A65 		.ascii	"sizetype\000"
  759      74797065 
  759      00
  760              	.LASF6:
- 761 024b 6C6F6E67 		.ascii	"long long int\000"
+ 761 0254 6C6F6E67 		.ascii	"long long int\000"
  761      206C6F6E 
  761      6720696E 
  761      7400
  762              	.LASF13:
- 763 0259 63686172 		.ascii	"char\000"
+ 763 0262 63686172 		.ascii	"char\000"
  763      00
  764              	.LASF37:
- 765 025e 53657276 		.ascii	"Servo_B_backup\000"
+ 765 0267 53657276 		.ascii	"Servo_B_backup\000"
  765      6F5F425F 
  765      6261636B 
  765      757000
  766              	.LASF2:
- 767 026d 73686F72 		.ascii	"short int\000"
+ 767 0276 73686F72 		.ascii	"short int\000"
  767      7420696E 
  767      7400
  768              	.LASF35:
- 769 0277 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Servo_B_PM.c\000"
+ 769 0280 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Servo_B_PM.c\000"
  769      6E657261 
  769      7465645F 
  769      536F7572 
  769      63655C50 
  770              	.LASF4:
- 771 029d 6C6F6E67 		.ascii	"long int\000"
+ 771 02a6 6C6F6E67 		.ascii	"long int\000"
  771      20696E74 
  771      00
  772              	.LASF25:
- 773 02a6 53657276 		.ascii	"Servo_B_Wakeup\000"
+ 773 02af 53657276 		.ascii	"Servo_B_Wakeup\000"
  773      6F5F425F 
  773      57616B65 
  773      757000
  774              	.LASF0:
- 775 02b5 7369676E 		.ascii	"signed char\000"
+ 775 02be 7369676E 		.ascii	"signed char\000"
  775      65642063 
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccd8G0XX.s 			page 20
+
+
  775      68617200 
  776              	.LASF30:
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccFlL7KE.s 			page 20
-
-
- 777 02c1 53657276 		.ascii	"Servo_B_WriteCounter\000"
+ 777 02ca 53657276 		.ascii	"Servo_B_WriteCounter\000"
  777      6F5F425F 
  777      57726974 
  777      65436F75 

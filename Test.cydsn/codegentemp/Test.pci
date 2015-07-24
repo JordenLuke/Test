@@ -1,5 +1,5 @@
 # Test
-# 2015-06-27 01:18:27Z
+# 2015-07-21 05:20:58Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -13,5 +13,7 @@ set_io "IN_1(0)" iocell 12 4
 set_io "IN_2(0)" iocell 6 5
 set_io "IN_3(0)" iocell 6 6
 set_io "IN_4(0)" iocell 6 7
+set_io "Rx_1(0)" iocell 2 0
 set_io "SCL_1(0)" iocell 6 1
 set_io "SDA_1(0)" iocell 6 0
+set_io "Tx_1(0)" iocell 2 1

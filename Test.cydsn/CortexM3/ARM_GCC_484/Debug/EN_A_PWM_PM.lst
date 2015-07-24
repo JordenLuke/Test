@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc8vevfx.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
   29:.\Generated_Source\PSoC5/EN_A_PWM_PM.c **** *
   30:.\Generated_Source\PSoC5/EN_A_PWM_PM.c **** * Parameters:
   31:.\Generated_Source\PSoC5/EN_A_PWM_PM.c **** *  None
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 2
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc8vevfx.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/EN_A_PWM_PM.c **** *
@@ -107,7 +107,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
   50              		.align	2
   51              	.L2:
   52 0018 00000000 		.word	.LANCHOR0
-  53 001c 8F640040 		.word	1073767567
+  53 001c 89640040 		.word	1073767561
   54              		.cfi_endproc
   55              	.LFE0:
   56              		.size	EN_A_PWM_SaveConfig, .-EN_A_PWM_SaveConfig
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
   61              		.thumb_func
   62              		.type	EN_A_PWM_RestoreConfig, %function
   63              	EN_A_PWM_RestoreConfig:
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 3
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc8vevfx.s 			page 3
 
 
   64              	.LFB1:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
   77              	.LVL2:
   93:.\Generated_Source\PSoC5/EN_A_PWM_PM.c ****             #endif /* (!EN_A_PWM_PWMModeIsCenterAligned) */
   94:.\Generated_Source\PSoC5/EN_A_PWM_PM.c **** 
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 4
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc8vevfx.s 			page 4
 
 
   95:.\Generated_Source\PSoC5/EN_A_PWM_PM.c ****             EN_A_PWM_WriteCounter(EN_A_PWM_backup.PWMUdb);
@@ -198,7 +198,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
   88              		.align	2
   89              	.L5:
   90 0018 00000000 		.word	.LANCHOR0
-  91 001c 8F640040 		.word	1073767567
+  91 001c 89640040 		.word	1073767561
   92              		.cfi_endproc
   93              	.LFE1:
   94              		.size	EN_A_PWM_RestoreConfig, .-EN_A_PWM_RestoreConfig
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
  124:.\Generated_Source\PSoC5/EN_A_PWM_PM.c **** *
  125:.\Generated_Source\PSoC5/EN_A_PWM_PM.c **** * Parameters:
  126:.\Generated_Source\PSoC5/EN_A_PWM_PM.c **** *  None
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 5
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc8vevfx.s 			page 5
 
 
  127:.\Generated_Source\PSoC5/EN_A_PWM_PM.c **** *
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
  128              	.LFB3:
  156:.\Generated_Source\PSoC5/EN_A_PWM_PM.c **** }
  157:.\Generated_Source\PSoC5/EN_A_PWM_PM.c **** 
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 6
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc8vevfx.s 			page 6
 
 
  158:.\Generated_Source\PSoC5/EN_A_PWM_PM.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
  154              	.LFE3:
  155              		.size	EN_A_PWM_Wakeup, .-EN_A_PWM_Wakeup
  156              		.bss
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 7
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc8vevfx.s 			page 7
 
 
  157              		.align	2
@@ -379,25 +379,25 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
  171 0006 00000000 		.4byte	.Ldebug_abbrev0
  172 000a 04       		.byte	0x4
  173 000b 01       		.uleb128 0x1
- 174 000c 68010000 		.4byte	.LASF31
+ 174 000c 71010000 		.4byte	.LASF31
  175 0010 01       		.byte	0x1
- 176 0011 15010000 		.4byte	.LASF32
- 177 0015 38000000 		.4byte	.LASF33
+ 176 0011 E7000000 		.4byte	.LASF32
+ 177 0015 35010000 		.4byte	.LASF33
  178 0019 00000000 		.4byte	.Ldebug_ranges0+0
  179 001d 00000000 		.4byte	0
  180 0021 00000000 		.4byte	.Ldebug_line0
  181 0025 02       		.uleb128 0x2
  182 0026 01       		.byte	0x1
  183 0027 06       		.byte	0x6
- 184 0028 62020000 		.4byte	.LASF0
+ 184 0028 6B020000 		.4byte	.LASF0
  185 002c 02       		.uleb128 0x2
  186 002d 01       		.byte	0x1
  187 002e 08       		.byte	0x8
- 188 002f 81000000 		.4byte	.LASF1
+ 188 002f 53000000 		.4byte	.LASF1
  189 0033 02       		.uleb128 0x2
  190 0034 02       		.byte	0x2
  191 0035 05       		.byte	0x5
- 192 0036 0E020000 		.4byte	.LASF2
+ 192 0036 17020000 		.4byte	.LASF2
  193 003a 02       		.uleb128 0x2
  194 003b 02       		.byte	0x2
  195 003c 07       		.byte	0x7
@@ -405,20 +405,20 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
  197 0041 02       		.uleb128 0x2
  198 0042 04       		.byte	0x4
  199 0043 05       		.byte	0x5
- 200 0044 45020000 		.4byte	.LASF4
+ 200 0044 4E020000 		.4byte	.LASF4
  201 0048 02       		.uleb128 0x2
  202 0049 04       		.byte	0x4
  203 004a 07       		.byte	0x7
- 204 004b AE000000 		.4byte	.LASF5
+ 204 004b 80000000 		.4byte	.LASF5
  205 004f 02       		.uleb128 0x2
  206 0050 08       		.byte	0x8
  207 0051 05       		.byte	0x5
- 208 0052 ED010000 		.4byte	.LASF6
+ 208 0052 F6010000 		.4byte	.LASF6
  209 0056 02       		.uleb128 0x2
  210 0057 08       		.byte	0x8
  211 0058 07       		.byte	0x7
- 212 0059 4C010000 		.4byte	.LASF7
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 8
+ 212 0059 1E010000 		.4byte	.LASF7
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc8vevfx.s 			page 8
 
 
  213 005d 03       		.uleb128 0x3
@@ -428,31 +428,31 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
  217 0064 02       		.uleb128 0x2
  218 0065 04       		.byte	0x4
  219 0066 07       		.byte	0x7
- 220 0067 08010000 		.4byte	.LASF8
+ 220 0067 DA000000 		.4byte	.LASF8
  221 006b 04       		.uleb128 0x4
- 222 006c C0000000 		.4byte	.LASF9
+ 222 006c 92000000 		.4byte	.LASF9
  223 0070 02       		.byte	0x2
  224 0071 B3       		.byte	0xb3
  225 0072 2C000000 		.4byte	0x2c
  226 0076 04       		.uleb128 0x4
- 227 0077 01010000 		.4byte	.LASF10
+ 227 0077 D3000000 		.4byte	.LASF10
  228 007b 02       		.byte	0x2
  229 007c B4       		.byte	0xb4
  230 007d 3A000000 		.4byte	0x3a
  231 0081 02       		.uleb128 0x2
  232 0082 04       		.byte	0x4
  233 0083 04       		.byte	0x4
- 234 0084 7B000000 		.4byte	.LASF11
+ 234 0084 4D000000 		.4byte	.LASF11
  235 0088 02       		.uleb128 0x2
  236 0089 08       		.byte	0x8
  237 008a 04       		.byte	0x4
- 238 008b FA000000 		.4byte	.LASF12
+ 238 008b CC000000 		.4byte	.LASF12
  239 008f 02       		.uleb128 0x2
  240 0090 01       		.byte	0x1
  241 0091 08       		.byte	0x8
- 242 0092 FB010000 		.4byte	.LASF13
+ 242 0092 04020000 		.4byte	.LASF13
  243 0096 05       		.uleb128 0x5
- 244 0097 63010000 		.4byte	.LASF14
+ 244 0097 6C010000 		.4byte	.LASF14
  245 009b 02       		.byte	0x2
  246 009c 5D01     		.2byte	0x15d
  247 009e A2000000 		.4byte	0xa2
@@ -461,14 +461,14 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
  250 00a7 02       		.uleb128 0x2
  251 00a8 04       		.byte	0x4
  252 00a9 07       		.byte	0x7
- 253 00aa E4010000 		.4byte	.LASF15
+ 253 00aa ED010000 		.4byte	.LASF15
  254 00ae 07       		.uleb128 0x7
  255 00af 08       		.byte	0x8
  256 00b0 03       		.byte	0x3
  257 00b1 6B       		.byte	0x6b
  258 00b2 E7000000 		.4byte	0xe7
  259 00b6 08       		.uleb128 0x8
- 260 00b7 9F000000 		.4byte	.LASF16
+ 260 00b7 71000000 		.4byte	.LASF16
  261 00bb 03       		.byte	0x3
  262 00bc 6E       		.byte	0x6e
  263 00bd 6B000000 		.4byte	0x6b
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
  267 00c7 03       		.byte	0x3
  268 00c8 71       		.byte	0x71
  269 00c9 76000000 		.4byte	0x76
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 9
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc8vevfx.s 			page 9
 
 
  270 00cd 02       		.byte	0x2
@@ -489,19 +489,19 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
  275 00d5 76000000 		.4byte	0x76
  276 00d9 04       		.byte	0x4
  277 00da 08       		.uleb128 0x8
- 278 00db 84020000 		.4byte	.LASF19
+ 278 00db 8D020000 		.4byte	.LASF19
  279 00df 03       		.byte	0x3
  280 00e0 76       		.byte	0x76
  281 00e1 6B000000 		.4byte	0x6b
  282 00e5 06       		.byte	0x6
  283 00e6 00       		.byte	0
  284 00e7 04       		.uleb128 0x4
- 285 00e8 18020000 		.4byte	.LASF20
+ 285 00e8 21020000 		.4byte	.LASF20
  286 00ec 03       		.byte	0x3
  287 00ed 8B       		.byte	0x8b
  288 00ee AE000000 		.4byte	0xae
  289 00f2 09       		.uleb128 0x9
- 290 00f3 4E020000 		.4byte	.LASF21
+ 290 00f3 57020000 		.4byte	.LASF21
  291 00f7 01       		.byte	0x1
  292 00f8 2A       		.byte	0x2a
  293 00f9 00000000 		.4byte	.LFB0
@@ -517,7 +517,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
  303 0115 AE010000 		.4byte	0x1ae
  304 0119 00       		.byte	0
  305 011a 09       		.uleb128 0x9
- 306 011b 2E020000 		.4byte	.LASF22
+ 306 011b 37020000 		.4byte	.LASF22
  307 011f 01       		.byte	0x1
  308 0120 58       		.byte	0x58
  309 0121 00000000 		.4byte	.LFB1
@@ -533,12 +533,12 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
  319 013d CA010000 		.4byte	0x1ca
  320 0141 00       		.byte	0
  321 0142 09       		.uleb128 0x9
- 322 0143 C6000000 		.4byte	.LASF23
+ 322 0143 98000000 		.4byte	.LASF23
  323 0147 01       		.byte	0x1
  324 0148 88       		.byte	0x88
  325 0149 00000000 		.4byte	.LFB2
  326 014d 0C000000 		.4byte	.LFE2-.LFB2
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 10
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc8vevfx.s 			page 10
 
 
  327 0151 01       		.uleb128 0x1
@@ -552,7 +552,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
  335 0165 F2000000 		.4byte	0xf2
  336 0169 00       		.byte	0
  337 016a 09       		.uleb128 0x9
- 338 016b D5000000 		.4byte	.LASF24
+ 338 016b A7000000 		.4byte	.LASF24
  339 016f 01       		.byte	0x1
  340 0170 B2       		.byte	0xb2
  341 0171 00000000 		.4byte	.LFB3
@@ -568,7 +568,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
  351 018d E2010000 		.4byte	0x1e2
  352 0191 00       		.byte	0
  353 0192 0B       		.uleb128 0xb
- 354 0193 8F000000 		.4byte	.LASF34
+ 354 0193 61000000 		.4byte	.LASF34
  355 0197 01       		.byte	0x1
  356 0198 14       		.byte	0x14
  357 0199 E7000000 		.4byte	0xe7
@@ -581,12 +581,12 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
  364 01a9 C0       		.byte	0xc0
  365 01aa 76000000 		.4byte	0x76
  366 01ae 0C       		.uleb128 0xc
- 367 01af 66000000 		.4byte	.LASF26
+ 367 01af 38000000 		.4byte	.LASF26
  368 01b3 03       		.byte	0x3
  369 01b4 B3       		.byte	0xb3
  370 01b5 76000000 		.4byte	0x76
  371 01b9 0D       		.uleb128 0xd
- 372 01ba E5000000 		.4byte	.LASF27
+ 372 01ba B7000000 		.4byte	.LASF27
  373 01be 03       		.byte	0x3
  374 01bf BE       		.byte	0xbe
  375 01c0 CA010000 		.4byte	0x1ca
@@ -594,22 +594,22 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
  377 01c5 76000000 		.4byte	0x76
  378 01c9 00       		.byte	0
  379 01ca 0D       		.uleb128 0xd
- 380 01cb 6E020000 		.4byte	.LASF28
+ 380 01cb 77020000 		.4byte	.LASF28
  381 01cf 03       		.byte	0x3
  382 01d0 BA       		.byte	0xba
  383 01d1 DB010000 		.4byte	0x1db
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 11
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc8vevfx.s 			page 11
 
 
  384 01d5 0E       		.uleb128 0xe
  385 01d6 76000000 		.4byte	0x76
  386 01da 00       		.byte	0
  387 01db 0F       		.uleb128 0xf
- 388 01dc 00020000 		.4byte	.LASF29
+ 388 01dc 09020000 		.4byte	.LASF29
  389 01e0 03       		.byte	0x3
  390 01e1 93       		.byte	0x93
  391 01e2 0F       		.uleb128 0xf
- 392 01e3 3C010000 		.4byte	.LASF30
+ 392 01e3 0E010000 		.4byte	.LASF30
  393 01e7 03       		.byte	0x3
  394 01e8 DB       		.byte	0xdb
  395 01e9 00       		.byte	0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
  438 0028 00       		.byte	0
  439 0029 04       		.uleb128 0x4
  440 002a 16       		.uleb128 0x16
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 12
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc8vevfx.s 			page 12
 
 
  441 002b 00       		.byte	0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
  495 0061 13       		.uleb128 0x13
  496 0062 38       		.uleb128 0x38
  497 0063 0B       		.uleb128 0xb
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 13
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc8vevfx.s 			page 13
 
 
  498 0064 00       		.byte	0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
  552 009d 3F       		.uleb128 0x3f
  553 009e 19       		.uleb128 0x19
  554 009f 03       		.uleb128 0x3
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 14
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc8vevfx.s 			page 14
 
 
  555 00a0 0E       		.uleb128 0xe
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
  609 00d6 00       		.byte	0
  610 00d7 00       		.byte	0
  611 00d8 00       		.byte	0
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 15
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc8vevfx.s 			page 15
 
 
  612              		.section	.debug_aranges,"",%progbits
@@ -897,173 +897,175 @@ ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 1
  652      7369676E 
  652      65642069 
  652      6E7400
- 653              	.LASF33:
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 16
+ 653              	.LASF26:
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc8vevfx.s 			page 16
 
 
- 654 0038 433A5C55 		.ascii	"C:\\Users\\CSE\\Documents\\GitHub\\Test\\Test.cydsn"
- 654      73657273 
- 654      5C435345 
- 654      5C446F63 
- 654      756D656E 
- 655 0065 00       		.ascii	"\000"
- 656              	.LASF26:
- 657 0066 454E5F41 		.ascii	"EN_A_PWM_ReadCounter\000"
- 657      5F50574D 
- 657      5F526561 
- 657      64436F75 
- 657      6E746572 
- 658              	.LASF11:
- 659 007b 666C6F61 		.ascii	"float\000"
- 659      7400
- 660              	.LASF1:
- 661 0081 756E7369 		.ascii	"unsigned char\000"
- 661      676E6564 
- 661      20636861 
- 661      7200
- 662              	.LASF34:
- 663 008f 454E5F41 		.ascii	"EN_A_PWM_backup\000"
- 663      5F50574D 
- 663      5F626163 
- 663      6B757000 
- 664              	.LASF16:
- 665 009f 50574D45 		.ascii	"PWMEnableState\000"
- 665      6E61626C 
- 665      65537461 
- 665      746500
- 666              	.LASF5:
- 667 00ae 6C6F6E67 		.ascii	"long unsigned int\000"
- 667      20756E73 
- 667      69676E65 
- 667      6420696E 
- 667      7400
- 668              	.LASF9:
- 669 00c0 75696E74 		.ascii	"uint8\000"
- 669      3800
- 670              	.LASF23:
- 671 00c6 454E5F41 		.ascii	"EN_A_PWM_Sleep\000"
- 671      5F50574D 
- 671      5F536C65 
- 671      657000
- 672              	.LASF24:
- 673 00d5 454E5F41 		.ascii	"EN_A_PWM_Wakeup\000"
- 673      5F50574D 
- 673      5F57616B 
- 673      65757000 
- 674              	.LASF27:
- 675 00e5 454E5F41 		.ascii	"EN_A_PWM_WritePeriod\000"
- 675      5F50574D 
- 675      5F577269 
- 675      74655065 
- 675      72696F64 
- 676              	.LASF12:
- 677 00fa 646F7562 		.ascii	"double\000"
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 17
+ 654 0038 454E5F41 		.ascii	"EN_A_PWM_ReadCounter\000"
+ 654      5F50574D 
+ 654      5F526561 
+ 654      64436F75 
+ 654      6E746572 
+ 655              	.LASF11:
+ 656 004d 666C6F61 		.ascii	"float\000"
+ 656      7400
+ 657              	.LASF1:
+ 658 0053 756E7369 		.ascii	"unsigned char\000"
+ 658      676E6564 
+ 658      20636861 
+ 658      7200
+ 659              	.LASF34:
+ 660 0061 454E5F41 		.ascii	"EN_A_PWM_backup\000"
+ 660      5F50574D 
+ 660      5F626163 
+ 660      6B757000 
+ 661              	.LASF16:
+ 662 0071 50574D45 		.ascii	"PWMEnableState\000"
+ 662      6E61626C 
+ 662      65537461 
+ 662      746500
+ 663              	.LASF5:
+ 664 0080 6C6F6E67 		.ascii	"long unsigned int\000"
+ 664      20756E73 
+ 664      69676E65 
+ 664      6420696E 
+ 664      7400
+ 665              	.LASF9:
+ 666 0092 75696E74 		.ascii	"uint8\000"
+ 666      3800
+ 667              	.LASF23:
+ 668 0098 454E5F41 		.ascii	"EN_A_PWM_Sleep\000"
+ 668      5F50574D 
+ 668      5F536C65 
+ 668      657000
+ 669              	.LASF24:
+ 670 00a7 454E5F41 		.ascii	"EN_A_PWM_Wakeup\000"
+ 670      5F50574D 
+ 670      5F57616B 
+ 670      65757000 
+ 671              	.LASF27:
+ 672 00b7 454E5F41 		.ascii	"EN_A_PWM_WritePeriod\000"
+ 672      5F50574D 
+ 672      5F577269 
+ 672      74655065 
+ 672      72696F64 
+ 673              	.LASF12:
+ 674 00cc 646F7562 		.ascii	"double\000"
+ 674      6C6500
+ 675              	.LASF10:
+ 676 00d3 75696E74 		.ascii	"uint16\000"
+ 676      313600
+ 677              	.LASF8:
+ 678 00da 756E7369 		.ascii	"unsigned int\000"
+ 678      676E6564 
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc8vevfx.s 			page 17
 
 
- 677      6C6500
- 678              	.LASF10:
- 679 0101 75696E74 		.ascii	"uint16\000"
- 679      313600
- 680              	.LASF8:
- 681 0108 756E7369 		.ascii	"unsigned int\000"
- 681      676E6564 
- 681      20696E74 
- 681      00
- 682              	.LASF32:
- 683 0115 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\EN_A_PWM_PM.c\000"
- 683      6E657261 
- 683      7465645F 
- 683      536F7572 
- 683      63655C50 
- 684              	.LASF30:
- 685 013c 454E5F41 		.ascii	"EN_A_PWM_Enable\000"
- 685      5F50574D 
- 685      5F456E61 
- 685      626C6500 
- 686              	.LASF7:
- 687 014c 6C6F6E67 		.ascii	"long long unsigned int\000"
- 687      206C6F6E 
- 687      6720756E 
- 687      7369676E 
- 687      65642069 
+ 678      20696E74 
+ 678      00
+ 679              	.LASF32:
+ 680 00e7 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\EN_A_PWM_PM.c\000"
+ 680      6E657261 
+ 680      7465645F 
+ 680      536F7572 
+ 680      63655C50 
+ 681              	.LASF30:
+ 682 010e 454E5F41 		.ascii	"EN_A_PWM_Enable\000"
+ 682      5F50574D 
+ 682      5F456E61 
+ 682      626C6500 
+ 683              	.LASF7:
+ 684 011e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 684      206C6F6E 
+ 684      6720756E 
+ 684      7369676E 
+ 684      65642069 
+ 685              	.LASF33:
+ 686 0135 433A5C55 		.ascii	"C:\\Users\\Jorden\\Documents\\PSoC Creator\\Test\\T"
+ 686      73657273 
+ 686      5C4A6F72 
+ 686      64656E5C 
+ 686      446F6375 
+ 687 0162 6573742E 		.ascii	"est.cydsn\000"
+ 687      63796473 
+ 687      6E00
  688              	.LASF14:
- 689 0163 72656738 		.ascii	"reg8\000"
+ 689 016c 72656738 		.ascii	"reg8\000"
  689      00
  690              	.LASF31:
- 691 0168 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 691 0171 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
  691      4320342E 
  691      382E3420 
  691      32303134 
  691      30353236 
- 692 019b 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 692 01a4 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
  692      20726576 
  692      6973696F 
  692      6E203231 
  692      31333538 
- 693 01ce 67202D66 		.ascii	"g -ffunction-sections\000"
+ 693 01d7 67202D66 		.ascii	"g -ffunction-sections\000"
  693      66756E63 
  693      74696F6E 
  693      2D736563 
  693      74696F6E 
  694              	.LASF15:
- 695 01e4 73697A65 		.ascii	"sizetype\000"
+ 695 01ed 73697A65 		.ascii	"sizetype\000"
  695      74797065 
  695      00
  696              	.LASF6:
- 697 01ed 6C6F6E67 		.ascii	"long long int\000"
+ 697 01f6 6C6F6E67 		.ascii	"long long int\000"
  697      206C6F6E 
  697      6720696E 
  697      7400
  698              	.LASF13:
- 699 01fb 63686172 		.ascii	"char\000"
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc8vevfx.s 			page 18
+
+
+ 699 0204 63686172 		.ascii	"char\000"
  699      00
-ARM GAS  C:\Users\CSE\AppData\Local\Temp\ccuuFnpX.s 			page 18
-
-
  700              	.LASF29:
- 701 0200 454E5F41 		.ascii	"EN_A_PWM_Stop\000"
+ 701 0209 454E5F41 		.ascii	"EN_A_PWM_Stop\000"
  701      5F50574D 
  701      5F53746F 
  701      7000
  702              	.LASF2:
- 703 020e 73686F72 		.ascii	"short int\000"
+ 703 0217 73686F72 		.ascii	"short int\000"
  703      7420696E 
  703      7400
  704              	.LASF20:
- 705 0218 454E5F41 		.ascii	"EN_A_PWM_backupStruct\000"
+ 705 0221 454E5F41 		.ascii	"EN_A_PWM_backupStruct\000"
  705      5F50574D 
  705      5F626163 
  705      6B757053 
  705      74727563 
  706              	.LASF22:
- 707 022e 454E5F41 		.ascii	"EN_A_PWM_RestoreConfig\000"
+ 707 0237 454E5F41 		.ascii	"EN_A_PWM_RestoreConfig\000"
  707      5F50574D 
  707      5F526573 
  707      746F7265 
  707      436F6E66 
  708              	.LASF4:
- 709 0245 6C6F6E67 		.ascii	"long int\000"
+ 709 024e 6C6F6E67 		.ascii	"long int\000"
  709      20696E74 
  709      00
  710              	.LASF21:
- 711 024e 454E5F41 		.ascii	"EN_A_PWM_SaveConfig\000"
+ 711 0257 454E5F41 		.ascii	"EN_A_PWM_SaveConfig\000"
  711      5F50574D 
  711      5F536176 
  711      65436F6E 
  711      66696700 
  712              	.LASF0:
- 713 0262 7369676E 		.ascii	"signed char\000"
+ 713 026b 7369676E 		.ascii	"signed char\000"
  713      65642063 
  713      68617200 
  714              	.LASF28:
- 715 026e 454E5F41 		.ascii	"EN_A_PWM_WriteCounter\000"
+ 715 0277 454E5F41 		.ascii	"EN_A_PWM_WriteCounter\000"
  715      5F50574D 
  715      5F577269 
  715      7465436F 
  715      756E7465 
  716              	.LASF19:
- 717 0284 496E7465 		.ascii	"InterruptMaskValue\000"
+ 717 028d 496E7465 		.ascii	"InterruptMaskValue\000"
  717      72727570 
  717      744D6173 
  717      6B56616C 

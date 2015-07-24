@@ -1,11 +1,13 @@
 /* ========================================
  *
- * Copyright YOUR COMPANY, THE YEAR
+ * Copyright Jorden Luke,2015
  * All Rights Reserved
  * UNPUBLISHED, LICENSED SOFTWARE.
- *
+ * This software is GPL for use and change by anyone who
+ * uses it. They are free to use or change as needed.
+ * 
  * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
+ * WHICH IS THE PROPERTY OF Jorden Luke.
  *
  * ========================================
 */
@@ -77,29 +79,29 @@
 #define HMC5883L_STATUS_LOCK_BIT    1
 #define HMC5883L_STATUS_READY_BIT   0
 
-typedef uint8 bool;
-    
-struct XYZ_Cord{
+//This struct can be used to organize data from HMC5883L
+struct HMC5883L_XYZ_Cord{
 	int16 x;
 	int16 y;
 	int16 z;
-
 };
-union HMC5883L
-{
-	uint8 array[6];
-	struct XYZ_Cord Data;
-};
-
+//used to configure the the magnetometer can bee changed as need
 void HMC5883L_Config();
+//used to read regs of the HMC588L
 uint8 read_HMC5883L_reg(uint8 reg);
+//used to write to regs of the HMC588L
 uint8 write_HMC5883L_reg(uint8 reg, uint8 data);
-uint8 testConnection();
-void getHeading(int16_t *x, int16_t *y, int16_t *z);
+//used to get headings form magentometer
+void getHeading(uint16 *x, uint16 *y, uint16 *z);
+//used just to get x
 int16_t getHeadingX();
+//used just to get y
 int16_t getHeadingY();
+//used just to get z
 int16_t getHeadingZ();
-
-uint16 get_HMC5883L_Data(union HMC5883L *Data);
+//returns all magnetometer data
+uint16 get_HMC5883L_Data(uint16 Data[]);
+//used to get the bearing
+double get_bearing();
 #endif
 /* [] END OF FILE */
