@@ -92,7 +92,7 @@ uint8 read_HMC5883L_reg(uint8 reg);
 //used to write to regs of the HMC588L
 uint8 write_HMC5883L_reg(uint8 reg, uint8 data);
 //used to get headings form magentometer
-void getHeading(uint16 *x, uint16 *y, uint16 *z);
+void getHeading(int16 *x, int16 *y, int16 *z);
 //used just to get x
 int16_t getHeadingX();
 //used just to get y
@@ -100,7 +100,7 @@ int16_t getHeadingY();
 //used just to get z
 int16_t getHeadingZ();
 //returns all magnetometer data
-uint16 get_HMC5883L_Data(uint16 Data[]);
+uint16 get_HMC5883L_Data(int16 Data[]);
 //used to get the bearing
 double get_bearing();
 #endif

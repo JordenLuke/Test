@@ -71,7 +71,7 @@ uint8 write_HMC5883L_reg(uint8 reg, uint8 data)
     return 0;
 }
 //This function only works in continous mode
-void getHeading(uint16 *x, uint16 *y, uint16*z)
+void getHeading(int16 *x, int16 *y, int16*z)
 {
     
    uint8 array[6];
@@ -87,9 +87,9 @@ void getHeading(uint16 *x, uint16 *y, uint16*z)
     array[5] = I2C_MasterReadByte(I2C_NAK_DATA);
     I2C_MasterSendStop();
     
-    *x = (((uint16_t)array[0]) << 8) | ((uint16_t)array[1]);
-    *y = (((uint16_t)array[4]) << 8) | ((uint16_t)array[5]);
-    *z = (((uint16_t)array[2]) << 8) | ((uint16_t)array[3]);
+    *x = (((int16)array[0]) << 8) | ((int16)array[1]);
+    *y = (((int16)array[4]) << 8) | ((int16)array[5]);
+    *z = (((int16)array[2]) << 8) | ((int16)array[3]);
 }
 int16_t getHeadingX()
 {
@@ -144,7 +144,7 @@ int16_t getHeadingZ()
     return ((((uint16_t)array[2]) << 8) | ((uint16_t)array[3]));
 }
 
-uint16 get_HMC5883L_Data(uint16 Data[])
+uint16 get_HMC5883L_Data(int16 Data[])
 {  
     uint8 array[6];
     I2C_MasterSendStart(HMC5883L_ADDRESS,I2C_WRITE_XFER_MODE);
@@ -159,19 +159,19 @@ uint16 get_HMC5883L_Data(uint16 Data[])
     array[5] = I2C_MasterReadByte(I2C_NAK_DATA);
     I2C_MasterSendStop();
     
-    Data[0] = (((uint16)array[0]) << 8) | ((uint16)array[1]);
-    Data[2] = (((uint16)array[2]) << 8) | ((uint16)array[3]);
-    Data[1] = (((uint16)array[4]) << 8) | ((uint16)array[5]);
+    Data[0] = (((int16)array[0]) << 8) | ((int16)array[1]);
+    Data[2] = (((int16)array[2]) << 8) | ((int16)array[3]);
+    Data[1] = (((int16)array[4]) << 8) | ((int16)array[5]);
     
     return 0;
 }
 //used to get the bearing in degrees 
 double get_bearing()
 {
-    double bearing;
-    uint16 x;
-    uint16 y;
-    uint16 z;
+    float bearing;
+    int16 x;
+    int16 y;
+    int16 z;
     double cx;
     double cy;
     double cz;
@@ -183,11 +183,8 @@ double get_bearing()
     bearing = atan2((cy),(cx));
     
     if(bearing <0)
-        bearing += 2 * M_PI;
-    if(bearing > 2 * M_PI)
-    {
-        bearing -= 2*M_PI;
-    }
+        bearing +=  M_TWOPI;
+    
     bearing = bearing *(180/M_PI);
     return bearing;
 }

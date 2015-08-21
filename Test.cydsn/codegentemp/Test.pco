@@ -1,5 +1,5 @@
 # Test
-# 2015-07-21 05:21:01Z
+# 2015-08-03 01:50:42Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -8,91 +8,113 @@ dont_use_io iocell 1 1
 # IO_3@[IOP=(1)][IoId=(3)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 3
 set_location "ClockBlock" clockblockcell -1 -1 0
+set_location "Command_RX" interrupt -1 -1 0
 set_io "EN_A(0)" iocell 12 5
 set_io "EN_B(0)" iocell 6 4
+set_io "GPS_RX(0)" iocell 6 2
+set_io "GPS_TX(0)" iocell 4 2
 set_io "IN_1(0)" iocell 12 4
 set_io "IN_2(0)" iocell 6 5
 set_io "IN_3(0)" iocell 6 6
 set_io "IN_4(0)" iocell 6 7
-set_location "Net_289" 0 4 0 1
-set_location "Net_5279" 0 5 1 1
-set_location "Net_6850" 3 4 1 0
+set_location "MODIN5_0" 0 3 0 2
+set_location "MODIN5_1" 0 3 0 0
+set_location "Net_289" 0 5 1 3
+set_location "Net_5279" 0 5 1 2
+set_location "Net_6850" 3 4 1 1
 set_location "Net_6960" 3 4 0 2
-set_location "Net_6983" 3 3 0 2
-set_location "Net_7018" 3 3 0 3
-set_location "Net_8329" 1 2 1 0
+set_location "Net_6983" 3 3 0 1
+set_location "Net_7018" 3 3 0 2
+set_location "Net_8329" 1 4 1 2
+set_location "Net_8530" 0 3 1 0
 set_io "Rx_1(0)" iocell 2 0
 set_io "SCL_1(0)" iocell 6 1
 set_io "SDA_1(0)" iocell 6 0
-set_io "Servo_1A(0)" iocell 0 2
-set_io "Servo_1B(0)" iocell 12 2
-set_io "Servo_2A(0)" iocell 0 1
-set_io "Servo_2B(0)" iocell 15 0
+set_io "Servo_Out1A(0)" iocell 0 6
+set_io "Servo_Out1B(0)" iocell 12 3
+set_io "Servo_Out2A(0)" iocell 0 4
+set_io "Servo_Out2B(0)" iocell 0 7
 set_io "Tx_1(0)" iocell 2 1
-set_location "\EN_A_PWM:PWMUDB:genblk8:stsreg\" 0 2 4
-set_location "\EN_A_PWM:PWMUDB:prevCompare1\" 0 2 1 3
-set_location "\EN_A_PWM:PWMUDB:runmode_enable\" 0 4 0 0
-set_location "\EN_A_PWM:PWMUDB:sP16:pwmdp:u0\" 0 2 2
-set_location "\EN_A_PWM:PWMUDB:sP16:pwmdp:u1\" 0 3 2
-set_location "\EN_A_PWM:PWMUDB:status_0\" 0 2 1 0
-set_location "\EN_A_PWM:PWMUDB:status_2\" 0 2 0 2
-set_location "\EN_B_PWM:PWMUDB:genblk8:stsreg\" 1 5 4
-set_location "\EN_B_PWM:PWMUDB:prevCompare1\" 1 5 0 3
-set_location "\EN_B_PWM:PWMUDB:runmode_enable\" 0 5 1 2
-set_location "\EN_B_PWM:PWMUDB:sP16:pwmdp:u0\" 0 5 2
-set_location "\EN_B_PWM:PWMUDB:sP16:pwmdp:u1\" 1 5 2
-set_location "\EN_B_PWM:PWMUDB:status_0\" 1 5 1 0
-set_location "\EN_B_PWM:PWMUDB:status_2\" 1 5 0 2
+set_location "\EN_A_PWM:PWMUDB:genblk8:stsreg\" 1 5 4
+set_location "\EN_A_PWM:PWMUDB:prevCompare1\" 1 5 1 1
+set_location "\EN_A_PWM:PWMUDB:runmode_enable\" 0 5 0 2
+set_location "\EN_A_PWM:PWMUDB:sP16:pwmdp:u0\" 0 5 2
+set_location "\EN_A_PWM:PWMUDB:sP16:pwmdp:u1\" 1 5 2
+set_location "\EN_A_PWM:PWMUDB:status_0\" 1 5 0 0
+set_location "\EN_A_PWM:PWMUDB:status_2\" 1 5 1 3
+set_location "\EN_B_PWM:PWMUDB:genblk8:stsreg\" 0 5 4
+set_location "\EN_B_PWM:PWMUDB:prevCompare1\" 0 5 0 3
+set_location "\EN_B_PWM:PWMUDB:runmode_enable\" 1 5 1 0
+set_location "\EN_B_PWM:PWMUDB:sP16:pwmdp:u0\" 1 4 2
+set_location "\EN_B_PWM:PWMUDB:sP16:pwmdp:u1\" 0 4 2
+set_location "\EN_B_PWM:PWMUDB:status_0\" 0 5 1 1
+set_location "\EN_B_PWM:PWMUDB:status_2\" 0 5 0 0
+set_location "\GPS:BUART:counter_load_not\" 0 1 1 0
+set_location "\GPS:BUART:pollcount_0\" 2 4 1 2
+set_location "\GPS:BUART:pollcount_1\" 2 5 1 1
+set_location "\GPS:BUART:rx_address_detected\" 2 3 1 1
+set_location "\GPS:BUART:rx_bitclk_enable\" 2 3 0 2
+set_location "\GPS:BUART:rx_counter_load\" 2 3 0 1
+set_location "\GPS:BUART:rx_last\" 2 4 1 0
+set_location "\GPS:BUART:rx_load_fifo\" 2 4 0 3
+set_location "\GPS:BUART:rx_postpoll\" 2 5 1 2
+set_location "\GPS:BUART:rx_state_0\" 2 5 1 0
+set_location "\GPS:BUART:rx_state_2\" 2 4 1 3
+set_location "\GPS:BUART:rx_state_3\" 2 3 1 0
+set_location "\GPS:BUART:rx_state_stop1_reg\" 3 5 1 1
+set_location "\GPS:BUART:rx_status_3\" 2 5 0 0
+set_location "\GPS:BUART:rx_status_4\" 2 4 0 2
+set_location "\GPS:BUART:rx_status_5\" 2 5 0 3
+set_location "\GPS:BUART:sRX:RxBitCounter\" 2 3 7
+set_location "\GPS:BUART:sRX:RxShifter:u0\" 2 5 2
+set_location "\GPS:BUART:sRX:RxSts\" 2 5 4
+set_location "\GPS:BUART:sTX:TxShifter:u0\" 1 1 2
+set_location "\GPS:BUART:sTX:TxSts\" 1 1 4
+set_location "\GPS:BUART:sTX:sCLOCK:TxBitClkGen\" 0 1 2
+set_location "\GPS:BUART:tx_bitclk\" 0 1 0 2
+set_location "\GPS:BUART:tx_state_0\" 1 1 1 0
+set_location "\GPS:BUART:tx_state_1\" 0 1 1 2
+set_location "\GPS:BUART:tx_state_2\" 0 1 1 1
+set_location "\GPS:BUART:tx_status_0\" 1 1 0 2
+set_location "\GPS:BUART:tx_status_2\" 1 1 1 1
+set_location "\GPS:BUART:txn\" 0 1 0 0
 set_location "\I2C:I2C_FF\" i2ccell -1 -1 0
 set_location "\I2C:I2C_IRQ\" interrupt -1 -1 15
-set_location "\Motor_A:Sync:ctrl_reg\" 0 4 6
-set_location "\Motor_B:Sync:ctrl_reg\" 0 5 6
-set_location "\Servo_A:PWMUDB:genblk1:ctrlreg\" 2 4 6
-set_location "\Servo_A:PWMUDB:genblk8:stsreg\" 2 4 4
-set_location "\Servo_A:PWMUDB:prevCompare1\" 2 4 1 2
-set_location "\Servo_A:PWMUDB:prevCompare2\" 2 3 1 1
-set_location "\Servo_A:PWMUDB:runmode_enable\" 2 4 0 2
+set_location "\Motor_A:Sync:ctrl_reg\" 0 5 6
+set_location "\Motor_B:Sync:ctrl_reg\" 1 5 6
+set_location "\Servo_A:PWMUDB:genblk1:ctrlreg\" 3 4 6
+set_location "\Servo_A:PWMUDB:runmode_enable\" 3 4 0 3
 set_location "\Servo_A:PWMUDB:sP16:pwmdp:u0\" 3 4 2
 set_location "\Servo_A:PWMUDB:sP16:pwmdp:u1\" 2 4 2
-set_location "\Servo_A:PWMUDB:status_0\" 2 4 1 1
-set_location "\Servo_A:PWMUDB:status_1\" 2 4 1 3
-set_location "\Servo_A:PWMUDB:status_2\" 2 4 1 0
 set_location "\Servo_B:PWMUDB:genblk1:ctrlreg\" 3 3 6
-set_location "\Servo_B:PWMUDB:genblk8:stsreg\" 3 3 4
-set_location "\Servo_B:PWMUDB:prevCompare1\" 3 3 1 0
-set_location "\Servo_B:PWMUDB:prevCompare2\" 3 3 1 2
 set_location "\Servo_B:PWMUDB:runmode_enable\" 3 3 0 0
 set_location "\Servo_B:PWMUDB:sP16:pwmdp:u0\" 2 3 2
 set_location "\Servo_B:PWMUDB:sP16:pwmdp:u1\" 3 3 2
-set_location "\Servo_B:PWMUDB:status_0\" 3 3 1 1
-set_location "\Servo_B:PWMUDB:status_1\" 3 3 1 3
-set_location "\Servo_B:PWMUDB:status_2\" 3 3 0 1
-set_location "\UART:BUART:counter_load_not\" 1 2 0 1
-set_location "\UART:BUART:pollcount_0\" 1 3 1 0
-set_location "\UART:BUART:pollcount_1\" 1 3 1 2
-set_location "\UART:BUART:rx_address_detected\" 1 4 0 0
-set_location "\UART:BUART:rx_bitclk_enable\" 1 3 0 0
-set_location "\UART:BUART:rx_counter_load\" 1 3 0 3
-set_location "\UART:BUART:rx_last\" 1 4 1 2
-set_location "\UART:BUART:rx_load_fifo\" 1 3 0 1
-set_location "\UART:BUART:rx_postpoll\" 1 3 1 1
-set_location "\UART:BUART:rx_state_0\" 1 4 0 1
-set_location "\UART:BUART:rx_state_2\" 1 4 1 0
-set_location "\UART:BUART:rx_state_3\" 1 4 1 1
-set_location "\UART:BUART:rx_state_stop1_reg\" 1 3 0 2
-set_location "\UART:BUART:rx_status_3\" 1 4 0 3
-set_location "\UART:BUART:rx_status_4\" 1 4 1 3
-set_location "\UART:BUART:rx_status_5\" 1 3 1 3
-set_location "\UART:BUART:sRX:RxBitCounter\" 1 3 7
-set_location "\UART:BUART:sRX:RxShifter:u0\" 1 3 2
-set_location "\UART:BUART:sRX:RxSts\" 1 4 4
-set_location "\UART:BUART:sTX:TxShifter:u0\" 1 1 2
-set_location "\UART:BUART:sTX:TxSts\" 1 1 4
-set_location "\UART:BUART:sTX:sCLOCK:TxBitClkGen\" 1 2 2
-set_location "\UART:BUART:tx_bitclk\" 1 1 1 2
-set_location "\UART:BUART:tx_state_0\" 1 1 1 3
-set_location "\UART:BUART:tx_state_1\" 1 2 0 0
-set_location "\UART:BUART:tx_state_2\" 1 2 1 3
-set_location "\UART:BUART:tx_status_0\" 1 1 0 1
-set_location "\UART:BUART:tx_status_2\" 1 1 0 3
-set_location "\UART:BUART:txn\" 1 1 0 0
+set_location "\UART:BUART:counter_load_not\" 1 3 1 0
+set_location "\UART:BUART:rx_address_detected\" 0 3 1 1
+set_location "\UART:BUART:rx_bitclk_enable\" 0 4 1 1
+set_location "\UART:BUART:rx_counter_load\" 0 3 0 3
+set_location "\UART:BUART:rx_last\" 0 4 0 2
+set_location "\UART:BUART:rx_load_fifo\" 0 4 1 0
+set_location "\UART:BUART:rx_postpoll\" 0 2 0 2
+set_location "\UART:BUART:rx_state_0\" 0 4 0 0
+set_location "\UART:BUART:rx_state_2\" 0 4 0 1
+set_location "\UART:BUART:rx_state_3\" 0 4 1 2
+set_location "\UART:BUART:rx_state_stop1_reg\" 0 3 1 3
+set_location "\UART:BUART:rx_status_3\" 0 3 0 1
+set_location "\UART:BUART:rx_status_4\" 0 2 1 1
+set_location "\UART:BUART:rx_status_5\" 0 2 1 0
+set_location "\UART:BUART:sRX:RxBitCounter\" 0 4 7
+set_location "\UART:BUART:sRX:RxShifter:u0\" 0 2 2
+set_location "\UART:BUART:sRX:RxSts\" 0 2 4
+set_location "\UART:BUART:sTX:TxShifter:u0\" 1 2 2
+set_location "\UART:BUART:sTX:TxSts\" 1 2 4
+set_location "\UART:BUART:sTX:sCLOCK:TxBitClkGen\" 1 3 2
+set_location "\UART:BUART:tx_bitclk\" 1 3 0 0
+set_location "\UART:BUART:tx_state_0\" 1 2 0 3
+set_location "\UART:BUART:tx_state_1\" 1 3 1 1
+set_location "\UART:BUART:tx_state_2\" 1 3 1 2
+set_location "\UART:BUART:tx_status_0\" 1 2 1 2
+set_location "\UART:BUART:tx_status_2\" 1 2 0 2
+set_location "\UART:BUART:txn\" 1 3 0 2
+set_location "\UART:RXInternalInterrupt\" interrupt -1 -1 1

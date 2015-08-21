@@ -39,7 +39,7 @@ extern uint8 Servo_A_initVar;
 #define Servo_A_DeadBand2_4                    (0u)
 
 #if !defined(Servo_A_PWMUDB_genblk8_stsreg__REMOVED)
-    #define Servo_A_UseStatus                  (1u)
+    #define Servo_A_UseStatus                  (0u)
 #else
     #define Servo_A_UseStatus                  (0u)
 #endif /* !defined(Servo_A_PWMUDB_genblk8_stsreg__REMOVED) */
@@ -238,7 +238,7 @@ void Servo_A_RestoreConfig(void) ;
                                                     (uint8)((uint8)(0u <<  \
                                                     Servo_A_STATUS_KILL_INT_EN_MASK_SHIFT )))
 #define Servo_A_DEFAULT_COMPARE2_MODE      (uint8)((uint8)1u <<  Servo_A_CTRL_CMPMODE2_SHIFT)
-#define Servo_A_DEFAULT_COMPARE1_MODE      (uint8)((uint8)1u <<  Servo_A_CTRL_CMPMODE1_SHIFT)
+#define Servo_A_DEFAULT_COMPARE1_MODE      (uint8)((uint8)2u <<  Servo_A_CTRL_CMPMODE1_SHIFT)
 #define Servo_A_INIT_DEAD_TIME             (1u)
 
 

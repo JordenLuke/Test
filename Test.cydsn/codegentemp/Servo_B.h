@@ -39,7 +39,7 @@ extern uint8 Servo_B_initVar;
 #define Servo_B_DeadBand2_4                    (0u)
 
 #if !defined(Servo_B_PWMUDB_genblk8_stsreg__REMOVED)
-    #define Servo_B_UseStatus                  (1u)
+    #define Servo_B_UseStatus                  (0u)
 #else
     #define Servo_B_UseStatus                  (0u)
 #endif /* !defined(Servo_B_PWMUDB_genblk8_stsreg__REMOVED) */

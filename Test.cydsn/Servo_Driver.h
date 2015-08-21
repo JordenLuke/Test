@@ -22,10 +22,10 @@ enum{
 };
 struct Servo{
     uint16 max_rotational_degree;
-    uint16 position;
+    double position;
     uint8 servo;
 };
-void set_position(uint16 position, struct Servo *s);
+void set_position(double position, struct Servo *s);
 uint16 get_position(struct Servo *s);
 void set_max_rotational_degree(uint16 value, struct Servo *s);
 uint16 get_max_rotational_degree(struct Servo *s);

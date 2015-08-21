@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
   29:.\Generated_Source\PSoC5/Servo_A.c ****          constant 1 for reset. This will prevent the component from operating.
   30:.\Generated_Source\PSoC5/Servo_A.c **** #endif /* Servo_A_PWMUDB_genblk1_ctrlreg__REMOVED */
   31:.\Generated_Source\PSoC5/Servo_A.c **** 
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 2
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/Servo_A.c **** uint8 Servo_A_initVar = 0u;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
   86:.\Generated_Source\PSoC5/Servo_A.c ****     #if (Servo_A_UsingFixedFunction || Servo_A_UseControl)
   87:.\Generated_Source\PSoC5/Servo_A.c ****         uint8 ctrl;
   88:.\Generated_Source\PSoC5/Servo_A.c ****     #endif /* (Servo_A_UsingFixedFunction || Servo_A_UseControl) */
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 3
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 3
 
 
   89:.\Generated_Source\PSoC5/Servo_A.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  143:.\Generated_Source\PSoC5/Servo_A.c ****         #endif /* (Servo_A_UseOneCompareMode) */
  144:.\Generated_Source\PSoC5/Servo_A.c **** 
  145:.\Generated_Source\PSoC5/Servo_A.c ****         #if (Servo_A_KillModeMinTime)
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 4
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 4
 
 
  146:.\Generated_Source\PSoC5/Servo_A.c ****             Servo_A_WriteKillTime(Servo_A_MinimumKillTime);
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  200:.\Generated_Source\PSoC5/Servo_A.c **** {
   27              		.loc 1 200 0
   28              		.cfi_startproc
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 5
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 5
 
 
   29              		@ args = 0, pretend = 0, frame = 0
@@ -262,7 +262,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
   38              	.L3:
   39              		.align	2
   40              	.L2:
-  41 000c 73640040 		.word	1073767539
+  41 000c 72640040 		.word	1073767538
   42              		.cfi_endproc
   43              	.LFE2:
   44              		.size	Servo_A_Enable, .-Servo_A_Enable
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  231:.\Generated_Source\PSoC5/Servo_A.c **** *
  232:.\Generated_Source\PSoC5/Servo_A.c **** *******************************************************************************/
  233:.\Generated_Source\PSoC5/Servo_A.c **** void Servo_A_Stop(void) 
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 6
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 6
 
 
  234:.\Generated_Source\PSoC5/Servo_A.c **** {
@@ -318,7 +318,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
   64              	.L6:
   65              		.align	2
   66              	.L5:
-  67 000c 73640040 		.word	1073767539
+  67 000c 72640040 		.word	1073767538
   68              		.cfi_endproc
   69              	.LFE3:
   70              		.size	Servo_A_Stop, .-Servo_A_Stop
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  262:.\Generated_Source\PSoC5/Servo_A.c ****         * Return:
  263:.\Generated_Source\PSoC5/Servo_A.c ****         *  None
  264:.\Generated_Source\PSoC5/Servo_A.c ****         *
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 7
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 7
 
 
  265:.\Generated_Source\PSoC5/Servo_A.c ****         *******************************************************************************/
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  319:.\Generated_Source\PSoC5/Servo_A.c ****         *  comparemode:  The new compare mode for the PWM output. Use the compare types
  320:.\Generated_Source\PSoC5/Servo_A.c ****         *                defined in the H file as input arguments.
  321:.\Generated_Source\PSoC5/Servo_A.c ****         *
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 8
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 8
 
 
  322:.\Generated_Source\PSoC5/Servo_A.c ****         * Return:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  376:.\Generated_Source\PSoC5/Servo_A.c **** 
  377:.\Generated_Source\PSoC5/Servo_A.c **** #endif /* UseOneCompareMode */
  378:.\Generated_Source\PSoC5/Servo_A.c **** 
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 9
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 9
 
 
  379:.\Generated_Source\PSoC5/Servo_A.c **** 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  408:.\Generated_Source\PSoC5/Servo_A.c **** 
  409:.\Generated_Source\PSoC5/Servo_A.c **** 
  410:.\Generated_Source\PSoC5/Servo_A.c ****     /*******************************************************************************
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 10
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 10
 
 
  411:.\Generated_Source\PSoC5/Servo_A.c ****     * Function Name: Servo_A_ReadCounter
@@ -594,11 +594,11 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  130              		.thumb_func
  131              		.type	Servo_A_WritePeriod, %function
  132              	Servo_A_WritePeriod:
- 133              	.LFB7:
+ 133              	.LFB6:
  435:.\Generated_Source\PSoC5/Servo_A.c **** 
  436:.\Generated_Source\PSoC5/Servo_A.c ****     #if (Servo_A_UseStatus)
  437:.\Generated_Source\PSoC5/Servo_A.c **** 
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 11
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 11
 
 
  438:.\Generated_Source\PSoC5/Servo_A.c **** 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  486:.\Generated_Source\PSoC5/Servo_A.c ****     #else
  487:.\Generated_Source\PSoC5/Servo_A.c ****         CY_SET_REG16(Servo_A_PERIOD_LSB_PTR, period);
  140              		.loc 1 487 0
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 12
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 12
 
 
  141 0000 014B     		ldr	r3, .L14
@@ -669,7 +669,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  146              	.L14:
  147 0008 84680040 		.word	1073768580
  148              		.cfi_endproc
- 149              	.LFE7:
+ 149              	.LFE6:
  150              		.size	Servo_A_WritePeriod, .-Servo_A_WritePeriod
  151              		.section	.text.Servo_A_WriteCompare1,"ax",%progbits
  152              		.align	2
@@ -678,7 +678,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  155              		.thumb_func
  156              		.type	Servo_A_WriteCompare1, %function
  157              	Servo_A_WriteCompare1:
- 158              	.LFB8:
+ 158              	.LFB7:
  488:.\Generated_Source\PSoC5/Servo_A.c ****     #endif /* (Servo_A_UsingFixedFunction) */
  489:.\Generated_Source\PSoC5/Servo_A.c **** }
  490:.\Generated_Source\PSoC5/Servo_A.c **** 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  524:.\Generated_Source\PSoC5/Servo_A.c **** 
  525:.\Generated_Source\PSoC5/Servo_A.c ****         #if (Servo_A_PWMMode == Servo_A__B_PWM__DITHER)
  526:.\Generated_Source\PSoC5/Servo_A.c ****             #if(Servo_A_UsingFixedFunction)
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 13
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 13
 
 
  527:.\Generated_Source\PSoC5/Servo_A.c ****                 CY_SET_REG16(Servo_A_COMPARE2_LSB_PTR, (uint16)(compare + 1u));
@@ -771,19 +771,19 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  171              	.L17:
  172 0008 44680040 		.word	1073768516
  173              		.cfi_endproc
- 174              	.LFE8:
+ 174              	.LFE7:
  175              		.size	Servo_A_WriteCompare1, .-Servo_A_WriteCompare1
  176              		.section	.text.Servo_A_WriteCompare2,"ax",%progbits
  177              		.align	2
  178              		.global	Servo_A_WriteCompare2
  179              		.thumb
  180              		.thumb_func
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 14
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 14
 
 
  181              		.type	Servo_A_WriteCompare2, %function
  182              	Servo_A_WriteCompare2:
- 183              	.LFB9:
+ 183              	.LFB8:
  562:.\Generated_Source\PSoC5/Servo_A.c ****         #endif /* (Servo_A_UsingFixedFunction) */
  563:.\Generated_Source\PSoC5/Servo_A.c ****     }
  564:.\Generated_Source\PSoC5/Servo_A.c **** 
@@ -828,21 +828,139 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  196              	.L20:
  197 0008 64680040 		.word	1073768548
  198              		.cfi_endproc
- 199              	.LFE9:
+ 199              	.LFE8:
  200              		.size	Servo_A_WriteCompare2, .-Servo_A_WriteCompare2
- 201              		.section	.text.Servo_A_SetInterruptMode,"ax",%progbits
+ 201              		.section	.text.Servo_A_Init,"ax",%progbits
  202              		.align	2
- 203              		.global	Servo_A_SetInterruptMode
+ 203              		.global	Servo_A_Init
  204              		.thumb
  205              		.thumb_func
- 206              		.type	Servo_A_SetInterruptMode, %function
- 207              	Servo_A_SetInterruptMode:
- 208              	.LFB10:
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 15
+ 206              		.type	Servo_A_Init, %function
+ 207              	Servo_A_Init:
+ 208              	.LFB1:
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 15
 
 
+  85:.\Generated_Source\PSoC5/Servo_A.c **** {
+ 209              		.loc 1 85 0
+ 210              		.cfi_startproc
+ 211              		@ args = 0, pretend = 0, frame = 0
+ 212              		@ frame_needed = 0, uses_anonymous_args = 0
+ 213 0000 08B5     		push	{r3, lr}
+ 214              		.cfi_def_cfa_offset 8
+ 215              		.cfi_offset 3, -8
+ 216              		.cfi_offset 14, -4
+ 117:.\Generated_Source\PSoC5/Servo_A.c ****         ctrl = Servo_A_CONTROL & ((uint8)(~Servo_A_CTRL_CMPMODE2_MASK)) &
+ 217              		.loc 1 117 0
+ 218 0002 114B     		ldr	r3, .L23
+ 219 0004 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 220 0006 02F0C002 		and	r2, r2, #192
+ 221              	.LVL4:
+ 119:.\Generated_Source\PSoC5/Servo_A.c ****         Servo_A_CONTROL = ctrl | Servo_A_DEFAULT_COMPARE2_MODE |
+ 222              		.loc 1 119 0
+ 223 000a 42F00A02 		orr	r2, r2, #10
+ 224              	.LVL5:
+ 225 000e 1A70     		strb	r2, [r3]
+ 129:.\Generated_Source\PSoC5/Servo_A.c ****             Servo_A_AUX_CONTROLDP0 |= (Servo_A_AUX_CTRL_FIFO0_CLR);
+ 226              		.loc 1 129 0
+ 227 0010 2033     		adds	r3, r3, #32
+ 228 0012 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 229 0014 42F00102 		orr	r2, r2, #1
+ 230 0018 1A70     		strb	r2, [r3]
+ 130:.\Generated_Source\PSoC5/Servo_A.c ****             Servo_A_AUX_CONTROLDP1 |= (Servo_A_AUX_CTRL_FIFO0_CLR);
+ 231              		.loc 1 130 0
+ 232 001a 0133     		adds	r3, r3, #1
+ 233 001c 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 234 001e 42F00102 		orr	r2, r2, #1
+ 235 0022 1A70     		strb	r2, [r3]
+ 133:.\Generated_Source\PSoC5/Servo_A.c ****         Servo_A_WriteCounter(Servo_A_INIT_PERIOD_VALUE);
+ 236              		.loc 1 133 0
+ 237 0024 4EF66020 		movw	r0, #60000
+ 238 0028 FFF7FEFF 		bl	Servo_A_WriteCounter
+ 239              	.LVL6:
+ 136:.\Generated_Source\PSoC5/Servo_A.c ****     Servo_A_WritePeriod(Servo_A_INIT_PERIOD_VALUE);
+ 240              		.loc 1 136 0
+ 241 002c 4EF66020 		movw	r0, #60000
+ 242 0030 FFF7FEFF 		bl	Servo_A_WritePeriod
+ 243              	.LVL7:
+ 141:.\Generated_Source\PSoC5/Servo_A.c ****             Servo_A_WriteCompare1(Servo_A_INIT_COMPARE_VALUE1);
+ 244              		.loc 1 141 0
+ 245 0034 41F27070 		movw	r0, #6000
+ 246 0038 FFF7FEFF 		bl	Servo_A_WriteCompare1
+ 247              	.LVL8:
+ 142:.\Generated_Source\PSoC5/Servo_A.c ****             Servo_A_WriteCompare2(Servo_A_INIT_COMPARE_VALUE2);
+ 248              		.loc 1 142 0
+ 249 003c 41F27070 		movw	r0, #6000
+ 250 0040 FFF7FEFF 		bl	Servo_A_WriteCompare2
+ 251              	.LVL9:
+ 252 0044 08BD     		pop	{r3, pc}
+ 253              	.L24:
+ 254 0046 00BF     		.align	2
+ 255              	.L23:
+ 256 0048 72640040 		.word	1073767538
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 16
+
+
+ 257              		.cfi_endproc
+ 258              	.LFE1:
+ 259              		.size	Servo_A_Init, .-Servo_A_Init
+ 260              		.section	.text.Servo_A_Start,"ax",%progbits
+ 261              		.align	2
+ 262              		.global	Servo_A_Start
+ 263              		.thumb
+ 264              		.thumb_func
+ 265              		.type	Servo_A_Start, %function
+ 266              	Servo_A_Start:
+ 267              	.LFB0:
+  56:.\Generated_Source\PSoC5/Servo_A.c **** {
+ 268              		.loc 1 56 0
+ 269              		.cfi_startproc
+ 270              		@ args = 0, pretend = 0, frame = 0
+ 271              		@ frame_needed = 0, uses_anonymous_args = 0
+ 272 0000 08B5     		push	{r3, lr}
+ 273              		.cfi_def_cfa_offset 8
+ 274              		.cfi_offset 3, -8
+ 275              		.cfi_offset 14, -4
+  58:.\Generated_Source\PSoC5/Servo_A.c ****     if(Servo_A_initVar == 0u)
+ 276              		.loc 1 58 0
+ 277 0002 054B     		ldr	r3, .L27
+ 278 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 279 0006 23B9     		cbnz	r3, .L26
+  60:.\Generated_Source\PSoC5/Servo_A.c ****         Servo_A_Init();
+ 280              		.loc 1 60 0
+ 281 0008 FFF7FEFF 		bl	Servo_A_Init
+ 282              	.LVL10:
+  61:.\Generated_Source\PSoC5/Servo_A.c ****         Servo_A_initVar = 1u;
+ 283              		.loc 1 61 0
+ 284 000c 0122     		movs	r2, #1
+ 285 000e 024B     		ldr	r3, .L27
+ 286 0010 1A70     		strb	r2, [r3]
+ 287              	.L26:
+  63:.\Generated_Source\PSoC5/Servo_A.c ****     Servo_A_Enable();
+ 288              		.loc 1 63 0
+ 289 0012 FFF7FEFF 		bl	Servo_A_Enable
+ 290              	.LVL11:
+ 291 0016 08BD     		pop	{r3, pc}
+ 292              	.L28:
+ 293              		.align	2
+ 294              	.L27:
+ 295 0018 00000000 		.word	.LANCHOR0
+ 296              		.cfi_endproc
+ 297              	.LFE0:
+ 298              		.size	Servo_A_Start, .-Servo_A_Start
+ 299              		.section	.text.Servo_A_ReadControlRegister,"ax",%progbits
+ 300              		.align	2
+ 301              		.global	Servo_A_ReadControlRegister
+ 302              		.thumb
+ 303              		.thumb_func
+ 304              		.type	Servo_A_ReadControlRegister, %function
+ 305              	Servo_A_ReadControlRegister:
+ 306              	.LFB9:
  591:.\Generated_Source\PSoC5/Servo_A.c ****         #endif /* (Servo_A_UsingFixedFunction) */
  592:.\Generated_Source\PSoC5/Servo_A.c ****     }
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 17
+
+
  593:.\Generated_Source\PSoC5/Servo_A.c **** #endif /* UseOneCompareMode */
  594:.\Generated_Source\PSoC5/Servo_A.c **** 
  595:.\Generated_Source\PSoC5/Servo_A.c **** #if (Servo_A_DeadBandUsed)
@@ -898,11 +1016,11 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  645:.\Generated_Source\PSoC5/Servo_A.c ****     *  Dead Band Counts
  646:.\Generated_Source\PSoC5/Servo_A.c ****     *
  647:.\Generated_Source\PSoC5/Servo_A.c ****     *******************************************************************************/
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 16
-
-
  648:.\Generated_Source\PSoC5/Servo_A.c ****     uint8 Servo_A_ReadDeadTime(void) 
  649:.\Generated_Source\PSoC5/Servo_A.c ****     {
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 18
+
+
  650:.\Generated_Source\PSoC5/Servo_A.c ****         /* If using the Dead Band 1-255 mode then just read the register */
  651:.\Generated_Source\PSoC5/Servo_A.c ****         #if(!Servo_A_DeadBand2_4)
  652:.\Generated_Source\PSoC5/Servo_A.c ****             return (CY_GET_REG8(Servo_A_DEADBAND_COUNT_PTR));
@@ -939,35 +1057,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  683:.\Generated_Source\PSoC5/Servo_A.c ****     *******************************************************************************/
  684:.\Generated_Source\PSoC5/Servo_A.c ****     void Servo_A_SetInterruptMode(uint8 interruptMode) 
  685:.\Generated_Source\PSoC5/Servo_A.c ****     {
- 209              		.loc 1 685 0
- 210              		.cfi_startproc
- 211              		@ args = 0, pretend = 0, frame = 0
- 212              		@ frame_needed = 0, uses_anonymous_args = 0
- 213              		@ link register save eliminated.
- 214              	.LVL4:
  686:.\Generated_Source\PSoC5/Servo_A.c ****         CY_SET_REG8(Servo_A_STATUS_MASK_PTR, interruptMode);
- 215              		.loc 1 686 0
- 216 0000 014B     		ldr	r3, .L23
- 217 0002 1870     		strb	r0, [r3]
- 218 0004 7047     		bx	lr
- 219              	.L24:
- 220 0006 00BF     		.align	2
- 221              	.L23:
- 222 0008 83640040 		.word	1073767555
- 223              		.cfi_endproc
- 224              	.LFE10:
- 225              		.size	Servo_A_SetInterruptMode, .-Servo_A_SetInterruptMode
- 226              		.section	.text.Servo_A_ReadStatusRegister,"ax",%progbits
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 17
-
-
- 227              		.align	2
- 228              		.global	Servo_A_ReadStatusRegister
- 229              		.thumb
- 230              		.thumb_func
- 231              		.type	Servo_A_ReadStatusRegister, %function
- 232              	Servo_A_ReadStatusRegister:
- 233              	.LFB11:
  687:.\Generated_Source\PSoC5/Servo_A.c ****     }
  688:.\Generated_Source\PSoC5/Servo_A.c **** 
  689:.\Generated_Source\PSoC5/Servo_A.c **** 
@@ -988,42 +1078,17 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  704:.\Generated_Source\PSoC5/Servo_A.c ****     *  [4]   : FIFO not empty
  705:.\Generated_Source\PSoC5/Servo_A.c ****     *  [3]   : FIFO full
  706:.\Generated_Source\PSoC5/Servo_A.c ****     *  [2]   : Terminal count
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 19
+
+
  707:.\Generated_Source\PSoC5/Servo_A.c ****     *  [1]   : Compare output 2
  708:.\Generated_Source\PSoC5/Servo_A.c ****     *  [0]   : Compare output 1
  709:.\Generated_Source\PSoC5/Servo_A.c ****     *
  710:.\Generated_Source\PSoC5/Servo_A.c ****     *******************************************************************************/
  711:.\Generated_Source\PSoC5/Servo_A.c ****     uint8 Servo_A_ReadStatusRegister(void) 
  712:.\Generated_Source\PSoC5/Servo_A.c ****     {
- 234              		.loc 1 712 0
- 235              		.cfi_startproc
- 236              		@ args = 0, pretend = 0, frame = 0
- 237              		@ frame_needed = 0, uses_anonymous_args = 0
- 238              		@ link register save eliminated.
  713:.\Generated_Source\PSoC5/Servo_A.c ****         return (CY_GET_REG8(Servo_A_STATUS_PTR));
- 239              		.loc 1 713 0
- 240 0000 014B     		ldr	r3, .L26
- 241 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
  714:.\Generated_Source\PSoC5/Servo_A.c ****     }
- 242              		.loc 1 714 0
- 243 0004 7047     		bx	lr
- 244              	.L27:
- 245 0006 00BF     		.align	2
- 246              	.L26:
- 247 0008 63640040 		.word	1073767523
- 248              		.cfi_endproc
- 249              	.LFE11:
- 250              		.size	Servo_A_ReadStatusRegister, .-Servo_A_ReadStatusRegister
- 251              		.section	.text.Servo_A_ReadControlRegister,"ax",%progbits
- 252              		.align	2
- 253              		.global	Servo_A_ReadControlRegister
- 254              		.thumb
- 255              		.thumb_func
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 18
-
-
- 256              		.type	Servo_A_ReadControlRegister, %function
- 257              	Servo_A_ReadControlRegister:
- 258              	.LFB12:
  715:.\Generated_Source\PSoC5/Servo_A.c **** 
  716:.\Generated_Source\PSoC5/Servo_A.c **** #endif /* (Servo_A_UseStatus || Servo_A_UsingFixedFunction) */
  717:.\Generated_Source\PSoC5/Servo_A.c **** 
@@ -1048,40 +1113,40 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  736:.\Generated_Source\PSoC5/Servo_A.c ****     *******************************************************************************/
  737:.\Generated_Source\PSoC5/Servo_A.c ****     uint8 Servo_A_ReadControlRegister(void) 
  738:.\Generated_Source\PSoC5/Servo_A.c ****     {
- 259              		.loc 1 738 0
- 260              		.cfi_startproc
- 261              		@ args = 0, pretend = 0, frame = 0
- 262              		@ frame_needed = 0, uses_anonymous_args = 0
- 263              		@ link register save eliminated.
+ 307              		.loc 1 738 0
+ 308              		.cfi_startproc
+ 309              		@ args = 0, pretend = 0, frame = 0
+ 310              		@ frame_needed = 0, uses_anonymous_args = 0
+ 311              		@ link register save eliminated.
  739:.\Generated_Source\PSoC5/Servo_A.c ****         uint8 result;
  740:.\Generated_Source\PSoC5/Servo_A.c **** 
  741:.\Generated_Source\PSoC5/Servo_A.c ****         result = CY_GET_REG8(Servo_A_CONTROL_PTR);
- 264              		.loc 1 741 0
- 265 0000 014B     		ldr	r3, .L29
- 266 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
- 267              	.LVL5:
+ 312              		.loc 1 741 0
+ 313 0000 014B     		ldr	r3, .L30
+ 314 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 315              	.LVL12:
  742:.\Generated_Source\PSoC5/Servo_A.c ****         return (result);
  743:.\Generated_Source\PSoC5/Servo_A.c ****     }
- 268              		.loc 1 743 0
- 269 0004 7047     		bx	lr
- 270              	.L30:
- 271 0006 00BF     		.align	2
- 272              	.L29:
- 273 0008 73640040 		.word	1073767539
- 274              		.cfi_endproc
- 275              	.LFE12:
- 276              		.size	Servo_A_ReadControlRegister, .-Servo_A_ReadControlRegister
- 277              		.section	.text.Servo_A_WriteControlRegister,"ax",%progbits
- 278              		.align	2
- 279              		.global	Servo_A_WriteControlRegister
- 280              		.thumb
- 281              		.thumb_func
- 282              		.type	Servo_A_WriteControlRegister, %function
- 283              	Servo_A_WriteControlRegister:
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 19
+ 316              		.loc 1 743 0
+ 317 0004 7047     		bx	lr
+ 318              	.L31:
+ 319 0006 00BF     		.align	2
+ 320              	.L30:
+ 321 0008 72640040 		.word	1073767538
+ 322              		.cfi_endproc
+ 323              	.LFE9:
+ 324              		.size	Servo_A_ReadControlRegister, .-Servo_A_ReadControlRegister
+ 325              		.section	.text.Servo_A_WriteControlRegister,"ax",%progbits
+ 326              		.align	2
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 20
 
 
- 284              	.LFB13:
+ 327              		.global	Servo_A_WriteControlRegister
+ 328              		.thumb
+ 329              		.thumb_func
+ 330              		.type	Servo_A_WriteControlRegister, %function
+ 331              	Servo_A_WriteControlRegister:
+ 332              	.LFB10:
  744:.\Generated_Source\PSoC5/Servo_A.c **** 
  745:.\Generated_Source\PSoC5/Servo_A.c **** 
  746:.\Generated_Source\PSoC5/Servo_A.c ****     /*******************************************************************************
@@ -1105,42 +1170,42 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  764:.\Generated_Source\PSoC5/Servo_A.c ****     *******************************************************************************/
  765:.\Generated_Source\PSoC5/Servo_A.c ****     void Servo_A_WriteControlRegister(uint8 control) 
  766:.\Generated_Source\PSoC5/Servo_A.c ****     {
- 285              		.loc 1 766 0
- 286              		.cfi_startproc
- 287              		@ args = 0, pretend = 0, frame = 0
- 288              		@ frame_needed = 0, uses_anonymous_args = 0
- 289              		@ link register save eliminated.
- 290              	.LVL6:
+ 333              		.loc 1 766 0
+ 334              		.cfi_startproc
+ 335              		@ args = 0, pretend = 0, frame = 0
+ 336              		@ frame_needed = 0, uses_anonymous_args = 0
+ 337              		@ link register save eliminated.
+ 338              	.LVL13:
  767:.\Generated_Source\PSoC5/Servo_A.c ****         CY_SET_REG8(Servo_A_CONTROL_PTR, control);
- 291              		.loc 1 767 0
- 292 0000 014B     		ldr	r3, .L32
- 293 0002 1870     		strb	r0, [r3]
- 294 0004 7047     		bx	lr
- 295              	.L33:
- 296 0006 00BF     		.align	2
- 297              	.L32:
- 298 0008 73640040 		.word	1073767539
- 299              		.cfi_endproc
- 300              	.LFE13:
- 301              		.size	Servo_A_WriteControlRegister, .-Servo_A_WriteControlRegister
- 302              		.section	.text.Servo_A_ReadCapture,"ax",%progbits
- 303              		.align	2
- 304              		.global	Servo_A_ReadCapture
- 305              		.thumb
- 306              		.thumb_func
- 307              		.type	Servo_A_ReadCapture, %function
- 308              	Servo_A_ReadCapture:
- 309              	.LFB14:
+ 339              		.loc 1 767 0
+ 340 0000 014B     		ldr	r3, .L33
+ 341 0002 1870     		strb	r0, [r3]
+ 342 0004 7047     		bx	lr
+ 343              	.L34:
+ 344 0006 00BF     		.align	2
+ 345              	.L33:
+ 346 0008 72640040 		.word	1073767538
+ 347              		.cfi_endproc
+ 348              	.LFE10:
+ 349              		.size	Servo_A_WriteControlRegister, .-Servo_A_WriteControlRegister
+ 350              		.section	.text.Servo_A_ReadCapture,"ax",%progbits
+ 351              		.align	2
+ 352              		.global	Servo_A_ReadCapture
+ 353              		.thumb
+ 354              		.thumb_func
+ 355              		.type	Servo_A_ReadCapture, %function
+ 356              	Servo_A_ReadCapture:
+ 357              	.LFB11:
  768:.\Generated_Source\PSoC5/Servo_A.c ****     }
  769:.\Generated_Source\PSoC5/Servo_A.c **** 
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 21
+
+
  770:.\Generated_Source\PSoC5/Servo_A.c **** #endif /* (Servo_A_UseControl) */
  771:.\Generated_Source\PSoC5/Servo_A.c **** 
  772:.\Generated_Source\PSoC5/Servo_A.c **** 
  773:.\Generated_Source\PSoC5/Servo_A.c **** #if (!Servo_A_UsingFixedFunction)
  774:.\Generated_Source\PSoC5/Servo_A.c **** 
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 20
-
-
  775:.\Generated_Source\PSoC5/Servo_A.c **** 
  776:.\Generated_Source\PSoC5/Servo_A.c ****     /*******************************************************************************
  777:.\Generated_Source\PSoC5/Servo_A.c ****     * Function Name: Servo_A_ReadCapture
@@ -1158,216 +1223,34 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  789:.\Generated_Source\PSoC5/Servo_A.c ****     *******************************************************************************/
  790:.\Generated_Source\PSoC5/Servo_A.c ****     uint16 Servo_A_ReadCapture(void) 
  791:.\Generated_Source\PSoC5/Servo_A.c ****     {
- 310              		.loc 1 791 0
- 311              		.cfi_startproc
- 312              		@ args = 0, pretend = 0, frame = 0
- 313              		@ frame_needed = 0, uses_anonymous_args = 0
- 314              		@ link register save eliminated.
+ 358              		.loc 1 791 0
+ 359              		.cfi_startproc
+ 360              		@ args = 0, pretend = 0, frame = 0
+ 361              		@ frame_needed = 0, uses_anonymous_args = 0
+ 362              		@ link register save eliminated.
  792:.\Generated_Source\PSoC5/Servo_A.c ****         return (CY_GET_REG16(Servo_A_CAPTURE_LSB_PTR));
- 315              		.loc 1 792 0
- 316 0000 014B     		ldr	r3, .L35
- 317 0002 1888     		ldrh	r0, [r3]
+ 363              		.loc 1 792 0
+ 364 0000 014B     		ldr	r3, .L36
+ 365 0002 1888     		ldrh	r0, [r3]
  793:.\Generated_Source\PSoC5/Servo_A.c ****     }
- 318              		.loc 1 793 0
- 319 0004 80B2     		uxth	r0, r0
- 320 0006 7047     		bx	lr
- 321              	.L36:
- 322              		.align	2
- 323              	.L35:
- 324 0008 A4680040 		.word	1073768612
- 325              		.cfi_endproc
- 326              	.LFE14:
- 327              		.size	Servo_A_ReadCapture, .-Servo_A_ReadCapture
- 328              		.section	.text.Servo_A_ClearFIFO,"ax",%progbits
- 329              		.align	2
- 330              		.global	Servo_A_ClearFIFO
- 331              		.thumb
- 332              		.thumb_func
- 333              		.type	Servo_A_ClearFIFO, %function
- 334              	Servo_A_ClearFIFO:
- 335              	.LFB6:
- 454:.\Generated_Source\PSoC5/Servo_A.c ****         {
- 336              		.loc 1 454 0
- 337              		.cfi_startproc
- 338              		@ args = 0, pretend = 0, frame = 0
- 339              		@ frame_needed = 0, uses_anonymous_args = 0
- 340 0000 08B5     		push	{r3, lr}
- 341              		.cfi_def_cfa_offset 8
- 342              		.cfi_offset 3, -8
- 343              		.cfi_offset 14, -4
- 455:.\Generated_Source\PSoC5/Servo_A.c ****             while(0u != (Servo_A_ReadStatusRegister() & Servo_A_STATUS_FIFONEMPTY))
- 344              		.loc 1 455 0
- 345 0002 01E0     		b	.L38
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 21
-
-
- 346              	.L39:
- 457:.\Generated_Source\PSoC5/Servo_A.c ****                 (void)Servo_A_ReadCapture();
- 347              		.loc 1 457 0
- 348 0004 FFF7FEFF 		bl	Servo_A_ReadCapture
- 349              	.LVL7:
- 350              	.L38:
- 455:.\Generated_Source\PSoC5/Servo_A.c ****             while(0u != (Servo_A_ReadStatusRegister() & Servo_A_STATUS_FIFONEMPTY))
- 351              		.loc 1 455 0 discriminator 1
- 352 0008 FFF7FEFF 		bl	Servo_A_ReadStatusRegister
- 353              	.LVL8:
- 354 000c 10F0100F 		tst	r0, #16
- 355 0010 F8D1     		bne	.L39
- 459:.\Generated_Source\PSoC5/Servo_A.c ****         }
- 356              		.loc 1 459 0
- 357 0012 08BD     		pop	{r3, pc}
- 358              		.cfi_endproc
- 359              	.LFE6:
- 360              		.size	Servo_A_ClearFIFO, .-Servo_A_ClearFIFO
- 361              		.section	.text.Servo_A_Init,"ax",%progbits
- 362              		.align	2
- 363              		.global	Servo_A_Init
- 364              		.thumb
- 365              		.thumb_func
- 366              		.type	Servo_A_Init, %function
- 367              	Servo_A_Init:
- 368              	.LFB1:
-  85:.\Generated_Source\PSoC5/Servo_A.c **** {
- 369              		.loc 1 85 0
- 370              		.cfi_startproc
- 371              		@ args = 0, pretend = 0, frame = 0
- 372              		@ frame_needed = 0, uses_anonymous_args = 0
- 373 0000 10B5     		push	{r4, lr}
- 374              		.cfi_def_cfa_offset 8
- 375              		.cfi_offset 4, -8
- 376              		.cfi_offset 14, -4
- 117:.\Generated_Source\PSoC5/Servo_A.c ****         ctrl = Servo_A_CONTROL & ((uint8)(~Servo_A_CTRL_CMPMODE2_MASK)) &
- 377              		.loc 1 117 0
- 378 0002 174B     		ldr	r3, .L41
- 379 0004 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
- 380 0006 02F0C002 		and	r2, r2, #192
- 381              	.LVL9:
- 119:.\Generated_Source\PSoC5/Servo_A.c ****         Servo_A_CONTROL = ctrl | Servo_A_DEFAULT_COMPARE2_MODE |
- 382              		.loc 1 119 0
- 383 000a 42F00902 		orr	r2, r2, #9
- 384              	.LVL10:
- 385 000e 1A70     		strb	r2, [r3]
- 129:.\Generated_Source\PSoC5/Servo_A.c ****             Servo_A_AUX_CONTROLDP0 |= (Servo_A_AUX_CTRL_FIFO0_CLR);
- 386              		.loc 1 129 0
- 387 0010 1F33     		adds	r3, r3, #31
- 388 0012 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
- 389 0014 42F00102 		orr	r2, r2, #1
- 390 0018 1A70     		strb	r2, [r3]
- 130:.\Generated_Source\PSoC5/Servo_A.c ****             Servo_A_AUX_CONTROLDP1 |= (Servo_A_AUX_CTRL_FIFO0_CLR);
- 391              		.loc 1 130 0
- 392 001a 124C     		ldr	r4, .L41+4
- 393 001c 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
- 394 001e 43F00103 		orr	r3, r3, #1
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 22
-
-
- 395 0022 2370     		strb	r3, [r4]
- 133:.\Generated_Source\PSoC5/Servo_A.c ****         Servo_A_WriteCounter(Servo_A_INIT_PERIOD_VALUE);
- 396              		.loc 1 133 0
- 397 0024 4EF66020 		movw	r0, #60000
- 398 0028 FFF7FEFF 		bl	Servo_A_WriteCounter
- 399              	.LVL11:
- 136:.\Generated_Source\PSoC5/Servo_A.c ****     Servo_A_WritePeriod(Servo_A_INIT_PERIOD_VALUE);
- 400              		.loc 1 136 0
- 401 002c 4EF66020 		movw	r0, #60000
- 402 0030 FFF7FEFF 		bl	Servo_A_WritePeriod
- 403              	.LVL12:
- 141:.\Generated_Source\PSoC5/Servo_A.c ****             Servo_A_WriteCompare1(Servo_A_INIT_COMPARE_VALUE1);
- 404              		.loc 1 141 0
- 405 0034 41F27070 		movw	r0, #6000
- 406 0038 FFF7FEFF 		bl	Servo_A_WriteCompare1
- 407              	.LVL13:
- 142:.\Generated_Source\PSoC5/Servo_A.c ****             Servo_A_WriteCompare2(Servo_A_INIT_COMPARE_VALUE2);
- 408              		.loc 1 142 0
- 409 003c 41F27070 		movw	r0, #6000
- 410 0040 FFF7FEFF 		bl	Servo_A_WriteCompare2
- 411              	.LVL14:
- 154:.\Generated_Source\PSoC5/Servo_A.c ****         Servo_A_SetInterruptMode(Servo_A_INIT_INTERRUPTS_MODE);
- 412              		.loc 1 154 0
- 413 0044 0020     		movs	r0, #0
- 414 0046 FFF7FEFF 		bl	Servo_A_SetInterruptMode
- 415              	.LVL15:
- 167:.\Generated_Source\PSoC5/Servo_A.c ****             Servo_A_interruptState = CyEnterCriticalSection();
- 416              		.loc 1 167 0
- 417 004a FFF7FEFF 		bl	CyEnterCriticalSection
- 418              	.LVL16:
- 169:.\Generated_Source\PSoC5/Servo_A.c ****             Servo_A_STATUS_AUX_CTRL |= Servo_A_STATUS_ACTL_INT_EN_MASK;
- 419              		.loc 1 169 0
- 420 004e 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
- 421 0050 43F01003 		orr	r3, r3, #16
- 422 0054 2370     		strb	r3, [r4]
- 172:.\Generated_Source\PSoC5/Servo_A.c ****             CyExitCriticalSection(Servo_A_interruptState);
- 423              		.loc 1 172 0
- 424 0056 FFF7FEFF 		bl	CyExitCriticalSection
- 425              	.LVL17:
- 176:.\Generated_Source\PSoC5/Servo_A.c ****             Servo_A_ClearFIFO();
- 426              		.loc 1 176 0
- 427 005a FFF7FEFF 		bl	Servo_A_ClearFIFO
- 428              	.LVL18:
- 429 005e 10BD     		pop	{r4, pc}
- 430              	.L42:
- 431              		.align	2
- 432              	.L41:
- 433 0060 73640040 		.word	1073767539
- 434 0064 93640040 		.word	1073767571
- 435              		.cfi_endproc
- 436              	.LFE1:
- 437              		.size	Servo_A_Init, .-Servo_A_Init
- 438              		.section	.text.Servo_A_Start,"ax",%progbits
- 439              		.align	2
- 440              		.global	Servo_A_Start
- 441              		.thumb
- 442              		.thumb_func
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 23
-
-
- 443              		.type	Servo_A_Start, %function
- 444              	Servo_A_Start:
- 445              	.LFB0:
-  56:.\Generated_Source\PSoC5/Servo_A.c **** {
- 446              		.loc 1 56 0
- 447              		.cfi_startproc
- 448              		@ args = 0, pretend = 0, frame = 0
- 449              		@ frame_needed = 0, uses_anonymous_args = 0
- 450 0000 08B5     		push	{r3, lr}
- 451              		.cfi_def_cfa_offset 8
- 452              		.cfi_offset 3, -8
- 453              		.cfi_offset 14, -4
-  58:.\Generated_Source\PSoC5/Servo_A.c ****     if(Servo_A_initVar == 0u)
- 454              		.loc 1 58 0
- 455 0002 054B     		ldr	r3, .L45
- 456 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 457 0006 23B9     		cbnz	r3, .L44
-  60:.\Generated_Source\PSoC5/Servo_A.c ****         Servo_A_Init();
- 458              		.loc 1 60 0
- 459 0008 FFF7FEFF 		bl	Servo_A_Init
- 460              	.LVL19:
-  61:.\Generated_Source\PSoC5/Servo_A.c ****         Servo_A_initVar = 1u;
- 461              		.loc 1 61 0
- 462 000c 0122     		movs	r2, #1
- 463 000e 024B     		ldr	r3, .L45
- 464 0010 1A70     		strb	r2, [r3]
- 465              	.L44:
-  63:.\Generated_Source\PSoC5/Servo_A.c ****     Servo_A_Enable();
- 466              		.loc 1 63 0
- 467 0012 FFF7FEFF 		bl	Servo_A_Enable
- 468              	.LVL20:
- 469 0016 08BD     		pop	{r3, pc}
- 470              	.L46:
- 471              		.align	2
- 472              	.L45:
- 473 0018 00000000 		.word	.LANCHOR0
- 474              		.cfi_endproc
- 475              	.LFE0:
- 476              		.size	Servo_A_Start, .-Servo_A_Start
- 477              		.section	.text.Servo_A_ReadCompare1,"ax",%progbits
- 478              		.align	2
- 479              		.global	Servo_A_ReadCompare1
- 480              		.thumb
- 481              		.thumb_func
- 482              		.type	Servo_A_ReadCompare1, %function
- 483              	Servo_A_ReadCompare1:
- 484              	.LFB15:
+ 366              		.loc 1 793 0
+ 367 0004 80B2     		uxth	r0, r0
+ 368 0006 7047     		bx	lr
+ 369              	.L37:
+ 370              		.align	2
+ 371              	.L36:
+ 372 0008 A4680040 		.word	1073768612
+ 373              		.cfi_endproc
+ 374              	.LFE11:
+ 375              		.size	Servo_A_ReadCapture, .-Servo_A_ReadCapture
+ 376              		.section	.text.Servo_A_ReadCompare1,"ax",%progbits
+ 377              		.align	2
+ 378              		.global	Servo_A_ReadCompare1
+ 379              		.thumb
+ 380              		.thumb_func
+ 381              		.type	Servo_A_ReadCompare1, %function
+ 382              	Servo_A_ReadCompare1:
+ 383              	.LFB12:
  794:.\Generated_Source\PSoC5/Servo_A.c **** 
  795:.\Generated_Source\PSoC5/Servo_A.c **** #endif /* (!Servo_A_UsingFixedFunction) */
  796:.\Generated_Source\PSoC5/Servo_A.c **** 
@@ -1375,12 +1258,12 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  798:.\Generated_Source\PSoC5/Servo_A.c **** #if (Servo_A_UseOneCompareMode)
  799:.\Generated_Source\PSoC5/Servo_A.c **** 
  800:.\Generated_Source\PSoC5/Servo_A.c **** 
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 22
+
+
  801:.\Generated_Source\PSoC5/Servo_A.c ****     /*******************************************************************************
  802:.\Generated_Source\PSoC5/Servo_A.c ****     * Function Name: Servo_A_ReadCompare
  803:.\Generated_Source\PSoC5/Servo_A.c ****     ********************************************************************************
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 24
-
-
  804:.\Generated_Source\PSoC5/Servo_A.c ****     *
  805:.\Generated_Source\PSoC5/Servo_A.c ****     * Summary:
  806:.\Generated_Source\PSoC5/Servo_A.c ****     *  Reads the compare value for the compare output when the PWM Mode parameter is
@@ -1421,37 +1304,37 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  841:.\Generated_Source\PSoC5/Servo_A.c ****     *******************************************************************************/
  842:.\Generated_Source\PSoC5/Servo_A.c ****     uint16 Servo_A_ReadCompare1(void) 
  843:.\Generated_Source\PSoC5/Servo_A.c ****     {
- 485              		.loc 1 843 0
- 486              		.cfi_startproc
- 487              		@ args = 0, pretend = 0, frame = 0
- 488              		@ frame_needed = 0, uses_anonymous_args = 0
- 489              		@ link register save eliminated.
+ 384              		.loc 1 843 0
+ 385              		.cfi_startproc
+ 386              		@ args = 0, pretend = 0, frame = 0
+ 387              		@ frame_needed = 0, uses_anonymous_args = 0
+ 388              		@ link register save eliminated.
  844:.\Generated_Source\PSoC5/Servo_A.c ****         return (CY_GET_REG16(Servo_A_COMPARE1_LSB_PTR));
- 490              		.loc 1 844 0
- 491 0000 014B     		ldr	r3, .L48
- 492 0002 1888     		ldrh	r0, [r3]
+ 389              		.loc 1 844 0
+ 390 0000 014B     		ldr	r3, .L39
+ 391 0002 1888     		ldrh	r0, [r3]
  845:.\Generated_Source\PSoC5/Servo_A.c ****     }
- 493              		.loc 1 845 0
- 494 0004 80B2     		uxth	r0, r0
- 495 0006 7047     		bx	lr
- 496              	.L49:
- 497              		.align	2
- 498              	.L48:
- 499 0008 44680040 		.word	1073768516
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 25
+ 392              		.loc 1 845 0
+ 393 0004 80B2     		uxth	r0, r0
+ 394 0006 7047     		bx	lr
+ 395              	.L40:
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 23
 
 
- 500              		.cfi_endproc
- 501              	.LFE15:
- 502              		.size	Servo_A_ReadCompare1, .-Servo_A_ReadCompare1
- 503              		.section	.text.Servo_A_ReadCompare2,"ax",%progbits
- 504              		.align	2
- 505              		.global	Servo_A_ReadCompare2
- 506              		.thumb
- 507              		.thumb_func
- 508              		.type	Servo_A_ReadCompare2, %function
- 509              	Servo_A_ReadCompare2:
- 510              	.LFB16:
+ 396              		.align	2
+ 397              	.L39:
+ 398 0008 44680040 		.word	1073768516
+ 399              		.cfi_endproc
+ 400              	.LFE12:
+ 401              		.size	Servo_A_ReadCompare1, .-Servo_A_ReadCompare1
+ 402              		.section	.text.Servo_A_ReadCompare2,"ax",%progbits
+ 403              		.align	2
+ 404              		.global	Servo_A_ReadCompare2
+ 405              		.thumb
+ 406              		.thumb_func
+ 407              		.type	Servo_A_ReadCompare2, %function
+ 408              	Servo_A_ReadCompare2:
+ 409              	.LFB13:
  846:.\Generated_Source\PSoC5/Servo_A.c **** 
  847:.\Generated_Source\PSoC5/Servo_A.c **** 
  848:.\Generated_Source\PSoC5/Servo_A.c ****     /*******************************************************************************
@@ -1470,37 +1353,37 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  861:.\Generated_Source\PSoC5/Servo_A.c ****     *******************************************************************************/
  862:.\Generated_Source\PSoC5/Servo_A.c ****     uint16 Servo_A_ReadCompare2(void) 
  863:.\Generated_Source\PSoC5/Servo_A.c ****     {
- 511              		.loc 1 863 0
- 512              		.cfi_startproc
- 513              		@ args = 0, pretend = 0, frame = 0
- 514              		@ frame_needed = 0, uses_anonymous_args = 0
- 515              		@ link register save eliminated.
+ 410              		.loc 1 863 0
+ 411              		.cfi_startproc
+ 412              		@ args = 0, pretend = 0, frame = 0
+ 413              		@ frame_needed = 0, uses_anonymous_args = 0
+ 414              		@ link register save eliminated.
  864:.\Generated_Source\PSoC5/Servo_A.c ****         return (CY_GET_REG16(Servo_A_COMPARE2_LSB_PTR));
- 516              		.loc 1 864 0
- 517 0000 014B     		ldr	r3, .L51
- 518 0002 1888     		ldrh	r0, [r3]
+ 415              		.loc 1 864 0
+ 416 0000 014B     		ldr	r3, .L42
+ 417 0002 1888     		ldrh	r0, [r3]
  865:.\Generated_Source\PSoC5/Servo_A.c ****     }
- 519              		.loc 1 865 0
- 520 0004 80B2     		uxth	r0, r0
- 521 0006 7047     		bx	lr
- 522              	.L52:
- 523              		.align	2
- 524              	.L51:
- 525 0008 64680040 		.word	1073768548
- 526              		.cfi_endproc
- 527              	.LFE16:
- 528              		.size	Servo_A_ReadCompare2, .-Servo_A_ReadCompare2
- 529              		.section	.text.Servo_A_ReadPeriod,"ax",%progbits
- 530              		.align	2
- 531              		.global	Servo_A_ReadPeriod
- 532              		.thumb
- 533              		.thumb_func
- 534              		.type	Servo_A_ReadPeriod, %function
- 535              	Servo_A_ReadPeriod:
- 536              	.LFB17:
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 26
+ 418              		.loc 1 865 0
+ 419 0004 80B2     		uxth	r0, r0
+ 420 0006 7047     		bx	lr
+ 421              	.L43:
+ 422              		.align	2
+ 423              	.L42:
+ 424 0008 64680040 		.word	1073768548
+ 425              		.cfi_endproc
+ 426              	.LFE13:
+ 427              		.size	Servo_A_ReadCompare2, .-Servo_A_ReadCompare2
+ 428              		.section	.text.Servo_A_ReadPeriod,"ax",%progbits
+ 429              		.align	2
+ 430              		.global	Servo_A_ReadPeriod
+ 431              		.thumb
+ 432              		.thumb_func
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 24
 
 
+ 433              		.type	Servo_A_ReadPeriod, %function
+ 434              	Servo_A_ReadPeriod:
+ 435              	.LFB14:
  866:.\Generated_Source\PSoC5/Servo_A.c **** 
  867:.\Generated_Source\PSoC5/Servo_A.c **** #endif /* (Servo_A_UseOneCompareMode) */
  868:.\Generated_Source\PSoC5/Servo_A.c **** 
@@ -1521,1217 +1404,1033 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 1
  883:.\Generated_Source\PSoC5/Servo_A.c **** *******************************************************************************/
  884:.\Generated_Source\PSoC5/Servo_A.c **** uint16 Servo_A_ReadPeriod(void) 
  885:.\Generated_Source\PSoC5/Servo_A.c **** {
- 537              		.loc 1 885 0
- 538              		.cfi_startproc
- 539              		@ args = 0, pretend = 0, frame = 0
- 540              		@ frame_needed = 0, uses_anonymous_args = 0
- 541              		@ link register save eliminated.
+ 436              		.loc 1 885 0
+ 437              		.cfi_startproc
+ 438              		@ args = 0, pretend = 0, frame = 0
+ 439              		@ frame_needed = 0, uses_anonymous_args = 0
+ 440              		@ link register save eliminated.
  886:.\Generated_Source\PSoC5/Servo_A.c ****     #if(Servo_A_UsingFixedFunction)
  887:.\Generated_Source\PSoC5/Servo_A.c ****         return ((uint16)CY_GET_REG16(Servo_A_PERIOD_LSB_PTR));
  888:.\Generated_Source\PSoC5/Servo_A.c ****     #else
  889:.\Generated_Source\PSoC5/Servo_A.c ****         return (CY_GET_REG16(Servo_A_PERIOD_LSB_PTR));
- 542              		.loc 1 889 0
- 543 0000 014B     		ldr	r3, .L54
- 544 0002 1888     		ldrh	r0, [r3]
+ 441              		.loc 1 889 0
+ 442 0000 014B     		ldr	r3, .L45
+ 443 0002 1888     		ldrh	r0, [r3]
  890:.\Generated_Source\PSoC5/Servo_A.c ****     #endif /* (Servo_A_UsingFixedFunction) */
  891:.\Generated_Source\PSoC5/Servo_A.c **** }
- 545              		.loc 1 891 0
- 546 0004 80B2     		uxth	r0, r0
- 547 0006 7047     		bx	lr
- 548              	.L55:
- 549              		.align	2
- 550              	.L54:
- 551 0008 84680040 		.word	1073768580
- 552              		.cfi_endproc
- 553              	.LFE17:
- 554              		.size	Servo_A_ReadPeriod, .-Servo_A_ReadPeriod
- 555              		.global	Servo_A_initVar
- 556              		.bss
- 557              		.set	.LANCHOR0,. + 0
- 558              		.type	Servo_A_initVar, %object
- 559              		.size	Servo_A_initVar, 1
- 560              	Servo_A_initVar:
- 561 0000 00       		.space	1
- 562              		.text
- 563              	.Letext0:
- 564              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
- 565              		.file 3 ".\\Generated_Source\\PSoC5\\CyLib.h"
- 566              		.section	.debug_info,"",%progbits
- 567              	.Ldebug_info0:
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 27
+ 444              		.loc 1 891 0
+ 445 0004 80B2     		uxth	r0, r0
+ 446 0006 7047     		bx	lr
+ 447              	.L46:
+ 448              		.align	2
+ 449              	.L45:
+ 450 0008 84680040 		.word	1073768580
+ 451              		.cfi_endproc
+ 452              	.LFE14:
+ 453              		.size	Servo_A_ReadPeriod, .-Servo_A_ReadPeriod
+ 454              		.global	Servo_A_initVar
+ 455              		.bss
+ 456              		.set	.LANCHOR0,. + 0
+ 457              		.type	Servo_A_initVar, %object
+ 458              		.size	Servo_A_initVar, 1
+ 459              	Servo_A_initVar:
+ 460 0000 00       		.space	1
+ 461              		.text
+ 462              	.Letext0:
+ 463              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 25
 
 
- 568 0000 99030000 		.4byte	0x399
- 569 0004 0400     		.2byte	0x4
- 570 0006 00000000 		.4byte	.Ldebug_abbrev0
- 571 000a 04       		.byte	0x4
- 572 000b 01       		.uleb128 0x1
- 573 000c 10020000 		.4byte	.LASF42
- 574 0010 01       		.byte	0x1
- 575 0011 9A000000 		.4byte	.LASF43
- 576 0015 C5010000 		.4byte	.LASF44
- 577 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 578 001d 00000000 		.4byte	0
- 579 0021 00000000 		.4byte	.Ldebug_line0
- 580 0025 02       		.uleb128 0x2
- 581 0026 01       		.byte	0x1
- 582 0027 06       		.byte	0x6
- 583 0028 2D030000 		.4byte	.LASF0
- 584 002c 02       		.uleb128 0x2
- 585 002d 01       		.byte	0x1
- 586 002e 08       		.byte	0x8
- 587 002f 87000000 		.4byte	.LASF1
- 588 0033 02       		.uleb128 0x2
- 589 0034 02       		.byte	0x2
- 590 0035 05       		.byte	0x5
- 591 0036 13010000 		.4byte	.LASF2
- 592 003a 02       		.uleb128 0x2
- 593 003b 02       		.byte	0x2
- 594 003c 07       		.byte	0x7
- 595 003d 27000000 		.4byte	.LASF3
- 596 0041 02       		.uleb128 0x2
- 597 0042 04       		.byte	0x4
- 598 0043 05       		.byte	0x5
- 599 0044 1F030000 		.4byte	.LASF4
- 600 0048 02       		.uleb128 0x2
- 601 0049 04       		.byte	0x4
- 602 004a 07       		.byte	0x7
- 603 004b D2000000 		.4byte	.LASF5
- 604 004f 02       		.uleb128 0x2
- 605 0050 08       		.byte	0x8
- 606 0051 05       		.byte	0x5
- 607 0052 95020000 		.4byte	.LASF6
- 608 0056 02       		.uleb128 0x2
- 609 0057 08       		.byte	0x8
- 610 0058 07       		.byte	0x7
- 611 0059 70000000 		.4byte	.LASF7
- 612 005d 03       		.uleb128 0x3
- 613 005e 04       		.byte	0x4
- 614 005f 05       		.byte	0x5
- 615 0060 696E7400 		.ascii	"int\000"
- 616 0064 02       		.uleb128 0x2
- 617 0065 04       		.byte	0x4
- 618 0066 07       		.byte	0x7
- 619 0067 49010000 		.4byte	.LASF8
- 620 006b 04       		.uleb128 0x4
- 621 006c E4000000 		.4byte	.LASF9
- 622 0070 02       		.byte	0x2
- 623 0071 B3       		.byte	0xb3
- 624 0072 2C000000 		.4byte	0x2c
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 28
+ 464              		.section	.debug_info,"",%progbits
+ 465              	.Ldebug_info0:
+ 466 0000 DC020000 		.4byte	0x2dc
+ 467 0004 0400     		.2byte	0x4
+ 468 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 469 000a 04       		.byte	0x4
+ 470 000b 01       		.uleb128 0x1
+ 471 000c A2010000 		.4byte	.LASF37
+ 472 0010 01       		.byte	0x1
+ 473 0011 83000000 		.4byte	.LASF38
+ 474 0015 66010000 		.4byte	.LASF39
+ 475 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 476 001d 00000000 		.4byte	0
+ 477 0021 00000000 		.4byte	.Ldebug_line0
+ 478 0025 02       		.uleb128 0x2
+ 479 0026 01       		.byte	0x1
+ 480 0027 06       		.byte	0x6
+ 481 0028 AC020000 		.4byte	.LASF0
+ 482 002c 02       		.uleb128 0x2
+ 483 002d 01       		.byte	0x1
+ 484 002e 08       		.byte	0x8
+ 485 002f 70000000 		.4byte	.LASF1
+ 486 0033 02       		.uleb128 0x2
+ 487 0034 02       		.byte	0x2
+ 488 0035 05       		.byte	0x5
+ 489 0036 EA000000 		.4byte	.LASF2
+ 490 003a 02       		.uleb128 0x2
+ 491 003b 02       		.byte	0x2
+ 492 003c 07       		.byte	0x7
+ 493 003d 27000000 		.4byte	.LASF3
+ 494 0041 02       		.uleb128 0x2
+ 495 0042 04       		.byte	0x4
+ 496 0043 05       		.byte	0x5
+ 497 0044 A3020000 		.4byte	.LASF4
+ 498 0048 02       		.uleb128 0x2
+ 499 0049 04       		.byte	0x4
+ 500 004a 07       		.byte	0x7
+ 501 004b BB000000 		.4byte	.LASF5
+ 502 004f 02       		.uleb128 0x2
+ 503 0050 08       		.byte	0x8
+ 504 0051 05       		.byte	0x5
+ 505 0052 27020000 		.4byte	.LASF6
+ 506 0056 02       		.uleb128 0x2
+ 507 0057 08       		.byte	0x8
+ 508 0058 07       		.byte	0x7
+ 509 0059 2A010000 		.4byte	.LASF7
+ 510 005d 03       		.uleb128 0x3
+ 511 005e 04       		.byte	0x4
+ 512 005f 05       		.byte	0x5
+ 513 0060 696E7400 		.ascii	"int\000"
+ 514 0064 02       		.uleb128 0x2
+ 515 0065 04       		.byte	0x4
+ 516 0066 07       		.byte	0x7
+ 517 0067 09010000 		.4byte	.LASF8
+ 518 006b 04       		.uleb128 0x4
+ 519 006c CD000000 		.4byte	.LASF9
+ 520 0070 02       		.byte	0x2
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 26
 
 
- 625 0076 04       		.uleb128 0x4
- 626 0077 1D010000 		.4byte	.LASF10
- 627 007b 02       		.byte	0x2
- 628 007c B4       		.byte	0xb4
- 629 007d 3A000000 		.4byte	0x3a
- 630 0081 02       		.uleb128 0x2
- 631 0082 04       		.byte	0x4
- 632 0083 04       		.byte	0x4
- 633 0084 56000000 		.4byte	.LASF11
- 634 0088 02       		.uleb128 0x2
- 635 0089 08       		.byte	0x8
- 636 008a 04       		.byte	0x4
- 637 008b 0C010000 		.4byte	.LASF12
- 638 008f 02       		.uleb128 0x2
- 639 0090 01       		.byte	0x1
- 640 0091 08       		.byte	0x8
- 641 0092 28030000 		.4byte	.LASF13
- 642 0096 05       		.uleb128 0x5
- 643 0097 95000000 		.4byte	.LASF14
- 644 009b 02       		.byte	0x2
- 645 009c 5D01     		.2byte	0x15d
- 646 009e A2000000 		.4byte	0xa2
- 647 00a2 06       		.uleb128 0x6
- 648 00a3 6B000000 		.4byte	0x6b
- 649 00a7 05       		.uleb128 0x5
- 650 00a8 00000000 		.4byte	.LASF15
- 651 00ac 02       		.byte	0x2
- 652 00ad 5E01     		.2byte	0x15e
- 653 00af B3000000 		.4byte	0xb3
- 654 00b3 06       		.uleb128 0x6
- 655 00b4 76000000 		.4byte	0x76
- 656 00b8 02       		.uleb128 0x2
- 657 00b9 04       		.byte	0x4
- 658 00ba 07       		.byte	0x7
- 659 00bb 8C020000 		.4byte	.LASF16
- 660 00bf 07       		.uleb128 0x7
- 661 00c0 47000000 		.4byte	.LASF17
- 662 00c4 01       		.byte	0x1
- 663 00c5 C7       		.byte	0xc7
- 664 00c6 00000000 		.4byte	.LFB2
- 665 00ca 10000000 		.4byte	.LFE2-.LFB2
- 666 00ce 01       		.uleb128 0x1
- 667 00cf 9C       		.byte	0x9c
- 668 00d0 07       		.uleb128 0x7
- 669 00d1 3A000000 		.4byte	.LASF18
- 670 00d5 01       		.byte	0x1
- 671 00d6 E9       		.byte	0xe9
- 672 00d7 00000000 		.4byte	.LFB3
- 673 00db 10000000 		.4byte	.LFE3-.LFB3
- 674 00df 01       		.uleb128 0x1
- 675 00e0 9C       		.byte	0x9c
- 676 00e1 08       		.uleb128 0x8
- 677 00e2 B0010000 		.4byte	.LASF19
- 678 00e6 01       		.byte	0x1
- 679 00e7 9301     		.2byte	0x193
- 680 00e9 00000000 		.4byte	.LFB4
- 681 00ed 0C000000 		.4byte	.LFE4-.LFB4
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 29
+ 521 0071 B3       		.byte	0xb3
+ 522 0072 2C000000 		.4byte	0x2c
+ 523 0076 04       		.uleb128 0x4
+ 524 0077 F4000000 		.4byte	.LASF10
+ 525 007b 02       		.byte	0x2
+ 526 007c B4       		.byte	0xb4
+ 527 007d 3A000000 		.4byte	0x3a
+ 528 0081 02       		.uleb128 0x2
+ 529 0082 04       		.byte	0x4
+ 530 0083 04       		.byte	0x4
+ 531 0084 56000000 		.4byte	.LASF11
+ 532 0088 02       		.uleb128 0x2
+ 533 0089 08       		.byte	0x8
+ 534 008a 04       		.byte	0x4
+ 535 008b E3000000 		.4byte	.LASF12
+ 536 008f 02       		.uleb128 0x2
+ 537 0090 01       		.byte	0x1
+ 538 0091 08       		.byte	0x8
+ 539 0092 35020000 		.4byte	.LASF13
+ 540 0096 05       		.uleb128 0x5
+ 541 0097 7E000000 		.4byte	.LASF14
+ 542 009b 02       		.byte	0x2
+ 543 009c 5D01     		.2byte	0x15d
+ 544 009e A2000000 		.4byte	0xa2
+ 545 00a2 06       		.uleb128 0x6
+ 546 00a3 6B000000 		.4byte	0x6b
+ 547 00a7 05       		.uleb128 0x5
+ 548 00a8 00000000 		.4byte	.LASF15
+ 549 00ac 02       		.byte	0x2
+ 550 00ad 5E01     		.2byte	0x15e
+ 551 00af B3000000 		.4byte	0xb3
+ 552 00b3 06       		.uleb128 0x6
+ 553 00b4 76000000 		.4byte	0x76
+ 554 00b8 02       		.uleb128 0x2
+ 555 00b9 04       		.byte	0x4
+ 556 00ba 07       		.byte	0x7
+ 557 00bb 1E020000 		.4byte	.LASF16
+ 558 00bf 07       		.uleb128 0x7
+ 559 00c0 47000000 		.4byte	.LASF17
+ 560 00c4 01       		.byte	0x1
+ 561 00c5 C7       		.byte	0xc7
+ 562 00c6 00000000 		.4byte	.LFB2
+ 563 00ca 10000000 		.4byte	.LFE2-.LFB2
+ 564 00ce 01       		.uleb128 0x1
+ 565 00cf 9C       		.byte	0x9c
+ 566 00d0 07       		.uleb128 0x7
+ 567 00d1 3A000000 		.4byte	.LASF18
+ 568 00d5 01       		.byte	0x1
+ 569 00d6 E9       		.byte	0xe9
+ 570 00d7 00000000 		.4byte	.LFB3
+ 571 00db 10000000 		.4byte	.LFE3-.LFB3
+ 572 00df 01       		.uleb128 0x1
+ 573 00e0 9C       		.byte	0x9c
+ 574 00e1 08       		.uleb128 0x8
+ 575 00e2 51010000 		.4byte	.LASF19
+ 576 00e6 01       		.byte	0x1
+ 577 00e7 9301     		.2byte	0x193
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 27
 
 
- 682 00f1 01       		.uleb128 0x1
- 683 00f2 9C       		.byte	0x9c
- 684 00f3 06010000 		.4byte	0x106
- 685 00f7 09       		.uleb128 0x9
- 686 00f8 04010000 		.4byte	.LASF21
- 687 00fc 01       		.byte	0x1
- 688 00fd 9301     		.2byte	0x193
- 689 00ff 76000000 		.4byte	0x76
- 690 0103 01       		.uleb128 0x1
- 691 0104 50       		.byte	0x50
- 692 0105 00       		.byte	0
- 693 0106 0A       		.uleb128 0xa
- 694 0107 FC010000 		.4byte	.LASF28
- 695 010b 01       		.byte	0x1
- 696 010c A901     		.2byte	0x1a9
- 697 010e 76000000 		.4byte	0x76
- 698 0112 00000000 		.4byte	.LFB5
- 699 0116 14000000 		.4byte	.LFE5-.LFB5
- 700 011a 01       		.uleb128 0x1
- 701 011b 9C       		.byte	0x9c
- 702 011c 08       		.uleb128 0x8
- 703 011d B1020000 		.4byte	.LASF20
- 704 0121 01       		.byte	0x1
- 705 0122 E201     		.2byte	0x1e2
- 706 0124 00000000 		.4byte	.LFB7
- 707 0128 0C000000 		.4byte	.LFE7-.LFB7
- 708 012c 01       		.uleb128 0x1
- 709 012d 9C       		.byte	0x9c
- 710 012e 41010000 		.4byte	0x141
- 711 0132 09       		.uleb128 0x9
- 712 0133 20000000 		.4byte	.LASF22
- 713 0137 01       		.byte	0x1
- 714 0138 E201     		.2byte	0x1e2
- 715 013a 76000000 		.4byte	0x76
- 716 013e 01       		.uleb128 0x1
- 717 013f 50       		.byte	0x50
- 718 0140 00       		.byte	0
- 719 0141 08       		.uleb128 0x8
- 720 0142 C5020000 		.4byte	.LASF23
- 721 0146 01       		.byte	0x1
- 722 0147 2B02     		.2byte	0x22b
- 723 0149 00000000 		.4byte	.LFB8
- 724 014d 0C000000 		.4byte	.LFE8-.LFB8
- 725 0151 01       		.uleb128 0x1
- 726 0152 9C       		.byte	0x9c
- 727 0153 66010000 		.4byte	0x166
- 728 0157 09       		.uleb128 0x9
- 729 0158 39030000 		.4byte	.LASF24
- 730 015c 01       		.byte	0x1
- 731 015d 2B02     		.2byte	0x22b
- 732 015f 76000000 		.4byte	0x76
- 733 0163 01       		.uleb128 0x1
- 734 0164 50       		.byte	0x50
- 735 0165 00       		.byte	0
- 736 0166 08       		.uleb128 0x8
- 737 0167 DB020000 		.4byte	.LASF25
- 738 016b 01       		.byte	0x1
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 30
+ 578 00e9 00000000 		.4byte	.LFB4
+ 579 00ed 0C000000 		.4byte	.LFE4-.LFB4
+ 580 00f1 01       		.uleb128 0x1
+ 581 00f2 9C       		.byte	0x9c
+ 582 00f3 06010000 		.4byte	0x106
+ 583 00f7 09       		.uleb128 0x9
+ 584 00f8 DB000000 		.4byte	.LASF21
+ 585 00fc 01       		.byte	0x1
+ 586 00fd 9301     		.2byte	0x193
+ 587 00ff 76000000 		.4byte	0x76
+ 588 0103 01       		.uleb128 0x1
+ 589 0104 50       		.byte	0x50
+ 590 0105 00       		.byte	0
+ 591 0106 0A       		.uleb128 0xa
+ 592 0107 16010000 		.4byte	.LASF32
+ 593 010b 01       		.byte	0x1
+ 594 010c A901     		.2byte	0x1a9
+ 595 010e 76000000 		.4byte	0x76
+ 596 0112 00000000 		.4byte	.LFB5
+ 597 0116 14000000 		.4byte	.LFE5-.LFB5
+ 598 011a 01       		.uleb128 0x1
+ 599 011b 9C       		.byte	0x9c
+ 600 011c 08       		.uleb128 0x8
+ 601 011d 3A020000 		.4byte	.LASF20
+ 602 0121 01       		.byte	0x1
+ 603 0122 E201     		.2byte	0x1e2
+ 604 0124 00000000 		.4byte	.LFB6
+ 605 0128 0C000000 		.4byte	.LFE6-.LFB6
+ 606 012c 01       		.uleb128 0x1
+ 607 012d 9C       		.byte	0x9c
+ 608 012e 41010000 		.4byte	0x141
+ 609 0132 09       		.uleb128 0x9
+ 610 0133 20000000 		.4byte	.LASF22
+ 611 0137 01       		.byte	0x1
+ 612 0138 E201     		.2byte	0x1e2
+ 613 013a 76000000 		.4byte	0x76
+ 614 013e 01       		.uleb128 0x1
+ 615 013f 50       		.byte	0x50
+ 616 0140 00       		.byte	0
+ 617 0141 08       		.uleb128 0x8
+ 618 0142 4E020000 		.4byte	.LASF23
+ 619 0146 01       		.byte	0x1
+ 620 0147 2B02     		.2byte	0x22b
+ 621 0149 00000000 		.4byte	.LFB7
+ 622 014d 0C000000 		.4byte	.LFE7-.LFB7
+ 623 0151 01       		.uleb128 0x1
+ 624 0152 9C       		.byte	0x9c
+ 625 0153 66010000 		.4byte	0x166
+ 626 0157 09       		.uleb128 0x9
+ 627 0158 B8020000 		.4byte	.LASF24
+ 628 015c 01       		.byte	0x1
+ 629 015d 2B02     		.2byte	0x22b
+ 630 015f 76000000 		.4byte	0x76
+ 631 0163 01       		.uleb128 0x1
+ 632 0164 50       		.byte	0x50
+ 633 0165 00       		.byte	0
+ 634 0166 08       		.uleb128 0x8
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 28
 
 
- 739 016c 4802     		.2byte	0x248
- 740 016e 00000000 		.4byte	.LFB9
- 741 0172 0C000000 		.4byte	.LFE9-.LFB9
- 742 0176 01       		.uleb128 0x1
- 743 0177 9C       		.byte	0x9c
- 744 0178 8B010000 		.4byte	0x18b
- 745 017c 09       		.uleb128 0x9
- 746 017d 39030000 		.4byte	.LASF24
- 747 0181 01       		.byte	0x1
- 748 0182 4802     		.2byte	0x248
- 749 0184 76000000 		.4byte	0x76
- 750 0188 01       		.uleb128 0x1
- 751 0189 50       		.byte	0x50
- 752 018a 00       		.byte	0
- 753 018b 08       		.uleb128 0x8
- 754 018c 56010000 		.4byte	.LASF26
- 755 0190 01       		.byte	0x1
- 756 0191 AC02     		.2byte	0x2ac
- 757 0193 00000000 		.4byte	.LFB10
- 758 0197 0C000000 		.4byte	.LFE10-.LFB10
- 759 019b 01       		.uleb128 0x1
- 760 019c 9C       		.byte	0x9c
- 761 019d B0010000 		.4byte	0x1b0
- 762 01a1 09       		.uleb128 0x9
- 763 01a2 A3020000 		.4byte	.LASF27
- 764 01a6 01       		.byte	0x1
- 765 01a7 AC02     		.2byte	0x2ac
- 766 01a9 6B000000 		.4byte	0x6b
- 767 01ad 01       		.uleb128 0x1
- 768 01ae 50       		.byte	0x50
- 769 01af 00       		.byte	0
- 770 01b0 0A       		.uleb128 0xa
- 771 01b1 85010000 		.4byte	.LASF29
- 772 01b5 01       		.byte	0x1
- 773 01b6 C702     		.2byte	0x2c7
- 774 01b8 6B000000 		.4byte	0x6b
- 775 01bc 00000000 		.4byte	.LFB11
- 776 01c0 0C000000 		.4byte	.LFE11-.LFB11
- 777 01c4 01       		.uleb128 0x1
- 778 01c5 9C       		.byte	0x9c
- 779 01c6 0B       		.uleb128 0xb
- 780 01c7 F6020000 		.4byte	.LASF45
- 781 01cb 01       		.byte	0x1
- 782 01cc E102     		.2byte	0x2e1
- 783 01ce 6B000000 		.4byte	0x6b
- 784 01d2 00000000 		.4byte	.LFB12
- 785 01d6 0C000000 		.4byte	.LFE12-.LFB12
- 786 01da 01       		.uleb128 0x1
- 787 01db 9C       		.byte	0x9c
- 788 01dc EF010000 		.4byte	0x1ef
- 789 01e0 0C       		.uleb128 0xc
- 790 01e1 19000000 		.4byte	.LASF35
- 791 01e5 01       		.byte	0x1
- 792 01e6 E302     		.2byte	0x2e3
- 793 01e8 6B000000 		.4byte	0x6b
- 794 01ec 01       		.uleb128 0x1
- 795 01ed 50       		.byte	0x50
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 31
+ 635 0167 64020000 		.4byte	.LASF25
+ 636 016b 01       		.byte	0x1
+ 637 016c 4802     		.2byte	0x248
+ 638 016e 00000000 		.4byte	.LFB8
+ 639 0172 0C000000 		.4byte	.LFE8-.LFB8
+ 640 0176 01       		.uleb128 0x1
+ 641 0177 9C       		.byte	0x9c
+ 642 0178 8B010000 		.4byte	0x18b
+ 643 017c 09       		.uleb128 0x9
+ 644 017d B8020000 		.4byte	.LASF24
+ 645 0181 01       		.byte	0x1
+ 646 0182 4802     		.2byte	0x248
+ 647 0184 76000000 		.4byte	0x76
+ 648 0188 01       		.uleb128 0x1
+ 649 0189 50       		.byte	0x50
+ 650 018a 00       		.byte	0
+ 651 018b 0B       		.uleb128 0xb
+ 652 018c 96020000 		.4byte	.LASF26
+ 653 0190 01       		.byte	0x1
+ 654 0191 54       		.byte	0x54
+ 655 0192 00000000 		.4byte	.LFB1
+ 656 0196 4C000000 		.4byte	.LFE1-.LFB1
+ 657 019a 01       		.uleb128 0x1
+ 658 019b 9C       		.byte	0x9c
+ 659 019c 00020000 		.4byte	0x200
+ 660 01a0 0C       		.uleb128 0xc
+ 661 01a1 9D010000 		.4byte	.LASF28
+ 662 01a5 01       		.byte	0x1
+ 663 01a6 57       		.byte	0x57
+ 664 01a7 6B000000 		.4byte	0x6b
+ 665 01ab 00000000 		.4byte	.LLST0
+ 666 01af 0D       		.uleb128 0xd
+ 667 01b0 2C000000 		.4byte	.LVL6
+ 668 01b4 E1000000 		.4byte	0xe1
+ 669 01b8 C4010000 		.4byte	0x1c4
+ 670 01bc 0E       		.uleb128 0xe
+ 671 01bd 01       		.uleb128 0x1
+ 672 01be 50       		.byte	0x50
+ 673 01bf 03       		.uleb128 0x3
+ 674 01c0 0B       		.byte	0xb
+ 675 01c1 60EA     		.2byte	0xea60
+ 676 01c3 00       		.byte	0
+ 677 01c4 0D       		.uleb128 0xd
+ 678 01c5 34000000 		.4byte	.LVL7
+ 679 01c9 1C010000 		.4byte	0x11c
+ 680 01cd D9010000 		.4byte	0x1d9
+ 681 01d1 0E       		.uleb128 0xe
+ 682 01d2 01       		.uleb128 0x1
+ 683 01d3 50       		.byte	0x50
+ 684 01d4 03       		.uleb128 0x3
+ 685 01d5 0B       		.byte	0xb
+ 686 01d6 60EA     		.2byte	0xea60
+ 687 01d8 00       		.byte	0
+ 688 01d9 0D       		.uleb128 0xd
+ 689 01da 3C000000 		.4byte	.LVL8
+ 690 01de 41010000 		.4byte	0x141
+ 691 01e2 EE010000 		.4byte	0x1ee
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 29
 
 
- 796 01ee 00       		.byte	0
- 797 01ef 08       		.uleb128 0x8
- 798 01f0 58030000 		.4byte	.LASF30
- 799 01f4 01       		.byte	0x1
- 800 01f5 FD02     		.2byte	0x2fd
- 801 01f7 00000000 		.4byte	.LFB13
- 802 01fb 0C000000 		.4byte	.LFE13-.LFB13
- 803 01ff 01       		.uleb128 0x1
- 804 0200 9C       		.byte	0x9c
- 805 0201 14020000 		.4byte	0x214
- 806 0205 09       		.uleb128 0x9
- 807 0206 EA000000 		.4byte	.LASF31
- 808 020a 01       		.byte	0x1
- 809 020b FD02     		.2byte	0x2fd
- 810 020d 6B000000 		.4byte	0x6b
- 811 0211 01       		.uleb128 0x1
- 812 0212 50       		.byte	0x50
- 813 0213 00       		.byte	0
- 814 0214 0A       		.uleb128 0xa
- 815 0215 5C000000 		.4byte	.LASF32
- 816 0219 01       		.byte	0x1
- 817 021a 1603     		.2byte	0x316
- 818 021c 76000000 		.4byte	0x76
- 819 0220 00000000 		.4byte	.LFB14
- 820 0224 0C000000 		.4byte	.LFE14-.LFB14
- 821 0228 01       		.uleb128 0x1
- 822 0229 9C       		.byte	0x9c
- 823 022a 08       		.uleb128 0x8
- 824 022b F2000000 		.4byte	.LASF33
- 825 022f 01       		.byte	0x1
- 826 0230 C501     		.2byte	0x1c5
- 827 0232 00000000 		.4byte	.LFB6
- 828 0236 14000000 		.4byte	.LFE6-.LFB6
- 829 023a 01       		.uleb128 0x1
- 830 023b 9C       		.byte	0x9c
- 831 023c 53020000 		.4byte	0x253
- 832 0240 0D       		.uleb128 0xd
- 833 0241 08000000 		.4byte	.LVL7
- 834 0245 14020000 		.4byte	0x214
- 835 0249 0D       		.uleb128 0xd
- 836 024a 0C000000 		.4byte	.LVL8
- 837 024e B0010000 		.4byte	0x1b0
- 838 0252 00       		.byte	0
- 839 0253 0E       		.uleb128 0xe
- 840 0254 12030000 		.4byte	.LASF34
- 841 0258 01       		.byte	0x1
- 842 0259 54       		.byte	0x54
- 843 025a 00000000 		.4byte	.LFB1
- 844 025e 68000000 		.4byte	.LFE1-.LFB1
- 845 0262 01       		.uleb128 0x1
- 846 0263 9C       		.byte	0x9c
- 847 0264 09030000 		.4byte	0x309
- 848 0268 0F       		.uleb128 0xf
- 849 0269 F1020000 		.4byte	.LASF36
- 850 026d 01       		.byte	0x1
- 851 026e 57       		.byte	0x57
- 852 026f 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 32
+ 692 01e6 0E       		.uleb128 0xe
+ 693 01e7 01       		.uleb128 0x1
+ 694 01e8 50       		.byte	0x50
+ 695 01e9 03       		.uleb128 0x3
+ 696 01ea 0A       		.byte	0xa
+ 697 01eb 7017     		.2byte	0x1770
+ 698 01ed 00       		.byte	0
+ 699 01ee 0F       		.uleb128 0xf
+ 700 01ef 44000000 		.4byte	.LVL9
+ 701 01f3 66010000 		.4byte	0x166
+ 702 01f7 0E       		.uleb128 0xe
+ 703 01f8 01       		.uleb128 0x1
+ 704 01f9 50       		.byte	0x50
+ 705 01fa 03       		.uleb128 0x3
+ 706 01fb 0A       		.byte	0xa
+ 707 01fc 7017     		.2byte	0x1770
+ 708 01fe 00       		.byte	0
+ 709 01ff 00       		.byte	0
+ 710 0200 0B       		.uleb128 0xb
+ 711 0201 FB000000 		.4byte	.LASF27
+ 712 0205 01       		.byte	0x1
+ 713 0206 37       		.byte	0x37
+ 714 0207 00000000 		.4byte	.LFB0
+ 715 020b 1C000000 		.4byte	.LFE0-.LFB0
+ 716 020f 01       		.uleb128 0x1
+ 717 0210 9C       		.byte	0x9c
+ 718 0211 28020000 		.4byte	0x228
+ 719 0215 10       		.uleb128 0x10
+ 720 0216 0C000000 		.4byte	.LVL10
+ 721 021a 8B010000 		.4byte	0x18b
+ 722 021e 10       		.uleb128 0x10
+ 723 021f 16000000 		.4byte	.LVL11
+ 724 0223 BF000000 		.4byte	0xbf
+ 725 0227 00       		.byte	0
+ 726 0228 11       		.uleb128 0x11
+ 727 0229 7A020000 		.4byte	.LASF40
+ 728 022d 01       		.byte	0x1
+ 729 022e E102     		.2byte	0x2e1
+ 730 0230 6B000000 		.4byte	0x6b
+ 731 0234 00000000 		.4byte	.LFB9
+ 732 0238 0C000000 		.4byte	.LFE9-.LFB9
+ 733 023c 01       		.uleb128 0x1
+ 734 023d 9C       		.byte	0x9c
+ 735 023e 51020000 		.4byte	0x251
+ 736 0242 12       		.uleb128 0x12
+ 737 0243 19000000 		.4byte	.LASF29
+ 738 0247 01       		.byte	0x1
+ 739 0248 E302     		.2byte	0x2e3
+ 740 024a 6B000000 		.4byte	0x6b
+ 741 024e 01       		.uleb128 0x1
+ 742 024f 50       		.byte	0x50
+ 743 0250 00       		.byte	0
+ 744 0251 08       		.uleb128 0x8
+ 745 0252 C0020000 		.4byte	.LASF30
+ 746 0256 01       		.byte	0x1
+ 747 0257 FD02     		.2byte	0x2fd
+ 748 0259 00000000 		.4byte	.LFB10
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 30
 
 
- 853 0273 00000000 		.4byte	.LLST0
- 854 0277 0F       		.uleb128 0xf
- 855 0278 41030000 		.4byte	.LASF37
- 856 027c 01       		.byte	0x1
- 857 027d 5D       		.byte	0x5d
- 858 027e 6B000000 		.4byte	0x6b
- 859 0282 13000000 		.4byte	.LLST1
- 860 0286 10       		.uleb128 0x10
- 861 0287 2C000000 		.4byte	.LVL11
- 862 028b E1000000 		.4byte	0xe1
- 863 028f 9B020000 		.4byte	0x29b
- 864 0293 11       		.uleb128 0x11
- 865 0294 01       		.uleb128 0x1
- 866 0295 50       		.byte	0x50
- 867 0296 03       		.uleb128 0x3
- 868 0297 0B       		.byte	0xb
- 869 0298 60EA     		.2byte	0xea60
- 870 029a 00       		.byte	0
- 871 029b 10       		.uleb128 0x10
- 872 029c 34000000 		.4byte	.LVL12
- 873 02a0 1C010000 		.4byte	0x11c
- 874 02a4 B0020000 		.4byte	0x2b0
- 875 02a8 11       		.uleb128 0x11
- 876 02a9 01       		.uleb128 0x1
- 877 02aa 50       		.byte	0x50
- 878 02ab 03       		.uleb128 0x3
- 879 02ac 0B       		.byte	0xb
- 880 02ad 60EA     		.2byte	0xea60
- 881 02af 00       		.byte	0
- 882 02b0 10       		.uleb128 0x10
- 883 02b1 3C000000 		.4byte	.LVL13
- 884 02b5 41010000 		.4byte	0x141
- 885 02b9 C5020000 		.4byte	0x2c5
- 886 02bd 11       		.uleb128 0x11
- 887 02be 01       		.uleb128 0x1
- 888 02bf 50       		.byte	0x50
- 889 02c0 03       		.uleb128 0x3
- 890 02c1 0A       		.byte	0xa
- 891 02c2 7017     		.2byte	0x1770
- 892 02c4 00       		.byte	0
- 893 02c5 10       		.uleb128 0x10
- 894 02c6 44000000 		.4byte	.LVL14
- 895 02ca 66010000 		.4byte	0x166
- 896 02ce DA020000 		.4byte	0x2da
- 897 02d2 11       		.uleb128 0x11
- 898 02d3 01       		.uleb128 0x1
- 899 02d4 50       		.byte	0x50
- 900 02d5 03       		.uleb128 0x3
- 901 02d6 0A       		.byte	0xa
- 902 02d7 7017     		.2byte	0x1770
- 903 02d9 00       		.byte	0
- 904 02da 10       		.uleb128 0x10
- 905 02db 4A000000 		.4byte	.LVL15
- 906 02df 8B010000 		.4byte	0x18b
- 907 02e3 ED020000 		.4byte	0x2ed
- 908 02e7 11       		.uleb128 0x11
- 909 02e8 01       		.uleb128 0x1
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 33
+ 749 025d 0C000000 		.4byte	.LFE10-.LFB10
+ 750 0261 01       		.uleb128 0x1
+ 751 0262 9C       		.byte	0x9c
+ 752 0263 76020000 		.4byte	0x276
+ 753 0267 09       		.uleb128 0x9
+ 754 0268 D3000000 		.4byte	.LASF31
+ 755 026c 01       		.byte	0x1
+ 756 026d FD02     		.2byte	0x2fd
+ 757 026f 6B000000 		.4byte	0x6b
+ 758 0273 01       		.uleb128 0x1
+ 759 0274 50       		.byte	0x50
+ 760 0275 00       		.byte	0
+ 761 0276 0A       		.uleb128 0xa
+ 762 0277 5C000000 		.4byte	.LASF33
+ 763 027b 01       		.byte	0x1
+ 764 027c 1603     		.2byte	0x316
+ 765 027e 76000000 		.4byte	0x76
+ 766 0282 00000000 		.4byte	.LFB11
+ 767 0286 0C000000 		.4byte	.LFE11-.LFB11
+ 768 028a 01       		.uleb128 0x1
+ 769 028b 9C       		.byte	0x9c
+ 770 028c 0A       		.uleb128 0xa
+ 771 028d A6000000 		.4byte	.LASF34
+ 772 0291 01       		.byte	0x1
+ 773 0292 4A03     		.2byte	0x34a
+ 774 0294 76000000 		.4byte	0x76
+ 775 0298 00000000 		.4byte	.LFB12
+ 776 029c 0C000000 		.4byte	.LFE12-.LFB12
+ 777 02a0 01       		.uleb128 0x1
+ 778 02a1 9C       		.byte	0x9c
+ 779 02a2 0A       		.uleb128 0xa
+ 780 02a3 DD020000 		.4byte	.LASF35
+ 781 02a7 01       		.byte	0x1
+ 782 02a8 5E03     		.2byte	0x35e
+ 783 02aa 76000000 		.4byte	0x76
+ 784 02ae 00000000 		.4byte	.LFB13
+ 785 02b2 0C000000 		.4byte	.LFE13-.LFB13
+ 786 02b6 01       		.uleb128 0x1
+ 787 02b7 9C       		.byte	0x9c
+ 788 02b8 0A       		.uleb128 0xa
+ 789 02b9 06000000 		.4byte	.LASF36
+ 790 02bd 01       		.byte	0x1
+ 791 02be 7403     		.2byte	0x374
+ 792 02c0 76000000 		.4byte	0x76
+ 793 02c4 00000000 		.4byte	.LFB14
+ 794 02c8 0C000000 		.4byte	.LFE14-.LFB14
+ 795 02cc 01       		.uleb128 0x1
+ 796 02cd 9C       		.byte	0x9c
+ 797 02ce 13       		.uleb128 0x13
+ 798 02cf 41010000 		.4byte	.LASF41
+ 799 02d3 01       		.byte	0x1
+ 800 02d4 20       		.byte	0x20
+ 801 02d5 6B000000 		.4byte	0x6b
+ 802 02d9 05       		.uleb128 0x5
+ 803 02da 03       		.byte	0x3
+ 804 02db 00000000 		.4byte	Servo_A_initVar
+ 805 02df 00       		.byte	0
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 31
 
 
- 910 02e9 50       		.byte	0x50
- 911 02ea 01       		.uleb128 0x1
- 912 02eb 30       		.byte	0x30
- 913 02ec 00       		.byte	0
- 914 02ed 0D       		.uleb128 0xd
- 915 02ee 4E000000 		.4byte	.LVL16
- 916 02f2 84030000 		.4byte	0x384
- 917 02f6 0D       		.uleb128 0xd
- 918 02f7 5A000000 		.4byte	.LVL17
- 919 02fb 8F030000 		.4byte	0x38f
- 920 02ff 0D       		.uleb128 0xd
- 921 0300 5E000000 		.4byte	.LVL18
- 922 0304 2A020000 		.4byte	0x22a
- 923 0308 00       		.byte	0
- 924 0309 0E       		.uleb128 0xe
- 925 030a 24010000 		.4byte	.LASF38
- 926 030e 01       		.byte	0x1
- 927 030f 37       		.byte	0x37
- 928 0310 00000000 		.4byte	.LFB0
- 929 0314 1C000000 		.4byte	.LFE0-.LFB0
- 930 0318 01       		.uleb128 0x1
- 931 0319 9C       		.byte	0x9c
- 932 031a 31030000 		.4byte	0x331
- 933 031e 0D       		.uleb128 0xd
- 934 031f 0C000000 		.4byte	.LVL19
- 935 0323 53020000 		.4byte	0x253
- 936 0327 0D       		.uleb128 0xd
- 937 0328 16000000 		.4byte	.LVL20
- 938 032c BF000000 		.4byte	0xbf
- 939 0330 00       		.byte	0
- 940 0331 0A       		.uleb128 0xa
- 941 0332 BD000000 		.4byte	.LASF39
- 942 0336 01       		.byte	0x1
- 943 0337 4A03     		.2byte	0x34a
- 944 0339 76000000 		.4byte	0x76
- 945 033d 00000000 		.4byte	.LFB15
- 946 0341 0C000000 		.4byte	.LFE15-.LFB15
- 947 0345 01       		.uleb128 0x1
- 948 0346 9C       		.byte	0x9c
- 949 0347 0A       		.uleb128 0xa
- 950 0348 75030000 		.4byte	.LASF40
- 951 034c 01       		.byte	0x1
- 952 034d 5E03     		.2byte	0x35e
- 953 034f 76000000 		.4byte	0x76
- 954 0353 00000000 		.4byte	.LFB16
- 955 0357 0C000000 		.4byte	.LFE16-.LFB16
- 956 035b 01       		.uleb128 0x1
- 957 035c 9C       		.byte	0x9c
- 958 035d 0A       		.uleb128 0xa
- 959 035e 06000000 		.4byte	.LASF41
- 960 0362 01       		.byte	0x1
- 961 0363 7403     		.2byte	0x374
- 962 0365 76000000 		.4byte	0x76
- 963 0369 00000000 		.4byte	.LFB17
- 964 036d 0C000000 		.4byte	.LFE17-.LFB17
- 965 0371 01       		.uleb128 0x1
- 966 0372 9C       		.byte	0x9c
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 34
+ 806              		.section	.debug_abbrev,"",%progbits
+ 807              	.Ldebug_abbrev0:
+ 808 0000 01       		.uleb128 0x1
+ 809 0001 11       		.uleb128 0x11
+ 810 0002 01       		.byte	0x1
+ 811 0003 25       		.uleb128 0x25
+ 812 0004 0E       		.uleb128 0xe
+ 813 0005 13       		.uleb128 0x13
+ 814 0006 0B       		.uleb128 0xb
+ 815 0007 03       		.uleb128 0x3
+ 816 0008 0E       		.uleb128 0xe
+ 817 0009 1B       		.uleb128 0x1b
+ 818 000a 0E       		.uleb128 0xe
+ 819 000b 55       		.uleb128 0x55
+ 820 000c 17       		.uleb128 0x17
+ 821 000d 11       		.uleb128 0x11
+ 822 000e 01       		.uleb128 0x1
+ 823 000f 10       		.uleb128 0x10
+ 824 0010 17       		.uleb128 0x17
+ 825 0011 00       		.byte	0
+ 826 0012 00       		.byte	0
+ 827 0013 02       		.uleb128 0x2
+ 828 0014 24       		.uleb128 0x24
+ 829 0015 00       		.byte	0
+ 830 0016 0B       		.uleb128 0xb
+ 831 0017 0B       		.uleb128 0xb
+ 832 0018 3E       		.uleb128 0x3e
+ 833 0019 0B       		.uleb128 0xb
+ 834 001a 03       		.uleb128 0x3
+ 835 001b 0E       		.uleb128 0xe
+ 836 001c 00       		.byte	0
+ 837 001d 00       		.byte	0
+ 838 001e 03       		.uleb128 0x3
+ 839 001f 24       		.uleb128 0x24
+ 840 0020 00       		.byte	0
+ 841 0021 0B       		.uleb128 0xb
+ 842 0022 0B       		.uleb128 0xb
+ 843 0023 3E       		.uleb128 0x3e
+ 844 0024 0B       		.uleb128 0xb
+ 845 0025 03       		.uleb128 0x3
+ 846 0026 08       		.uleb128 0x8
+ 847 0027 00       		.byte	0
+ 848 0028 00       		.byte	0
+ 849 0029 04       		.uleb128 0x4
+ 850 002a 16       		.uleb128 0x16
+ 851 002b 00       		.byte	0
+ 852 002c 03       		.uleb128 0x3
+ 853 002d 0E       		.uleb128 0xe
+ 854 002e 3A       		.uleb128 0x3a
+ 855 002f 0B       		.uleb128 0xb
+ 856 0030 3B       		.uleb128 0x3b
+ 857 0031 0B       		.uleb128 0xb
+ 858 0032 49       		.uleb128 0x49
+ 859 0033 13       		.uleb128 0x13
+ 860 0034 00       		.byte	0
+ 861 0035 00       		.byte	0
+ 862 0036 05       		.uleb128 0x5
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 32
 
 
- 967 0373 12       		.uleb128 0x12
- 968 0374 A0010000 		.4byte	.LASF46
- 969 0378 01       		.byte	0x1
- 970 0379 20       		.byte	0x20
- 971 037a 6B000000 		.4byte	0x6b
- 972 037e 05       		.uleb128 0x5
- 973 037f 03       		.byte	0x3
- 974 0380 00000000 		.4byte	Servo_A_initVar
- 975 0384 13       		.uleb128 0x13
- 976 0385 32010000 		.4byte	.LASF47
- 977 0389 03       		.byte	0x3
- 978 038a 7E       		.byte	0x7e
- 979 038b 6B000000 		.4byte	0x6b
- 980 038f 14       		.uleb128 0x14
- 981 0390 6F010000 		.4byte	.LASF48
- 982 0394 03       		.byte	0x3
- 983 0395 7F       		.byte	0x7f
- 984 0396 15       		.uleb128 0x15
- 985 0397 6B000000 		.4byte	0x6b
- 986 039b 00       		.byte	0
- 987 039c 00       		.byte	0
- 988              		.section	.debug_abbrev,"",%progbits
- 989              	.Ldebug_abbrev0:
- 990 0000 01       		.uleb128 0x1
- 991 0001 11       		.uleb128 0x11
- 992 0002 01       		.byte	0x1
- 993 0003 25       		.uleb128 0x25
- 994 0004 0E       		.uleb128 0xe
- 995 0005 13       		.uleb128 0x13
- 996 0006 0B       		.uleb128 0xb
- 997 0007 03       		.uleb128 0x3
- 998 0008 0E       		.uleb128 0xe
- 999 0009 1B       		.uleb128 0x1b
- 1000 000a 0E       		.uleb128 0xe
- 1001 000b 55       		.uleb128 0x55
- 1002 000c 17       		.uleb128 0x17
- 1003 000d 11       		.uleb128 0x11
- 1004 000e 01       		.uleb128 0x1
- 1005 000f 10       		.uleb128 0x10
- 1006 0010 17       		.uleb128 0x17
- 1007 0011 00       		.byte	0
- 1008 0012 00       		.byte	0
- 1009 0013 02       		.uleb128 0x2
- 1010 0014 24       		.uleb128 0x24
- 1011 0015 00       		.byte	0
- 1012 0016 0B       		.uleb128 0xb
- 1013 0017 0B       		.uleb128 0xb
- 1014 0018 3E       		.uleb128 0x3e
- 1015 0019 0B       		.uleb128 0xb
- 1016 001a 03       		.uleb128 0x3
- 1017 001b 0E       		.uleb128 0xe
- 1018 001c 00       		.byte	0
- 1019 001d 00       		.byte	0
- 1020 001e 03       		.uleb128 0x3
- 1021 001f 24       		.uleb128 0x24
- 1022 0020 00       		.byte	0
- 1023 0021 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 35
+ 863 0037 16       		.uleb128 0x16
+ 864 0038 00       		.byte	0
+ 865 0039 03       		.uleb128 0x3
+ 866 003a 0E       		.uleb128 0xe
+ 867 003b 3A       		.uleb128 0x3a
+ 868 003c 0B       		.uleb128 0xb
+ 869 003d 3B       		.uleb128 0x3b
+ 870 003e 05       		.uleb128 0x5
+ 871 003f 49       		.uleb128 0x49
+ 872 0040 13       		.uleb128 0x13
+ 873 0041 00       		.byte	0
+ 874 0042 00       		.byte	0
+ 875 0043 06       		.uleb128 0x6
+ 876 0044 35       		.uleb128 0x35
+ 877 0045 00       		.byte	0
+ 878 0046 49       		.uleb128 0x49
+ 879 0047 13       		.uleb128 0x13
+ 880 0048 00       		.byte	0
+ 881 0049 00       		.byte	0
+ 882 004a 07       		.uleb128 0x7
+ 883 004b 2E       		.uleb128 0x2e
+ 884 004c 00       		.byte	0
+ 885 004d 3F       		.uleb128 0x3f
+ 886 004e 19       		.uleb128 0x19
+ 887 004f 03       		.uleb128 0x3
+ 888 0050 0E       		.uleb128 0xe
+ 889 0051 3A       		.uleb128 0x3a
+ 890 0052 0B       		.uleb128 0xb
+ 891 0053 3B       		.uleb128 0x3b
+ 892 0054 0B       		.uleb128 0xb
+ 893 0055 27       		.uleb128 0x27
+ 894 0056 19       		.uleb128 0x19
+ 895 0057 11       		.uleb128 0x11
+ 896 0058 01       		.uleb128 0x1
+ 897 0059 12       		.uleb128 0x12
+ 898 005a 06       		.uleb128 0x6
+ 899 005b 40       		.uleb128 0x40
+ 900 005c 18       		.uleb128 0x18
+ 901 005d 9742     		.uleb128 0x2117
+ 902 005f 19       		.uleb128 0x19
+ 903 0060 00       		.byte	0
+ 904 0061 00       		.byte	0
+ 905 0062 08       		.uleb128 0x8
+ 906 0063 2E       		.uleb128 0x2e
+ 907 0064 01       		.byte	0x1
+ 908 0065 3F       		.uleb128 0x3f
+ 909 0066 19       		.uleb128 0x19
+ 910 0067 03       		.uleb128 0x3
+ 911 0068 0E       		.uleb128 0xe
+ 912 0069 3A       		.uleb128 0x3a
+ 913 006a 0B       		.uleb128 0xb
+ 914 006b 3B       		.uleb128 0x3b
+ 915 006c 05       		.uleb128 0x5
+ 916 006d 27       		.uleb128 0x27
+ 917 006e 19       		.uleb128 0x19
+ 918 006f 11       		.uleb128 0x11
+ 919 0070 01       		.uleb128 0x1
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 33
 
 
- 1024 0022 0B       		.uleb128 0xb
- 1025 0023 3E       		.uleb128 0x3e
- 1026 0024 0B       		.uleb128 0xb
- 1027 0025 03       		.uleb128 0x3
- 1028 0026 08       		.uleb128 0x8
- 1029 0027 00       		.byte	0
- 1030 0028 00       		.byte	0
- 1031 0029 04       		.uleb128 0x4
- 1032 002a 16       		.uleb128 0x16
- 1033 002b 00       		.byte	0
- 1034 002c 03       		.uleb128 0x3
- 1035 002d 0E       		.uleb128 0xe
- 1036 002e 3A       		.uleb128 0x3a
- 1037 002f 0B       		.uleb128 0xb
- 1038 0030 3B       		.uleb128 0x3b
- 1039 0031 0B       		.uleb128 0xb
- 1040 0032 49       		.uleb128 0x49
- 1041 0033 13       		.uleb128 0x13
- 1042 0034 00       		.byte	0
- 1043 0035 00       		.byte	0
- 1044 0036 05       		.uleb128 0x5
- 1045 0037 16       		.uleb128 0x16
- 1046 0038 00       		.byte	0
- 1047 0039 03       		.uleb128 0x3
- 1048 003a 0E       		.uleb128 0xe
- 1049 003b 3A       		.uleb128 0x3a
- 1050 003c 0B       		.uleb128 0xb
- 1051 003d 3B       		.uleb128 0x3b
- 1052 003e 05       		.uleb128 0x5
- 1053 003f 49       		.uleb128 0x49
- 1054 0040 13       		.uleb128 0x13
- 1055 0041 00       		.byte	0
- 1056 0042 00       		.byte	0
- 1057 0043 06       		.uleb128 0x6
- 1058 0044 35       		.uleb128 0x35
- 1059 0045 00       		.byte	0
- 1060 0046 49       		.uleb128 0x49
- 1061 0047 13       		.uleb128 0x13
- 1062 0048 00       		.byte	0
- 1063 0049 00       		.byte	0
- 1064 004a 07       		.uleb128 0x7
- 1065 004b 2E       		.uleb128 0x2e
- 1066 004c 00       		.byte	0
- 1067 004d 3F       		.uleb128 0x3f
- 1068 004e 19       		.uleb128 0x19
- 1069 004f 03       		.uleb128 0x3
- 1070 0050 0E       		.uleb128 0xe
- 1071 0051 3A       		.uleb128 0x3a
- 1072 0052 0B       		.uleb128 0xb
- 1073 0053 3B       		.uleb128 0x3b
- 1074 0054 0B       		.uleb128 0xb
- 1075 0055 27       		.uleb128 0x27
- 1076 0056 19       		.uleb128 0x19
- 1077 0057 11       		.uleb128 0x11
- 1078 0058 01       		.uleb128 0x1
- 1079 0059 12       		.uleb128 0x12
- 1080 005a 06       		.uleb128 0x6
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 36
+ 920 0071 12       		.uleb128 0x12
+ 921 0072 06       		.uleb128 0x6
+ 922 0073 40       		.uleb128 0x40
+ 923 0074 18       		.uleb128 0x18
+ 924 0075 9742     		.uleb128 0x2117
+ 925 0077 19       		.uleb128 0x19
+ 926 0078 01       		.uleb128 0x1
+ 927 0079 13       		.uleb128 0x13
+ 928 007a 00       		.byte	0
+ 929 007b 00       		.byte	0
+ 930 007c 09       		.uleb128 0x9
+ 931 007d 05       		.uleb128 0x5
+ 932 007e 00       		.byte	0
+ 933 007f 03       		.uleb128 0x3
+ 934 0080 0E       		.uleb128 0xe
+ 935 0081 3A       		.uleb128 0x3a
+ 936 0082 0B       		.uleb128 0xb
+ 937 0083 3B       		.uleb128 0x3b
+ 938 0084 05       		.uleb128 0x5
+ 939 0085 49       		.uleb128 0x49
+ 940 0086 13       		.uleb128 0x13
+ 941 0087 02       		.uleb128 0x2
+ 942 0088 18       		.uleb128 0x18
+ 943 0089 00       		.byte	0
+ 944 008a 00       		.byte	0
+ 945 008b 0A       		.uleb128 0xa
+ 946 008c 2E       		.uleb128 0x2e
+ 947 008d 00       		.byte	0
+ 948 008e 3F       		.uleb128 0x3f
+ 949 008f 19       		.uleb128 0x19
+ 950 0090 03       		.uleb128 0x3
+ 951 0091 0E       		.uleb128 0xe
+ 952 0092 3A       		.uleb128 0x3a
+ 953 0093 0B       		.uleb128 0xb
+ 954 0094 3B       		.uleb128 0x3b
+ 955 0095 05       		.uleb128 0x5
+ 956 0096 27       		.uleb128 0x27
+ 957 0097 19       		.uleb128 0x19
+ 958 0098 49       		.uleb128 0x49
+ 959 0099 13       		.uleb128 0x13
+ 960 009a 11       		.uleb128 0x11
+ 961 009b 01       		.uleb128 0x1
+ 962 009c 12       		.uleb128 0x12
+ 963 009d 06       		.uleb128 0x6
+ 964 009e 40       		.uleb128 0x40
+ 965 009f 18       		.uleb128 0x18
+ 966 00a0 9742     		.uleb128 0x2117
+ 967 00a2 19       		.uleb128 0x19
+ 968 00a3 00       		.byte	0
+ 969 00a4 00       		.byte	0
+ 970 00a5 0B       		.uleb128 0xb
+ 971 00a6 2E       		.uleb128 0x2e
+ 972 00a7 01       		.byte	0x1
+ 973 00a8 3F       		.uleb128 0x3f
+ 974 00a9 19       		.uleb128 0x19
+ 975 00aa 03       		.uleb128 0x3
+ 976 00ab 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 34
 
 
- 1081 005b 40       		.uleb128 0x40
- 1082 005c 18       		.uleb128 0x18
- 1083 005d 9742     		.uleb128 0x2117
- 1084 005f 19       		.uleb128 0x19
- 1085 0060 00       		.byte	0
- 1086 0061 00       		.byte	0
- 1087 0062 08       		.uleb128 0x8
- 1088 0063 2E       		.uleb128 0x2e
- 1089 0064 01       		.byte	0x1
- 1090 0065 3F       		.uleb128 0x3f
- 1091 0066 19       		.uleb128 0x19
- 1092 0067 03       		.uleb128 0x3
- 1093 0068 0E       		.uleb128 0xe
- 1094 0069 3A       		.uleb128 0x3a
- 1095 006a 0B       		.uleb128 0xb
- 1096 006b 3B       		.uleb128 0x3b
- 1097 006c 05       		.uleb128 0x5
- 1098 006d 27       		.uleb128 0x27
- 1099 006e 19       		.uleb128 0x19
- 1100 006f 11       		.uleb128 0x11
- 1101 0070 01       		.uleb128 0x1
- 1102 0071 12       		.uleb128 0x12
- 1103 0072 06       		.uleb128 0x6
- 1104 0073 40       		.uleb128 0x40
- 1105 0074 18       		.uleb128 0x18
- 1106 0075 9742     		.uleb128 0x2117
- 1107 0077 19       		.uleb128 0x19
- 1108 0078 01       		.uleb128 0x1
- 1109 0079 13       		.uleb128 0x13
- 1110 007a 00       		.byte	0
- 1111 007b 00       		.byte	0
- 1112 007c 09       		.uleb128 0x9
- 1113 007d 05       		.uleb128 0x5
- 1114 007e 00       		.byte	0
- 1115 007f 03       		.uleb128 0x3
- 1116 0080 0E       		.uleb128 0xe
- 1117 0081 3A       		.uleb128 0x3a
- 1118 0082 0B       		.uleb128 0xb
- 1119 0083 3B       		.uleb128 0x3b
- 1120 0084 05       		.uleb128 0x5
- 1121 0085 49       		.uleb128 0x49
- 1122 0086 13       		.uleb128 0x13
- 1123 0087 02       		.uleb128 0x2
- 1124 0088 18       		.uleb128 0x18
- 1125 0089 00       		.byte	0
- 1126 008a 00       		.byte	0
- 1127 008b 0A       		.uleb128 0xa
- 1128 008c 2E       		.uleb128 0x2e
- 1129 008d 00       		.byte	0
- 1130 008e 3F       		.uleb128 0x3f
- 1131 008f 19       		.uleb128 0x19
- 1132 0090 03       		.uleb128 0x3
- 1133 0091 0E       		.uleb128 0xe
- 1134 0092 3A       		.uleb128 0x3a
- 1135 0093 0B       		.uleb128 0xb
- 1136 0094 3B       		.uleb128 0x3b
- 1137 0095 05       		.uleb128 0x5
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 37
+ 977 00ac 3A       		.uleb128 0x3a
+ 978 00ad 0B       		.uleb128 0xb
+ 979 00ae 3B       		.uleb128 0x3b
+ 980 00af 0B       		.uleb128 0xb
+ 981 00b0 27       		.uleb128 0x27
+ 982 00b1 19       		.uleb128 0x19
+ 983 00b2 11       		.uleb128 0x11
+ 984 00b3 01       		.uleb128 0x1
+ 985 00b4 12       		.uleb128 0x12
+ 986 00b5 06       		.uleb128 0x6
+ 987 00b6 40       		.uleb128 0x40
+ 988 00b7 18       		.uleb128 0x18
+ 989 00b8 9742     		.uleb128 0x2117
+ 990 00ba 19       		.uleb128 0x19
+ 991 00bb 01       		.uleb128 0x1
+ 992 00bc 13       		.uleb128 0x13
+ 993 00bd 00       		.byte	0
+ 994 00be 00       		.byte	0
+ 995 00bf 0C       		.uleb128 0xc
+ 996 00c0 34       		.uleb128 0x34
+ 997 00c1 00       		.byte	0
+ 998 00c2 03       		.uleb128 0x3
+ 999 00c3 0E       		.uleb128 0xe
+ 1000 00c4 3A       		.uleb128 0x3a
+ 1001 00c5 0B       		.uleb128 0xb
+ 1002 00c6 3B       		.uleb128 0x3b
+ 1003 00c7 0B       		.uleb128 0xb
+ 1004 00c8 49       		.uleb128 0x49
+ 1005 00c9 13       		.uleb128 0x13
+ 1006 00ca 02       		.uleb128 0x2
+ 1007 00cb 17       		.uleb128 0x17
+ 1008 00cc 00       		.byte	0
+ 1009 00cd 00       		.byte	0
+ 1010 00ce 0D       		.uleb128 0xd
+ 1011 00cf 898201   		.uleb128 0x4109
+ 1012 00d2 01       		.byte	0x1
+ 1013 00d3 11       		.uleb128 0x11
+ 1014 00d4 01       		.uleb128 0x1
+ 1015 00d5 31       		.uleb128 0x31
+ 1016 00d6 13       		.uleb128 0x13
+ 1017 00d7 01       		.uleb128 0x1
+ 1018 00d8 13       		.uleb128 0x13
+ 1019 00d9 00       		.byte	0
+ 1020 00da 00       		.byte	0
+ 1021 00db 0E       		.uleb128 0xe
+ 1022 00dc 8A8201   		.uleb128 0x410a
+ 1023 00df 00       		.byte	0
+ 1024 00e0 02       		.uleb128 0x2
+ 1025 00e1 18       		.uleb128 0x18
+ 1026 00e2 9142     		.uleb128 0x2111
+ 1027 00e4 18       		.uleb128 0x18
+ 1028 00e5 00       		.byte	0
+ 1029 00e6 00       		.byte	0
+ 1030 00e7 0F       		.uleb128 0xf
+ 1031 00e8 898201   		.uleb128 0x4109
+ 1032 00eb 01       		.byte	0x1
+ 1033 00ec 11       		.uleb128 0x11
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 35
 
 
- 1138 0096 27       		.uleb128 0x27
- 1139 0097 19       		.uleb128 0x19
- 1140 0098 49       		.uleb128 0x49
- 1141 0099 13       		.uleb128 0x13
- 1142 009a 11       		.uleb128 0x11
- 1143 009b 01       		.uleb128 0x1
- 1144 009c 12       		.uleb128 0x12
- 1145 009d 06       		.uleb128 0x6
- 1146 009e 40       		.uleb128 0x40
- 1147 009f 18       		.uleb128 0x18
- 1148 00a0 9742     		.uleb128 0x2117
- 1149 00a2 19       		.uleb128 0x19
- 1150 00a3 00       		.byte	0
- 1151 00a4 00       		.byte	0
- 1152 00a5 0B       		.uleb128 0xb
- 1153 00a6 2E       		.uleb128 0x2e
- 1154 00a7 01       		.byte	0x1
- 1155 00a8 3F       		.uleb128 0x3f
- 1156 00a9 19       		.uleb128 0x19
- 1157 00aa 03       		.uleb128 0x3
- 1158 00ab 0E       		.uleb128 0xe
- 1159 00ac 3A       		.uleb128 0x3a
- 1160 00ad 0B       		.uleb128 0xb
- 1161 00ae 3B       		.uleb128 0x3b
- 1162 00af 05       		.uleb128 0x5
- 1163 00b0 27       		.uleb128 0x27
- 1164 00b1 19       		.uleb128 0x19
- 1165 00b2 49       		.uleb128 0x49
- 1166 00b3 13       		.uleb128 0x13
- 1167 00b4 11       		.uleb128 0x11
- 1168 00b5 01       		.uleb128 0x1
- 1169 00b6 12       		.uleb128 0x12
- 1170 00b7 06       		.uleb128 0x6
- 1171 00b8 40       		.uleb128 0x40
- 1172 00b9 18       		.uleb128 0x18
- 1173 00ba 9742     		.uleb128 0x2117
- 1174 00bc 19       		.uleb128 0x19
- 1175 00bd 01       		.uleb128 0x1
- 1176 00be 13       		.uleb128 0x13
- 1177 00bf 00       		.byte	0
- 1178 00c0 00       		.byte	0
- 1179 00c1 0C       		.uleb128 0xc
- 1180 00c2 34       		.uleb128 0x34
- 1181 00c3 00       		.byte	0
- 1182 00c4 03       		.uleb128 0x3
- 1183 00c5 0E       		.uleb128 0xe
- 1184 00c6 3A       		.uleb128 0x3a
- 1185 00c7 0B       		.uleb128 0xb
- 1186 00c8 3B       		.uleb128 0x3b
- 1187 00c9 05       		.uleb128 0x5
- 1188 00ca 49       		.uleb128 0x49
- 1189 00cb 13       		.uleb128 0x13
- 1190 00cc 02       		.uleb128 0x2
- 1191 00cd 18       		.uleb128 0x18
- 1192 00ce 00       		.byte	0
- 1193 00cf 00       		.byte	0
- 1194 00d0 0D       		.uleb128 0xd
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 38
+ 1034 00ed 01       		.uleb128 0x1
+ 1035 00ee 31       		.uleb128 0x31
+ 1036 00ef 13       		.uleb128 0x13
+ 1037 00f0 00       		.byte	0
+ 1038 00f1 00       		.byte	0
+ 1039 00f2 10       		.uleb128 0x10
+ 1040 00f3 898201   		.uleb128 0x4109
+ 1041 00f6 00       		.byte	0
+ 1042 00f7 11       		.uleb128 0x11
+ 1043 00f8 01       		.uleb128 0x1
+ 1044 00f9 31       		.uleb128 0x31
+ 1045 00fa 13       		.uleb128 0x13
+ 1046 00fb 00       		.byte	0
+ 1047 00fc 00       		.byte	0
+ 1048 00fd 11       		.uleb128 0x11
+ 1049 00fe 2E       		.uleb128 0x2e
+ 1050 00ff 01       		.byte	0x1
+ 1051 0100 3F       		.uleb128 0x3f
+ 1052 0101 19       		.uleb128 0x19
+ 1053 0102 03       		.uleb128 0x3
+ 1054 0103 0E       		.uleb128 0xe
+ 1055 0104 3A       		.uleb128 0x3a
+ 1056 0105 0B       		.uleb128 0xb
+ 1057 0106 3B       		.uleb128 0x3b
+ 1058 0107 05       		.uleb128 0x5
+ 1059 0108 27       		.uleb128 0x27
+ 1060 0109 19       		.uleb128 0x19
+ 1061 010a 49       		.uleb128 0x49
+ 1062 010b 13       		.uleb128 0x13
+ 1063 010c 11       		.uleb128 0x11
+ 1064 010d 01       		.uleb128 0x1
+ 1065 010e 12       		.uleb128 0x12
+ 1066 010f 06       		.uleb128 0x6
+ 1067 0110 40       		.uleb128 0x40
+ 1068 0111 18       		.uleb128 0x18
+ 1069 0112 9742     		.uleb128 0x2117
+ 1070 0114 19       		.uleb128 0x19
+ 1071 0115 01       		.uleb128 0x1
+ 1072 0116 13       		.uleb128 0x13
+ 1073 0117 00       		.byte	0
+ 1074 0118 00       		.byte	0
+ 1075 0119 12       		.uleb128 0x12
+ 1076 011a 34       		.uleb128 0x34
+ 1077 011b 00       		.byte	0
+ 1078 011c 03       		.uleb128 0x3
+ 1079 011d 0E       		.uleb128 0xe
+ 1080 011e 3A       		.uleb128 0x3a
+ 1081 011f 0B       		.uleb128 0xb
+ 1082 0120 3B       		.uleb128 0x3b
+ 1083 0121 05       		.uleb128 0x5
+ 1084 0122 49       		.uleb128 0x49
+ 1085 0123 13       		.uleb128 0x13
+ 1086 0124 02       		.uleb128 0x2
+ 1087 0125 18       		.uleb128 0x18
+ 1088 0126 00       		.byte	0
+ 1089 0127 00       		.byte	0
+ 1090 0128 13       		.uleb128 0x13
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 36
 
 
- 1195 00d1 898201   		.uleb128 0x4109
- 1196 00d4 00       		.byte	0
- 1197 00d5 11       		.uleb128 0x11
- 1198 00d6 01       		.uleb128 0x1
- 1199 00d7 31       		.uleb128 0x31
- 1200 00d8 13       		.uleb128 0x13
- 1201 00d9 00       		.byte	0
- 1202 00da 00       		.byte	0
- 1203 00db 0E       		.uleb128 0xe
- 1204 00dc 2E       		.uleb128 0x2e
- 1205 00dd 01       		.byte	0x1
- 1206 00de 3F       		.uleb128 0x3f
- 1207 00df 19       		.uleb128 0x19
- 1208 00e0 03       		.uleb128 0x3
- 1209 00e1 0E       		.uleb128 0xe
- 1210 00e2 3A       		.uleb128 0x3a
- 1211 00e3 0B       		.uleb128 0xb
- 1212 00e4 3B       		.uleb128 0x3b
- 1213 00e5 0B       		.uleb128 0xb
- 1214 00e6 27       		.uleb128 0x27
- 1215 00e7 19       		.uleb128 0x19
- 1216 00e8 11       		.uleb128 0x11
- 1217 00e9 01       		.uleb128 0x1
- 1218 00ea 12       		.uleb128 0x12
- 1219 00eb 06       		.uleb128 0x6
- 1220 00ec 40       		.uleb128 0x40
- 1221 00ed 18       		.uleb128 0x18
- 1222 00ee 9742     		.uleb128 0x2117
- 1223 00f0 19       		.uleb128 0x19
- 1224 00f1 01       		.uleb128 0x1
- 1225 00f2 13       		.uleb128 0x13
- 1226 00f3 00       		.byte	0
- 1227 00f4 00       		.byte	0
- 1228 00f5 0F       		.uleb128 0xf
- 1229 00f6 34       		.uleb128 0x34
- 1230 00f7 00       		.byte	0
- 1231 00f8 03       		.uleb128 0x3
- 1232 00f9 0E       		.uleb128 0xe
- 1233 00fa 3A       		.uleb128 0x3a
- 1234 00fb 0B       		.uleb128 0xb
- 1235 00fc 3B       		.uleb128 0x3b
- 1236 00fd 0B       		.uleb128 0xb
- 1237 00fe 49       		.uleb128 0x49
- 1238 00ff 13       		.uleb128 0x13
- 1239 0100 02       		.uleb128 0x2
- 1240 0101 17       		.uleb128 0x17
- 1241 0102 00       		.byte	0
- 1242 0103 00       		.byte	0
- 1243 0104 10       		.uleb128 0x10
- 1244 0105 898201   		.uleb128 0x4109
- 1245 0108 01       		.byte	0x1
- 1246 0109 11       		.uleb128 0x11
- 1247 010a 01       		.uleb128 0x1
- 1248 010b 31       		.uleb128 0x31
- 1249 010c 13       		.uleb128 0x13
- 1250 010d 01       		.uleb128 0x1
- 1251 010e 13       		.uleb128 0x13
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 39
+ 1091 0129 34       		.uleb128 0x34
+ 1092 012a 00       		.byte	0
+ 1093 012b 03       		.uleb128 0x3
+ 1094 012c 0E       		.uleb128 0xe
+ 1095 012d 3A       		.uleb128 0x3a
+ 1096 012e 0B       		.uleb128 0xb
+ 1097 012f 3B       		.uleb128 0x3b
+ 1098 0130 0B       		.uleb128 0xb
+ 1099 0131 49       		.uleb128 0x49
+ 1100 0132 13       		.uleb128 0x13
+ 1101 0133 3F       		.uleb128 0x3f
+ 1102 0134 19       		.uleb128 0x19
+ 1103 0135 02       		.uleb128 0x2
+ 1104 0136 18       		.uleb128 0x18
+ 1105 0137 00       		.byte	0
+ 1106 0138 00       		.byte	0
+ 1107 0139 00       		.byte	0
+ 1108              		.section	.debug_loc,"",%progbits
+ 1109              	.Ldebug_loc0:
+ 1110              	.LLST0:
+ 1111 0000 0A000000 		.4byte	.LVL4
+ 1112 0004 0E000000 		.4byte	.LVL5
+ 1113 0008 0100     		.2byte	0x1
+ 1114 000a 52       		.byte	0x52
+ 1115 000b 00000000 		.4byte	0
+ 1116 000f 00000000 		.4byte	0
+ 1117              		.section	.debug_aranges,"",%progbits
+ 1118 0000 8C000000 		.4byte	0x8c
+ 1119 0004 0200     		.2byte	0x2
+ 1120 0006 00000000 		.4byte	.Ldebug_info0
+ 1121 000a 04       		.byte	0x4
+ 1122 000b 00       		.byte	0
+ 1123 000c 0000     		.2byte	0
+ 1124 000e 0000     		.2byte	0
+ 1125 0010 00000000 		.4byte	.LFB2
+ 1126 0014 10000000 		.4byte	.LFE2-.LFB2
+ 1127 0018 00000000 		.4byte	.LFB3
+ 1128 001c 10000000 		.4byte	.LFE3-.LFB3
+ 1129 0020 00000000 		.4byte	.LFB4
+ 1130 0024 0C000000 		.4byte	.LFE4-.LFB4
+ 1131 0028 00000000 		.4byte	.LFB5
+ 1132 002c 14000000 		.4byte	.LFE5-.LFB5
+ 1133 0030 00000000 		.4byte	.LFB6
+ 1134 0034 0C000000 		.4byte	.LFE6-.LFB6
+ 1135 0038 00000000 		.4byte	.LFB7
+ 1136 003c 0C000000 		.4byte	.LFE7-.LFB7
+ 1137 0040 00000000 		.4byte	.LFB8
+ 1138 0044 0C000000 		.4byte	.LFE8-.LFB8
+ 1139 0048 00000000 		.4byte	.LFB1
+ 1140 004c 4C000000 		.4byte	.LFE1-.LFB1
+ 1141 0050 00000000 		.4byte	.LFB0
+ 1142 0054 1C000000 		.4byte	.LFE0-.LFB0
+ 1143 0058 00000000 		.4byte	.LFB9
+ 1144 005c 0C000000 		.4byte	.LFE9-.LFB9
+ 1145 0060 00000000 		.4byte	.LFB10
+ 1146 0064 0C000000 		.4byte	.LFE10-.LFB10
+ 1147 0068 00000000 		.4byte	.LFB11
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 37
 
 
- 1252 010f 00       		.byte	0
- 1253 0110 00       		.byte	0
- 1254 0111 11       		.uleb128 0x11
- 1255 0112 8A8201   		.uleb128 0x410a
- 1256 0115 00       		.byte	0
- 1257 0116 02       		.uleb128 0x2
- 1258 0117 18       		.uleb128 0x18
- 1259 0118 9142     		.uleb128 0x2111
- 1260 011a 18       		.uleb128 0x18
- 1261 011b 00       		.byte	0
- 1262 011c 00       		.byte	0
- 1263 011d 12       		.uleb128 0x12
- 1264 011e 34       		.uleb128 0x34
- 1265 011f 00       		.byte	0
- 1266 0120 03       		.uleb128 0x3
- 1267 0121 0E       		.uleb128 0xe
- 1268 0122 3A       		.uleb128 0x3a
- 1269 0123 0B       		.uleb128 0xb
- 1270 0124 3B       		.uleb128 0x3b
- 1271 0125 0B       		.uleb128 0xb
- 1272 0126 49       		.uleb128 0x49
- 1273 0127 13       		.uleb128 0x13
- 1274 0128 3F       		.uleb128 0x3f
- 1275 0129 19       		.uleb128 0x19
- 1276 012a 02       		.uleb128 0x2
- 1277 012b 18       		.uleb128 0x18
- 1278 012c 00       		.byte	0
- 1279 012d 00       		.byte	0
- 1280 012e 13       		.uleb128 0x13
- 1281 012f 2E       		.uleb128 0x2e
- 1282 0130 00       		.byte	0
- 1283 0131 3F       		.uleb128 0x3f
- 1284 0132 19       		.uleb128 0x19
- 1285 0133 03       		.uleb128 0x3
- 1286 0134 0E       		.uleb128 0xe
- 1287 0135 3A       		.uleb128 0x3a
- 1288 0136 0B       		.uleb128 0xb
- 1289 0137 3B       		.uleb128 0x3b
- 1290 0138 0B       		.uleb128 0xb
- 1291 0139 27       		.uleb128 0x27
- 1292 013a 19       		.uleb128 0x19
- 1293 013b 49       		.uleb128 0x49
- 1294 013c 13       		.uleb128 0x13
- 1295 013d 3C       		.uleb128 0x3c
- 1296 013e 19       		.uleb128 0x19
- 1297 013f 00       		.byte	0
- 1298 0140 00       		.byte	0
- 1299 0141 14       		.uleb128 0x14
- 1300 0142 2E       		.uleb128 0x2e
- 1301 0143 01       		.byte	0x1
- 1302 0144 3F       		.uleb128 0x3f
- 1303 0145 19       		.uleb128 0x19
- 1304 0146 03       		.uleb128 0x3
- 1305 0147 0E       		.uleb128 0xe
- 1306 0148 3A       		.uleb128 0x3a
- 1307 0149 0B       		.uleb128 0xb
- 1308 014a 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 40
+ 1148 006c 0C000000 		.4byte	.LFE11-.LFB11
+ 1149 0070 00000000 		.4byte	.LFB12
+ 1150 0074 0C000000 		.4byte	.LFE12-.LFB12
+ 1151 0078 00000000 		.4byte	.LFB13
+ 1152 007c 0C000000 		.4byte	.LFE13-.LFB13
+ 1153 0080 00000000 		.4byte	.LFB14
+ 1154 0084 0C000000 		.4byte	.LFE14-.LFB14
+ 1155 0088 00000000 		.4byte	0
+ 1156 008c 00000000 		.4byte	0
+ 1157              		.section	.debug_ranges,"",%progbits
+ 1158              	.Ldebug_ranges0:
+ 1159 0000 00000000 		.4byte	.LFB2
+ 1160 0004 10000000 		.4byte	.LFE2
+ 1161 0008 00000000 		.4byte	.LFB3
+ 1162 000c 10000000 		.4byte	.LFE3
+ 1163 0010 00000000 		.4byte	.LFB4
+ 1164 0014 0C000000 		.4byte	.LFE4
+ 1165 0018 00000000 		.4byte	.LFB5
+ 1166 001c 14000000 		.4byte	.LFE5
+ 1167 0020 00000000 		.4byte	.LFB6
+ 1168 0024 0C000000 		.4byte	.LFE6
+ 1169 0028 00000000 		.4byte	.LFB7
+ 1170 002c 0C000000 		.4byte	.LFE7
+ 1171 0030 00000000 		.4byte	.LFB8
+ 1172 0034 0C000000 		.4byte	.LFE8
+ 1173 0038 00000000 		.4byte	.LFB1
+ 1174 003c 4C000000 		.4byte	.LFE1
+ 1175 0040 00000000 		.4byte	.LFB0
+ 1176 0044 1C000000 		.4byte	.LFE0
+ 1177 0048 00000000 		.4byte	.LFB9
+ 1178 004c 0C000000 		.4byte	.LFE9
+ 1179 0050 00000000 		.4byte	.LFB10
+ 1180 0054 0C000000 		.4byte	.LFE10
+ 1181 0058 00000000 		.4byte	.LFB11
+ 1182 005c 0C000000 		.4byte	.LFE11
+ 1183 0060 00000000 		.4byte	.LFB12
+ 1184 0064 0C000000 		.4byte	.LFE12
+ 1185 0068 00000000 		.4byte	.LFB13
+ 1186 006c 0C000000 		.4byte	.LFE13
+ 1187 0070 00000000 		.4byte	.LFB14
+ 1188 0074 0C000000 		.4byte	.LFE14
+ 1189 0078 00000000 		.4byte	0
+ 1190 007c 00000000 		.4byte	0
+ 1191              		.section	.debug_line,"",%progbits
+ 1192              	.Ldebug_line0:
+ 1193 0000 61010000 		.section	.debug_str,"MS",%progbits,1
+ 1193      02004600 
+ 1193      00000201 
+ 1193      FB0E0D00 
+ 1193      01010101 
+ 1194              	.LASF15:
+ 1195 0000 72656731 		.ascii	"reg16\000"
+ 1195      3600
+ 1196              	.LASF36:
+ 1197 0006 53657276 		.ascii	"Servo_A_ReadPeriod\000"
+ 1197      6F5F415F 
+ 1197      52656164 
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 38
 
 
- 1309 014b 0B       		.uleb128 0xb
- 1310 014c 27       		.uleb128 0x27
- 1311 014d 19       		.uleb128 0x19
- 1312 014e 3C       		.uleb128 0x3c
- 1313 014f 19       		.uleb128 0x19
- 1314 0150 00       		.byte	0
- 1315 0151 00       		.byte	0
- 1316 0152 15       		.uleb128 0x15
- 1317 0153 05       		.uleb128 0x5
- 1318 0154 00       		.byte	0
- 1319 0155 49       		.uleb128 0x49
- 1320 0156 13       		.uleb128 0x13
- 1321 0157 00       		.byte	0
- 1322 0158 00       		.byte	0
- 1323 0159 00       		.byte	0
- 1324              		.section	.debug_loc,"",%progbits
- 1325              	.Ldebug_loc0:
- 1326              	.LLST0:
- 1327 0000 0A000000 		.4byte	.LVL9
- 1328 0004 0E000000 		.4byte	.LVL10
- 1329 0008 0100     		.2byte	0x1
- 1330 000a 52       		.byte	0x52
- 1331 000b 00000000 		.4byte	0
- 1332 000f 00000000 		.4byte	0
- 1333              	.LLST1:
- 1334 0013 4E000000 		.4byte	.LVL16
- 1335 0017 59000000 		.4byte	.LVL17-1
- 1336 001b 0100     		.2byte	0x1
- 1337 001d 50       		.byte	0x50
- 1338 001e 00000000 		.4byte	0
- 1339 0022 00000000 		.4byte	0
- 1340              		.section	.debug_aranges,"",%progbits
- 1341 0000 A4000000 		.4byte	0xa4
- 1342 0004 0200     		.2byte	0x2
- 1343 0006 00000000 		.4byte	.Ldebug_info0
- 1344 000a 04       		.byte	0x4
- 1345 000b 00       		.byte	0
- 1346 000c 0000     		.2byte	0
- 1347 000e 0000     		.2byte	0
- 1348 0010 00000000 		.4byte	.LFB2
- 1349 0014 10000000 		.4byte	.LFE2-.LFB2
- 1350 0018 00000000 		.4byte	.LFB3
- 1351 001c 10000000 		.4byte	.LFE3-.LFB3
- 1352 0020 00000000 		.4byte	.LFB4
- 1353 0024 0C000000 		.4byte	.LFE4-.LFB4
- 1354 0028 00000000 		.4byte	.LFB5
- 1355 002c 14000000 		.4byte	.LFE5-.LFB5
- 1356 0030 00000000 		.4byte	.LFB7
- 1357 0034 0C000000 		.4byte	.LFE7-.LFB7
- 1358 0038 00000000 		.4byte	.LFB8
- 1359 003c 0C000000 		.4byte	.LFE8-.LFB8
- 1360 0040 00000000 		.4byte	.LFB9
- 1361 0044 0C000000 		.4byte	.LFE9-.LFB9
- 1362 0048 00000000 		.4byte	.LFB10
- 1363 004c 0C000000 		.4byte	.LFE10-.LFB10
- 1364 0050 00000000 		.4byte	.LFB11
- 1365 0054 0C000000 		.4byte	.LFE11-.LFB11
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 41
+ 1197      50657269 
+ 1197      6F6400
+ 1198              	.LASF29:
+ 1199 0019 72657375 		.ascii	"result\000"
+ 1199      6C7400
+ 1200              	.LASF22:
+ 1201 0020 70657269 		.ascii	"period\000"
+ 1201      6F6400
+ 1202              	.LASF3:
+ 1203 0027 73686F72 		.ascii	"short unsigned int\000"
+ 1203      7420756E 
+ 1203      7369676E 
+ 1203      65642069 
+ 1203      6E7400
+ 1204              	.LASF18:
+ 1205 003a 53657276 		.ascii	"Servo_A_Stop\000"
+ 1205      6F5F415F 
+ 1205      53746F70 
+ 1205      00
+ 1206              	.LASF17:
+ 1207 0047 53657276 		.ascii	"Servo_A_Enable\000"
+ 1207      6F5F415F 
+ 1207      456E6162 
+ 1207      6C6500
+ 1208              	.LASF11:
+ 1209 0056 666C6F61 		.ascii	"float\000"
+ 1209      7400
+ 1210              	.LASF33:
+ 1211 005c 53657276 		.ascii	"Servo_A_ReadCapture\000"
+ 1211      6F5F415F 
+ 1211      52656164 
+ 1211      43617074 
+ 1211      75726500 
+ 1212              	.LASF1:
+ 1213 0070 756E7369 		.ascii	"unsigned char\000"
+ 1213      676E6564 
+ 1213      20636861 
+ 1213      7200
+ 1214              	.LASF14:
+ 1215 007e 72656738 		.ascii	"reg8\000"
+ 1215      00
+ 1216              	.LASF38:
+ 1217 0083 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Servo_A.c\000"
+ 1217      6E657261 
+ 1217      7465645F 
+ 1217      536F7572 
+ 1217      63655C50 
+ 1218              	.LASF34:
+ 1219 00a6 53657276 		.ascii	"Servo_A_ReadCompare1\000"
+ 1219      6F5F415F 
+ 1219      52656164 
+ 1219      436F6D70 
+ 1219      61726531 
+ 1220              	.LASF5:
+ 1221 00bb 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1221      20756E73 
+ 1221      69676E65 
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 39
 
 
- 1366 0058 00000000 		.4byte	.LFB12
- 1367 005c 0C000000 		.4byte	.LFE12-.LFB12
- 1368 0060 00000000 		.4byte	.LFB13
- 1369 0064 0C000000 		.4byte	.LFE13-.LFB13
- 1370 0068 00000000 		.4byte	.LFB14
- 1371 006c 0C000000 		.4byte	.LFE14-.LFB14
- 1372 0070 00000000 		.4byte	.LFB6
- 1373 0074 14000000 		.4byte	.LFE6-.LFB6
- 1374 0078 00000000 		.4byte	.LFB1
- 1375 007c 68000000 		.4byte	.LFE1-.LFB1
- 1376 0080 00000000 		.4byte	.LFB0
- 1377 0084 1C000000 		.4byte	.LFE0-.LFB0
- 1378 0088 00000000 		.4byte	.LFB15
- 1379 008c 0C000000 		.4byte	.LFE15-.LFB15
- 1380 0090 00000000 		.4byte	.LFB16
- 1381 0094 0C000000 		.4byte	.LFE16-.LFB16
- 1382 0098 00000000 		.4byte	.LFB17
- 1383 009c 0C000000 		.4byte	.LFE17-.LFB17
- 1384 00a0 00000000 		.4byte	0
- 1385 00a4 00000000 		.4byte	0
- 1386              		.section	.debug_ranges,"",%progbits
- 1387              	.Ldebug_ranges0:
- 1388 0000 00000000 		.4byte	.LFB2
- 1389 0004 10000000 		.4byte	.LFE2
- 1390 0008 00000000 		.4byte	.LFB3
- 1391 000c 10000000 		.4byte	.LFE3
- 1392 0010 00000000 		.4byte	.LFB4
- 1393 0014 0C000000 		.4byte	.LFE4
- 1394 0018 00000000 		.4byte	.LFB5
- 1395 001c 14000000 		.4byte	.LFE5
- 1396 0020 00000000 		.4byte	.LFB7
- 1397 0024 0C000000 		.4byte	.LFE7
- 1398 0028 00000000 		.4byte	.LFB8
- 1399 002c 0C000000 		.4byte	.LFE8
- 1400 0030 00000000 		.4byte	.LFB9
- 1401 0034 0C000000 		.4byte	.LFE9
- 1402 0038 00000000 		.4byte	.LFB10
- 1403 003c 0C000000 		.4byte	.LFE10
- 1404 0040 00000000 		.4byte	.LFB11
- 1405 0044 0C000000 		.4byte	.LFE11
- 1406 0048 00000000 		.4byte	.LFB12
- 1407 004c 0C000000 		.4byte	.LFE12
- 1408 0050 00000000 		.4byte	.LFB13
- 1409 0054 0C000000 		.4byte	.LFE13
- 1410 0058 00000000 		.4byte	.LFB14
- 1411 005c 0C000000 		.4byte	.LFE14
- 1412 0060 00000000 		.4byte	.LFB6
- 1413 0064 14000000 		.4byte	.LFE6
- 1414 0068 00000000 		.4byte	.LFB1
- 1415 006c 68000000 		.4byte	.LFE1
- 1416 0070 00000000 		.4byte	.LFB0
- 1417 0074 1C000000 		.4byte	.LFE0
- 1418 0078 00000000 		.4byte	.LFB15
- 1419 007c 0C000000 		.4byte	.LFE15
- 1420 0080 00000000 		.4byte	.LFB16
- 1421 0084 0C000000 		.4byte	.LFE16
- 1422 0088 00000000 		.4byte	.LFB17
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 42
+ 1221      6420696E 
+ 1221      7400
+ 1222              	.LASF9:
+ 1223 00cd 75696E74 		.ascii	"uint8\000"
+ 1223      3800
+ 1224              	.LASF31:
+ 1225 00d3 636F6E74 		.ascii	"control\000"
+ 1225      726F6C00 
+ 1226              	.LASF21:
+ 1227 00db 636F756E 		.ascii	"counter\000"
+ 1227      74657200 
+ 1228              	.LASF12:
+ 1229 00e3 646F7562 		.ascii	"double\000"
+ 1229      6C6500
+ 1230              	.LASF2:
+ 1231 00ea 73686F72 		.ascii	"short int\000"
+ 1231      7420696E 
+ 1231      7400
+ 1232              	.LASF10:
+ 1233 00f4 75696E74 		.ascii	"uint16\000"
+ 1233      313600
+ 1234              	.LASF27:
+ 1235 00fb 53657276 		.ascii	"Servo_A_Start\000"
+ 1235      6F5F415F 
+ 1235      53746172 
+ 1235      7400
+ 1236              	.LASF8:
+ 1237 0109 756E7369 		.ascii	"unsigned int\000"
+ 1237      676E6564 
+ 1237      20696E74 
+ 1237      00
+ 1238              	.LASF32:
+ 1239 0116 53657276 		.ascii	"Servo_A_ReadCounter\000"
+ 1239      6F5F415F 
+ 1239      52656164 
+ 1239      436F756E 
+ 1239      74657200 
+ 1240              	.LASF7:
+ 1241 012a 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1241      206C6F6E 
+ 1241      6720756E 
+ 1241      7369676E 
+ 1241      65642069 
+ 1242              	.LASF41:
+ 1243 0141 53657276 		.ascii	"Servo_A_initVar\000"
+ 1243      6F5F415F 
+ 1243      696E6974 
+ 1243      56617200 
+ 1244              	.LASF19:
+ 1245 0151 53657276 		.ascii	"Servo_A_WriteCounter\000"
+ 1245      6F5F415F 
+ 1245      57726974 
+ 1245      65436F75 
+ 1245      6E746572 
+ 1246              	.LASF39:
+ 1247 0166 433A5C55 		.ascii	"C:\\Users\\Jorden\\Documents\\PSoC Creator\\Test\\T"
+ 1247      73657273 
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 40
 
 
- 1423 008c 0C000000 		.4byte	.LFE17
- 1424 0090 00000000 		.4byte	0
- 1425 0094 00000000 		.4byte	0
- 1426              		.section	.debug_line,"",%progbits
- 1427              	.Ldebug_line0:
- 1428 0000 B0010000 		.section	.debug_str,"MS",%progbits,1
- 1428      02005100 
- 1428      00000201 
- 1428      FB0E0D00 
- 1428      01010101 
- 1429              	.LASF15:
- 1430 0000 72656731 		.ascii	"reg16\000"
- 1430      3600
- 1431              	.LASF41:
- 1432 0006 53657276 		.ascii	"Servo_A_ReadPeriod\000"
- 1432      6F5F415F 
- 1432      52656164 
- 1432      50657269 
- 1432      6F6400
- 1433              	.LASF35:
- 1434 0019 72657375 		.ascii	"result\000"
- 1434      6C7400
- 1435              	.LASF22:
- 1436 0020 70657269 		.ascii	"period\000"
- 1436      6F6400
- 1437              	.LASF3:
- 1438 0027 73686F72 		.ascii	"short unsigned int\000"
- 1438      7420756E 
- 1438      7369676E 
- 1438      65642069 
- 1438      6E7400
- 1439              	.LASF18:
- 1440 003a 53657276 		.ascii	"Servo_A_Stop\000"
- 1440      6F5F415F 
- 1440      53746F70 
- 1440      00
- 1441              	.LASF17:
- 1442 0047 53657276 		.ascii	"Servo_A_Enable\000"
- 1442      6F5F415F 
- 1442      456E6162 
- 1442      6C6500
- 1443              	.LASF11:
- 1444 0056 666C6F61 		.ascii	"float\000"
- 1444      7400
- 1445              	.LASF32:
- 1446 005c 53657276 		.ascii	"Servo_A_ReadCapture\000"
- 1446      6F5F415F 
- 1446      52656164 
- 1446      43617074 
- 1446      75726500 
- 1447              	.LASF7:
- 1448 0070 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1448      206C6F6E 
- 1448      6720756E 
- 1448      7369676E 
- 1448      65642069 
- 1449              	.LASF1:
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 43
+ 1247      5C4A6F72 
+ 1247      64656E5C 
+ 1247      446F6375 
+ 1248 0193 6573742E 		.ascii	"est.cydsn\000"
+ 1248      63796473 
+ 1248      6E00
+ 1249              	.LASF28:
+ 1250 019d 6374726C 		.ascii	"ctrl\000"
+ 1250      00
+ 1251              	.LASF37:
+ 1252 01a2 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 1252      4320342E 
+ 1252      382E3420 
+ 1252      32303134 
+ 1252      30353236 
+ 1253 01d5 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 1253      20726576 
+ 1253      6973696F 
+ 1253      6E203231 
+ 1253      31333538 
+ 1254 0208 67202D66 		.ascii	"g -ffunction-sections\000"
+ 1254      66756E63 
+ 1254      74696F6E 
+ 1254      2D736563 
+ 1254      74696F6E 
+ 1255              	.LASF16:
+ 1256 021e 73697A65 		.ascii	"sizetype\000"
+ 1256      74797065 
+ 1256      00
+ 1257              	.LASF6:
+ 1258 0227 6C6F6E67 		.ascii	"long long int\000"
+ 1258      206C6F6E 
+ 1258      6720696E 
+ 1258      7400
+ 1259              	.LASF13:
+ 1260 0235 63686172 		.ascii	"char\000"
+ 1260      00
+ 1261              	.LASF20:
+ 1262 023a 53657276 		.ascii	"Servo_A_WritePeriod\000"
+ 1262      6F5F415F 
+ 1262      57726974 
+ 1262      65506572 
+ 1262      696F6400 
+ 1263              	.LASF23:
+ 1264 024e 53657276 		.ascii	"Servo_A_WriteCompare1\000"
+ 1264      6F5F415F 
+ 1264      57726974 
+ 1264      65436F6D 
+ 1264      70617265 
+ 1265              	.LASF25:
+ 1266 0264 53657276 		.ascii	"Servo_A_WriteCompare2\000"
+ 1266      6F5F415F 
+ 1266      57726974 
+ 1266      65436F6D 
+ 1266      70617265 
+ 1267              	.LASF40:
+ 1268 027a 53657276 		.ascii	"Servo_A_ReadControlRegister\000"
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc52CNDv.s 			page 41
 
 
- 1450 0087 756E7369 		.ascii	"unsigned char\000"
- 1450      676E6564 
- 1450      20636861 
- 1450      7200
- 1451              	.LASF14:
- 1452 0095 72656738 		.ascii	"reg8\000"
- 1452      00
- 1453              	.LASF43:
- 1454 009a 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Servo_A.c\000"
- 1454      6E657261 
- 1454      7465645F 
- 1454      536F7572 
- 1454      63655C50 
- 1455              	.LASF39:
- 1456 00bd 53657276 		.ascii	"Servo_A_ReadCompare1\000"
- 1456      6F5F415F 
- 1456      52656164 
- 1456      436F6D70 
- 1456      61726531 
- 1457              	.LASF5:
- 1458 00d2 6C6F6E67 		.ascii	"long unsigned int\000"
- 1458      20756E73 
- 1458      69676E65 
- 1458      6420696E 
- 1458      7400
- 1459              	.LASF9:
- 1460 00e4 75696E74 		.ascii	"uint8\000"
- 1460      3800
- 1461              	.LASF31:
- 1462 00ea 636F6E74 		.ascii	"control\000"
- 1462      726F6C00 
- 1463              	.LASF33:
- 1464 00f2 53657276 		.ascii	"Servo_A_ClearFIFO\000"
- 1464      6F5F415F 
- 1464      436C6561 
- 1464      72464946 
- 1464      4F00
- 1465              	.LASF21:
- 1466 0104 636F756E 		.ascii	"counter\000"
- 1466      74657200 
- 1467              	.LASF12:
- 1468 010c 646F7562 		.ascii	"double\000"
- 1468      6C6500
- 1469              	.LASF2:
- 1470 0113 73686F72 		.ascii	"short int\000"
- 1470      7420696E 
- 1470      7400
- 1471              	.LASF10:
- 1472 011d 75696E74 		.ascii	"uint16\000"
- 1472      313600
- 1473              	.LASF38:
- 1474 0124 53657276 		.ascii	"Servo_A_Start\000"
- 1474      6F5F415F 
- 1474      53746172 
- 1474      7400
- 1475              	.LASF47:
- 1476 0132 4379456E 		.ascii	"CyEnterCriticalSection\000"
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 44
-
-
- 1476      74657243 
- 1476      72697469 
- 1476      63616C53 
- 1476      65637469 
- 1477              	.LASF8:
- 1478 0149 756E7369 		.ascii	"unsigned int\000"
- 1478      676E6564 
- 1478      20696E74 
- 1478      00
- 1479              	.LASF26:
- 1480 0156 53657276 		.ascii	"Servo_A_SetInterruptMode\000"
- 1480      6F5F415F 
- 1480      53657449 
- 1480      6E746572 
- 1480      72757074 
- 1481              	.LASF48:
- 1482 016f 43794578 		.ascii	"CyExitCriticalSection\000"
- 1482      69744372 
- 1482      69746963 
- 1482      616C5365 
- 1482      6374696F 
- 1483              	.LASF29:
- 1484 0185 53657276 		.ascii	"Servo_A_ReadStatusRegister\000"
- 1484      6F5F415F 
- 1484      52656164 
- 1484      53746174 
- 1484      75735265 
- 1485              	.LASF46:
- 1486 01a0 53657276 		.ascii	"Servo_A_initVar\000"
- 1486      6F5F415F 
- 1486      696E6974 
- 1486      56617200 
- 1487              	.LASF19:
- 1488 01b0 53657276 		.ascii	"Servo_A_WriteCounter\000"
- 1488      6F5F415F 
- 1488      57726974 
- 1488      65436F75 
- 1488      6E746572 
- 1489              	.LASF44:
- 1490 01c5 433A5C55 		.ascii	"C:\\Users\\Jorden\\Documents\\PSoC Creator\\Test\\T"
- 1490      73657273 
- 1490      5C4A6F72 
- 1490      64656E5C 
- 1490      446F6375 
- 1491 01f2 6573742E 		.ascii	"est.cydsn\000"
- 1491      63796473 
- 1491      6E00
- 1492              	.LASF28:
- 1493 01fc 53657276 		.ascii	"Servo_A_ReadCounter\000"
- 1493      6F5F415F 
- 1493      52656164 
- 1493      436F756E 
- 1493      74657200 
- 1494              	.LASF42:
- 1495 0210 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 1495      4320342E 
- 1495      382E3420 
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 45
-
-
- 1495      32303134 
- 1495      30353236 
- 1496 0243 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
- 1496      20726576 
- 1496      6973696F 
- 1496      6E203231 
- 1496      31333538 
- 1497 0276 67202D66 		.ascii	"g -ffunction-sections\000"
- 1497      66756E63 
- 1497      74696F6E 
- 1497      2D736563 
- 1497      74696F6E 
- 1498              	.LASF16:
- 1499 028c 73697A65 		.ascii	"sizetype\000"
- 1499      74797065 
- 1499      00
- 1500              	.LASF6:
- 1501 0295 6C6F6E67 		.ascii	"long long int\000"
- 1501      206C6F6E 
- 1501      6720696E 
- 1501      7400
- 1502              	.LASF27:
- 1503 02a3 696E7465 		.ascii	"interruptMode\000"
- 1503      72727570 
- 1503      744D6F64 
- 1503      6500
- 1504              	.LASF20:
- 1505 02b1 53657276 		.ascii	"Servo_A_WritePeriod\000"
- 1505      6F5F415F 
- 1505      57726974 
- 1505      65506572 
- 1505      696F6400 
- 1506              	.LASF23:
- 1507 02c5 53657276 		.ascii	"Servo_A_WriteCompare1\000"
- 1507      6F5F415F 
- 1507      57726974 
- 1507      65436F6D 
- 1507      70617265 
- 1508              	.LASF25:
- 1509 02db 53657276 		.ascii	"Servo_A_WriteCompare2\000"
- 1509      6F5F415F 
- 1509      57726974 
- 1509      65436F6D 
- 1509      70617265 
- 1510              	.LASF36:
- 1511 02f1 6374726C 		.ascii	"ctrl\000"
- 1511      00
- 1512              	.LASF45:
- 1513 02f6 53657276 		.ascii	"Servo_A_ReadControlRegister\000"
- 1513      6F5F415F 
- 1513      52656164 
- 1513      436F6E74 
- 1513      726F6C52 
- 1514              	.LASF34:
- 1515 0312 53657276 		.ascii	"Servo_A_Init\000"
- 1515      6F5F415F 
- 1515      496E6974 
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTB8314.s 			page 46
-
-
- 1515      00
- 1516              	.LASF4:
- 1517 031f 6C6F6E67 		.ascii	"long int\000"
- 1517      20696E74 
- 1517      00
- 1518              	.LASF13:
- 1519 0328 63686172 		.ascii	"char\000"
- 1519      00
- 1520              	.LASF0:
- 1521 032d 7369676E 		.ascii	"signed char\000"
- 1521      65642063 
- 1521      68617200 
- 1522              	.LASF24:
- 1523 0339 636F6D70 		.ascii	"compare\000"
- 1523      61726500 
- 1524              	.LASF37:
- 1525 0341 53657276 		.ascii	"Servo_A_interruptState\000"
- 1525      6F5F415F 
- 1525      696E7465 
- 1525      72727570 
- 1525      74537461 
- 1526              	.LASF30:
- 1527 0358 53657276 		.ascii	"Servo_A_WriteControlRegister\000"
- 1527      6F5F415F 
- 1527      57726974 
- 1527      65436F6E 
- 1527      74726F6C 
- 1528              	.LASF40:
- 1529 0375 53657276 		.ascii	"Servo_A_ReadCompare2\000"
- 1529      6F5F415F 
- 1529      52656164 
- 1529      436F6D70 
- 1529      61726532 
- 1530              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
+ 1268      6F5F415F 
+ 1268      52656164 
+ 1268      436F6E74 
+ 1268      726F6C52 
+ 1269              	.LASF26:
+ 1270 0296 53657276 		.ascii	"Servo_A_Init\000"
+ 1270      6F5F415F 
+ 1270      496E6974 
+ 1270      00
+ 1271              	.LASF4:
+ 1272 02a3 6C6F6E67 		.ascii	"long int\000"
+ 1272      20696E74 
+ 1272      00
+ 1273              	.LASF0:
+ 1274 02ac 7369676E 		.ascii	"signed char\000"
+ 1274      65642063 
+ 1274      68617200 
+ 1275              	.LASF24:
+ 1276 02b8 636F6D70 		.ascii	"compare\000"
+ 1276      61726500 
+ 1277              	.LASF30:
+ 1278 02c0 53657276 		.ascii	"Servo_A_WriteControlRegister\000"
+ 1278      6F5F415F 
+ 1278      57726974 
+ 1278      65436F6E 
+ 1278      74726F6C 
+ 1279              	.LASF35:
+ 1280 02dd 53657276 		.ascii	"Servo_A_ReadCompare2\000"
+ 1280      6F5F415F 
+ 1280      52656164 
+ 1280      436F6D70 
+ 1280      61726532 
+ 1281              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

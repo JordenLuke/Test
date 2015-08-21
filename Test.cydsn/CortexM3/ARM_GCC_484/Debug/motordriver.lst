@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
   18:.\motordriver.c ****     {
   19:.\motordriver.c ****         EN_A_PWM_WriteCompare(speed);
   38              		.loc 1 19 0
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 2
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 2
 
 
   39 0004 FFF7FEFF 		bl	EN_A_PWM_WriteCompare
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
   77              		.loc 1 35 0
   78 000e 2043     		orrs	r0, r0, r4
   79              	.LVL7:
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 3
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 3
 
 
   80 0010 FFF7FEFF 		bl	Motor_A_Write
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
   49:.\motordriver.c ****     {
   50:.\motordriver.c ****         
   51:.\motordriver.c ****         temp = temp | direction;
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 4
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 4
 
 
   52:.\motordriver.c ****         Motor_A_Write(temp);        
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  162 000e FFF7FEFF 		bl	rotateMotor
  163              	.LVL23:
  164 0012 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 5
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 5
 
 
  165              		.cfi_endproc
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  211              		.cfi_def_cfa_offset 8
  212              		.cfi_offset 3, -8
  213              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 6
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 6
 
 
   73:.\motordriver.c ****     rotateMotor(CLOCKWISE,MOTOR_A);
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  261              		.thumb
  262              		.thumb_func
  263              		.type	stop_all, %function
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 7
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 7
 
 
  264              	stop_all:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  307              	.LVL33:
  308 0008 08BD     		pop	{r3, pc}
  309              	.LVL34:
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 8
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 8
 
 
  310              	.L16:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  360 0041 41020000 		.4byte	.LASF2
  361 0045 02       		.uleb128 0x2
  362 0046 02       		.byte	0x2
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 9
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 9
 
 
  363 0047 07       		.byte	0x7
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  417 00b0 61000000 		.4byte	.LASF15
  418 00b4 02       		.uleb128 0x2
  419 00b5 08       		.byte	0x8
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 10
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 10
 
 
  420 00b6 04       		.byte	0x4
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  474 0134 59000000 		.4byte	.LASF20
  475 0138 01       		.byte	0x1
  476 0139 1A       		.byte	0x1a
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 11
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 11
 
 
  477 013a 81000000 		.4byte	0x81
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  531 01ca 00       		.byte	0
  532 01cb 09       		.uleb128 0x9
  533 01cc B3010000 		.4byte	.LASF26
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 12
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 12
 
 
  534 01d0 01       		.byte	0x1
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  588 0233 30       		.byte	0x30
  589 0234 0B       		.uleb128 0xb
  590 0235 01       		.uleb128 0x1
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 13
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 13
 
 
  591 0236 50       		.byte	0x50
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  645 028d 01       		.uleb128 0x1
  646 028e 34       		.byte	0x34
  647 028f 00       		.byte	0
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 14
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 14
 
 
  648 0290 00       		.byte	0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  702 02f6 01       		.uleb128 0x1
  703 02f7 50       		.byte	0x50
  704 02f8 01       		.uleb128 0x1
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 15
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 15
 
 
  705 02f9 30       		.byte	0x30
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  759 0369 00       		.byte	0
  760 036a 0F       		.uleb128 0xf
  761 036b 00000000 		.4byte	.LASF33
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 16
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 16
 
 
  762 036f 06       		.byte	0x6
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  816 0014 24       		.uleb128 0x24
  817 0015 00       		.byte	0
  818 0016 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 17
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 17
 
 
  819 0017 0B       		.uleb128 0xb
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  873 004e 00       		.byte	0
  874 004f 00       		.byte	0
  875 0050 06       		.uleb128 0x6
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 18
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 18
 
 
  876 0051 05       		.uleb128 0x5
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  930 0089 18       		.uleb128 0x18
  931 008a 9742     		.uleb128 0x2117
  932 008c 19       		.uleb128 0x19
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 19
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 19
 
 
  933 008d 01       		.uleb128 0x1
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  987 00ca 13       		.uleb128 0x13
  988 00cb 00       		.byte	0
  989 00cc 00       		.byte	0
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 20
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 20
 
 
  990 00cd 0F       		.uleb128 0xf
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  1044 0103 3B       		.uleb128 0x3b
  1045 0104 0B       		.uleb128 0xb
  1046 0105 27       		.uleb128 0x27
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 21
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 21
 
 
  1047 0106 19       		.uleb128 0x19
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  1101 006a 51       		.byte	0x51
  1102 006b 9F       		.byte	0x9f
  1103 006c 00000000 		.4byte	0
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 22
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 22
 
 
  1104 0070 00000000 		.4byte	0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  1158 00f0 0100     		.2byte	0x1
  1159 00f2 50       		.byte	0x50
  1160 00f3 0E000000 		.4byte	.LVL6
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 23
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 23
 
 
  1161 00f7 10000000 		.4byte	.LVL7
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  1215 016f 0E000000 		.4byte	.LVL19
  1216 0173 0400     		.2byte	0x4
  1217 0175 F3       		.byte	0xf3
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 24
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 24
 
 
  1218 0176 01       		.uleb128 0x1
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  1272 01ed 0100     		.2byte	0x1
  1273 01ef 50       		.byte	0x50
  1274 01f0 0C000000 		.4byte	.LVL35
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 25
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 25
 
 
  1275 01f4 12000000 		.4byte	.LFE71
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  1329 0040 00000000 		.4byte	.LFB71
  1330 0044 12000000 		.4byte	.LFE71
  1331 0048 00000000 		.4byte	0
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 26
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 26
 
 
  1332 004c 00000000 		.4byte	0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  1359      725F425F 
  1359      52656164 
  1359      00
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 27
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 27
 
 
  1360              	.LASF7:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  1381      74654D6F 
  1381      746F7200 
  1382              	.LASF10:
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 28
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 28
 
 
  1383 016c 756E7369 		.ascii	"unsigned int\000"
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 1
  1406      7400
  1407              	.LASF17:
  1408 0226 63686172 		.ascii	"char\000"
-ARM GAS  C:\Users\Jorden\AppData\Local\Temp\ccTSEIwo.s 			page 29
+ARM GAS  C:\Users\Jorden\AppData\Local\Temp\cc5CDiaZ.s 			page 29
 
 
  1408      00

@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: Servo_1A.c  
+* File Name: Servo_Out2A.c  
 * Version 2.10
 *
 * Description:
@@ -15,15 +15,15 @@
 *******************************************************************************/
 
 #include "cytypes.h"
-#include "Servo_1A.h"
+#include "Servo_Out2A.h"
 
 /* APIs are not generated for P15[7:6] on PSoC 5 */
 #if !(CY_PSOC5A &&\
-	 Servo_1A__PORT == 15 && ((Servo_1A__MASK & 0xC0) != 0))
+	 Servo_Out2A__PORT == 15 && ((Servo_Out2A__MASK & 0xC0) != 0))
 
 
 /*******************************************************************************
-* Function Name: Servo_1A_Write
+* Function Name: Servo_Out2A_Write
 ********************************************************************************
 *
 * Summary:
@@ -36,15 +36,15 @@
 *  None
 *  
 *******************************************************************************/
-void Servo_1A_Write(uint8 value) 
+void Servo_Out2A_Write(uint8 value) 
 {
-    uint8 staticBits = (Servo_1A_DR & (uint8)(~Servo_1A_MASK));
-    Servo_1A_DR = staticBits | ((uint8)(value << Servo_1A_SHIFT) & Servo_1A_MASK);
+    uint8 staticBits = (Servo_Out2A_DR & (uint8)(~Servo_Out2A_MASK));
+    Servo_Out2A_DR = staticBits | ((uint8)(value << Servo_Out2A_SHIFT) & Servo_Out2A_MASK);
 }
 
 
 /*******************************************************************************
-* Function Name: Servo_1A_SetDriveMode
+* Function Name: Servo_Out2A_SetDriveMode
 ********************************************************************************
 *
 * Summary:
@@ -53,27 +53,27 @@ void Servo_1A_Write(uint8 value)
 * Parameters:  
 *  mode:  Change the pins to one of the following drive modes.
 *
-*  Servo_1A_DM_STRONG     Strong Drive 
-*  Servo_1A_DM_OD_HI      Open Drain, Drives High 
-*  Servo_1A_DM_OD_LO      Open Drain, Drives Low 
-*  Servo_1A_DM_RES_UP     Resistive Pull Up 
-*  Servo_1A_DM_RES_DWN    Resistive Pull Down 
-*  Servo_1A_DM_RES_UPDWN  Resistive Pull Up/Down 
-*  Servo_1A_DM_DIG_HIZ    High Impedance Digital 
-*  Servo_1A_DM_ALG_HIZ    High Impedance Analog 
+*  Servo_Out2A_DM_STRONG     Strong Drive 
+*  Servo_Out2A_DM_OD_HI      Open Drain, Drives High 
+*  Servo_Out2A_DM_OD_LO      Open Drain, Drives Low 
+*  Servo_Out2A_DM_RES_UP     Resistive Pull Up 
+*  Servo_Out2A_DM_RES_DWN    Resistive Pull Down 
+*  Servo_Out2A_DM_RES_UPDWN  Resistive Pull Up/Down 
+*  Servo_Out2A_DM_DIG_HIZ    High Impedance Digital 
+*  Servo_Out2A_DM_ALG_HIZ    High Impedance Analog 
 *
 * Return: 
 *  None
 *
 *******************************************************************************/
-void Servo_1A_SetDriveMode(uint8 mode) 
+void Servo_Out2A_SetDriveMode(uint8 mode) 
 {
-	CyPins_SetPinDriveMode(Servo_1A_0, mode);
+	CyPins_SetPinDriveMode(Servo_Out2A_0, mode);
 }
 
 
 /*******************************************************************************
-* Function Name: Servo_1A_Read
+* Function Name: Servo_Out2A_Read
 ********************************************************************************
 *
 * Summary:
@@ -87,17 +87,17 @@ void Servo_1A_SetDriveMode(uint8 mode)
 *  Returns the current value of the Digital Port as a right justified number
 *  
 * Note:
-*  Macro Servo_1A_ReadPS calls this function. 
+*  Macro Servo_Out2A_ReadPS calls this function. 
 *  
 *******************************************************************************/
-uint8 Servo_1A_Read(void) 
+uint8 Servo_Out2A_Read(void) 
 {
-    return (Servo_1A_PS & Servo_1A_MASK) >> Servo_1A_SHIFT;
+    return (Servo_Out2A_PS & Servo_Out2A_MASK) >> Servo_Out2A_SHIFT;
 }
 
 
 /*******************************************************************************
-* Function Name: Servo_1A_ReadDataReg
+* Function Name: Servo_Out2A_ReadDataReg
 ********************************************************************************
 *
 * Summary:
@@ -110,17 +110,17 @@ uint8 Servo_1A_Read(void)
 *  Returns the current value assigned to the Digital Port's data output register
 *  
 *******************************************************************************/
-uint8 Servo_1A_ReadDataReg(void) 
+uint8 Servo_Out2A_ReadDataReg(void) 
 {
-    return (Servo_1A_DR & Servo_1A_MASK) >> Servo_1A_SHIFT;
+    return (Servo_Out2A_DR & Servo_Out2A_MASK) >> Servo_Out2A_SHIFT;
 }
 
 
 /* If Interrupts Are Enabled for this Pins component */ 
-#if defined(Servo_1A_INTSTAT) 
+#if defined(Servo_Out2A_INTSTAT) 
 
     /*******************************************************************************
-    * Function Name: Servo_1A_ClearInterrupt
+    * Function Name: Servo_Out2A_ClearInterrupt
     ********************************************************************************
     * Summary:
     *  Clears any active interrupts attached to port and returns the value of the 
@@ -133,9 +133,9 @@ uint8 Servo_1A_ReadDataReg(void)
     *  Returns the value of the interrupt status register
     *  
     *******************************************************************************/
-    uint8 Servo_1A_ClearInterrupt(void) 
+    uint8 Servo_Out2A_ClearInterrupt(void) 
     {
-        return (Servo_1A_INTSTAT & Servo_1A_MASK) >> Servo_1A_SHIFT;
+        return (Servo_Out2A_INTSTAT & Servo_Out2A_MASK) >> Servo_Out2A_SHIFT;
     }
 
 #endif /* If Interrupts Are Enabled for this Pins component */ 

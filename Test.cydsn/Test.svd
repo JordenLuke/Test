@@ -7,27 +7,6 @@
   <width>32</width>
   <peripherals>
     <peripheral>
-      <name>Motor_B</name>
-      <description>No description available</description>
-      <baseAddress>0x4000647E</baseAddress>
-      <addressBlock>
-        <offset>0</offset>
-        <size>0x0</size>
-        <usage>registers</usage>
-      </addressBlock>
-      <registers>
-        <register>
-          <name>Motor_B_CONTROL_REG</name>
-          <description>No description available</description>
-          <addressOffset>0x0</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-        </register>
-      </registers>
-    </peripheral>
-    <peripheral>
       <name>I2C</name>
       <description>No description available</description>
       <baseAddress>0x0</baseAddress>
@@ -450,7 +429,7 @@
         <register>
           <name>RX_UART_RX_ADDRESS1</name>
           <description>RX Address1 Register</description>
-          <addressOffset>0x4000642B</addressOffset>
+          <addressOffset>0x40006429</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -459,7 +438,16 @@
         <register>
           <name>RX_UART_RX_ADDRESS2</name>
           <description>RX Address2 Register</description>
-          <addressOffset>0x4000643B</addressOffset>
+          <addressOffset>0x40006439</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>TX_UART_TX_DATA</name>
+          <description>TX Data Register</description>
+          <addressOffset>0x40006448</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -468,16 +456,55 @@
         <register>
           <name>RX_UART_RX_DATA</name>
           <description>RX Data Register</description>
-          <addressOffset>0x4000644B</addressOffset>
+          <addressOffset>0x40006449</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
           <resetMask>0</resetMask>
         </register>
         <register>
+          <name>TX_UART_TX_STATUS</name>
+          <description>TX status register</description>
+          <addressOffset>0x40006468</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>UART_TX_STS_COMPLETE</name>
+              <description>No description available</description>
+              <lsb>0</lsb>
+              <msb>0</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>UART_TX_STS_FIFO_EMPTY</name>
+              <description>No description available</description>
+              <lsb>1</lsb>
+              <msb>1</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>UART_TX_STS_FIFO_FULL</name>
+              <description>No description available</description>
+              <lsb>2</lsb>
+              <msb>2</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>UART_TX_STS_FIFO_NOT_FULL</name>
+              <description>No description available</description>
+              <lsb>3</lsb>
+              <msb>3</msb>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
           <name>RX_UART_RX_STATUS</name>
           <description>RX status register</description>
-          <addressOffset>0x4000646C</addressOffset>
+          <addressOffset>0x40006469</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -534,8 +561,107 @@
             </field>
           </fields>
         </register>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>GPS</name>
+      <description>UART</description>
+      <baseAddress>0x0</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x0</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
         <register>
-          <name>TX_UART_TX_DATA</name>
+          <name>RX_GPS_RX_ADDRESS1</name>
+          <description>RX Address1 Register</description>
+          <addressOffset>0x40006420</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>RX_GPS_RX_ADDRESS2</name>
+          <description>RX Address2 Register</description>
+          <addressOffset>0x40006430</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>RX_GPS_RX_DATA</name>
+          <description>RX Data Register</description>
+          <addressOffset>0x40006440</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+        <register>
+          <name>RX_GPS_RX_STATUS</name>
+          <description>RX status register</description>
+          <addressOffset>0x40006460</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>GPS_RX_STS_MRKSPC</name>
+              <description>No description available</description>
+              <lsb>0</lsb>
+              <msb>0</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>GPS_RX_STS_BREAK</name>
+              <description>No description available</description>
+              <lsb>1</lsb>
+              <msb>1</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>GPS_RX_STS_PAR_ERROR</name>
+              <description>No description available</description>
+              <lsb>2</lsb>
+              <msb>2</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>GPS_RX_STS_STOP_ERROR</name>
+              <description>No description available</description>
+              <lsb>3</lsb>
+              <msb>3</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>GPS_RX_STS_OVERRUN</name>
+              <description>No description available</description>
+              <lsb>4</lsb>
+              <msb>4</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>GPS_RX_STS_FIFO_NOTEMPTY</name>
+              <description>No description available</description>
+              <lsb>5</lsb>
+              <msb>5</msb>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>GPS_RX_STS_ADDR_MATCH</name>
+              <description>No description available</description>
+              <lsb>6</lsb>
+              <msb>6</msb>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TX_GPS_TX_DATA</name>
           <description>TX Data Register</description>
           <addressOffset>0x40006548</addressOffset>
           <size>8</size>
@@ -544,7 +670,7 @@
           <resetMask>0</resetMask>
         </register>
         <register>
-          <name>TX_UART_TX_STATUS</name>
+          <name>TX_GPS_TX_STATUS</name>
           <description>TX status register</description>
           <addressOffset>0x40006568</addressOffset>
           <size>8</size>
@@ -553,55 +679,34 @@
           <resetMask>0</resetMask>
           <fields>
             <field>
-              <name>UART_TX_STS_COMPLETE</name>
+              <name>GPS_TX_STS_COMPLETE</name>
               <description>No description available</description>
               <lsb>0</lsb>
               <msb>0</msb>
               <access>read-only</access>
             </field>
             <field>
-              <name>UART_TX_STS_FIFO_EMPTY</name>
+              <name>GPS_TX_STS_FIFO_EMPTY</name>
               <description>No description available</description>
               <lsb>1</lsb>
               <msb>1</msb>
               <access>read-only</access>
             </field>
             <field>
-              <name>UART_TX_STS_FIFO_FULL</name>
+              <name>GPS_TX_STS_FIFO_FULL</name>
               <description>No description available</description>
               <lsb>2</lsb>
               <msb>2</msb>
               <access>read-only</access>
             </field>
             <field>
-              <name>UART_TX_STS_FIFO_NOT_FULL</name>
+              <name>GPS_TX_STS_FIFO_NOT_FULL</name>
               <description>No description available</description>
               <lsb>3</lsb>
               <msb>3</msb>
               <access>read-only</access>
             </field>
           </fields>
-        </register>
-      </registers>
-    </peripheral>
-    <peripheral>
-      <name>Motor_A</name>
-      <description>No description available</description>
-      <baseAddress>0x4000647D</baseAddress>
-      <addressBlock>
-        <offset>0</offset>
-        <size>0x0</size>
-        <usage>registers</usage>
-      </addressBlock>
-      <registers>
-        <register>
-          <name>Motor_A_CONTROL_REG</name>
-          <description>No description available</description>
-          <addressOffset>0x0</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
         </register>
       </registers>
     </peripheral>
@@ -636,7 +741,7 @@
         <register>
           <name>Servo_A_Control_Reg</name>
           <description>UDB Control Register - Assigned Control Register Value</description>
-          <addressOffset>0x40006473</addressOffset>
+          <addressOffset>0x40006472</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -662,52 +767,6 @@
               <lsb>0</lsb>
               <msb>2</msb>
               <access>read-write</access>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>Servo_A_STATUS_MASK</name>
-          <description>UDB Status bits Interrupt Mask Enable Register</description>
-          <addressOffset>0x40006483</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-          <fields>
-            <field>
-              <name>PWM_STS_CMP1</name>
-              <description>Enables the Interrupt on Compare 1</description>
-              <lsb>0</lsb>
-              <msb>0</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>PWM_STS_CMP2</name>
-              <description>Enables the Interrupt on Compare 2</description>
-              <lsb>1</lsb>
-              <msb>1</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>PWM_STS_TC</name>
-              <description>Enables the Interrupt on Terminal Count</description>
-              <lsb>2</lsb>
-              <msb>2</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>PWM_STS_FIFO_FULL</name>
-              <description>FIFO Full Status Mask </description>
-              <lsb>3</lsb>
-              <msb>3</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>PWM_STS_KILL</name>
-              <description>Enables the Interrupt on Kill</description>
-              <lsb>5</lsb>
-              <msb>5</msb>
-              <access>read-only</access>
             </field>
           </fields>
         </register>
@@ -1024,52 +1083,6 @@
           </fields>
         </register>
         <register>
-          <name>Servo_B_STATUS_MASK</name>
-          <description>UDB Status bits Interrupt Mask Enable Register</description>
-          <addressOffset>0x40006485</addressOffset>
-          <size>8</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-          <fields>
-            <field>
-              <name>PWM_STS_CMP1</name>
-              <description>Enables the Interrupt on Compare 1</description>
-              <lsb>0</lsb>
-              <msb>0</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>PWM_STS_CMP2</name>
-              <description>Enables the Interrupt on Compare 2</description>
-              <lsb>1</lsb>
-              <msb>1</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>PWM_STS_TC</name>
-              <description>Enables the Interrupt on Terminal Count</description>
-              <lsb>2</lsb>
-              <msb>2</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>PWM_STS_FIFO_FULL</name>
-              <description>FIFO Full Status Mask </description>
-              <lsb>3</lsb>
-              <msb>3</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>PWM_STS_KILL</name>
-              <description>Enables the Interrupt on Kill</description>
-              <lsb>5</lsb>
-              <msb>5</msb>
-              <access>read-only</access>
-            </field>
-          </fields>
-        </register>
-        <register>
           <name>Servo_B_STATUS_AUX_CTRLDP0</name>
           <description>UDB Auxilliary Control Register</description>
           <addressOffset>0x40006494</addressOffset>
@@ -1322,7 +1335,49 @@
       </registers>
     </peripheral>
     <peripheral>
-      <name>EN_B_PWM</name>
+      <name>Motor_A</name>
+      <description>No description available</description>
+      <baseAddress>0x4000647E</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x0</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>Motor_A_CONTROL_REG</name>
+          <description>No description available</description>
+          <addressOffset>0x0</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>Motor_B</name>
+      <description>No description available</description>
+      <baseAddress>0x4000647F</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x0</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>Motor_B_CONTROL_REG</name>
+          <description>No description available</description>
+          <addressOffset>0x0</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
+      <name>EN_A_PWM</name>
       <description>No description available</description>
       <baseAddress>0x0</baseAddress>
       <addressBlock>
@@ -1332,7 +1387,7 @@
       </addressBlock>
       <registers>
         <register>
-          <name>EN_B_PWM_COMPARE_Reg</name>
+          <name>EN_A_PWM_COMPARE_Reg</name>
           <description>UDB.D0 - Assigned Compare Value</description>
           <addressOffset>0x4000642E</addressOffset>
           <size>16</size>
@@ -1341,7 +1396,7 @@
           <resetMask>0</resetMask>
         </register>
         <register>
-          <name>EN_B_PWM_STATUS_MASK</name>
+          <name>EN_A_PWM_STATUS_MASK</name>
           <description>UDB Status bits Interrupt Mask Enable Register</description>
           <addressOffset>0x4000648F</addressOffset>
           <size>8</size>
@@ -1387,7 +1442,7 @@
           </fields>
         </register>
         <register>
-          <name>EN_B_PWM_STATUS_AUX_CTRLDP0</name>
+          <name>EN_A_PWM_STATUS_AUX_CTRLDP0</name>
           <description>UDB Auxilliary Control Register</description>
           <addressOffset>0x4000649E</addressOffset>
           <size>8</size>
@@ -1512,7 +1567,7 @@
           </fields>
         </register>
         <register>
-          <name>EN_B_PWM_STATUS_AUX_CTRLDP1</name>
+          <name>EN_A_PWM_STATUS_AUX_CTRLDP1</name>
           <description>UDB Auxilliary Control Register</description>
           <addressOffset>0x4000649F</addressOffset>
           <size>8</size>
@@ -1639,7 +1694,7 @@
       </registers>
     </peripheral>
     <peripheral>
-      <name>EN_A_PWM</name>
+      <name>EN_B_PWM</name>
       <description>No description available</description>
       <baseAddress>0x0</baseAddress>
       <addressBlock>
@@ -1649,18 +1704,18 @@
       </addressBlock>
       <registers>
         <register>
-          <name>EN_A_PWM_COMPARE_Reg</name>
+          <name>EN_B_PWM_COMPARE_Reg</name>
           <description>UDB.D0 - Assigned Compare Value</description>
-          <addressOffset>0x40006429</addressOffset>
+          <addressOffset>0x4000642C</addressOffset>
           <size>16</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
           <resetMask>0</resetMask>
         </register>
         <register>
-          <name>EN_A_PWM_STATUS_MASK</name>
+          <name>EN_B_PWM_STATUS_MASK</name>
           <description>UDB Status bits Interrupt Mask Enable Register</description>
-          <addressOffset>0x40006489</addressOffset>
+          <addressOffset>0x4000648E</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -1704,9 +1759,9 @@
           </fields>
         </register>
         <register>
-          <name>EN_A_PWM_STATUS_AUX_CTRLDP0</name>
+          <name>EN_B_PWM_STATUS_AUX_CTRLDP0</name>
           <description>UDB Auxilliary Control Register</description>
-          <addressOffset>0x40006499</addressOffset>
+          <addressOffset>0x4000649C</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -1829,9 +1884,9 @@
           </fields>
         </register>
         <register>
-          <name>EN_A_PWM_STATUS_AUX_CTRLDP1</name>
+          <name>EN_B_PWM_STATUS_AUX_CTRLDP1</name>
           <description>UDB Auxilliary Control Register</description>
-          <addressOffset>0x4000649A</addressOffset>
+          <addressOffset>0x4000649D</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>

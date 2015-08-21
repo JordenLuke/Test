@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: Servo_1B.h  
+* File Name: Servo_Out2A.h  
 * Version 2.10
 *
 * Description:
@@ -14,8 +14,8 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#if !defined(CY_PINS_Servo_1B_ALIASES_H) /* Pins Servo_1B_ALIASES_H */
-#define CY_PINS_Servo_1B_ALIASES_H
+#if !defined(CY_PINS_Servo_Out2A_ALIASES_H) /* Pins Servo_Out2A_ALIASES_H */
+#define CY_PINS_Servo_Out2A_ALIASES_H
 
 #include "cytypes.h"
 #include "cyfitter.h"
@@ -25,8 +25,8 @@
 /***************************************
 *              Constants        
 ***************************************/
-#define Servo_1B_0		(Servo_1B__0__PC)
+#define Servo_Out2A_0		(Servo_Out2A__0__PC)
 
-#endif /* End Pins Servo_1B_ALIASES_H */
+#endif /* End Pins Servo_Out2A_ALIASES_H */
 
 /* [] END OF FILE */
